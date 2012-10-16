@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="0.9" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Customer" representedClassName="Customer" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brick" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customername2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grouptype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_customer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_practice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ismain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sap_no" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="practice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Practice" inverseName="customers" inverseEntity="Practice" syncable="YES"/>
+    </entity>
+    <entity name="Focused_brand" representedClassName="Focused_brand" syncable="YES">
+        <attribute name="brand_class" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brand_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Practice" representedClassName="Practice" syncable="YES">
+        <attribute name="add1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="add2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brick" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isactive" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="practicecode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="practicename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sap_no" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="customers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer" inverseName="practice" inverseEntity="Customer" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="datecrea" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="group1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pclass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SALES_REPORT_Customer_OrderBy" representedClassName="SALES_REPORT_Customer_OrderBy" syncable="YES">
+        <attribute name="aprval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="augval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="decval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="febval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_customer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_practice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="janval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="julval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="junval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_1val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_2val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_3val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_4val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_5val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_6val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_7val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_8val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_9val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_10val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_11val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_12val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m0val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="marval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matvalcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matvalprv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matvalprv2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mayval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="novval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="octval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatcustgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatcustpractice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatcusttotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatcustuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatgrouptotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatgroupuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatpracgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatpractotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankmatpracuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdcustgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdcustpractice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdcusttotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdcustuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdgrouptotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdgroupuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdpracgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdpractotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankytdpracuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runningmatvalcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runningytdvalcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sepval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdvalcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdvalprv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdvalprv2" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SALES_REPORT_CustomerSalesTrends" representedClassName="SALES_REPORT_CustomerSalesTrends" syncable="YES">
+        <attribute name="aprval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="augval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="datatype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="decval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="febval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_customer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_practice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="janval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="julval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="junval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_1val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_2val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_3val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_4val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_5val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_6val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_7val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_8val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_9val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_10val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_11val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m_12val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="m0val" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="marval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matunitcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matunitprv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matvalcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matvalprv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mayval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="novval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="octval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sepval" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdunitcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdunitprv" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdvalcur" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ytdvalprv" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Customer" positionX="-20" positionY="-465" width="128" height="375"/>
+        <element name="Focused_brand" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Practice" positionX="234" positionY="-462" width="128" height="255"/>
+        <element name="Product" positionX="369" positionY="51" width="128" height="255"/>
+        <element name="SALES_REPORT_CustomerSalesTrends" positionX="99" positionY="-432" width="128" height="645"/>
+        <element name="SALES_REPORT_Customer_OrderBy" positionX="160" positionY="192" width="128" height="900"/>
+    </elements>
+</model>
