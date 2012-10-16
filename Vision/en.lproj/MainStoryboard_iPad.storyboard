@@ -1570,7 +1570,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="372" y="395" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1790,7 +1790,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="363" y="68" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1996,7 +1996,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="720" y="31" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2221,7 +2221,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="371" y="483" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2453,7 +2453,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="367" y="70" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2677,7 +2677,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="737" y="24" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -4220,7 +4220,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="361" y="71" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -4451,7 +4451,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="733" y="25" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -4684,7 +4684,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="365" y="67" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="GrouB/Groupp">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -4946,7 +4946,7 @@ E: contact@dbm-int.fr</string>
                                 <rect key="frame" x="716" y="24" width="103" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Group">
+                                <state key="normal" title="B/Group">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -5000,12 +5000,113 @@ E: contact@dbm-int.fr</string>
         <image name="reload.png" width="92" height="92"/>
         <image name="visionlogo.png" width="100" height="50"/>
     </resources>
+    <classes>
+        <class className="evClientSalesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evClientSalesViewController.h"/>
+        </class>
+        <class className="evCustomerSalesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evCustomerSalesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evErReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evErReportViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evLogonViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evLogonViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="CheckCredentials:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="evProductSalesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evProductSalesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evSalesReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evSalesReportViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evSitesDistributionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evSitesDistributionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="filterbyBrandClicked:"/>
+                <relationship kind="action" name="filterbyProductClicked:"/>
+            </relationships>
+        </class>
+        <class className="umfundiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/umfundiViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SyncData:"/>
+                <relationship kind="action" name="searchClicked:"/>
+                <relationship kind="action" name="setSales:"/>
+                <relationship kind="action" name="setSites:"/>
+                <relationship kind="outlet" name="KAMField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="MATField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="MonthField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="SAPCodeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="YTDField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="aboutButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="accountButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="accountNoField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="brickField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="clientSalesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="countryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="customerSalesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="erReportButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="postcodeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="postcodeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="practiceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="productSalesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="salesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="salesTrendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="selectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sitesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sitesDistributionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="townButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="townField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PdE-Hg-WXd"/>
+        <segue reference="uiC-AA-qG0"/>
     </inferredMetricsTieBreakers>
 </document>
