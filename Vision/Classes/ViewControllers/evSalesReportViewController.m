@@ -42,7 +42,7 @@
 {
     BOOL isPortrait = UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
     
-    monthReportGrid.frame = CGRectMake(9, 280, self.view.bounds.size.width-20, (self.view.bounds.size.height-324) / 2);
+    monthReportGrid.frame = CGRectMake(9, 290, self.view.bounds.size.width-20, (self.view.bounds.size.height-324) / 2);
     YTDReportGrid.frame = CGRectMake(9, 280 + (self.view.bounds.size.height-320) / 2,
                                      self.view.bounds.size.width - 20, (self.view.bounds.size.height-324) / 2);
     
@@ -104,6 +104,7 @@ NSArray *SalesReportSubviews(UIView *aView)
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
+    lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
     monthReportDataSource = [[SalesTrendsReportDataSource alloc] init];
@@ -186,4 +187,9 @@ NSArray *SalesReportSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    lblPostcode = nil;
+    lblPostcode = nil;
+    [super viewDidUnload];
+}
 @end
