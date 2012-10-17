@@ -59,7 +59,6 @@
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
-    lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
     productSalesDataSource = [[ProductSalesDataSource alloc] init];
@@ -158,9 +157,4 @@ NSArray *ProductSalesSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    lblPostcode = nil;
-    lblAddress3 = nil;
-    [super viewDidUnload];
-}
 @end

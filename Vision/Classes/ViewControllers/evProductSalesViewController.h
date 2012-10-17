@@ -18,10 +18,8 @@
     IBOutlet UILabel *lblAddress1;
     IBOutlet UILabel *lblAddress2;
     IBOutlet UILabel *lblAddress3;
-    IBOutlet UILabel *lblPostcode;
     IBOutlet UILabel *lblPracticeCode;
     IBOutlet UILabel *lblIDUser;
-
     
     ShinobiGrid *productSalesGrid;
     ProductSalesDataSource *productSalesDataSource;
