@@ -190,6 +190,7 @@ NSArray *SalesReportSubviews(UIView *aView)
 - (void)viewDidUnload {
     lblPostcode = nil;
     lblPostcode = nil;
+    lblPostcode = nil;
     [super viewDidUnload];
 }
 @end

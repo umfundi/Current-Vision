@@ -59,6 +59,7 @@
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
+    lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
     productSalesDataSource = [[ProductSalesDataSource alloc] init];
@@ -121,7 +122,7 @@
 {
     BOOL isPortrait = UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
     
-    productSalesGrid.frame = CGRectMake(9, 260, self.view.bounds.size.width-20, self.view.bounds.size.height-300);
+    productSalesGrid.frame = CGRectMake(9, 280, self.view.bounds.size.width-20, self.view.bounds.size.height-300);
 
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"ProductSalesPortraitView" : @"ProductSalesLandscapeView"];
     if (templateController)
@@ -157,4 +158,8 @@ NSArray *ProductSalesSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    lblPostcode = nil;
+    [super viewDidUnload];
+}
 @end
