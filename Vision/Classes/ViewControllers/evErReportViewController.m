@@ -58,6 +58,7 @@
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
+    lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
     erReportDataSource = [[ErReportDataSource alloc] init];
@@ -119,8 +120,12 @@
 {
     BOOL isPortrait = UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
     
-    erReportGrid.frame = CGRectMake(9, 260, self.view.bounds.size.width-20, self.view.bounds.size.height-300);
+    if (isPortrait)
+        erReportGrid.frame = CGRectMake(9, 295, self.view.bounds.size.width-20, self.view.bounds.size.height-300);
+    else
+        erReportGrid.frame = CGRectMake(9, 270, self.view.bounds.size.width-20, self.view.bounds.size.height-300);
     
+        
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"ErReportPortraitView" : @"ErReportLandscapeView"];
     if (templateController)
     {
@@ -154,4 +159,8 @@ NSArray *ErReportSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    lblPostcode = nil;
+    [super viewDidUnload];
+}
 @end

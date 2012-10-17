@@ -20,6 +20,7 @@
     IBOutlet UILabel *lblAddress3;
     IBOutlet UILabel *lblPracticeCode;
     IBOutlet UILabel *lblIDUser;
+    IBOutlet UILabel *lblPostcode;
     
     ShinobiGrid *erReportGrid;
     ErReportDataSource *erReportDataSource;
