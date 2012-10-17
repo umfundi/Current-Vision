@@ -58,6 +58,7 @@
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
+    lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
     erReportDataSource = [[ErReportDataSource alloc] init];
@@ -154,4 +155,9 @@ NSArray *ErReportSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    lblPostcode = nil;
+    lblPostcode = nil;
+    [super viewDidUnload];
+}
 @end

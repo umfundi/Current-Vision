@@ -380,15 +380,19 @@ NSArray *allSubviews(UIView *aView)
     switch ([sender tag])
     {
         case 210:
+            // Account button
             keyField = @"practicecode";
-            break;
+            break;            
         case 211:
+            // Name button
             keyField = @"practicename";
             break;
         case 212:
-            keyField = @"province";
+            // Town button
+            keyField = @"city";
             break;
         case 213:
+            // Postcode button
             keyField = @"postcode";
             break;
         default:

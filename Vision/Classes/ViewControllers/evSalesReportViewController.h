@@ -20,6 +20,7 @@
     IBOutlet UILabel *lblAddress3;
     IBOutlet UILabel *lblPracticeCode;
     IBOutlet UILabel *lblIDUser;
+
     
     ShinobiGrid *monthReportGrid;
     SalesTrendsReportDataSource *monthReportDataSource;

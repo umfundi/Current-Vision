@@ -186,4 +186,7 @@ NSArray *SalesReportSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 @end

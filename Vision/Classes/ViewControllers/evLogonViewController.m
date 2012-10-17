@@ -129,13 +129,6 @@
 {
     [userField resignFirstResponder];
     [passwordField resignFirstResponder];
-
-    
-    HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
-    HUDProcessing.labelText = @"Processing tables ...";
-    [self.view addSubview:HUDProcessing];
-    
-    [HUDProcessing show:YES];
     
     // Check if users.sqlite exists
     if ([User existsSqliteFileForUsers:YES])
@@ -193,9 +186,9 @@
         return;
         }
     
-    HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
-    HUDProcessing.labelText = @"Processing tables ...";
-    [self.view addSubview:HUDProcessing];
+//    HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
+//    HUDProcessing.labelText = @"Processing tables ...";
+//    [self.view addSubview:HUDProcessing];
     
     [HUDProcessing show:YES];
     
