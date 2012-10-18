@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ShinobiGrids/ShinobiGrid.h>
+#import <ShinobiGrids/ShinobiGrid.h> 
 
 @interface SitesDataSource : NSObject <SGridDataSource>
 
