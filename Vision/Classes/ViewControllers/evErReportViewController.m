@@ -86,7 +86,7 @@
     erReportGrid.defaultBorderStyle.width = 1.0f;
     
     //provide default row heights and col widths
-    erReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    erReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     erReportGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
     //ensure that section header is hidden (a grid has one section by default)

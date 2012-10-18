@@ -58,6 +58,7 @@
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
+    lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
     customerSalesDataSource = [[CustomerSalesDataSource alloc] init];
@@ -85,7 +86,7 @@
     customerSalesGrid.defaultBorderStyle.width = 1.0f;
     
     //provide default row heights and col widths
-    customerSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    customerSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     customerSalesGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
     //ensure that section header is hidden (a grid has one section by default)
@@ -155,4 +156,8 @@ NSArray *CustomerSalesSubviews(UIView *aView)
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    lblPostcode = nil;
+    [super viewDidUnload];
+}
 @end

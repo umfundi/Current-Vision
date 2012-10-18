@@ -19,13 +19,14 @@
 
 - (SGridCell *)shinobiGrid:(ShinobiGrid *)grid cellForGridCoord:(const SGridCoord *) gridCoord
 {
+    // Set the column headers - Row zero are the normal titles.
     if (gridCoord.section == 0)
-    {
+        {
         SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
         if (!cell)
-        {
+            {
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
-        }
+            }
         
         cell.textField.textAlignment = UITextAlignmentCenter;
         cell.textField.backgroundColor = [UIColor darkGrayColor];
@@ -36,7 +37,7 @@
         
         NSString *cellText;
         switch (gridCoord.column)
-        {
+            {
             case 0:
                 cellText = NSLocalizedString(@"Year", @"");
                 break;
@@ -103,23 +104,21 @@
             default:
                 cellText = @"";
                 break;
-        }
+            }
         
         cell.textField.text = cellText;
         
         return cell;
-    }
+        }
     else
-    {
+        {
         SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
+        cell.textField.font = [UIFont fontWithName:@"Ariel" size:14.0f];
         cell.textField.textColor = [UIColor blackColor];
         cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
-        
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
         
@@ -195,12 +194,10 @@
             default:
                 cellText = @"";
                 break;
-        }
-        
+            }
         cell.textField.text = cellText;
-        
         return cell;
-    }
+        }
 }
 
 - (NSUInteger)numberOfColsForShinobiGrid:(ShinobiGrid *)grid

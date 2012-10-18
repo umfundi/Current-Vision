@@ -128,7 +128,7 @@
     sitesGrid.defaultGridLineStyle.color = [UIColor lightGrayColor];
     sitesGrid.defaultBorderStyle.color = [UIColor darkGrayColor];
     sitesGrid.defaultBorderStyle.width = 1.0f;
-
+    
     salesGrid.backgroundColor = [UIColor whiteColor];
     salesGrid.rowStylesTakePriority = YES;
     salesGrid.defaultGridLineStyle.width = 1.0f;

@@ -128,13 +128,13 @@
     sitesDistByProductGrid.defaultBorderStyle.width = 1.0f;
     
     //provide default row heights and col widths
-    brandListGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    brandListGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     brandListGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:400];
-    sitesDistByBrandGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    sitesDistByBrandGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     sitesDistByBrandGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
-    productListGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    productListGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     productListGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:400];
-    sitesDistByProductGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    sitesDistByProductGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     sitesDistByProductGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
     //ensure that section header is hidden (a grid has one section by default)

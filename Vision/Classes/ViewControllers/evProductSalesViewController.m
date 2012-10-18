@@ -87,7 +87,7 @@
     productSalesGrid.defaultBorderStyle.width = 1.0f;
     
     //provide default row heights and col widths
-    productSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    productSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
     productSalesGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
     //ensure that section header is hidden (a grid has one section by default)

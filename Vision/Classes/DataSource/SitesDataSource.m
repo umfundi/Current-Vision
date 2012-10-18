@@ -66,17 +66,17 @@
         cell.textField.text = cellText;
         
         return cell;
-    }
+        }
     else
-    {
+        {
         SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
+        cell.textField.font = [UIFont fontWithName:@"Ariel" size:15.0f];
         cell.textField.textColor = [UIColor blackColor];
         cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
+        cell.textField.font = [UIFont fontWithName:@"Ariel" size:15.0f];
         
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
