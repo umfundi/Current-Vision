@@ -1,0 +1,3699 @@
+<dsElanco>
+  <PRODUCTS>
+    <PCODE>0</PCODE>
+    <PNAME>IGNORE</PNAME>
+    <CLASS>-</CLASS>
+    <BRAND>-</BRAND>
+    <SIZE>-</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>-</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>IGNORE</Type>
+    <Datecrea>2010-08-02T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>10Gun</PCODE>
+    <PNAME>Dectomax 10ml Gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>1931</PCODE>
+    <PNAME>Duvaxyn IET Plus 10 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>1960</PCODE>
+    <PNAME>Duvaxyn R 10 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>37039</PCODE>
+    <PNAME>Stresnil 40 mg/ml 100ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stresnil</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>37041</PCODE>
+    <PNAME>Flubenol 5% 600g</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Flubenol</BRAND>
+    <SIZE>600gm</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>37042</PCODE>
+    <PNAME>Imaverol  100ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Imaverol </BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>37044</PCODE>
+    <PNAME>Surolan  15ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Surolan </BRAND>
+    <SIZE>15ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>37047</PCODE>
+    <PNAME>Telmin Granules 2 x 20g</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Telmin</BRAND>
+    <SIZE>2x20g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>376933</PCODE>
+    <PNAME>Flubenvet 5% 12kg</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Flubenvet</BRAND>
+    <SIZE>12kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>378232</PCODE>
+    <PNAME>Flubenvet 1% 12 x 60g </PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Flubenvet</BRAND>
+    <SIZE>12x60gm</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>378426</PCODE>
+    <PNAME>Otoclean  18 x 5ml </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Otoclean </BRAND>
+    <SIZE>18x5ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>378892</PCODE>
+    <PNAME>Exodus 28g Syringe x 1</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Exodus </BRAND>
+    <SIZE>28.5g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>378893</PCODE>
+    <PNAME>Maximec </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Maximec </BRAND>
+    <SIZE>24x6.42g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>379162</PCODE>
+    <PNAME>Game-Bird Tonic  1L</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Game-Bird Tonic</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>379293</PCODE>
+    <PNAME>Telmin Paste  1 x 20g Syringe</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Telmin</BRAND>
+    <SIZE>20g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>38124</PCODE>
+    <PNAME>Flubenol 5% Premix 25kg</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Flubenol</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>381241</PCODE>
+    <PNAME>Flubenol 50% Premix 10kg UNLICENSED</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Flubenol</BRAND>
+    <SIZE>10kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-02-14T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>381783</PCODE>
+    <PNAME>Danilon Equidos  60 X 1.5g </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Danilon Equidos </BRAND>
+    <SIZE>60x10g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>382525</PCODE>
+    <PNAME>Comforion Vet  100ml </PNAME>
+    <CLASS>Ruminant &amp; Pig &amp; Horse</CLASS>
+    <BRAND>Comforion Vet </BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Pig &amp; Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>384277</PCODE>
+    <PNAME>QUALIMINTIC POUR-ON     1x5 LITRE</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimintic</BRAND>
+    <SIZE>5l</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>384391</PCODE>
+    <PNAME>Solubenol 100 mg/g 5 x 100g</PNAME>
+    <CLASS>Pig &amp; Poultry</CLASS>
+    <BRAND>Solubenol</BRAND>
+    <SIZE>5x100g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pigs &amp; Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>384421</PCODE>
+    <PNAME>Poultry Tonic  1L</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Poultry Tonic</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>384500</PCODE>
+    <PNAME>YARVITAN 1x55ML x1</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Yarvitan</BRAND>
+    <SIZE>55ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>384504</PCODE>
+    <PNAME>YARVITAN 1x120ML x1</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Yarvitan</BRAND>
+    <SIZE>120ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>384508</PCODE>
+    <PNAME>YARVITAN 1x210ML x1</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Yarvitan</BRAND>
+    <SIZE>210ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>385319</PCODE>
+    <PNAME>Qualimec Injection 10 mg/ml  500ml</PNAME>
+    <CLASS>Ruminant &amp; Pig</CLASS>
+    <BRAND>Qualimec</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Pigs &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>385375</PCODE>
+    <PNAME>Ripercol Oral 75 mg/ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ripercol</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>385376</PCODE>
+    <PNAME>Ripercol Oral 75 mg/ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ripercol</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>385865</PCODE>
+    <PNAME>Meloxivet 1.5mg/ml  10ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Meloxivet</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>385866</PCODE>
+    <PNAME>Meloxivet 1.5mg/ml  30ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Meloxivet</BRAND>
+    <SIZE>30ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>385867</PCODE>
+    <PNAME>Meloxivet 1.5mg/ml  150ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Meloxivet</BRAND>
+    <SIZE>150ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386043</PCODE>
+    <PNAME>Flubenol 5%</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Flubenol</BRAND>
+    <SIZE>600gm</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386059</PCODE>
+    <PNAME>Flubenvet 5%</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Flubenvet</BRAND>
+    <SIZE>12kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386060</PCODE>
+    <PNAME>Flubenol 5% Premix</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Flubenol</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386621</PCODE>
+    <PNAME>Regumate Porcine 4 mg/ml </PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Regumate Porcine</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386863</PCODE>
+    <PNAME>Qualimec Pour-On  1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimec</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386864</PCODE>
+    <PNAME>Qualimec Pour-On  2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimec</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386865</PCODE>
+    <PNAME>Qualimec Pour-On  5L </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimec</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386873</PCODE>
+    <PNAME>Cavalesse Topical  60g</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Cavalesse Topical </BRAND>
+    <SIZE>60g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>386874</PCODE>
+    <PNAME>Cavalesse Oral 3 X 20g</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Cavalesse </BRAND>
+    <SIZE>3x20g + 60g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387329</PCODE>
+    <PNAME>Perloquan  800g</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Perloquan </BRAND>
+    <SIZE>800gm</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387333</PCODE>
+    <PNAME>Enurace 50</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Enurace</BRAND>
+    <SIZE>100x50g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387785</PCODE>
+    <PNAME>Benedyn  20 x 20g</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Benedyn </BRAND>
+    <SIZE>50 caps</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387820</PCODE>
+    <PNAME>Fiberdyn  800g </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Fiberdyn </BRAND>
+    <SIZE>800g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387860</PCODE>
+    <PNAME>Dexdomitor 0.5 mg/ml   10ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Dexdomitor</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387870</PCODE>
+    <PNAME>Domosedan Gel 7.5mg/ml 3ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Domosedan Gel</BRAND>
+    <SIZE>3ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>387875</PCODE>
+    <PNAME>Domosedan 10 mg/ml  20ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Domosedan</BRAND>
+    <SIZE>20ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>410168</PCODE>
+    <PNAME>Maprelin  50ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Maprelin </BRAND>
+    <SIZE>50ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>410195</PCODE>
+    <PNAME>Meloxivet 0.5mg/ml  10ml </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Meloxivet</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>410697</PCODE>
+    <PNAME>Kaodyn 15ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Kaodyn</BRAND>
+    <SIZE>15ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>410698</PCODE>
+    <PNAME>Kaodyn 30ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Kaodyn</BRAND>
+    <SIZE>30ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>411287</PCODE>
+    <PNAME>Truleva</PNAME>
+    <CLASS>Ruminant &amp; Pig</CLASS>
+    <BRAND>Truleva</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>412109</PCODE>
+    <PNAME>Enurace 10</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Enurace</BRAND>
+    <SIZE>60x10g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>412136</PCODE>
+    <PNAME>Surosolve  125ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Surosolve </BRAND>
+    <SIZE>125ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>412225</PCODE>
+    <PNAME>Antisedan 5 mg/ml  10ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Antisedan</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>412227</PCODE>
+    <PNAME>Domosedan 10 mg/ml   5ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Domosedan</BRAND>
+    <SIZE>5ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>412237</PCODE>
+    <PNAME>Domitor 1 mg/ml   10ml</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Domitor</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>60Gun</PCODE>
+    <PNAME>Dectomax Pour On 60ml Gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>60ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7381</PCODE>
+    <PNAME>Strongid P Paste Original 10 Syringes</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>10 Syringes</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7391</PCODE>
+    <PNAME>Strongid P Grans 15 sachets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>15sa</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7450</PCODE>
+    <PNAME>Dectomax Injection 50ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>50ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7451C</PCODE>
+    <PNAME>Dectomax Cattle Injection 200ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7451S</PCODE>
+    <PNAME>Dectomax Sheep Injection 200ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7452C</PCODE>
+    <PNAME>Dectomax Cattle Injection 500ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7452S</PCODE>
+    <PNAME>Dectomax Sheep Injection 500ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7461</PCODE>
+    <PNAME>Dectomax Cattle Pour On 250ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>250ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7462</PCODE>
+    <PNAME>Dectomax Cattle Pour On 1ltr</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>1l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7467</PCODE>
+    <PNAME>Dectomax Pig Injection 200ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7468</PCODE>
+    <PNAME>Dectomax Pig Injection 500ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7472</PCODE>
+    <PNAME>Dectomax Cattle Pour On 2x3L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>3l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7637</PCODE>
+    <PNAME>Valbazen S SC 2.5% 2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>2.5l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7638</PCODE>
+    <PNAME>Valbazen S SC 2.5% 10L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>10l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7641</PCODE>
+    <PNAME>Valbazen C 10% 1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>1l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7642</PCODE>
+    <PNAME>Valbazen C 10% 5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>5l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7650</PCODE>
+    <PNAME>Scour Formula Extra 12pk sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>12pk</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7651</PCODE>
+    <PNAME>Scour Formula Extra 48pk sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>48pk</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7716</PCODE>
+    <PNAME>Lectade LA 12 sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7717</PCODE>
+    <PNAME>Lectade LA 48 sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>48 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7718</PCODE>
+    <PNAME>Lectade Plus LA 12 sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7719</PCODE>
+    <PNAME>Lectade Plus LA 48 sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>48 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7722</PCODE>
+    <PNAME>Lectade SA 30 sachet</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Lectade SA</BRAND>
+    <SIZE>x30</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>SA  </GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7738</PCODE>
+    <PNAME>Felocell CVR 30 Dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Felocell</BRAND>
+    <SIZE>30 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Feline</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7780</PCODE>
+    <PNAME>Stellamune Mycoplasma 100ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stellamune</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7812</PCODE>
+    <PNAME>Strongid P Paste Caramel 10 Syringes</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>x10</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7822</PCODE>
+    <PNAME>Valbazen S SC 2.5% 1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>1l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7883</PCODE>
+    <PNAME>Stellamune Once 100ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stellamune</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7904</PCODE>
+    <PNAME>Strongid P Paste Original 3 pack</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>3pk</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7908</PCODE>
+    <PNAME>Strongid P Paste Caramel 3 pack</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>3pk</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7926C</PCODE>
+    <PNAME>Dectomax Cattle Injection 2x500ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7926S</PCODE>
+    <PNAME>Dectomax Sheep Injection 2x500ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>7948</PCODE>
+    <PNAME>Dectomax Cattle Pour On 3L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>3l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>8001379</PCODE>
+    <PNAME>Duvaxyn EHV1 4 1 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>1 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>8001380</PCODE>
+    <PNAME>Duvaxyn IE Plus 10 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>8001381</PCODE>
+    <PNAME>Duvaxyn IET Plus 10 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>8001382</PCODE>
+    <PNAME>Duvaxyn T 10 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>801421</PCODE>
+    <PNAME>Duvaxyn WNV 5 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>5 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Companion</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>82515</PCODE>
+    <PNAME>Flubenol 1.5%  2kg </PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Flubenol</BRAND>
+    <SIZE>2kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>82516</PCODE>
+    <PNAME>Flubenvet 2.5% 240g</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Flubenvet</BRAND>
+    <SIZE>240gm</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>82517</PCODE>
+    <PNAME>Flubenvet 2.5% 2.4kg</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Flubenvet</BRAND>
+    <SIZE>2.4kg</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900901</PCODE>
+    <PNAME>Dectomax Sheep gun 3ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>gun 3ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900902</PCODE>
+    <PNAME>Defender 20ml Drench gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Defender</BRAND>
+    <SIZE>gun 20ml</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900903</PCODE>
+    <PNAME>Duphacycline Aero 140 gm</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Duphacycline</BRAND>
+    <SIZE>Aero 140gm</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Aerosol</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900904</PCODE>
+    <PNAME>Duphamox Pal drop 15ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Duphamox</BRAND>
+    <SIZE>15ml</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Drops</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900905</PCODE>
+    <PNAME>Duphamox Tablets 250 X 200mg</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Duphamox</BRAND>
+    <SIZE>200mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900906</PCODE>
+    <PNAME>Duphamox Tablets 500 X 40mg</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Duphamox</BRAND>
+    <SIZE>40mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900907</PCODE>
+    <PNAME>Duvaxyn EHV1 4 10 X 1 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900908</PCODE>
+    <PNAME>Duvaxyn Syringes and Needles 1 X 10</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900909</PCODE>
+    <PNAME>Felocell CVR 25 Dose + syringe</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Felocell</BRAND>
+    <SIZE>25 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Feline</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900910</PCODE>
+    <PNAME>Felocell CVR FIE+FVR+FCV 25 Dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Felocell</BRAND>
+    <SIZE>25 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Feline</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900911</PCODE>
+    <PNAME>Lectade Doser</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>x1</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Doser</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900912</PCODE>
+    <PNAME>Nisamox Tablets 500MG X 100</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Nisamox</BRAND>
+    <SIZE>500mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900913</PCODE>
+    <PNAME>Nisamox Tablets 100X50MG</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Nisamox</BRAND>
+    <SIZE>50mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900914</PCODE>
+    <PNAME>Nisamox Tablets 250X250MG</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Nisamox</BRAND>
+    <SIZE>250mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900915</PCODE>
+    <PNAME>Nisamox Tablets 500X50MG</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Nisamox</BRAND>
+    <SIZE>50mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900916</PCODE>
+    <PNAME>Nisamox Tablets 50X250MG</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Nisamox</BRAND>
+    <SIZE>250mg</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>na</GROUP2>
+    <GROUP3>Tablet</GROUP3>
+    <GROUP4>Other</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>SUPPRIME</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900917</PCODE>
+    <PNAME>Scour Formula 10X12 sachets SPX</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900918</PCODE>
+    <PNAME>Scour Formula 12 sachet</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900919</PCODE>
+    <PNAME>Stellamune Mycoplasma 100ml X 10</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stellamune</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900920</PCODE>
+    <PNAME>Stellamune Once 50 dose X 10</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stellamune</BRAND>
+    <SIZE>50 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900921</PCODE>
+    <PNAME>Strongid Caramel Paste X 1</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>x1</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900922</PCODE>
+    <PNAME>Strongid P syringe</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>x1</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Syringe</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900923</PCODE>
+    <PNAME>Syringes X 25</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Syringe</BRAND>
+    <SIZE>x25</SIZE>
+    <GROUP1>unknown</GROUP1>
+    <GROUP2>Feline</GROUP2>
+    <GROUP3>Syringe</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900924</PCODE>
+    <PNAME>Valbazen Defender Drench gun 25ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>25ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900925</PCODE>
+    <PNAME>Valbazen Drench gun 15ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>15ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900926</PCODE>
+    <PNAME>Valbazen Drench gun 20ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>20ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900927</PCODE>
+    <PNAME>Valbazen Drench gun 25ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>25ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900928</PCODE>
+    <PNAME>Valbazen S SC 2.5% 5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>5l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-05-28T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900929</PCODE>
+    <PNAME>Micotil 100ML</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Micotil</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>ab</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-07-13T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900930</PCODE>
+    <PNAME>Lactatrim MC</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lactatrim</BRAND>
+    <SIZE>8g Syringe</SIZE>
+    <GROUP1>Intramammary</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Syringe</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-07-13T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900931</PCODE>
+    <PNAME>Dectomax Cattle Pour On 2x3L + 1L FOC</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>3l X2 +1L</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-07-13T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900932</PCODE>
+    <PNAME>Felocell CVR single dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Felocell</BRAND>
+    <SIZE>1 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Feline</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-07-13T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900933</PCODE>
+    <PNAME>Strongid P Paste Original X 1</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>single</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2010-08-11T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900934</PCODE>
+    <PNAME>Dectomax Injection For Cattle &amp; Sheep 30 x 26g syringe</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>30 syringes</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2010-08-11T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900935</PCODE>
+    <PNAME>Elector 237 ML</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Elector</BRAND>
+    <SIZE>237 ML</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>poultry</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2010-08-11T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900936</PCODE>
+    <PNAME>COMFORTIS CHEW TABS 6X270MG</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X270MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-05-10T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900937</PCODE>
+    <PNAME>COMFORTIS CHEW TABS 6X425MG</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X425MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-05-10T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900938</PCODE>
+    <PNAME>COMFORTIS CHEW TABS 6X665MG</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X665MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-05-10T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900939</PCODE>
+    <PNAME>COMFORTIS CHEW TABS 6X1040MG</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X1040MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-05-10T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>900940</PCODE>
+    <PNAME>COMFORTIS CHEW TABS 6X1620MG</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X1620MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-05-10T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>90301</PCODE>
+    <PNAME>Vecoxan 2.5 mg/ml  1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Vecoxan</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>90302</PCODE>
+    <PNAME>Vecoxan 2.5 mg/ml  2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Vecoxan</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>90303</PCODE>
+    <PNAME>Vecoxan 2.5 mg/ml  5L </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Vecoxan</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>90579</PCODE>
+    <PNAME>QUALIMINTIC 1% INJECTION  500ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimintic</BRAND>
+    <SIZE>1% inj</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95794</PCODE>
+    <PNAME>Ovispec S&amp;C 2.5%  2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ovispec</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95795</PCODE>
+    <PNAME>Ovispec S&amp;C 2.5%  5L </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ovispec</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95796</PCODE>
+    <PNAME>Ovispec S&amp;C 2.5%  10L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ovispec</BRAND>
+    <SIZE>10L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95797</PCODE>
+    <PNAME>Ovispec S&amp;C 10%  1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ovispec</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95798</PCODE>
+    <PNAME>Ovispec S&amp;C 10%  2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ovispec</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95799</PCODE>
+    <PNAME>Ovispec S&amp;C 10%  5L </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Ovispec</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle &amp; Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>95960</PCODE>
+    <PNAME>Surolan  30ml </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Surolan </BRAND>
+    <SIZE>30ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96071</PCODE>
+    <PNAME>Flukiver 5 mg/ml  5L </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Flukiver</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96072</PCODE>
+    <PNAME>Flukiver 5 mg/ml  2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Flukiver</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96073</PCODE>
+    <PNAME>Flukiver 5 mg/ml  1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Flukiver</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96077</PCODE>
+    <PNAME>Supaverm Oral Suspension 1L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Supaverm</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96078</PCODE>
+    <PNAME>Supaverm Oral Suspension 2.5L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Supaverm</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96078A</PCODE>
+    <PNAME>Mebadown Super Oral Suspension for Sheep x 2.5 Lt</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Mebadown</BRAND>
+    <SIZE>2.5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-05-15T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96079</PCODE>
+    <PNAME>Supaverm Oral Suspension 5L </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Supaverm</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96079A</PCODE>
+    <PNAME>Mebadown Super Oral Suspension for Sheep x 5 Lt</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Mebadown</BRAND>
+    <SIZE>5L</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-05-15T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96234</PCODE>
+    <PNAME>Fertagyl 0.1 mg/ml </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Fertagyl</BRAND>
+    <SIZE>10x5ml vial</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96240</PCODE>
+    <PNAME>Regumate Porcine 4 mg/ml </PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Regumate Porcine</BRAND>
+    <SIZE>360ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96341</PCODE>
+    <PNAME>VULKETAN 0.25% GEL 1x75g</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Vulketan</BRAND>
+    <SIZE>75g</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96734</PCODE>
+    <PNAME>Itrafungol  52ml </PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Itrafungol </BRAND>
+    <SIZE>52ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2011-08-03T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>96885</PCODE>
+    <PNAME>FLUKIVER* 4x250ML  VIAL</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Flukiver</BRAND>
+    <SIZE>250ml</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>968851</PCODE>
+    <PNAME>FLUKIVER* 1 Litre</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Flukiver</BRAND>
+    <SIZE>1 Lt</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-02-14T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>99369</PCODE>
+    <PNAME>QUALIMINTIC POUR-ON     1x1 LITRE</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimintic</BRAND>
+    <SIZE>1l</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>99370</PCODE>
+    <PNAME>QUALIMINTIC POUR-ON     1x2.5 LITRE</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Qualimintic</BRAND>
+    <SIZE>2.5l</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-12T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF002025KAA</PCODE>
+    <PNAME>Tylan G20 Premix 25kg</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Tylan Premix</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF005002k</PCODE>
+    <PNAME>Tylan G50 2 kg Premix</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Tylan Premix</BRAND>
+    <SIZE>2kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF005002KAA</PCODE>
+    <PNAME>Tylan G50 Premix 2kg </PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Tylan Premix</BRAND>
+    <SIZE>2kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF020005KAA</PCODE>
+    <PNAME>Apralan G200 Premix</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Apralan</BRAND>
+    <SIZE>5kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF025066VAA</PCODE>
+    <PNAME>Tylan G250 Premix</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Tylan Premix</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF046502KAA</PCODE>
+    <PNAME>Pulmotil Premix G100 2kg </PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Pulmotil</BRAND>
+    <SIZE>2kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF046502KIE</PCODE>
+    <PNAME>Pulmotil G100 2kg ROI</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Pulmotil</BRAND>
+    <SIZE>2kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF047210KAA</PCODE>
+    <PNAME>Pulmotil Premix G200 10kg</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Pulmotil</BRAND>
+    <SIZE>10kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF047210KIE</PCODE>
+    <PNAME>Pulmotil G200    ROI</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Pulmotil</BRAND>
+    <SIZE>10kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF051125KEL</PCODE>
+    <PNAME>Monteban 100 Premix</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Monteban</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>Prx</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF130001KAA</PCODE>
+    <PNAME>Tylan Soluble 1kg Pack (Boxes of TEN) 1kg</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Tylan Soluble</BRAND>
+    <SIZE>1kg</SIZE>
+    <GROUP1>Soluble</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Soluble</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF130067XAA</PCODE>
+    <PNAME>Tylan Soluble 100g</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Tylan Soluble</BRAND>
+    <SIZE>100gm</SIZE>
+    <GROUP1>Soluble</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Soluble</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF130825KAA</PCODE>
+    <PNAME>Elancoban Premix 25kg</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Elancoban</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>a/c</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF137525KAA</PCODE>
+    <PNAME>Maxiban Premix 25kg</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Maxiban</BRAND>
+    <SIZE>25kg</SIZE>
+    <GROUP1>a/c</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Premix</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AF720082XAA</PCODE>
+    <PNAME>Tylan 200 100ml </PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Tylan Injection</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>ab</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH023050HAA</PCODE>
+    <PNAME>Micotil 300 50ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Micotil</BRAND>
+    <SIZE>50ml</SIZE>
+    <GROUP1>ab</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH023050HIE</PCODE>
+    <PNAME>Micotil 50ml (EIRE)</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Micotil</BRAND>
+    <SIZE>50ml</SIZE>
+    <GROUP1>ab</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH047009YAA</PCODE>
+    <PNAME>Pulmotil AC 240ml</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Pulmotil</BRAND>
+    <SIZE>240ml</SIZE>
+    <GROUP1>Soluble</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Drops</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH047009YIE</PCODE>
+    <PNAME>Pulmotil AC</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Pulmotil</BRAND>
+    <SIZE>240ml</SIZE>
+    <GROUP1>Soluble</GROUP1>
+    <GROUP2>Poultry</GROUP2>
+    <GROUP3>Drops</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>ANCIEN CODE</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH049501LAA</PCODE>
+    <PNAME>Elector PSP Spray  1L</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Elector</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>poultry</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH049508ZAA</PCODE>
+    <PNAME>Elector PSP Spray  237ml</PNAME>
+    <CLASS>Poultry</CLASS>
+    <BRAND>Elector</BRAND>
+    <SIZE>237 ML</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>poultry</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Poultry</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH063550EAA</PCODE>
+    <PNAME>Apralan Soluble 50g</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Apralan</BRAND>
+    <SIZE>50gm</SIZE>
+    <GROUP1>Soluble</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Soluble</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH063560YAA</PCODE>
+    <PNAME>Apralan Sachets 50 x 1g sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Apralan</BRAND>
+    <SIZE>1gm</SIZE>
+    <GROUP1>Soluble</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH066011VAA</PCODE>
+    <PNAME>Energaid 24 sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Energaid</BRAND>
+    <SIZE>24s</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH071001LAA</PCODE>
+    <PNAME>Dectomax Pour On 1 litre</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>1l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH071001LIE</PCODE>
+    <PNAME>ZEARL 5mg/ml POUR ON 1LTR</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Zearl</BRAND>
+    <SIZE>1L</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-06-08T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH071003LAA</PCODE>
+    <PNAME>Dectomax Pour On 3 litre</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>3l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH071003LIE</PCODE>
+    <PNAME>ZEARL 5mg/ml POUR ON 3LTR</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Zearl</BRAND>
+    <SIZE>3L</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-06-08T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH071038WAA</PCODE>
+    <PNAME>Dectomax Pour On 250ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>250ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082CAA</PCODE>
+    <PNAME>Dectomax Injection 50ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>50ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082CIE</PCODE>
+    <PNAME>ZEARL 10mg/ml SOL INJ. 50MLS</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Zearl</BRAND>
+    <SIZE>50ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle &amp; sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-06-08T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082DAA</PCODE>
+    <PNAME>Dectomax Injection 200ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082DIE</PCODE>
+    <PNAME>ZEARL 10mg/ml SOL.INJ. 200MLS</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Zearl</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle &amp; sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-06-08T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082EAA</PCODE>
+    <PNAME>Dectomax Injection 500ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082EIE</PCODE>
+    <PNAME>ZEARL 10mg/ml SOL.INJ. 500MLS</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Zearl</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Cattle &amp; sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-06-08T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072082FAA</PCODE>
+    <PNAME>Dectomax Promo Pack 2X500ml+200ml</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072182DAA</PCODE>
+    <PNAME>Dectomax Injection Pigs 200ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>200ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH072182EAA</PCODE>
+    <PNAME>Dectomax Injection Pigs 500ml</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>500ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074081HEX</PCODE>
+    <PNAME>Lectade Standard 1 x 48 Sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>48 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074081JAA</PCODE>
+    <PNAME>Elanco Scour Formula (Prev. Lectade Scour) 10 x 12 sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074081JEX</PCODE>
+    <PNAME>Lectade Standard 10 x 12 Sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074181HEX</PCODE>
+    <PNAME>Lectade Plus 1 x 48 Sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>48 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074181JAA</PCODE>
+    <PNAME>Elanco Scour Formula Extra 10 x 12 Sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>12pk</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074181JEX</PCODE>
+    <PNAME>Lectade Plus 10 x 12 Sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>12 sachet</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH074181LAA</PCODE>
+    <PNAME>Elanco Scour Formula Extra 2 x 48 Sachets</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Scour Formula</BRAND>
+    <SIZE>48pk</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AH076181ZAA</PCODE>
+    <PNAME>Valbazen Suspension 2.5%  2 x 10L</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>10l</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Suspension</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AV101081VAA</PCODE>
+    <PNAME>Duvaxyn IE 11 x 1 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AV102081VAA</PCODE>
+    <PNAME>Duvaxyn IET 10 x 1 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AV103081VAA</PCODE>
+    <PNAME>Duvaxyn T 10 x 1 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Duvaxyn</BRAND>
+    <SIZE>10 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AV201081AAA</PCODE>
+    <PNAME>Felocell 25 x 1 dose</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Felocell</BRAND>
+    <SIZE>25 dose</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Feline</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AV301081DAA</PCODE>
+    <PNAME>Stellamune Mycoplasma 10 x 50 Doses</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stellamune</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>AV302081DAA</PCODE>
+    <PNAME>Stellamune Once 10 x 50 Doses</PNAME>
+    <CLASS>Pig</CLASS>
+    <BRAND>Stellamune</BRAND>
+    <SIZE>100ml</SIZE>
+    <GROUP1>Vaccine</GROUP1>
+    <GROUP2>Pig</GROUP2>
+    <GROUP3>Injection</GROUP3>
+    <GROUP4>Pig</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>PigPoultry</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA074281PAA</PCODE>
+    <PNAME>Lectade SA 30 Sachets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Lectade SA</BRAND>
+    <SIZE>x30</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>SA  </GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA075081FAA</PCODE>
+    <PNAME>Strongid Granules 15 Sachets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>15sa</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Sachet</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA075181XAA</PCODE>
+    <PNAME>Strongid Paste 10 Tubes</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>10 Syringes</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA075281XAA</PCODE>
+    <PNAME>Strongid Caramel 10 Tubes</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Strongid</BRAND>
+    <SIZE>x1</SIZE>
+    <GROUP1>oral</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Paste</GROUP3>
+    <GROUP4>Equine</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA4223Y07GI</PCODE>
+    <PNAME>Comfortis Chewable Tablet For Dogs 270 mg 1 x 6 tablets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X270MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA4227Y07GI</PCODE>
+    <PNAME>Comfortis Chewable Tablet For Dogs 1620 mg 1 x 6 tablets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X1620MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA4229Y07GI</PCODE>
+    <PNAME>Comfortis Chewable Tablet For Dogs 425 mg 1 x 6 tablets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X425MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA4230Y07GI</PCODE>
+    <PNAME>Comfortis Chewable Tablet For Dogs 665 mg 1 x 6 tablets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X665MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>CA4231Y07GI</PCODE>
+    <PNAME>Comfortis Chewable Tablet For Dogs 1040 mg 1 x 6 tablets</PNAME>
+    <CLASS>Companion</CLASS>
+    <BRAND>Comfortis</BRAND>
+    <SIZE>6X1040MG</SIZE>
+    <GROUP1>Flea treatment</GROUP1>
+    <GROUP2>Canine</GROUP2>
+    <GROUP3>Chewable tablet</GROUP3>
+    <GROUP4>SA</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Companion</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>JANSSEN</PCODE>
+    <PNAME>JANSSEN</PNAME>
+    <CLASS>-</CLASS>
+    <BRAND>-</BRAND>
+    <SIZE>-</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>-</GROUP4>
+    <GROUP5>JANSSEN</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>IGNORE</Type>
+    <Datecrea>2011-08-01T00:00:00+02:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>LD1150001EX</PCODE>
+    <PNAME>Dectomax 65ml Pour On Applicator 1 Gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>60ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Pour On</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>LD1160001EX</PCODE>
+    <PNAME>Dectomax 10ml Injector Gun 1 Gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>10ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Equine</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>LD1175001EX</PCODE>
+    <PNAME>Dectomax 3ml Injector Gun 1 Gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Dectomax</BRAND>
+    <SIZE>gun 3ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>LD1210001EX</PCODE>
+    <PNAME>Valbazen 25ml Drencher 1 Gun</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Valbazen</BRAND>
+    <SIZE>25ml</SIZE>
+    <GROUP1>wormer</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Gun</GROUP3>
+    <GROUP4>Sheep</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>LD1250001EX</PCODE>
+    <PNAME>Lectade Stomach Tube Doser 1 Bag&amp;Tube</PNAME>
+    <CLASS>Ruminant</CLASS>
+    <BRAND>Lectade LA</BRAND>
+    <SIZE>x1</SIZE>
+    <GROUP1>ort</GROUP1>
+    <GROUP2>Ruminant</GROUP2>
+    <GROUP3>Doser</GROUP3>
+    <GROUP4>Cattle</GROUP4>
+    <GROUP5>ELANCO</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>Ruminant</Type>
+    <Datecrea>2012-01-27T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+  <PRODUCTS>
+    <PCODE>TRASH</PCODE>
+    <PNAME>TRASH</PNAME>
+    <CLASS>-</CLASS>
+    <BRAND>-</BRAND>
+    <SIZE>-</SIZE>
+    <GROUP1>-</GROUP1>
+    <GROUP2>-</GROUP2>
+    <GROUP3>-</GROUP3>
+    <GROUP4>-</GROUP4>
+    <GROUP5>TRASH</GROUP5>
+    <GROUP6>-</GROUP6>
+    <Type>IGNORE</Type>
+    <Datecrea>2000-01-01T00:00:00+01:00</Datecrea>
+    <status>true</status>
+  </PRODUCTS>
+</dsElanco>

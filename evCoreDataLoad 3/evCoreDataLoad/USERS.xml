@@ -1,0 +1,66 @@
+<dsElanco>
+  <USERS>
+    <id_user>0007</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Admin Trade GB</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4404</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Guy Swindlehurst</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4425</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Bill Ferris</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4426</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Chris Andrews</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4427</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Geraint Davies</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4428</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Grant Webster</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4429</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Ian Caven</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+  <USERS>
+    <id_user>4430</id_user>
+    <country>Great-Britain</country>
+    <data>ruminant</data>
+    <login>Nick Burford</login>
+    <password>elanco</password>
+    <accessLevel>2</accessLevel>
+  </USERS>
+</dsElanco>

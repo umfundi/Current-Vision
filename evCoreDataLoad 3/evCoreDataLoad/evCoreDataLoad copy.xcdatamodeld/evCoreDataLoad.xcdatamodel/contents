@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D2001" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Customer" representedClassName="Customers" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brick" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerName2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_customer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_practice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isMain" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sap_no" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Focused_brand" representedClassName="Focused_brand" syncable="YES">
+        <attribute name="brand_class" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brand_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Practice" representedClassName="Practices" syncable="YES">
+        <attribute name="add1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="add2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brick" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="practiceCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="practiceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sap_no" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="datecrea" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="group1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pclass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="accesslevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Customer" positionX="-17138" positionY="-12213" width="128" height="360"/>
+        <element name="Focused_brand" positionX="-17361" positionY="-12168" width="128" height="90"/>
+        <element name="Practice" positionX="-16913" positionY="-12159" width="128" height="240"/>
+        <element name="Product" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="User" positionX="-17363" positionY="-11934" width="128" height="135"/>
+    </elements>
+</model>
