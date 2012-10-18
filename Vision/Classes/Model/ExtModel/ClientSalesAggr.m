@@ -9,6 +9,7 @@
 
 #import "User.h"
 #import "ClientSalesAggrPerGroup.h"
+#import "Product.h"
 
 @implementation ClientSalesAggr
 
@@ -16,9 +17,13 @@
 @synthesize lastyear;
 @synthesize aggrPerGroups;
 
-#warning ClientSales Aggr
-+ (ClientSalesAggr *)Aggr
+#warning ClientSales Aggr by Products
++ (ClientSalesAggr *)AggrByProducts:(NSArray *)products
 {
+    NSMutableArray *brandNames = [[NSMutableArray alloc] initWithCapacity:products.count];
+    for (Product *product in products)
+        [brandNames addObject:product.brand];
+    
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -27,9 +32,12 @@
     [fetchRequest setEntity:entity];
     
     [fetchRequest setResultType:NSDictionaryResultType];
-    
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand IN %@", brandNames];
+    [fetchRequest setPredicate:predicate];
+
     // Sort
-    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"groupname" ascending:YES];
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"groupName" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
@@ -38,7 +46,7 @@
     ClientSalesAggrPerGroup *aggrPerGroup = [[ClientSalesAggrPerGroup alloc] init];
     for (NSDictionary *report in reports)
     {
-        NSString *group = [report objectForKey:@"groupname"];
+        NSString *group = [report objectForKey:@"groupName"];
         
         if (aggrPerGroup.group == nil)
             aggrPerGroup.group = group;

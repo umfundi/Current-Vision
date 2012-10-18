@@ -21,22 +21,22 @@
 @dynamic brick;
 @dynamic city;
 @dynamic country;
-@dynamic customername;
-@dynamic customername2;
+@dynamic customerName;
+@dynamic customerName2;
 @dynamic fax;
 @dynamic grade;
-@dynamic groupname;
-@dynamic grouptype;
+@dynamic groupName;
+@dynamic groupType;
 @dynamic id_customer;
 @dynamic id_practice;
 @dynamic id_user;
-@dynamic ismain;
+@dynamic isMain;
 @dynamic postcode;
 @dynamic province;
 @dynamic sap_no;
 @dynamic tel;
 @dynamic website;
-@dynamic practice;
+@synthesize practice;
 
 - (void)loadPracticeAndValues
 {
@@ -47,7 +47,7 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"practicecode == %@", self.id_practice];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"practiceCode == %@", self.id_practice];
     [fetchRequest setPredicate:predicate];
     
     NSArray *array = [context executeFetchRequest:fetchRequest error:nil];

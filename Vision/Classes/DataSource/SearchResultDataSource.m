@@ -96,7 +96,7 @@
                 cellText = customer.id_customer;
                 break;
             case 1:
-                cellText = customer.customername;
+                cellText = customer.customerName;
                 // Name
                 break;
             case 2:

@@ -19,14 +19,15 @@
 @dynamic city;
 @dynamic country;
 @dynamic fax;
-@dynamic isactive;
+@dynamic isActive;
 @dynamic postcode;
-@dynamic practicecode;
-@dynamic practicename;
+@dynamic practiceCode;
+@dynamic practiceName;
 @dynamic province;
 @dynamic sap_no;
 @dynamic tel;
-@dynamic customers;
+
+@synthesize customers;
 
 - (void)loadCustomers
 {
@@ -37,7 +38,7 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_practice == %@", self.practicecode];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_practice == %@", self.practiceCode];
     [fetchRequest setPredicate:predicate];
 
     NSArray *results = [context executeFetchRequest:fetchRequest error:nil];

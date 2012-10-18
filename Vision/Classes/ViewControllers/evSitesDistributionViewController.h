@@ -24,9 +24,6 @@
     ProductListDataSource *productListDataSource;
     ShinobiGrid *sitesDistByProductGrid;
     SitesDistributionDataSource *sitesDistByProductDataSource;
-    
-    NSInteger selectedBrand;
-    NSInteger selectedProduct;
 }
 
 - (IBAction)filterbyBrandClicked:(id)sender;

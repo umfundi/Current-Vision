@@ -90,7 +90,7 @@
                 cellText = customer.id_customer;
                 break;
             case 1:
-                cellText = customer.customername;
+                cellText = customer.customerName;
                 break;
             case 2:
                 cellText = customer.city;

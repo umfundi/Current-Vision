@@ -28,7 +28,7 @@
     [fetchRequest setResultType:NSDictionaryResultType];
     
     // Sort
-    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"groupname" ascending:YES];
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"groupName" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", customer];
@@ -42,7 +42,7 @@
     CustomerSalesAggrPerYear *aggrPerYear = [[CustomerSalesAggrPerYear alloc] init];
     for (NSDictionary *report in reports)
     {
-        NSString *group = [report objectForKey:@"groupname"];
+        NSString *group = [report objectForKey:@"groupName"];
         NSString *year = @"2012";
         
         if (aggrPerGroup.group == nil)

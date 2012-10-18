@@ -53,8 +53,8 @@
     umfundiAppDelegate *appDelegate = (umfundiAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.selectedPractice = appDelegate.frontViewController.currentCustomer.practice;
     
-    lblPracticeName.text = selectedPractice.practicename;
-    lblPracticeCode.text = selectedPractice.practicecode;
+    lblPracticeName.text = selectedPractice.practiceName;
+    lblPracticeCode.text = selectedPractice.practiceCode;
     lblAddress1.text = selectedPractice.add1;
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;

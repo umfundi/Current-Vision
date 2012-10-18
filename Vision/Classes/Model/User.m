@@ -27,6 +27,7 @@ User *gLoginUser;
 @dynamic accessLevel;
 @dynamic country;
 @dynamic data;
+@dynamic datalocation;
 @dynamic id_user;
 @dynamic login;
 @dynamic password;
@@ -156,7 +157,7 @@ User *gLoginUser;
 
 + (NSString *)sqliteFilepathForData
 {
-    NSString *filename = [NSString stringWithFormat:@"%@.sqlite", gLoginUser.id_user];
+    NSString *filename = [NSString stringWithFormat:@"%@.sqlite", gLoginUser.datasource];
 
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
@@ -172,7 +173,7 @@ User *gLoginUser;
         {
             if (tryCopy)
             {
-                NSString *srcpath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.sqlite", gLoginUser.id_user] ofType:nil];
+                NSString *srcpath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.sqlite", gLoginUser.datasource] ofType:nil];
                 if (srcpath)
                 {
                     if (![[NSFileManager defaultManager] copyItemAtPath:srcpath toPath:filepath error:nil])
@@ -189,7 +190,7 @@ User *gLoginUser;
 
 + (NSString *)sqliteDownloadURLForData
 {
-    return [DownloadURL stringByAppendingString:[NSString stringWithFormat:@"%@.sqlite", gLoginUser.id_user]];
+    return [DownloadURL stringByAppendingString:[NSString stringWithFormat:@"%@.sqlite", gLoginUser.datasource]];
 }
 
 

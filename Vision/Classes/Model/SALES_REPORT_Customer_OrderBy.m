@@ -15,7 +15,7 @@
 @dynamic decval;
 @dynamic dl;
 @dynamic febval;
-@dynamic groupname;
+@dynamic groupName;
 @dynamic id_customer;
 @dynamic id_practice;
 @dynamic id_user;

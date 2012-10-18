@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * decval;
 @property (nonatomic, retain) NSString * dl;
 @property (nonatomic, retain) NSString * febval;
-@property (nonatomic, retain) NSString * groupname;
+@property (nonatomic, retain) NSString * groupName;
 @property (nonatomic, retain) NSString * id_customer;
 @property (nonatomic, retain) NSString * id_practice;
 @property (nonatomic, retain) NSString * id_user;

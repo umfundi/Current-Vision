@@ -19,13 +19,14 @@
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * country;
 @property (nonatomic, retain) NSString * fax;
-@property (nonatomic, assign) NSInteger isactive;
+@property (nonatomic, assign) NSInteger isActive;
 @property (nonatomic, retain) NSString * postcode;
-@property (nonatomic, retain) NSString * practicecode;
-@property (nonatomic, retain) NSString * practicename;
+@property (nonatomic, retain) NSString * practiceCode;
+@property (nonatomic, retain) NSString * practiceName;
 @property (nonatomic, retain) NSString * province;
 @property (nonatomic, retain) NSString * sap_no;
 @property (nonatomic, retain) NSString * tel;
+
 @property (nonatomic, retain) NSSet *customers;
 
 - (void)loadCustomers;

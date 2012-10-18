@@ -12,6 +12,7 @@
 @implementation BrandListDataSource
 
 @synthesize brandArray;
+@synthesize itemSelected;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -21,14 +22,21 @@
     SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
     if (!cell)
         cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
-    
+
     cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
     cell.textField.textColor = [UIColor blackColor];
     cell.textField.textAlignment = UITextAlignmentLeft;
     cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
-    
     cell.textField.backgroundColor = [UIColor whiteColor];
     cell.backgroundColor = [UIColor whiteColor];
+
+    NSNumber *selected = [itemSelected objectAtIndex:gridCoord.rowIndex];
+    if ([selected boolValue])
+    {
+        cell.textField.textColor = [UIColor whiteColor];
+        cell.textField.backgroundColor = [UIColor orangeColor];
+        cell.backgroundColor = [UIColor orangeColor];
+    }
     
     Focused_brand *brand = [brandArray objectAtIndex:gridCoord.rowIndex];
     

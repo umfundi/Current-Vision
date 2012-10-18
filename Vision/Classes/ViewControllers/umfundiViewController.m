@@ -305,7 +305,7 @@ NSArray *allSubviews(UIView *aView)
     }
     
     accountNoField.text = currentCustomer.id_customer;
-    nameField.text = currentCustomer.customername;
+    nameField.text = currentCustomer.customerName;
     addressField.text = currentCustomer.address1;
     townField.text = currentCustomer.city;
     countryField.text = currentCustomer.province;
@@ -318,9 +318,9 @@ NSArray *allSubviews(UIView *aView)
 
     if (currentCustomer.practice)
     {
-        practiceField.text = currentCustomer.practice.practicename;
+        practiceField.text = currentCustomer.practice.practiceName;
         
-        NSLog(@"practicecode = %@", currentCustomer.practice.practicecode);
+        NSLog(@"practiceCode = %@", currentCustomer.practice.practiceCode);
         [currentCustomer.practice loadCustomers];
         
         sitesDataSource.sitesArray = [currentCustomer.practice.customers allObjects];
@@ -380,10 +380,10 @@ NSArray *allSubviews(UIView *aView)
     switch ([sender tag])
     {
         case 210:
-            keyField = @"practicecode";
+            keyField = @"practiceCode";
             break;
         case 211:
-            keyField = @"practicename";
+            keyField = @"practiceName";
             break;
         case 212:
             keyField = @"province";

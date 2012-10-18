@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSString *accessLevel;
 @property (nonatomic, retain) NSString *country;
 @property (nonatomic, retain) NSString *data;
+@property (nonatomic, retain) NSString *datalocation;
 @property (nonatomic, retain) NSString *id_user;
 @property (nonatomic, retain) NSString *login;
 @property (nonatomic, retain) NSString *password;

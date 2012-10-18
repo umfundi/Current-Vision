@@ -12,5 +12,6 @@
 @interface ProductListDataSource : NSObject <SGridDataSource>
 
 @property (nonatomic, strong) NSArray *productArray;
+@property (nonatomic, strong) NSMutableArray *itemSelected;
 
 @end

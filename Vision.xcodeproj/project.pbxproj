@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		379C13F816004A10003828DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379C13F716004A10003828DD /* Security.framework */; };
 		379C13FA16004A33003828DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379C13F916004A33003828DD /* QuartzCore.framework */; };
-		379E4C4D162B1C3E0061BE02 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379E4C4C162B1C3E0061BE02 /* ShinobiGrids.framework */; };
 		37A5318716049B5200AF38D5 /* elancoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A5318516049B5200AF38D5 /* elancoModel.xcdatamodeld */; };
 		37CBBF891604D9D2003AA83E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CBBF881604D9D2003AA83E /* CoreData.framework */; };
 		37D722D315F3ABD4006DF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D722D215F3ABD4006DF8F6 /* UIKit.framework */; };
@@ -70,7 +69,6 @@
 		ADCCDFE416245B6E009E0BCE /* evSalesReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCDFD216245B6E009E0BCE /* evSalesReportViewController.m */; };
 		ADCCDFE516245B6E009E0BCE /* evSitesDistributionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCDFD416245B6E009E0BCE /* evSitesDistributionViewController.m */; };
 		ADCCDFE616245B6E009E0BCE /* umfundiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCCDFD616245B6E009E0BCE /* umfundiViewController.m */; };
-		ADCCE00B16245B78009E0BCE /* 0001.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADCCDFE916245B78009E0BCE /* 0001.sqlite */; };
 		ADCCE00C16245B78009E0BCE /* users.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ADCCDFEA16245B78009E0BCE /* users.sqlite */; };
 		ADCCE00D16245B78009E0BCE /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADCCDFEC16245B78009E0BCE /* Background.jpg */; };
 		ADCCE00E16245B78009E0BCE /* Clear.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCDFED16245B78009E0BCE /* Clear.png */; };
@@ -103,6 +101,7 @@
 		ADCCE02916245B78009E0BCE /* vi.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE00816245B78009E0BCE /* vi.png */; };
 		ADCCE02A16245B78009E0BCE /* visionlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE00916245B78009E0BCE /* visionlogo.png */; };
 		ADCCE02B16245B78009E0BCE /* world-map.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE00A16245B78009E0BCE /* world-map.png */; };
+		ADF310A7162E8694005188FE /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF310A6162E8694005188FE /* ShinobiGrids.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +117,6 @@
 /* Begin PBXFileReference section */
 		379C13F716004A10003828DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		379C13F916004A33003828DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		379E4C4C162B1C3E0061BE02 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = "../ShinobiControls Trial-2/ShinobiGrids Trial/ShinobiGrids.framework"; sourceTree = "<group>"; };
 		37A5318616049B5200AF38D5 /* elancoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = elancoModel.xcdatamodel; sourceTree = "<group>"; };
 		37CBBF881604D9D2003AA83E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		37D722CE15F3ABD4006DF8F6 /* Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vision.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,7 +227,6 @@
 		ADCCDFD416245B6E009E0BCE /* evSitesDistributionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = evSitesDistributionViewController.m; sourceTree = "<group>"; };
 		ADCCDFD516245B6E009E0BCE /* umfundiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = umfundiViewController.h; sourceTree = "<group>"; };
 		ADCCDFD616245B6E009E0BCE /* umfundiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = umfundiViewController.m; sourceTree = "<group>"; };
-		ADCCDFE916245B78009E0BCE /* 0001.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0001.sqlite; sourceTree = "<group>"; };
 		ADCCDFEA16245B78009E0BCE /* users.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = users.sqlite; sourceTree = "<group>"; };
 		ADCCDFEC16245B78009E0BCE /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		ADCCDFED16245B78009E0BCE /* Clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clear.png; sourceTree = "<group>"; };
@@ -262,6 +259,7 @@
 		ADCCE00816245B78009E0BCE /* vi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vi.png; sourceTree = "<group>"; };
 		ADCCE00916245B78009E0BCE /* visionlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visionlogo.png; sourceTree = "<group>"; };
 		ADCCE00A16245B78009E0BCE /* world-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world-map.png"; sourceTree = "<group>"; };
+		ADF310A6162E8694005188FE /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = ../components/ShinobiGridsQuickStart/ShinobiGrids.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,7 +267,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				379E4C4D162B1C3E0061BE02 /* ShinobiGrids.framework in Frameworks */,
 				AD6C98BB161EBD6C001FD2E2 /* SystemConfiguration.framework in Frameworks */,
 				37CBBF891604D9D2003AA83E /* CoreData.framework in Frameworks */,
 				379C13FA16004A33003828DD /* QuartzCore.framework in Frameworks */,
@@ -277,6 +274,7 @@
 				379C13F816004A10003828DD /* Security.framework in Frameworks */,
 				37D722D315F3ABD4006DF8F6 /* UIKit.framework in Frameworks */,
 				37D722D515F3ABD4006DF8F6 /* Foundation.framework in Frameworks */,
+				ADF310A7162E8694005188FE /* ShinobiGrids.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +313,7 @@
 		37D722D115F3ABD4006DF8F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				379E4C4C162B1C3E0061BE02 /* ShinobiGrids.framework */,
+				ADF310A6162E8694005188FE /* ShinobiGrids.framework */,
 				AD6C98BA161EBD6C001FD2E2 /* SystemConfiguration.framework */,
 				AD6C98B8161EBD61001FD2E2 /* CFNetwork.framework */,
 				37CBBF881604D9D2003AA83E /* CoreData.framework */,
@@ -521,7 +519,6 @@
 		ADCCDFE816245B78009E0BCE /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				ADCCDFE916245B78009E0BCE /* 0001.sqlite */,
 				ADCCDFEA16245B78009E0BCE /* users.sqlite */,
 			);
 			path = Database;
@@ -639,7 +636,6 @@
 			files = (
 				37D722DD15F3ABD4006DF8F6 /* InfoPlist.strings in Resources */,
 				37D722E915F3ABD4006DF8F6 /* MainStoryboard_iPad.storyboard in Resources */,
-				ADCCE00B16245B78009E0BCE /* 0001.sqlite in Resources */,
 				ADCCE00C16245B78009E0BCE /* users.sqlite in Resources */,
 				ADCCE00D16245B78009E0BCE /* Background.jpg in Resources */,
 				ADCCE00E16245B78009E0BCE /* Clear.png in Resources */,

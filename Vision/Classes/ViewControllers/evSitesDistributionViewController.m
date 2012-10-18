@@ -27,9 +27,19 @@
 - (void) shinobiGrid:(ShinobiGrid *)grid didSelectCellAtCoord: (const SGridCoord *) gridCoord
 {
     if (grid == brandListGrid)
-        selectedBrand = gridCoord.rowIndex;
+    {
+        NSNumber *selected = [brandListDataSource.itemSelected objectAtIndex:gridCoord.rowIndex];
+        [brandListDataSource.itemSelected replaceObjectAtIndex:gridCoord.rowIndex withObject:[NSNumber numberWithBool:!selected.boolValue]];
+        
+        [brandListGrid reload];
+    }
     else if (grid == productListGrid)
-        selectedProduct = gridCoord.rowIndex;
+    {
+        NSNumber *selected = [productListDataSource.itemSelected objectAtIndex:gridCoord.rowIndex];
+        [productListDataSource.itemSelected replaceObjectAtIndex:gridCoord.rowIndex withObject:[NSNumber numberWithBool:!selected.boolValue]];
+        
+        [productListGrid reload];
+    }
 }
 
 
@@ -47,14 +57,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    selectedBrand = -1;
-    selectedProduct = -1;
-    
     brandListDataSource = [[BrandListDataSource alloc] init];
     brandListDataSource.brandArray = [Focused_brand AllBrands];
+    brandListDataSource.itemSelected = [[NSMutableArray alloc] initWithCapacity:0];
+    for (NSInteger i = 0 ; i < brandListDataSource.brandArray.count ; i ++ )
+        [brandListDataSource.itemSelected addObject:[NSNumber numberWithBool:NO]];
+
     sitesDistByBrandDataSource = [[SitesDistributionDataSource alloc] init];
+    
     productListDataSource = [[ProductListDataSource alloc] init];
     productListDataSource.productArray = [Product AllProducts];
+    productListDataSource.itemSelected = [[NSMutableArray alloc] initWithCapacity:0];
+    for (NSInteger i = 0 ; i < productListDataSource.productArray.count ; i ++ )
+        [productListDataSource.itemSelected addObject:[NSNumber numberWithBool:NO]];
+
     sitesDistByProductDataSource = [[SitesDistributionDataSource alloc] init];
     
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
@@ -113,11 +129,11 @@
     
     //provide default row heights and col widths
     brandListGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
-    brandListGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
+    brandListGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:400];
     sitesDistByBrandGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
     sitesDistByBrandGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     productListGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
-    productListGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
+    productListGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:400];
     sitesDistByProductGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
     sitesDistByProductGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
@@ -147,11 +163,6 @@
     sitesDistByProductGrid.canReorderColsViaLongPress = YES;
     sitesDistByProductGrid.canReorderRowsViaLongPress = YES;
     
-    brandListGrid.frame = CGRectMake(1, 1, 2, 2);
-    sitesDistByBrandGrid.frame = CGRectMake(1, 1, 2, 2);
-    productListGrid.frame = CGRectMake(1, 1, 2, 2);
-    sitesDistByProductGrid.frame = CGRectMake(1, 1, 2, 2);
-    
     // this displays the grid
     [self.view addSubview:brandListGrid];
     [self.view addSubview:sitesDistByBrandGrid];
@@ -173,15 +184,18 @@
 {
     BOOL isPortrait = UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
     
-    brandListGrid.frame = CGRectMake(9, 160, 100, (self.view.bounds.size.height-320) / 2);
-    sitesDistByBrandGrid.frame = CGRectMake(120, 160,
-                                            self.view.bounds.size.width - 130,
-                                            (self.view.bounds.size.height-320) / 2);
-    productListGrid.frame = CGRectMake(9, 280 + (self.view.bounds.size.height-320) / 2,
-                                       100, (self.view.bounds.size.height-320) / 2);
-    sitesDistByProductGrid.frame = CGRectMake(120, 280 + (self.view.bounds.size.height-320) / 2,
-                                            self.view.bounds.size.width - 130,
-                                              (self.view.bounds.size.height-320) / 2);
+    brandListGrid.frame = CGRectMake(100, 100,
+                                     self.view.bounds.size.width - 130,
+                                     (self.view.bounds.size.height-200) / 4);
+    sitesDistByBrandGrid.frame = CGRectMake(10, (self.view.bounds.size.height-200) / 4 + 120,
+                                            self.view.bounds.size.width - 30,
+                                            (self.view.bounds.size.height-200) / 4);
+    productListGrid.frame = CGRectMake(100, 140 + (self.view.bounds.size.height-200) / 2,
+                                       self.view.bounds.size.width - 130,
+                                       (self.view.bounds.size.height-200) / 4);
+    sitesDistByProductGrid.frame = CGRectMake(10, 160 + (self.view.bounds.size.height-200) / 4 * 3,
+                                            self.view.bounds.size.width - 30,
+                                              (self.view.bounds.size.height-200) / 4);
 
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"SitesDistributionPortraitView" : @"SitesDistributionLandscapeView"];
     if (templateController)
@@ -220,20 +234,32 @@ NSArray *SitesDistributionSubviews(UIView *aView)
 
 - (IBAction)filterbyBrandClicked:(id)sender
 {
-    if (selectedBrand >= 0)
+    NSMutableArray *brands = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for (NSInteger i = 0 ; i < brandListDataSource.brandArray.count ; i ++ )
     {
-        sitesDistByBrandDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByBrands:[NSArray arrayWithObject:[brandListDataSource.brandArray objectAtIndex:selectedBrand]]];
-        [sitesDistByBrandGrid reload];
+        NSNumber *selected = [brandListDataSource.itemSelected objectAtIndex:i];
+        if ([selected boolValue])
+            [brands addObject:[brandListDataSource.brandArray objectAtIndex:i]];
     }
+    
+    sitesDistByBrandDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByBrands:brands];
+    [sitesDistByBrandGrid reload];
 }
 
 - (IBAction)filterbyProductClicked:(id)sender
 {
-    if (selectedProduct >= 0)
+    NSMutableArray *products = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for (NSInteger i = 0 ; i < productListDataSource.productArray.count ; i ++ )
     {
-        sitesDistByProductDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByProducts:[NSArray arrayWithObject:[productListDataSource.productArray objectAtIndex:selectedProduct]]];
-        [sitesDistByProductGrid reload];
+        NSNumber *selected = [productListDataSource.itemSelected objectAtIndex:i];
+        if ([selected boolValue])
+            [products addObject:[productListDataSource.productArray objectAtIndex:i]];
     }
+    
+    sitesDistByProductDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByProducts:products];
+    [sitesDistByProductGrid reload];
 }
 
 @end

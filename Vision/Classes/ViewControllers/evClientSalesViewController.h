@@ -10,11 +10,17 @@
 #import <ShinobiGrids/ShinobiGrid.h>
 
 @class ClientSalesDataSource;
+@class ProductListDataSource;
 
 @interface evClientSalesViewController : UIViewController <SGridDelegate>
 {
     ShinobiGrid *clientSalesGrid;
     ClientSalesDataSource *clientSalesDataSource;
+    ShinobiGrid *productListGrid;
+    ProductListDataSource *productListDataSource;
 }
+
+- (IBAction)clearButtonClicked:(id)sender;
+- (IBAction)selectButtonClicked:(id)sender;
 
 @end
