@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373D56851630A6AA00337947 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D56841630A6AA00337947 /* ShinobiGrids.framework */; };
 		379C13F816004A10003828DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379C13F716004A10003828DD /* Security.framework */; };
 		379C13FA16004A33003828DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379C13F916004A33003828DD /* QuartzCore.framework */; };
 		37A5318716049B5200AF38D5 /* elancoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A5318516049B5200AF38D5 /* elancoModel.xcdatamodeld */; };
@@ -101,7 +102,6 @@
 		ADCCE02916245B78009E0BCE /* vi.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE00816245B78009E0BCE /* vi.png */; };
 		ADCCE02A16245B78009E0BCE /* visionlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE00916245B78009E0BCE /* visionlogo.png */; };
 		ADCCE02B16245B78009E0BCE /* world-map.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCCE00A16245B78009E0BCE /* world-map.png */; };
-		ADF310A7162E8694005188FE /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF310A6162E8694005188FE /* ShinobiGrids.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +115,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		373D56841630A6AA00337947 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = "../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial/ShinobiGrids.framework"; sourceTree = "<group>"; };
 		379C13F716004A10003828DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		379C13F916004A33003828DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		37A5318616049B5200AF38D5 /* elancoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = elancoModel.xcdatamodel; sourceTree = "<group>"; };
@@ -259,7 +260,6 @@
 		ADCCE00816245B78009E0BCE /* vi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vi.png; sourceTree = "<group>"; };
 		ADCCE00916245B78009E0BCE /* visionlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visionlogo.png; sourceTree = "<group>"; };
 		ADCCE00A16245B78009E0BCE /* world-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world-map.png"; sourceTree = "<group>"; };
-		ADF310A6162E8694005188FE /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = ../components/ShinobiGridsQuickStart/ShinobiGrids.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373D56851630A6AA00337947 /* ShinobiGrids.framework in Frameworks */,
 				AD6C98BB161EBD6C001FD2E2 /* SystemConfiguration.framework in Frameworks */,
 				37CBBF891604D9D2003AA83E /* CoreData.framework in Frameworks */,
 				379C13FA16004A33003828DD /* QuartzCore.framework in Frameworks */,
@@ -274,7 +275,6 @@
 				379C13F816004A10003828DD /* Security.framework in Frameworks */,
 				37D722D315F3ABD4006DF8F6 /* UIKit.framework in Frameworks */,
 				37D722D515F3ABD4006DF8F6 /* Foundation.framework in Frameworks */,
-				ADF310A7162E8694005188FE /* ShinobiGrids.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +294,7 @@
 		37D722C315F3ABD4006DF8F6 = {
 			isa = PBXGroup;
 			children = (
+				373D56841630A6AA00337947 /* ShinobiGrids.framework */,
 				37D722D815F3ABD4006DF8F6 /* Vision */,
 				37D722D115F3ABD4006DF8F6 /* Frameworks */,
 				37D722F915F3ABD4006DF8F6 /* VisionTests */,
@@ -313,7 +314,6 @@
 		37D722D115F3ABD4006DF8F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADF310A6162E8694005188FE /* ShinobiGrids.framework */,
 				AD6C98BA161EBD6C001FD2E2 /* SystemConfiguration.framework */,
 				AD6C98B8161EBD61001FD2E2 /* CFNetwork.framework */,
 				37CBBF881604D9D2003AA83E /* CoreData.framework */,
@@ -873,6 +873,7 @@
 					"\"$(SRCROOT)/../components/ShinobiGridsQuickStart\"",
 					"\"$(SRCROOT)/../../components/ShinobiGridsQuickStart\"",
 					"\"$(SRCROOT)/../ShinobiControls Trial-2/ShinobiGrids Trial\"",
+					"\"$(SRCROOT)/../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vision/Vision-Prefix.pch";
@@ -896,6 +897,7 @@
 					"\"$(SRCROOT)/../components/ShinobiGridsQuickStart\"",
 					"\"$(SRCROOT)/../../components/ShinobiGridsQuickStart\"",
 					"\"$(SRCROOT)/../ShinobiControls Trial-2/ShinobiGrids Trial\"",
+					"\"$(SRCROOT)/../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vision/Vision-Prefix.pch";
