@@ -148,9 +148,9 @@ NSArray *SalesReportSubviews(UIView *aView)
     YTDReportGrid.defaultBorderStyle.width = 1.0f;
     
     //provide default row heights and col widths
-    monthReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
+    monthReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:20];
     monthReportGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
-    YTDReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
+    YTDReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:20];
     YTDReportGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
     //ensure that section header is hidden (a grid has one section by default)

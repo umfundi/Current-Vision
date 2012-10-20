@@ -82,4 +82,19 @@
     return nil;
 }
 
++ (NSArray *)searchCustomersWithField:(NSString *)aField andKey:(NSString *)aKey
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ CONTAINS[cd] %%@", aField], aKey];
+    [fetchRequest setPredicate:predicate];
+    
+    return [context executeFetchRequest:fetchRequest error:nil];
+}
+
 @end

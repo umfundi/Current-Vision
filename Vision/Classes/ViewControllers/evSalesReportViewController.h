@@ -26,6 +26,10 @@
 
     ShinobiGrid *YTDReportGrid;
     SalesTrendsReportDataSource *YTDReportDataSource;
+    
+    ShinobiGrid *MATReportGrid;
+    SalesTrendsReportDataSource *MATReportDataSource;
+    
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;

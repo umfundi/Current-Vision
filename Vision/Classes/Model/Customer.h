@@ -46,4 +46,6 @@
 
 + (Customer *)firstCustomer;
 
++ (NSArray *)searchCustomersWithField:(NSString *)aField andKey:(NSString *)aKey;
+
 @end

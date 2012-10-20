@@ -128,7 +128,7 @@
     sitesGrid.defaultGridLineStyle.color = [UIColor lightGrayColor];
     sitesGrid.defaultBorderStyle.color = [UIColor darkGrayColor];
     sitesGrid.defaultBorderStyle.width = 1.0f;
-    
+
     salesGrid.backgroundColor = [UIColor whiteColor];
     salesGrid.rowStylesTakePriority = YES;
     salesGrid.defaultGridLineStyle.width = 1.0f;
@@ -380,10 +380,10 @@ NSArray *allSubviews(UIView *aView)
     switch ([sender tag])
     {
         case 210:
-            keyField = @"practiceCode";
+            keyField = @"id_customer";
             break;
         case 211:
-            keyField = @"practiceName";
+            keyField = @"customerName";
             break;
         case 212:
             keyField = @"province";
@@ -397,18 +397,20 @@ NSArray *allSubviews(UIView *aView)
     
     NSString *searchKey = searchField.text;
 
-    // Fetch Practices
-    NSArray *practices = [Practice searchPracticesWithField:keyField andKey:searchKey];
-
-    // Fetch Customers from Practices
-    NSMutableArray *resultCustomers = [[NSMutableArray alloc] initWithCapacity:0];
-    for (Practice *practice in practices)
-    {
-        [practice loadCustomers];
-        [resultCustomers addObjectsFromArray:[practice.customers allObjects]];
-    }
+//    // Fetch Practices
+//    NSArray *practices = [Practice searchPracticesWithField:keyField andKey:searchKey];
+//
+//    // Fetch Customers from Practices
+//    NSMutableArray *resultCustomers = [[NSMutableArray alloc] initWithCapacity:0];
+//    for (Practice *practice in practices)
+//    {
+//        [practice loadCustomers];
+//        [resultCustomers addObjectsFromArray:[practice.customers allObjects]];
+//    }
+//    
+//    searchResults = resultCustomers;
     
-    searchResults = resultCustomers;
+    searchResults = [Customer searchCustomersWithField:keyField andKey:searchKey];
 
     [self performSelectorOnMainThread:@selector(searchFinished:) withObject:sender waitUntilDone:YES];
 }

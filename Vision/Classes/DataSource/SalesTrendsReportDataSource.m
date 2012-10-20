@@ -94,11 +94,9 @@
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Ariel" size:12.0f];
+        cell.textField.font = [UIFont fontWithName:@"Ariel" size:14.0f];
         cell.textField.textColor = [UIColor blackColor];
         cell.textField.textAlignment = UITextAlignmentLeft;
-        
-//        cell.textField.font = [UIFont fontWithName:@"Ariel" size:12.0f];
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
         
