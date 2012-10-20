@@ -82,14 +82,34 @@ NSArray *SalesReportSubviews(UIView *aView)
     
     //Set fixed width for certain columns
     if(colIndex == 0) {
-        style.size = [NSNumber numberWithFloat:150];
+        style.size = [NSNumber numberWithFloat:160];
         return style;
     } else if (colIndex < 13) {
         style.size = [NSNumber numberWithFloat:60];
         return style;
     }
+    
     return nil;
 }
+
+- (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int)secIndex{
+    SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
+    
+    //Set fixed width for certain columns
+    if(rowIndex == 0)
+        {
+        style.size = [NSNumber numberWithFloat:30];
+        return style;
+        }
+    else
+        {
+        style.size = [NSNumber numberWithFloat:30];
+        return style;
+        }
+    
+    return nil;
+}
+
 
 - (void)viewDidLoad
 {
