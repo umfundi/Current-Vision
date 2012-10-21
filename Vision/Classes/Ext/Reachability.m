@@ -5,6 +5,8 @@
  
  Version: 2.2 - ARCified
  
+ standard Apple reacheability code
+ 
 */
 
 #import <sys/socket.h>

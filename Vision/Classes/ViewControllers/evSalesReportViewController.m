@@ -122,8 +122,8 @@ NSArray *SalesReportSubviews(UIView *aView)
     lblPracticeName.text = selectedPractice.practiceName;
     lblPracticeCode.text = selectedPractice.practiceCode;
     lblAddress1.text = selectedPractice.add1;
-    lblAddress2.text = selectedPractice.province;
-    lblAddress3.text = selectedPractice.country;
+    lblAddress2.text = selectedPractice.city;
+    lblAddress3.text = selectedPractice.province;
     lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     

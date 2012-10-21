@@ -101,7 +101,9 @@
             cell.backgroundColor = [UIColor lightGrayColor];
         else
             cell.backgroundColor = [UIColor whiteColor];    */
-      
+            
+        cell.backgroundColor = [UIColor whiteColor];
+            
         SalesTrendAggrPerBrand *aggr = [reportArray objectAtIndex:gridCoord.rowIndex - 1];
         
         NSString *cellText;

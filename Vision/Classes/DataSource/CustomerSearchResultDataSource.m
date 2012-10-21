@@ -1,15 +1,15 @@
 //
-//  SearchResultDataSource.m
+//  CustomerSearchResultDataSource.m
 //  Vision
 //
 //  Copyright (c) 2012 Ian Molesworth. All rights reserved.
 //
 
-#import "SearchResultDataSource.h"
+#import "CustomerSearchResultDataSource.h"
 
 #import "Customer.h"
 
-@implementation SearchResultDataSource
+@implementation CustomerSearchResultDataSource
 
 @synthesize searchResult;
 
@@ -17,10 +17,9 @@
 {
     self = [super init];
     if (self)
-    {
+        {
         self.searchResult = resultArray;
-    }
-    
+        }    
     return self;
 }
 

@@ -1,5 +1,5 @@
 //
-//  SearchResultDataSource.h
+//  CustomerSearchResultDataSource.h
 //  Vision
 //
 //  Copyright (c) 2012 Ian Molesworth. All rights reserved.
@@ -9,7 +9,7 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
-@interface SearchResultDataSource : NSObject <SGridDataSource>
+@interface CustomerSearchResultDataSource : NSObject <SGridDataSource>
 
 @property (nonatomic, strong) NSArray *searchResult;
 

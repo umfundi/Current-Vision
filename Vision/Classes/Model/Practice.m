@@ -7,7 +7,6 @@
 //
 
 #import "Practice.h"
-
 #import "Customer.h"
 #import "User.h"
 
@@ -34,8 +33,7 @@
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
-                                              inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_practice == %@", self.practiceCode];
@@ -46,6 +44,25 @@
     NSLog(@"%@", self.customers);
 }
 
++ (Customer *)firstPractice
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Practice"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    [fetchRequest setFetchLimit:1];
+    
+    NSArray *practices = [context executeFetchRequest:fetchRequest error:nil];
+    if ([practices count] > 0)
+        return [practices objectAtIndex:0];
+    
+    return nil;
+}
+
+
 + (NSArray *)searchPracticesWithField:(NSString *)aField andKey:(NSString *)aKey
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
@@ -55,7 +72,8 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ CONTAINS[cd] %%@", aField], aKey];
+    NSString *pString = [NSString localizedStringWithFormat:@"%@ CONTAINS[cd] %%@",aField ];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:pString, aKey];
     [fetchRequest setPredicate:predicate];
     
     return [context executeFetchRequest:fetchRequest error:nil];

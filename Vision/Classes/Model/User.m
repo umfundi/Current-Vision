@@ -10,7 +10,7 @@
 
 #define DownloadURL     @"http://elancovision.umfundi.com/data/dbase/"
 
-#define LastLoginUser       @"LastLoginUser"
+#define LastLoginUser   @"LastLoginUser"
 
 @implementation User
 
@@ -22,7 +22,7 @@ NSManagedObjectContext *gManagedObjectContextForData;
 NSManagedObjectModel *gManagedObjectModelForData;
 NSPersistentStoreCoordinator *gPersistentStoreCoordinatorForData;
 
-User *gLoginUser;
+User *gLoggedinUser;
 
 @dynamic accessLevel;
 @dynamic country;
@@ -45,31 +45,40 @@ User *gLoginUser;
 }
 
 + (BOOL)existsSqliteFileForUsers:(BOOL)tryCopy
-{
+    {
+    NSLog(@"Checking for local copy of users.sqlite");
     NSString *filepath = [self sqliteFilepathForUsers];
     if (filepath)
-    {
-        if (![[NSFileManager defaultManager] fileExistsAtPath:filepath])
         {
-            if (tryCopy)
+        if (![[NSFileManager defaultManager] fileExistsAtPath:filepath])
             {
+            if (tryCopy)
+                {
                 NSString *srcpath = [[NSBundle mainBundle] pathForResource:@"users.sqlite" ofType:nil];
                 if (srcpath)
-                {
+                    {
                     if (![[NSFileManager defaultManager] copyItemAtPath:srcpath toPath:filepath error:nil])
+                        {
+                        NSLog(@"Failed to copy item at path");    
                         return NO;
+                        }
+                    NSLog(@"Copied item ok");
                     return YES;
+                    }
                 }
-            }
+            NSLog(@"Failed to copy file");
             return NO;
-        }
+            }
+        NSLog(@"Suceeded");
         return YES;
-    }
+        }
+    NSLog(@"Failed to find local file");
     return NO;
-}
+    }
 
 + (NSString *)sqliteDownloadURLForUsers
 {
+//    NSLog(@"Downloading users.sqlite from server");
     return [DownloadURL stringByAppendingString:@"users.sqlite"];
 }
 
@@ -144,20 +153,20 @@ User *gLoginUser;
 
 + (void)setLoginUser:(User *)aUser
 {
-    gLoginUser = aUser;
+    gLoggedinUser = aUser;
     
     [User setLastLoginUser:aUser.login];
 }
 
 + (User *)loginUser
 {
-    return gLoginUser;
+    return gLoggedinUser;
 }
 
 
 + (NSString *)sqliteFilepathForData
 {
-    NSString *filename = [NSString stringWithFormat:@"%@.sqlite", gLoginUser.datasource];
+    NSString *filename = [NSString stringWithFormat:@"%@.sqlite", gLoggedinUser.datasource];
 
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
@@ -173,7 +182,7 @@ User *gLoginUser;
         {
             if (tryCopy)
             {
-                NSString *srcpath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.sqlite", gLoginUser.datasource] ofType:nil];
+                NSString *srcpath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.sqlite", gLoggedinUser.datasource] ofType:nil];
                 if (srcpath)
                 {
                     if (![[NSFileManager defaultManager] copyItemAtPath:srcpath toPath:filepath error:nil])
@@ -190,7 +199,7 @@ User *gLoginUser;
 
 + (NSString *)sqliteDownloadURLForData
 {
-    return [DownloadURL stringByAppendingString:[NSString stringWithFormat:@"%@.sqlite", gLoginUser.datasource]];
+    return [DownloadURL stringByAppendingString:[NSString stringWithFormat:@"%@.sqlite", gLoggedinUser.datasource]];
 }
 
 

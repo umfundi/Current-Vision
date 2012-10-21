@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
 #import "MBProgressHUD.h"
-#import "SearchResultViewController.h"
+#import "PracticeSearchResultViewController.h"
 
 @class Customer;
+@class Practice;
 @class SitesDataSource;
 @class SalesDataSource;
 
-@interface umfundiViewController : UIViewController <UITextFieldDelegate, SearchSelectDelegate, SGridDelegate>
+@interface umfundiViewController : UIViewController <UITextFieldDelegate, PracticeSearchSelectDelegate, SGridDelegate>
 {
     IBOutlet UITextField *accountNoField;
     IBOutlet UITextField *nameField;
@@ -55,6 +56,8 @@
     MBProgressHUD *HUDSearch;
     MBProgressHUD *HUDProcessing;
     
+//    PracticeSearchResultDataSource *dataSource;
+    
     // Sites & Sales
     ShinobiGrid *sitesGrid, *salesGrid;
     SitesDataSource *sitesDataSource;
@@ -62,6 +65,7 @@
 }
 
 @property (strong, nonatomic) Customer *currentCustomer;
+@property (strong, nonatomic) Practice *currentPractice;
 
 - (IBAction)searchClicked:(id)sender;
 
@@ -70,6 +74,8 @@
 - (IBAction)SyncData:(id)sender;
 
 - (void)displayCustomer;
+- (void)displayPractice;
+
 - (void)applyTheme:(BOOL)redTheme;
 
 - (void)searchThread:(id)sender;

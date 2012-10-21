@@ -4,6 +4,8 @@
 //
 //  Copyright (c) 2012 Ian Molesworth. All rights reserved.
 //
+//  Some common stuff
+//
 
 #import "umfundiCommon.h"
 

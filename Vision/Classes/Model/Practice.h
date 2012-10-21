@@ -30,6 +30,8 @@
 @property (nonatomic, retain) NSSet *customers;
 
 - (void)loadCustomers;
++ (Practice *)firstPractice;
+
 
 + (NSArray *)searchPracticesWithField:(NSString *)aField andKey:(NSString *)aKey;
 

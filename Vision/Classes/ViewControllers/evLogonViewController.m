@@ -130,13 +130,6 @@
     [userField resignFirstResponder];
     [passwordField resignFirstResponder];
 
-    
-//    HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
-//    HUDProcessing.labelText = @"Processing tables ...";
-//    [self.view addSubview:HUDProcessing];
-    
-//    [HUDProcessing show:YES];
-    
     // Check if users.sqlite exists
     if ([User existsSqliteFileForUsers:YES])
     {
@@ -151,12 +144,13 @@
             {
                 // Start Download from the server - <name>.sqlite!
                 HUDDownload = [[MBProgressHUD alloc] initWithView:self.view];
-                HUDDownload.labelText = @"Downloading...";
+                HUDDownload.labelText = @"Downloading Territory Data";
                 [self.view addSubview:HUDDownload];
                 
                 [HUDDownload show:YES];
 
                 downloadPath = [User sqliteFilepathForData];
+                NSLog(@"Download territory file %@",downloadPath);
                 conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[User sqliteDownloadURLForData]]] delegate:self startImmediately:YES];
 
                 return;
@@ -182,7 +176,7 @@
         {
         // Start Download from the server - users.sqlite
         HUDDownload = [[MBProgressHUD alloc] initWithView:self.view];
-        HUDDownload.labelText = @"Downloading...";
+        HUDDownload.labelText = @"Validating User with server";
         [self.view addSubview:HUDDownload];
         
         [HUDDownload show:YES];
