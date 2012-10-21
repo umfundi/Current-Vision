@@ -92,24 +92,24 @@ NSArray *SalesReportSubviews(UIView *aView)
     return nil;
 }
 
+
 - (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int)secIndex{
     SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
     
-    //Set fixed width for certain columns
+    //Set Height of rows
     if(rowIndex == 0)
         {
-        style.size = [NSNumber numberWithFloat:30];
+        style.size = [NSNumber numberWithFloat:25];
         return style;
         }
     else
         {
-        style.size = [NSNumber numberWithFloat:30];
+        style.size = [NSNumber numberWithFloat:18];
         return style;
         }
     
     return nil;
 }
-
 
 - (void)viewDidLoad
 {
@@ -127,28 +127,41 @@ NSArray *SalesReportSubviews(UIView *aView)
     lblPostcode.text = selectedPractice.postcode;
     lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
     
+    // The datasource for the Monthly data grid
     monthReportDataSource = [[SalesTrendsReportDataSource alloc] init];
     monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:appDelegate.frontViewController.currentCustomer.id_customer];
     monthReportDataSource.isMonthReport = YES;
 
+    // The datasource for the YTD data grid
     YTDReportDataSource = [[SalesTrendsReportDataSource alloc] init];
     YTDReportDataSource.reportArray = [SalesTrendAggrPerBrand YTDReportsFrom:monthReportDataSource.reportArray];
     YTDReportDataSource.isMonthReport = NO;
 
+    // The datasource for the MAT data grid
+    MATReportDataSource = [[SalesTrendsReportDataSource alloc] init];
+    MATReportDataSource.reportArray = [SalesTrendAggrPerBrand YTDReportsFrom:monthReportDataSource.reportArray];
+    MATReportDataSource.isMonthReport = NO;
+    
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
     
-    //Create the grid
+    //Create the grids
     monthReportGrid = [[ShinobiGrid alloc] initWithFrame:self.view.bounds];
     YTDReportGrid = [[ShinobiGrid alloc] initWithFrame:self.view.bounds];
+    MATReportGrid = [[ShinobiGrid alloc] initWithFrame:self.view.bounds];
     
     monthReportGrid.licenseKey = licencekey;
     YTDReportGrid.licenseKey = licencekey;
+    MATReportGrid.licenseKey = licencekey;
     
     monthReportGrid.dataSource = monthReportDataSource;
     monthReportGrid.delegate = self;
     YTDReportGrid.dataSource = YTDReportDataSource;
     YTDReportGrid.delegate = self;
+
+    MATReportGrid.dataSource = MATReportDataSource;
+    MATReportGrid.delegate = self;
     
+
     //Freeze our top and left most rows
     [monthReportGrid freezeRowsAboveAndIncludingRow:SGridRowMake(0, 0)];
     [YTDReportGrid freezeRowsAboveAndIncludingRow:SGridRowMake(0, 0)];
@@ -168,9 +181,9 @@ NSArray *SalesReportSubviews(UIView *aView)
     YTDReportGrid.defaultBorderStyle.width = 1.0f;
     
     //provide default row heights and col widths
-    monthReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:20];
+    monthReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:18];
     monthReportGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
-    YTDReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:20];
+    YTDReportGrid.defaultRowStyle.size = [NSNumber numberWithFloat:18];
     YTDReportGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
     
     //ensure that section header is hidden (a grid has one section by default)

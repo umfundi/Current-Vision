@@ -20,23 +20,23 @@
 - (SGridCell *)shinobiGrid:(ShinobiGrid *)grid cellForGridCoord:(const SGridCoord *) gridCoord
 {
     if (gridCoord.rowIndex == 0)
-    {
+        {
         SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
         if (!cell)
-        {
+            {
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
-        }
+            }
         
         cell.textField.textAlignment = UITextAlignmentCenter;
         cell.textField.backgroundColor = [UIColor darkGrayColor];
         cell.backgroundColor = [UIColor darkGrayColor];
         cell.textField.textColor = [UIColor whiteColor];
         
-        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:14.f];
+        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:12.f];
         
         NSString *cellText;
         switch (gridCoord.column)
-        {
+            {
             case 0:
                 cellText = NSLocalizedString(isMonthReport ? @"Month. Figures" : @"YTD Figures", @"");
                 break;
@@ -84,27 +84,29 @@
                 break;
         }
         
-        cell.textField.text = cellText;
-        
+        cell.textField.text = cellText;        
         return cell;
-    }
+        }
     else
-    {
+        {
         SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Ariel" size:14.0f];
+        cell.textField.font = [UIFont fontWithName:@"Arial" size:8.f];
         cell.textField.textColor = [UIColor blackColor];
         cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.backgroundColor = [UIColor whiteColor];
-        cell.backgroundColor = [UIColor whiteColor];
-        
+
+/*        if (gridCoord.rowIndex%2 == 0)
+            cell.backgroundColor = [UIColor lightGrayColor];
+        else
+            cell.backgroundColor = [UIColor whiteColor];    */
+      
         SalesTrendAggrPerBrand *aggr = [reportArray objectAtIndex:gridCoord.rowIndex - 1];
         
         NSString *cellText;
         switch (gridCoord.column)
-        {
+            {
             case 0:
                 cellText = aggr.brand;
                 break;
@@ -150,10 +152,9 @@
             default:
                 cellText = @"";
                 break;
-        }
+            }
         
-        cell.textField.text = cellText;
-        
+        cell.textField.text = cellText;        
         return cell;
     }
 }
