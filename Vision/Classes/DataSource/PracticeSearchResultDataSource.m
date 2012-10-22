@@ -1,18 +1,27 @@
 //
-//  SitesDataSource.m
+//  CustomerSearchResultDataSource.m
 //  Vision
 //
 //  Copyright (c) 2012 Ian Molesworth. All rights reserved.
 //
 
-#import "SitesDataSource.h"
+#import "PracticeSearchResultDataSource.h"
 
-#import "Customer.h"
-#import "CustomerAggr.h"
+#import "Practice.h"
 
-@implementation SitesDataSource
+@implementation PracticeSearchResultDataSource
 
-@synthesize sitesArray;
+@synthesize searchResult;
+
+- (id)initWithResults:(NSArray *)resultArray
+{
+    self = [super init];
+    if (self)
+        {
+        self.searchResult = resultArray;
+        }
+    return self;
+}
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -38,25 +47,20 @@
         switch (gridCoord.column)
         {
             case 0:
+                // Account
                 cellText = NSLocalizedString(@"Account", @"");
                 break;
             case 1:
                 cellText = NSLocalizedString(@"Name", @"");
+                // Name
                 break;
             case 2:
                 cellText = NSLocalizedString(@"Town", @"");
+                // Town
                 break;
             case 3:
                 cellText = NSLocalizedString(@"Postcode", @"");
-                break;
-            case 4:
-                cellText = NSLocalizedString(@"Month", @"");
-                break;
-            case 5:
-                cellText = NSLocalizedString(@"YTD", @"");
-                break;
-            case 6:
-                cellText = NSLocalizedString(@"MAT", @"");
+                //Postcode
                 break;
             default:
                 cellText = @"";
@@ -66,46 +70,41 @@
         cell.textField.text = cellText;
         
         return cell;
-        }
+    }
     else
-        {
+    {
         SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+        cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
         cell.textField.textColor = [UIColor blackColor];
         cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+        cell.textField.font = [UIFont fontWithName:@"Courier" size:15.0f];
         
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
         
-        Customer *customer = [sitesArray objectAtIndex:gridCoord.rowIndex - 1];
+        Practice *practice = [searchResult objectAtIndex:gridCoord.rowIndex - 1];
         
         NSString *cellText;
         switch (gridCoord.column)
         {
             case 0:
-                cellText = customer.id_customer;
+                // Account
+                cellText = practice.practiceCode;
                 break;
             case 1:
-                cellText = customer.customerName;
+                cellText = practice.practiceName;
+                // Name
                 break;
             case 2:
-                cellText = customer.city;
+                cellText = practice.province;
+                // Town
                 break;
             case 3:
-                cellText = customer.postcode;
-                break;
-            case 4:
-                cellText = customer.aggrValue.monthString;
-                break;
-            case 5:
-                cellText = customer.aggrValue.ytdString;
-                break;
-            case 6:
-                cellText = customer.aggrValue.matString;
+                cellText = practice.postcode;
+                //Postcode
                 break;
             default:
                 cellText = @"";
@@ -120,26 +119,12 @@
 
 - (NSUInteger)numberOfColsForShinobiGrid:(ShinobiGrid *)grid
 {
-    return 7;
+    return 4;
 }
 
 - (NSUInteger)shinobiGrid:(ShinobiGrid *)grid numberOfRowsInSection:(int) sectionIndex
 {
-    return [sitesArray count] + 1;
-}
-
-//Return the titles for the sections
-- (NSString *)shinobiGrid:(ShinobiGrid *)grid titleForHeaderInSection:(int)section
-{
-    switch (section)
-    {
-        case 0:
-            return @"Sites";
-        default:
-            break;
-    }
-    
-    return nil;
+    return [searchResult count] + 1;
 }
 
 @end

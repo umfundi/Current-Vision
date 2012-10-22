@@ -13,6 +13,7 @@
 @implementation ProductSalesDataSource
 
 @synthesize productSalesArray;
+@synthesize numberFormat;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -33,7 +34,7 @@
         cell.backgroundColor = [UIColor darkGrayColor];
         cell.textField.textColor = [UIColor whiteColor];
         
-        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:14.f];
+        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:10.f];
         
         NSString *cellText;
         switch (gridCoord.column)
@@ -107,7 +108,6 @@
             }
         
         cell.textField.text = cellText;
-        
         return cell;
         }
     else
@@ -116,7 +116,7 @@
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Ariel" size:14.0f];
+        cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
         cell.textField.textColor = [UIColor blackColor];
         cell.textField.textAlignment = UITextAlignmentLeft;
         cell.textField.backgroundColor = [UIColor whiteColor];
@@ -195,6 +195,7 @@
                 cellText = @"";
                 break;
             }
+            
         cell.textField.text = cellText;
         return cell;
         }

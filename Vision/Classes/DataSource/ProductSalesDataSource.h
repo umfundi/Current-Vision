@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSArray *productSalesArray;
 
+@property (nonatomic, strong) NSNumberFormatter *numberFormat;
+
 @end

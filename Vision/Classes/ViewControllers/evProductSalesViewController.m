@@ -29,7 +29,8 @@
 {
     if (sectionIndex != 0)
     {
-        SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:25.f withBackgroundColor:[UIColor grayColor]];
+        SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:15.f withBackgroundColor:[UIColor lightGrayColor]];
+        s.font = [UIFont fontWithName:@"Arial" size:10.0f];
         return s;
     }
     
@@ -44,6 +45,44 @@
         // Custom initialization
     }
     return self;
+}
+
+
+- (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int)secIndex{
+    SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
+    
+    NSLog(@"Sect %d row %d", secIndex, rowIndex);
+    
+    //Set Height of rows
+    if(rowIndex == 0 && secIndex == 0)
+        {
+        style.size = [NSNumber numberWithFloat:23];
+        return style;
+        }
+    else
+        {
+        style.size = [NSNumber numberWithFloat:18];
+        return style;
+        }
+    
+    return nil;
+}
+
+
+- (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForColAtIndex:(int)colIndex
+{
+    SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
+    
+    //Set fixed width for certain columns
+    if(colIndex == 4 || colIndex == 8 || colIndex == 12 || colIndex == 16 || colIndex == 18 || colIndex == 20) {
+        style.size = [NSNumber numberWithFloat:56];
+        return style;
+    }
+/*    else if (colIndex == 2) {
+        style.size = [NSNumber numberWithFloat:150];
+        return style;
+    }  */
+    return nil;
 }
 
 - (void)viewDidLoad
@@ -86,9 +125,11 @@
     productSalesGrid.defaultBorderStyle.color = [UIColor darkGrayColor];
     productSalesGrid.defaultBorderStyle.width = 1.0f;
     
+    productSalesGrid.defaultSectionHeaderStyle.font = [UIFont fontWithName:@"Arial" size:10.0f];
+    
     //provide default row heights and col widths
-    productSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:30];
-    productSalesGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:100];
+    productSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
+    productSalesGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:43];
     
     //ensure that section header is hidden (a grid has one section by default)
     productSalesGrid.defaultSectionHeaderStyle.hidden = YES;
