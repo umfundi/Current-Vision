@@ -18,14 +18,15 @@
 
 @end
 
-@interface PracticeSearchResultViewController : UIViewController
+@interface PracticeSearchResultViewController : UIViewController<SGridDataSource, SGridDelegate>
 {
     ShinobiGrid *practiceGrid;
-    PracticeSearchResultDataSource *pdataSource;
+    PracticeSearchResultDataSource *dataSource;
 }
 
 @property (strong, nonatomic) NSArray *searchResult;
 @property (strong, nonatomic) id<PracticeSearchSelectDelegate> delegate;
 
 - (CGSize)contentSizeForViewInPopover;
+
 @end

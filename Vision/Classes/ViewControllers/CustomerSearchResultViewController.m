@@ -2,6 +2,7 @@
 //  CustomerSearchResultViewController.m
 //  Vision
 //
+//  Created by Ian Molesworth on 21/10/2012.
 //  Copyright (c) 2012 Ian Molesworth. All rights reserved.
 //
 
@@ -31,8 +32,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
-    
     if ([searchResult count] == 0)
         {
         // No result
@@ -47,7 +46,6 @@
         [self.view addSubview:noresultLabel];
         return;
         }
-    
     
     dataSource = [[CustomerSearchResultDataSource alloc] initWithResults:searchResult];
     

@@ -8,6 +8,9 @@
 
 #import "PracticeSearchResultViewController.h"
 
+#import "Practice.h"
+#import "PracticeSearchResultDataSource.h"
+
 @interface PracticeSearchResultViewController ()
 
 @end
@@ -15,7 +18,6 @@
 @implementation PracticeSearchResultViewController
 
 @synthesize searchResult, delegate;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -98,4 +100,41 @@
     CGFloat height = 30 * ([searchResult count] + 1);
     return CGSizeMake(700, height);
 }
+
+
+#pragma mark -
+#pragma mark ShinobiGridDelegate
+
+- (void) shinobiGrid:(ShinobiGrid *)grid willCommenceEditingAutoCell:(const SGridAutoCell *)cell
+{
+    practiceGrid.canEditCellsViaDoubleTap = NO;
+    
+    if (cell.gridCoord.rowIndex == 0)
+    {
+        practiceGrid.canEditCellsViaDoubleTap = YES;
+        return;
+    }
+    
+    // Selected
+    Practice *selectedPractice = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
+    
+    [delegate performSelector:@selector(practiceSelected:) withObject:selectedPractice];
+}
+
+
+- (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForColAtIndex:(int)colIndex
+{
+    SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
+    
+    //Set fixed width for certain columns
+    if(colIndex == 1) {
+        style.size = [NSNumber numberWithFloat:350];
+        return style;
+    } else if (colIndex == 2) {
+        style.size = [NSNumber numberWithFloat:150];
+        return style;
+    }
+    return nil;
+}
+
 @end
