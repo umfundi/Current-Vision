@@ -112,14 +112,23 @@
         }
     else
         {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+        SGridNumberCell *cell = (SGridNumberCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+            
+//        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
         if (!cell)
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
+//            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
+              cell = [[SGridNumberCell alloc] initWithReuseIdentifier:@"valueCell"];
         
+//        cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
+//        cell.textField.textColor = [UIColor blackColor];
+//        cell.textField.textAlignment = UITextAlignmentLeft;
+//        cell.textField.backgroundColor = [UIColor whiteColor];
+            
         cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
         cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentLeft;
+        cell.textField.textAlignment = UITextAlignmentRight;
         cell.textField.backgroundColor = [UIColor whiteColor];
+            
         cell.backgroundColor = [UIColor whiteColor];
         
         ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:gridCoord.section - 1];
@@ -195,8 +204,10 @@
                 cellText = @"";
                 break;
             }
+        NSNumber *number=[NSNumber numberWithInteger:[cellText integerValue]];    
+        cell.textField.text = [self.numberFormat stringFromNumber:number];
             
-        cell.textField.text = cellText;
+ //       cell.textField.text = cellText;
         return cell;
         }
 }
