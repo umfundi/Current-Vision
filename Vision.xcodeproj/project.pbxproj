@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		373D56851630A6AA00337947 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D56841630A6AA00337947 /* ShinobiGrids.framework */; };
+		376ED1511635AFD500066502 /* PracticeAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = 376ED1501635AFD400066502 /* PracticeAggr.m */; };
+		376ED1551635B1CF00066502 /* PracticeAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 376ED1541635B1CF00066502 /* PracticeAggrPerBrand.m */; };
 		3779C8C016346562002A2037 /* PracticeSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8BE16346562002A2037 /* PracticeSearchResultViewController.m */; };
 		3779C8C6163469BB002A2037 /* CustomerSearchResultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8C3163469BB002A2037 /* CustomerSearchResultDataSource.m */; };
 		3779C8C7163469BB002A2037 /* PracticeSearchResultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8C5163469BB002A2037 /* PracticeSearchResultDataSource.m */; };
@@ -117,6 +119,10 @@
 
 /* Begin PBXFileReference section */
 		373D56841630A6AA00337947 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = "../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial/ShinobiGrids.framework"; sourceTree = "<group>"; };
+		376ED14F1635AFD400066502 /* PracticeAggr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggr.h; sourceTree = "<group>"; };
+		376ED1501635AFD400066502 /* PracticeAggr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggr.m; sourceTree = "<group>"; };
+		376ED1531635B1CE00066502 /* PracticeAggrPerBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggrPerBrand.h; sourceTree = "<group>"; };
+		376ED1541635B1CF00066502 /* PracticeAggrPerBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggrPerBrand.m; sourceTree = "<group>"; };
 		3779C8BD16346562002A2037 /* PracticeSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeSearchResultViewController.h; sourceTree = "<group>"; };
 		3779C8BE16346562002A2037 /* PracticeSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeSearchResultViewController.m; sourceTree = "<group>"; };
 		3779C8C3163469BB002A2037 /* CustomerSearchResultDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerSearchResultDataSource.m; sourceTree = "<group>"; };
@@ -436,6 +442,10 @@
 				AD7AFAC1162AE6F90092A690 /* SitesDistributionAggr.m */,
 				AD7AFAC6162AE84B0092A690 /* SitesDistributionAggrItem.h */,
 				AD7AFAC7162AE84C0092A690 /* SitesDistributionAggrItem.m */,
+				376ED14F1635AFD400066502 /* PracticeAggr.h */,
+				376ED1501635AFD400066502 /* PracticeAggr.m */,
+				376ED1531635B1CE00066502 /* PracticeAggrPerBrand.h */,
+				376ED1541635B1CF00066502 /* PracticeAggrPerBrand.m */,
 			);
 			path = ExtModel;
 			sourceTree = "<group>";
@@ -758,6 +768,8 @@
 				3779C8C016346562002A2037 /* PracticeSearchResultViewController.m in Sources */,
 				3779C8C6163469BB002A2037 /* CustomerSearchResultDataSource.m in Sources */,
 				3779C8C7163469BB002A2037 /* PracticeSearchResultDataSource.m in Sources */,
+				376ED1511635AFD500066502 /* PracticeAggr.m in Sources */,
+				376ED1551635B1CF00066502 /* PracticeAggrPerBrand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,10 +41,10 @@
     //Set the size and text colour of the first row
     if (rowIndex == 0)
     {
-        style.size = [NSNumber numberWithInt:40];
+        style.size = [NSNumber numberWithInt:30];
     } else {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            style.size = [NSNumber numberWithInt:36];
+            style.size = [NSNumber numberWithInt:25];
         } else {
             style.size = [NSNumber numberWithInt:26];
         }
@@ -77,10 +77,10 @@
             style.size = [NSNumber numberWithFloat:80];
             return style;
         } else if(colIndex == 1) {
-            style.size = [NSNumber numberWithFloat:250];
+            style.size = [NSNumber numberWithFloat:200];
             return style;
         } else if (colIndex == 2) {
-            style.size = [NSNumber numberWithFloat:150];
+            style.size = [NSNumber numberWithFloat:125];
             return style;
         } else if (colIndex > 3) {
             style.size = [NSNumber numberWithFloat:70];
@@ -175,7 +175,8 @@
     
     [self didRotateFromInterfaceOrientation:0];
     
-    [self displayCustomer];
+//    [self displayCustomer];    
+    [self displayPractice];
     [self applyTheme:[[User loginUser].data isEqualToString:@"companion"]];
     
 }
@@ -307,7 +308,9 @@ NSArray *allSubviews(UIView *aView)
         [currentCustomer loadPracticeAndValues];
     }
     
-    accountNoField.text = currentCustomer.id_customer;
+    // Practice code into field 1 
+ //   accountNoField.text = currentCustomer.id_customer;
+    accountNoField.text = currentPractice.practiceCode;
     nameField.text = currentCustomer.customerName;
     addressField.text = currentCustomer.address1;
     townField.text = currentCustomer.city;

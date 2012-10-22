@@ -1,21 +1,22 @@
 //
-//  SalesExtModel.m
+//  PracticeAggr.m
 //  Vision
 //
+//  Created by Ian Molesworth on 22/10/2012.
 //  Copyright (c) 2012 Ian Molesworth. All rights reserved.
 //
 
-#import "CustomerAggr.h"
+#import "PracticeAggr.h"
 #import "User.h"
-#import "CustomerAggrPerBrand.h"
+#import "PracticeAggrPerBrand.h"
 
-@implementation CustomerAggr
+@implementation PracticeAggr
 
 @synthesize month, ytd, mat;
 @synthesize monthString, ytdString, matString;
 @synthesize aggrPerBrands;
 
-+ (CustomerAggr *)AggrFrom:(NSString *)customer
++ (PracticeAggr *)AggrFrom:(NSString *)Practice
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
@@ -30,35 +31,35 @@
     NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"brand" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", customer];
-    [fetchRequest setPredicate:predicate];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", practice];
+//    [fetchRequest setPredicate:predicate];
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
-    CustomerAggr *aggr = [[CustomerAggr alloc] init];
-    CustomerAggrPerBrand *aggrPerBrand = [[CustomerAggrPerBrand alloc] init];
+    PracticeAggr *aggr = [[PracticeAggr alloc] init];
+//    PracticeAggrPerBrand *aggrPerBrand = [[PracticeAggrPerBrand alloc] init];
     for (NSDictionary *report in reports)
     {
         NSString *brand = [report objectForKey:@"brand"];
         
-        if (aggrPerBrand.brand == nil)
-            aggrPerBrand.brand = brand;
-        else if (![aggrPerBrand.brand isEqualToString:brand])
+//        if (aggrPerBrand.brand == nil)
+//            aggrPerBrand.brand = brand;
+//        else if (![aggrPerBrand.brand isEqualToString:brand])
         {
-            [aggrPerBrand finishAdd];
-            [aggr addAggrPerBrand:aggrPerBrand];
+//            [aggrPerBrand finishAdd];
+//            [aggr addAggrPerBrand:aggrPerBrand];
             
-            aggrPerBrand = [[CustomerAggrPerBrand alloc] init];
-            aggrPerBrand.brand = brand;
+//            aggrPerBrand = [[CustomerAggrPerBrand alloc] init];
+//            aggrPerBrand.brand = brand;
         }
         
-        [aggrPerBrand addSalesReport:report];
+//        [aggrPerBrand addSalesReport:report];
     }
     
-    if (aggrPerBrand.brand)
+//    if (aggrPerBrand.brand)
     {
-        [aggrPerBrand finishAdd];
-        [aggr.aggrPerBrands addObject:aggrPerBrand];
+//        [aggrPerBrand finishAdd];
+//        [aggr.aggrPerBrands addObject:aggrPerBrand];
     }
     
     [aggr finishAdd];
@@ -67,7 +68,7 @@
 }
 
 
-- (void)addAggrPerBrand:(CustomerAggrPerBrand *)aggrPerBrand
+- (void)addAggrPerBrand:(PracticeAggrPerBrand *)aggrPerBrand
 {
     month += aggrPerBrand.month;
     ytd += aggrPerBrand.ytd;
