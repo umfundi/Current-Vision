@@ -9,6 +9,7 @@
 #import "Practice.h"
 #import "Customer.h"
 #import "User.h"
+#import "PracticeAggr.h"
 
 @implementation Practice
 
@@ -28,22 +29,6 @@
 
 @synthesize customers;
 
-- (void)loadCustomers
-{
-    NSManagedObjectContext *context = [User managedObjectContextForData];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_practice == %@", self.practiceCode];
-    [fetchRequest setPredicate:predicate];
-
-    NSArray *results = [context executeFetchRequest:fetchRequest error:nil];
-    self.customers = [NSSet setWithArray:results];
-    NSLog(@"%@", self.customers);
-}
-
 + (Customer *)firstPractice
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
@@ -60,6 +45,46 @@
         return [practices objectAtIndex:0];
     
     return nil;
+}
+
++ (NSArray *)allPractices
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Practice"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSManagedObjectResultType];
+    
+    return [context executeFetchRequest:fetchRequest error:nil];
+}
+
+
+- (void)loadCustomers
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_practice == %@", self.practiceCode];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *results = [context executeFetchRequest:fetchRequest error:nil];
+    self.customers = [NSSet setWithArray:results];
+    NSLog(@"%@", self.customers);
+}
+
+- (void)loadAggrValues
+{
+    aggr = [PracticeAggr AggrFrom:self.practiceCode];
+}
+
+- (PracticeAggr *)aggrValue
+{
+    return aggr;
 }
 
 

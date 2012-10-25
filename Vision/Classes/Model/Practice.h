@@ -10,8 +10,12 @@
 #import <CoreData/CoreData.h>
 
 @class Customer;
+@class PracticeAggr;
 
 @interface Practice : NSManagedObject
+{
+    PracticeAggr *aggr;
+}
 
 @property (nonatomic, retain) NSString * add1;
 @property (nonatomic, retain) NSString * add2;
@@ -29,8 +33,12 @@
 
 @property (nonatomic, retain) NSSet *customers;
 
-- (void)loadCustomers;
 + (Practice *)firstPractice;
++ (NSArray *)allPractices;
+
+- (void)loadCustomers;
+- (void)loadAggrValues;
+- (PracticeAggr *)aggrValue;
 
 
 + (NSArray *)searchPracticesWithField:(NSString *)aField andKey:(NSString *)aKey;

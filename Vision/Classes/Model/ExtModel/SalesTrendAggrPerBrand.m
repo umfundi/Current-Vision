@@ -8,6 +8,7 @@
 #import "SalesTrendAggrPerBrand.h"
 
 #import "User.h"
+#import "Customer.h"
 
 @implementation SalesTrendAggrPerBrand
 
@@ -26,12 +27,12 @@
 @synthesize dec, decString;
 @synthesize growthString;
 
-+ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)customer
++ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_CustomerSalesTrends"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_Customer_OrderBy"
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
@@ -41,7 +42,8 @@
     NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"brand" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", customer];
+    NSString *format = [NSString stringWithFormat:@"%@ == %%@", aField];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:format, aValue];
     [fetchRequest setPredicate:predicate];
     
     NSArray *trends = [context executeFetchRequest:fetchRequest error:nil];
@@ -63,7 +65,7 @@
             aggrPerBrand.brand = brand;
         }
         
-        [aggrPerBrand addSalesTrend:trend];
+        [aggrPerBrand addSalesTrend:trend YDTorMAT:isYTD];
     }
     
     if (aggrPerBrand.brand)
@@ -75,31 +77,101 @@
     return aggrs;
 }
 
-+ (NSArray *)YTDReportsFrom:(NSArray *)monthReports
++ (NSArray *)SalesTrendsGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD
+{
+    NSArray *filteredCustomers = [Customer searchCustomerIDsWithField:aField andValue:aValue];
+    
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_Customer_OrderBy"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    [fetchRequest setResultType:NSDictionaryResultType];
+    
+    // Sort
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"brand" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer in %@", filteredCustomers];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *trends = [context executeFetchRequest:fetchRequest error:nil];
+    
+    NSMutableArray *aggrs = [[NSMutableArray alloc] initWithCapacity:0];
+    SalesTrendAggrPerBrand *aggrPerBrand = [[SalesTrendAggrPerBrand alloc] init];
+    for (NSDictionary *trend in trends)
+    {
+        NSString *brand = [trend objectForKey:@"brand"];
+        
+        if (aggrPerBrand.brand == nil)
+            aggrPerBrand.brand = brand;
+        else if (![aggrPerBrand.brand isEqualToString:brand])
+        {
+            [aggrPerBrand finishAdd];
+            [aggrs addObject:aggrPerBrand];
+            
+            aggrPerBrand = [[SalesTrendAggrPerBrand alloc] init];
+            aggrPerBrand.brand = brand;
+        }
+        
+        [aggrPerBrand addSalesTrend:trend YDTorMAT:isYTD];
+    }
+    
+    if (aggrPerBrand.brand)
+    {
+        [aggrPerBrand finishAdd];
+        [aggrs addObject:aggrPerBrand];
+    }
+    
+    return aggrs;
+}
+
+
++ (NSArray *)yearReportsFrom:(NSArray *)monthReports
 {
     NSMutableArray *reports = [[NSMutableArray alloc] initWithCapacity:monthReports.count];
     
     for (SalesTrendAggrPerBrand *aggr in monthReports)
-        [reports addObject:[aggr convertToYTDAggr]];
+        [reports addObject:[aggr convertToYearAggr]];
     
     return reports;
 }
 
 
-- (void)addSalesTrend:(NSDictionary *)trend
+- (void)addSalesTrend:(NSDictionary *)trend YDTorMAT:(BOOL)isYTD
 {
-    jan += [[trend objectForKey:@"janval"] doubleValue];
-    feb += [[trend objectForKey:@"febval"] doubleValue];
-    mar += [[trend objectForKey:@"marval"] doubleValue];
-    apr += [[trend objectForKey:@"aprval"] doubleValue];
-    may += [[trend objectForKey:@"mayval"] doubleValue];
-    jun += [[trend objectForKey:@"junval"] doubleValue];
-    jul += [[trend objectForKey:@"julval"] doubleValue];
-    aug += [[trend objectForKey:@"augval"] doubleValue];
-    sep += [[trend objectForKey:@"sepval"] doubleValue];
-    oct += [[trend objectForKey:@"octval"] doubleValue];
-    nov += [[trend objectForKey:@"novval"] doubleValue];
-    dec += [[trend objectForKey:@"decval"] doubleValue];
+    if (isYTD)
+    {
+        jan += [[trend objectForKey:@"janval"] doubleValue];
+        feb += [[trend objectForKey:@"febval"] doubleValue];
+        mar += [[trend objectForKey:@"marval"] doubleValue];
+        apr += [[trend objectForKey:@"aprval"] doubleValue];
+        may += [[trend objectForKey:@"mayval"] doubleValue];
+        jun += [[trend objectForKey:@"junval"] doubleValue];
+        jul += [[trend objectForKey:@"julval"] doubleValue];
+        aug += [[trend objectForKey:@"augval"] doubleValue];
+        sep += [[trend objectForKey:@"sepval"] doubleValue];
+        oct += [[trend objectForKey:@"octval"] doubleValue];
+        nov += [[trend objectForKey:@"novval"] doubleValue];
+        dec += [[trend objectForKey:@"decval"] doubleValue];
+    }
+    else
+    {
+        jan += [[trend objectForKey:@"m_11val"] doubleValue];
+        feb += [[trend objectForKey:@"m_10val"] doubleValue];
+        mar += [[trend objectForKey:@"m_9val"] doubleValue];
+        apr += [[trend objectForKey:@"m_8val"] doubleValue];
+        may += [[trend objectForKey:@"m_7val"] doubleValue];
+        jun += [[trend objectForKey:@"m_6val"] doubleValue];
+        jul += [[trend objectForKey:@"m_5val"] doubleValue];
+        aug += [[trend objectForKey:@"m_4val"] doubleValue];
+        sep += [[trend objectForKey:@"m_3val"] doubleValue];
+        oct += [[trend objectForKey:@"m_2val"] doubleValue];
+        nov += [[trend objectForKey:@"m_1val"] doubleValue];
+        dec += [[trend objectForKey:@"m0val"] doubleValue];
+    }
 }
 
 - (void)finishAdd
@@ -120,26 +192,26 @@
     growthString = [NSString stringWithFormat:@"%.0f%%", round(0)];
 }
 
-- (SalesTrendAggrPerBrand *)convertToYTDAggr
+- (SalesTrendAggrPerBrand *)convertToYearAggr
 {
-    SalesTrendAggrPerBrand *ytdAggr = [[SalesTrendAggrPerBrand alloc] init];
+    SalesTrendAggrPerBrand *yearAggr = [[SalesTrendAggrPerBrand alloc] init];
     
-    ytdAggr.brand = brand;
-    ytdAggr.jan = jan;
-    ytdAggr.feb = ytdAggr.jan + feb;
-    ytdAggr.mar = ytdAggr.feb + mar;
-    ytdAggr.apr = ytdAggr.mar + apr;
-    ytdAggr.may = ytdAggr.apr + may;
-    ytdAggr.jun = ytdAggr.may + jun;
-    ytdAggr.jul = ytdAggr.jun + jul;
-    ytdAggr.aug = ytdAggr.jul + aug;
-    ytdAggr.sep = ytdAggr.aug + sep;
-    ytdAggr.oct = ytdAggr.sep + oct;
-    ytdAggr.nov = ytdAggr.oct + nov;
-    ytdAggr.dec = ytdAggr.nov + dec;
-    [ytdAggr finishAdd];
+    yearAggr.brand = brand;
+    yearAggr.jan = jan;
+    yearAggr.feb = yearAggr.jan + feb;
+    yearAggr.mar = yearAggr.feb + mar;
+    yearAggr.apr = yearAggr.mar + apr;
+    yearAggr.may = yearAggr.apr + may;
+    yearAggr.jun = yearAggr.may + jun;
+    yearAggr.jul = yearAggr.jun + jul;
+    yearAggr.aug = yearAggr.jul + aug;
+    yearAggr.sep = yearAggr.aug + sep;
+    yearAggr.oct = yearAggr.sep + oct;
+    yearAggr.nov = yearAggr.oct + nov;
+    yearAggr.dec = yearAggr.nov + dec;
+    [yearAggr finishAdd];
     
-    return ytdAggr;
+    return yearAggr;
 }
 
 @end

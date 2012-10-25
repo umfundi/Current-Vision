@@ -20,7 +20,7 @@
 
 @property (nonatomic, retain) NSMutableArray *aggrPerBrands;
 
-+ (PracticeAggr *)AggrFrom:(NSString *)practice;
++ (PracticeAggr *)AggrFrom:(NSString *)practiceCode;
 
 - (void)addAggrPerBrand:(PracticeAggrPerBrand *)aggrPerBrand;
 - (void)finishAdd;

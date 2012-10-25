@@ -15,6 +15,7 @@
 #import "Practice.h"
 #import "User.h"
 #import "CustomerAggr.h"
+#import "PracticeAggr.h"
 
 #import "PracticeSearchResultViewController.h"
 //#import "
@@ -30,7 +31,7 @@
 
 @implementation umfundiViewController
 
-@synthesize currentCustomer;
+//@synthesize currentCustomer;
 @synthesize currentPractice;
 
 #pragma mark Grid Delegate methods
@@ -297,67 +298,71 @@ NSArray *allSubviews(UIView *aView)
 }
 
 
-- (void)displayCustomer
-{
-    if (!currentCustomer)
-    {
-        self.currentCustomer = [Customer firstCustomer];
-        if (!currentCustomer)
-            return;
-        
-        [currentCustomer loadPracticeAndValues];
-    }
-    
-    // Practice code into field 1 
- //   accountNoField.text = currentCustomer.id_customer;
-    accountNoField.text = currentPractice.practiceCode;
-    nameField.text = currentCustomer.customerName;
-    addressField.text = currentCustomer.address1;
-    townField.text = currentCustomer.city;
-    countryField.text = currentCustomer.province;
-    postcodeField.text = currentCustomer.postcode;
-    brickField.text = currentCustomer.brick;
-    SAPCodeField.text = currentCustomer.sap_no;
-    MonthField.text = currentCustomer.aggrValue.monthString;
-    YTDField.text = currentCustomer.aggrValue.ytdString;
-    MATField.text = currentCustomer.aggrValue.matString;
-    
-    if (currentCustomer.practice)
-    {
-        practiceField.text = currentCustomer.practice.practiceName;
-        
-        NSLog(@"practiceCode = %@", currentCustomer.practice.practiceCode);
-        [currentCustomer.practice loadCustomers];
-        
-        sitesDataSource.sitesArray = [currentCustomer.practice.customers allObjects];
-        for (Customer *customer in sitesDataSource.sitesArray)
-            [customer loadPracticeAndValues];
-        [sitesGrid reload];
-        
-        salesDataSource.salesArray = currentCustomer.aggrValue.aggrPerBrands;
-        [salesGrid reload];
-    }
-    else
-    {
-        practiceField.text = @"-";
-        
-        sitesDataSource.sitesArray = nil;
-        [sitesGrid reload];
-        
-        salesDataSource.salesArray = nil;
-        [salesGrid reload];
-    }
-}
+//- (void)displayCustomer
+//{
+//    if (!currentCustomer)
+//    {
+//        self.currentCustomer = [Customer firstCustomer];
+//        if (!currentCustomer)
+//            return;
+//        
+//        [currentCustomer loadPracticeAndValues];
+//    }
+//    
+//    // Practice code into field 1 
+// //   accountNoField.text = currentCustomer.id_customer;
+//    accountNoField.text = currentPractice.practiceCode;
+//    nameField.text = currentCustomer.customerName;
+//    addressField.text = currentCustomer.address1;
+//    townField.text = currentCustomer.city;
+//    countryField.text = currentCustomer.province;
+//    postcodeField.text = currentCustomer.postcode;
+//    brickField.text = currentCustomer.brick;
+//    SAPCodeField.text = currentCustomer.sap_no;
+//    MonthField.text = currentCustomer.aggrValue.monthString;
+//    YTDField.text = currentCustomer.aggrValue.ytdString;
+//    MATField.text = currentCustomer.aggrValue.matString;
+//    
+//    if (currentCustomer.practice)
+//    {
+//        practiceField.text = currentCustomer.practice.practiceName;
+//        
+//        NSLog(@"practiceCode = %@", currentCustomer.practice.practiceCode);
+//        [currentCustomer.practice loadCustomers];
+//        for (Customer *customer in currentCustomer.practice.customers)
+//            [customer loadPracticeAndValues];
+//        
+//        sitesDataSource.sitesArray = [currentCustomer.practice.customers allObjects];
+//        [sitesGrid reload];
+//        
+//        salesDataSource.salesArray = currentCustomer.aggrValue.aggrPerBrands;
+//        [salesGrid reload];
+//    }
+//    else
+//    {
+//        practiceField.text = @"-";
+//        
+//        sitesDataSource.sitesArray = nil;
+//        [sitesGrid reload];
+//        
+//        salesDataSource.salesArray = nil;
+//        [salesGrid reload];
+//    }
+//}
 
 - (void)displayPractice
 {
-    if (!currentCustomer)
+    if (!currentPractice)
     {
         self.currentPractice = [Practice firstPractice];
         if (!currentPractice)
             return;
         
-//        [currentPractice loadPracticeAndValues];
+        [currentPractice loadCustomers];
+        for (Customer *customer in currentPractice.customers)
+            [customer loadPracticeAndValues];
+
+        [currentPractice loadAggrValues];
     }
     
     accountNoField.text = currentPractice.practiceCode;
@@ -368,23 +373,18 @@ NSArray *allSubviews(UIView *aView)
     postcodeField.text = currentPractice.postcode;
     brickField.text = currentPractice.brick;
     SAPCodeField.text = currentPractice.sap_no;
-//    MonthField.text = currentPractice.aggrValue.monthString;
-//    YTDField.text = currentPractice.aggrValue.ytdString;
-//    MATField.text = currentPractice.aggrValue.matString;
+    MonthField.text = currentPractice.aggrValue.monthString;
+    YTDField.text = currentPractice.aggrValue.ytdString;
+    MATField.text = currentPractice.aggrValue.matString;
     
-    if (currentCustomer.practice)
+    if (currentPractice)
     {
-        practiceField.text = currentCustomer.practice.practiceName;
+        practiceField.text = currentPractice.practiceName;
         
-        NSLog(@"practiceCode = %@", currentCustomer.practice.practiceCode);
-        [currentCustomer.practice loadCustomers];
-        
-        sitesDataSource.sitesArray = [currentCustomer.practice.customers allObjects];
-        for (Customer *customer in sitesDataSource.sitesArray)
-            [customer loadPracticeAndValues];
+        sitesDataSource.sitesArray = [currentPractice.customers allObjects];
         [sitesGrid reload];
         
-        salesDataSource.salesArray = currentCustomer.aggrValue.aggrPerBrands;
+        salesDataSource.salesArray = currentPractice.aggrValue.aggrPerBrands;
         [salesGrid reload];
     }
     else
@@ -492,16 +492,16 @@ NSArray *allSubviews(UIView *aView)
 #pragma mark -
 #pragma mark SearchSelectDelegate
 
-- (void)customerSelected:(Customer *)selected
-{
-    [searchPopoverController dismissPopoverAnimated:YES];
-    searchPopoverController = nil;
-    
-    self.currentCustomer = selected;
-    [currentCustomer loadPracticeAndValues];
-    
-    [self displayCustomer];
-}
+//- (void)customerSelected:(Customer *)selected
+//{
+//    [searchPopoverController dismissPopoverAnimated:YES];
+//    searchPopoverController = nil;
+//    
+//    self.currentCustomer = selected;
+//    [currentCustomer loadPracticeAndValues];
+//    
+//    [self displayCustomer];
+//}
 
 - (void)practiceSelected:(Practice *)selected
 {
@@ -509,7 +509,11 @@ NSArray *allSubviews(UIView *aView)
     searchPopoverController = nil;
     
     self.currentPractice = selected;
-//    [currentPractice loadPracticeAndValues];
+    [currentPractice loadCustomers];
+    for (Customer *customer in currentPractice.customers)
+        [customer loadPracticeAndValues];
+    
+    [currentPractice loadAggrValues];
     
     [self displayPractice];
 }

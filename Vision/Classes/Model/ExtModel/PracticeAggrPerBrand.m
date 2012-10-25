@@ -28,8 +28,7 @@
     month += [[report objectForKey:@"m0val"] doubleValue];
     ytd += [[report objectForKey:@"ytdvalcur"] doubleValue];
     mat += [[report objectForKey:@"matvalcur"] doubleValue];
-#warning monthprv in SalesGrid
-    monthprv += [[report objectForKey:@"m0val"] doubleValue];
+    monthprv += [[report objectForKey:@"m_12val"] doubleValue];
     ytdprv += [[report objectForKey:@"ytdvalprv"] doubleValue];
     matprv += [[report objectForKey:@"matvalprv"] doubleValue];
 }
@@ -56,4 +55,5 @@
     else
         matpro = [NSString stringWithFormat:@"%.0f%%", round((mat - matprv) / matprv * 100)];
 }
+
 @end

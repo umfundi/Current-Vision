@@ -45,7 +45,12 @@
 - (CustomerAggr *)aggrValue;
 
 + (Customer *)firstCustomer;
++ (NSArray *)allCustomers;
++ (NSArray *)allGroups;
++ (NSArray *)allCountries;
++ (NSArray *)allCounties;
 
++ (NSArray *)searchCustomerIDsWithField:(NSString *)aField andValue:(NSString *)aValue;
 + (NSArray *)searchCustomersWithField:(NSString *)aField andKey:(NSString *)aKey;
 
 @end

@@ -82,6 +82,132 @@
     return nil;
 }
 
++ (NSArray *)allCustomers
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSManagedObjectResultType];
+    
+    NSArray *customers = [context executeFetchRequest:fetchRequest error:nil];
+    for (Customer *customer in customers)
+        [customer loadPracticeAndValues];
+    
+    return customers;
+}
+
++ (NSArray *)allGroups
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSManagedObjectResultType];
+    
+    // Sort
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"groupName" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    
+    NSMutableArray *groups = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    NSString *group = nil;
+    for (Customer *customer in [context executeFetchRequest:fetchRequest error:nil])
+    {
+        if (!group || ![group isEqualToString:customer.groupName])
+        {
+            group = customer.groupName;
+            [groups addObject:group];
+        }
+    }
+    
+    return groups;
+}
+
++ (NSArray *)allCountries
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSManagedObjectResultType];
+    
+    // Sort
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"country" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    
+    NSMutableArray *countries = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    NSString *country = nil;
+    for (Customer *customer in [context executeFetchRequest:fetchRequest error:nil])
+    {
+        if (!country || ![country isEqualToString:customer.country])
+        {
+            country = customer.country;
+            [countries addObject:country];
+        }
+    }
+    
+    return countries;
+}
+
++ (NSArray *)allCounties
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSManagedObjectResultType];
+    
+    // Sort
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"province" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    
+    NSMutableArray *counties = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    NSString *province = nil;
+    for (Customer *customer in [context executeFetchRequest:fetchRequest error:nil])
+    {
+        if (!province || ![province isEqualToString:customer.province])
+        {
+            province = customer.province;
+            [counties addObject:province];
+        }
+    }
+    
+    return counties;
+}
+
+
++ (NSArray *)searchCustomerIDsWithField:(NSString *)aField andValue:(NSString *)aValue
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ == %%@", aField], aValue];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *customers = [context executeFetchRequest:fetchRequest error:nil];
+    
+    NSMutableArray *customerIDs = [[NSMutableArray alloc] initWithCapacity:customers.count];
+    for (Customer *customer in customers)
+        [customerIDs addObject:customer.id_customer];
+    
+    return customerIDs;
+}
+
 + (NSArray *)searchCustomersWithField:(NSString *)aField andKey:(NSString *)aKey
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];

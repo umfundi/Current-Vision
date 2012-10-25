@@ -12,38 +12,24 @@
 
 @property (nonatomic, retain) NSString *brand;
 
-@property (nonatomic, assign) double jan;
-@property (nonatomic, retain) NSString *janString;
-@property (nonatomic, assign) double feb;
-@property (nonatomic, retain) NSString *febString;
-@property (nonatomic, assign) double mar;
-@property (nonatomic, retain) NSString *marString;
-@property (nonatomic, assign) double apr;
-@property (nonatomic, retain) NSString *aprString;
-@property (nonatomic, assign) double may;
-@property (nonatomic, retain) NSString *mayString;
-@property (nonatomic, assign) double jun;
-@property (nonatomic, retain) NSString *junString;
-@property (nonatomic, assign) double jul;
-@property (nonatomic, retain) NSString *julString;
-@property (nonatomic, assign) double aug;
-@property (nonatomic, retain) NSString *augString;
-@property (nonatomic, assign) double sep;
-@property (nonatomic, retain) NSString *sepString;
-@property (nonatomic, assign) double oct;
-@property (nonatomic, retain) NSString *octString;
-@property (nonatomic, assign) double nov;
-@property (nonatomic, retain) NSString *novString;
-@property (nonatomic, assign) double dec;
-@property (nonatomic, retain) NSString *decString;
-@property (nonatomic, retain) NSString *growthString;
+@property (nonatomic, assign) double month;
+@property (nonatomic, retain) NSString *monthString;
+@property (nonatomic, assign) double ytd;
+@property (nonatomic, retain) NSString *ytdString;
+@property (nonatomic, assign) double mat;
+@property (nonatomic, retain) NSString *matString;
+@property (nonatomic, assign) double monthprv;
+@property (nonatomic, retain) NSString *monthprvString;
+@property (nonatomic, assign) double ytdprv;
+@property (nonatomic, retain) NSString *ytdprvString;
+@property (nonatomic, assign) double matprv;
+@property (nonatomic, retain) NSString *matprvString;
 
-+ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)customer;
-+ (NSArray *)YTDReportsFrom:(NSArray *)monthReports;
+@property (nonatomic, retain) NSString *monthpro;
+@property (nonatomic, retain) NSString *ytdpro;
+@property (nonatomic, retain) NSString *matpro;
 
-- (void)addSalesTrend:(NSDictionary *)trend;
+- (void)addSalesReport:(NSDictionary *)report;
 - (void)finishAdd;
-
-//- (SalesTrendAggrPerBrand *)convertToYTDAggr;
 
 @end

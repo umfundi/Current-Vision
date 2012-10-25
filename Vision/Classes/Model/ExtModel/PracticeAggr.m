@@ -16,7 +16,7 @@
 @synthesize monthString, ytdString, matString;
 @synthesize aggrPerBrands;
 
-+ (PracticeAggr *)AggrFrom:(NSString *)Practice
++ (PracticeAggr *)AggrFrom:(NSString *)practiceCode
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
@@ -31,35 +31,35 @@
     NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"brand" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
     
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", practice];
-//    [fetchRequest setPredicate:predicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_practice == %@", practiceCode];
+    [fetchRequest setPredicate:predicate];
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
     PracticeAggr *aggr = [[PracticeAggr alloc] init];
-//    PracticeAggrPerBrand *aggrPerBrand = [[PracticeAggrPerBrand alloc] init];
+    PracticeAggrPerBrand *aggrPerBrand = [[PracticeAggrPerBrand alloc] init];
     for (NSDictionary *report in reports)
     {
         NSString *brand = [report objectForKey:@"brand"];
         
-//        if (aggrPerBrand.brand == nil)
-//            aggrPerBrand.brand = brand;
-//        else if (![aggrPerBrand.brand isEqualToString:brand])
+        if (aggrPerBrand.brand == nil)
+            aggrPerBrand.brand = brand;
+        else if (![aggrPerBrand.brand isEqualToString:brand])
         {
-//            [aggrPerBrand finishAdd];
-//            [aggr addAggrPerBrand:aggrPerBrand];
+            [aggrPerBrand finishAdd];
+            [aggr addAggrPerBrand:aggrPerBrand];
             
-//            aggrPerBrand = [[CustomerAggrPerBrand alloc] init];
-//            aggrPerBrand.brand = brand;
+            aggrPerBrand = [[PracticeAggrPerBrand alloc] init];
+            aggrPerBrand.brand = brand;
         }
         
-//        [aggrPerBrand addSalesReport:report];
+        [aggrPerBrand addSalesReport:report];
     }
     
-//    if (aggrPerBrand.brand)
+    if (aggrPerBrand.brand)
     {
-//        [aggrPerBrand finishAdd];
-//        [aggr.aggrPerBrands addObject:aggrPerBrand];
+        [aggrPerBrand finishAdd];
+        [aggr.aggrPerBrands addObject:aggrPerBrand];
     }
     
     [aggr finishAdd];

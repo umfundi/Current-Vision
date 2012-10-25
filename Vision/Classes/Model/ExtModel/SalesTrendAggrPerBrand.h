@@ -37,12 +37,14 @@
 @property (nonatomic, retain) NSString *decString;
 @property (nonatomic, retain) NSString *growthString;
 
-+ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)customer;
-+ (NSArray *)YTDReportsFrom:(NSArray *)monthReports;
++ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD;
++ (NSArray *)SalesTrendsGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD;
 
-- (void)addSalesTrend:(NSDictionary *)trend;
++ (NSArray *)yearReportsFrom:(NSArray *)monthReports;
+
+- (void)addSalesTrend:(NSDictionary *)trend YDTorMAT:(BOOL)isYTD;
 - (void)finishAdd;
 
-- (SalesTrendAggrPerBrand *)convertToYTDAggr;
+- (SalesTrendAggrPerBrand *)convertToYearAggr;
 
 @end

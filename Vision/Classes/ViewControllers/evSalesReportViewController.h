@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
 
+#import "AllCustomersViewController.h"
+#import "AllPracticesViewController.h"
+#import "AllCountiesViewController.h"
+#import "AllKeyAccountManagersViewController.h"
+#import "AllGroupsViewController.h"
+#import "AllCountriesViewController.h"
+
+@class User;
 @class Practice;
 @class SalesTrendsReportDataSource;
 
-@interface evSalesReportViewController : UIViewController <SGridDelegate>
+@interface evSalesReportViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate>
 {
     IBOutlet UILabel *lblPracticeName;
     IBOutlet UILabel *lblAddress1;
@@ -24,14 +32,30 @@
     ShinobiGrid *monthReportGrid;
     SalesTrendsReportDataSource *monthReportDataSource;
 
-    ShinobiGrid *YTDReportGrid;
-    SalesTrendsReportDataSource *YTDReportDataSource;
+    ShinobiGrid *yearReportGrid;
+    SalesTrendsReportDataSource *yearReportDataSource;
     
-    ShinobiGrid *MATReportGrid;
-    SalesTrendsReportDataSource *MATReportDataSource;
+    UIPopoverController *searchPopoverController;
     
+    NSInteger currentFilter;
+    BOOL isYTD;
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;
+@property (nonatomic, retain) User *selectedUser;
+@property (nonatomic, retain) Customer *selectedCustomer;
+@property (nonatomic, retain) NSString *selectedFilterVal;
+
+- (IBAction)customerClicked:(id)sender;
+- (IBAction)practiceClicked:(id)sender;
+- (IBAction)countyClicked:(id)sender;
+- (IBAction)keyAccountManagerClicked:(id)sender;
+- (IBAction)groupClicked:(id)sender;
+- (IBAction)countryClicked:(id)sender;
+
+- (IBAction)ytdClicked:(id)sender;
+- (IBAction)matClicked:(id)sender;
+
+- (void)displayGrids;
 
 @end

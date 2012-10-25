@@ -7,13 +7,11 @@
 
 #import "CustomerAggr.h"
 #import "User.h"
-#import "CustomerAggrPerBrand.h"
 
 @implementation CustomerAggr
 
 @synthesize month, ytd, mat;
 @synthesize monthString, ytdString, matString;
-@synthesize aggrPerBrands;
 
 + (CustomerAggr *)AggrFrom:(NSString *)customer
 {
@@ -26,57 +24,22 @@
     
     [fetchRequest setResultType:NSDictionaryResultType];
     
-    // Sort
-    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"brand" ascending:YES];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", customer];
     [fetchRequest setPredicate:predicate];
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
     CustomerAggr *aggr = [[CustomerAggr alloc] init];
-    CustomerAggrPerBrand *aggrPerBrand = [[CustomerAggrPerBrand alloc] init];
     for (NSDictionary *report in reports)
     {
-        NSString *brand = [report objectForKey:@"brand"];
-        
-        if (aggrPerBrand.brand == nil)
-            aggrPerBrand.brand = brand;
-        else if (![aggrPerBrand.brand isEqualToString:brand])
-        {
-            [aggrPerBrand finishAdd];
-            [aggr addAggrPerBrand:aggrPerBrand];
-            
-            aggrPerBrand = [[CustomerAggrPerBrand alloc] init];
-            aggrPerBrand.brand = brand;
-        }
-        
-        [aggrPerBrand addSalesReport:report];
-    }
-    
-    if (aggrPerBrand.brand)
-    {
-        [aggrPerBrand finishAdd];
-        [aggr.aggrPerBrands addObject:aggrPerBrand];
+        aggr.month += [[report objectForKey:@"m0val"] doubleValue];
+        aggr.ytd += [[report objectForKey:@"ytdvalcur"] doubleValue];
+        aggr.mat += [[report objectForKey:@"matvalcur"] doubleValue];
     }
     
     [aggr finishAdd];
     
     return aggr;
-}
-
-
-- (void)addAggrPerBrand:(CustomerAggrPerBrand *)aggrPerBrand
-{
-    month += aggrPerBrand.month;
-    ytd += aggrPerBrand.ytd;
-    mat += aggrPerBrand.mat;
-    
-    if (!aggrPerBrands)
-        aggrPerBrands = [[NSMutableArray alloc] initWithCapacity:0];
-    
-    [aggrPerBrands addObject:aggrPerBrand];
 }
 
 - (void)finishAdd

@@ -8,6 +8,7 @@
 
 #import "evProductSalesViewController.h"
 
+#import "User.h"
 #import "Customer.h"
 #import "Practice.h"
 #import "umfundiAppDelegate.h"
@@ -91,7 +92,7 @@
 	// Do any additional setup after loading the view.
     
     umfundiAppDelegate *appDelegate = (umfundiAppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.selectedPractice = appDelegate.frontViewController.currentCustomer.practice;
+    self.selectedPractice = appDelegate.frontViewController.currentPractice;
     
     lblPracticeName.text = selectedPractice.practiceName;
     lblPracticeCode.text = selectedPractice.practiceCode;
@@ -99,11 +100,11 @@
     lblAddress2.text = selectedPractice.province;
     lblAddress3.text = selectedPractice.country;
     lblPostcode.text = selectedPractice.postcode;
-    lblIDUser.text = appDelegate.frontViewController.currentCustomer.id_user;
+    lblIDUser.text = [User loginUser].login;
     
     productSalesDataSource = [[ProductSalesDataSource alloc] init];
     
-    productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:appDelegate.frontViewController.currentCustomer.id_customer];
+    productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:appDelegate.frontViewController.currentPractice.practiceCode];
     
     
     NSNumberFormatter *nf = [NSNumberFormatter new];

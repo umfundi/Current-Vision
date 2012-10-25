@@ -11,7 +11,7 @@
 
 @interface SalesTrendsReportDataSource : NSObject <SGridDataSource>
 
-@property (nonatomic, assign) BOOL isMonthReport;
+@property (nonatomic, strong) NSString *figureTitle;
 @property (nonatomic, strong) NSArray *reportArray;
 
 @end

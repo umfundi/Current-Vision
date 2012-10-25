@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		373D56851630A6AA00337947 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D56841630A6AA00337947 /* ShinobiGrids.framework */; };
 		376ED1511635AFD500066502 /* PracticeAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = 376ED1501635AFD400066502 /* PracticeAggr.m */; };
-		376ED1551635B1CF00066502 /* PracticeAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 376ED1541635B1CF00066502 /* PracticeAggrPerBrand.m */; };
 		3779C8C016346562002A2037 /* PracticeSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8BE16346562002A2037 /* PracticeSearchResultViewController.m */; };
 		3779C8C6163469BB002A2037 /* CustomerSearchResultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8C3163469BB002A2037 /* CustomerSearchResultDataSource.m */; };
 		3779C8C7163469BB002A2037 /* PracticeSearchResultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8C5163469BB002A2037 /* PracticeSearchResultDataSource.m */; };
@@ -40,13 +39,40 @@
 		AD2B60B01629C83000AD00FF /* ClientSalesAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2B60AF1629C82F00AD00FF /* ClientSalesAggr.m */; };
 		AD2CB9B11627F17D0068ECCE /* SALES_REPORT_CustomerSalesTrends.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2CB9B01627F17C0068ECCE /* SALES_REPORT_CustomerSalesTrends.m */; };
 		AD2CB9B41627FDE70068ECCE /* SALES_REPORT_Customer_OrderBy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2CB9B31627FDE60068ECCE /* SALES_REPORT_Customer_OrderBy.m */; };
+		AD310005163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.m in Sources */ = {isa = PBXBuildFile; fileRef = AD310004163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.m */; };
+		AD3100091636299A005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3100081636299A005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.m */; };
+		AD31000C16362B13005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31000B16362B13005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.m */; };
+		AD31000F16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31000E16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.m */; };
+		AD31001616363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31001516363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.m */; };
+		AD31001916363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31001816363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.m */; };
+		AD31001C163636ED005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31001B163636ED005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.m */; };
+		AD31001F163638A4005B48E5 /* SALES_REPORT_CustomerDistribution_detail.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31001E163638A4005B48E5 /* SALES_REPORT_CustomerDistribution_detail.m */; };
+		AD31002216363964005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002116363963005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.m */; };
+		AD310025163639BB005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD310024163639BA005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.m */; };
+		AD31002816363BCE005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002716363BCD005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.m */; };
+		AD31002B16363C3A005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002A16363C39005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m */; };
+		AD31002E16363D02005B48E5 /* SALES_REPORT_Dashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002D16363D01005B48E5 /* SALES_REPORT_Dashboard.m */; };
+		AD31003116363ECF005B48E5 /* SALES_REPORT_Dashboard_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31003016363ECD005B48E5 /* SALES_REPORT_Dashboard_Qty.m */; };
 		AD3773D71628680300760031 /* SalesTrendsReportDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3773D61628680200760031 /* SalesTrendsReportDataSource.m */; };
 		AD3773DB16287A3B00760031 /* ProductSalesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3773DA16287A3B00760031 /* ProductSalesDataSource.m */; };
 		AD38F67316290D6400E4ACC1 /* CustomerAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38F67216290D6400E4ACC1 /* CustomerAggr.m */; };
-		AD38F676162910CC00E4ACC1 /* CustomerAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38F675162910CC00E4ACC1 /* CustomerAggrPerBrand.m */; };
 		AD38F679162922CD00E4ACC1 /* SalesTrendAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38F678162922CD00E4ACC1 /* SalesTrendAggrPerBrand.m */; };
 		AD38F67C162933D300E4ACC1 /* ProductSalesAggrPerYear.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38F67B162933D300E4ACC1 /* ProductSalesAggrPerYear.m */; };
 		AD38F67F162935C900E4ACC1 /* ProductSalesAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38F67E162935C900E4ACC1 /* ProductSalesAggrPerBrand.m */; };
+		AD5E41421638D6360046F9C9 /* AllCustomersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41411638D6360046F9C9 /* AllCustomersDataSource.m */; };
+		AD5E41461638D6430046F9C9 /* AllPracticesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41451638D6430046F9C9 /* AllPracticesDataSource.m */; };
+		AD5E41491638D65F0046F9C9 /* AllCountriesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41481638D65F0046F9C9 /* AllCountriesDataSource.m */; };
+		AD5E414C1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E414B1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.m */; };
+		AD5E414F1638D70C0046F9C9 /* AllGroupsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E414E1638D70C0046F9C9 /* AllGroupsDataSource.m */; };
+		AD5E41521638D7220046F9C9 /* AllCountiesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41511638D7220046F9C9 /* AllCountiesDataSource.m */; };
+		AD5E41561638E5720046F9C9 /* AllCustomersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41551638E5720046F9C9 /* AllCustomersViewController.m */; };
+		AD5E41591638E57F0046F9C9 /* AllPracticesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41581638E57F0046F9C9 /* AllPracticesViewController.m */; };
+		AD5E415C1638E5980046F9C9 /* AllCountiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E415B1638E5980046F9C9 /* AllCountiesViewController.m */; };
+		AD5E415F1638E5A70046F9C9 /* AllKeyAccountManagersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E415E1638E5A70046F9C9 /* AllKeyAccountManagersViewController.m */; };
+		AD5E41621638E5CD0046F9C9 /* AllGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41611638E5CD0046F9C9 /* AllGroupsViewController.m */; };
+		AD5E41651638E5D80046F9C9 /* AllCountriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E41641638E5D80046F9C9 /* AllCountriesViewController.m */; };
+		AD6602DD16378399006D7102 /* PracticeAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6602DC16378399006D7102 /* PracticeAggrPerBrand.m */; };
+		AD6602DE16378954006D7102 /* PracticeAggrPerBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6602DC16378399006D7102 /* PracticeAggrPerBrand.m */; };
 		AD6C98BB161EBD6C001FD2E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6C98BA161EBD6C001FD2E2 /* SystemConfiguration.framework */; };
 		AD6C98BE161EBDAB001FD2E2 /* usersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD6C98BC161EBDAB001FD2E2 /* usersModel.xcdatamodeld */; };
 		AD7AFAB8162ADA390092A690 /* CustomerSalesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFAB7162ADA390092A690 /* CustomerSalesDataSource.m */; };
@@ -121,8 +147,6 @@
 		373D56841630A6AA00337947 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = "../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial/ShinobiGrids.framework"; sourceTree = "<group>"; };
 		376ED14F1635AFD400066502 /* PracticeAggr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggr.h; sourceTree = "<group>"; };
 		376ED1501635AFD400066502 /* PracticeAggr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggr.m; sourceTree = "<group>"; };
-		376ED1531635B1CE00066502 /* PracticeAggrPerBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggrPerBrand.h; sourceTree = "<group>"; };
-		376ED1541635B1CF00066502 /* PracticeAggrPerBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggrPerBrand.m; sourceTree = "<group>"; };
 		3779C8BD16346562002A2037 /* PracticeSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeSearchResultViewController.h; sourceTree = "<group>"; };
 		3779C8BE16346562002A2037 /* PracticeSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeSearchResultViewController.m; sourceTree = "<group>"; };
 		3779C8C3163469BB002A2037 /* CustomerSearchResultDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerSearchResultDataSource.m; sourceTree = "<group>"; };
@@ -172,20 +196,72 @@
 		AD2CB9B01627F17C0068ECCE /* SALES_REPORT_CustomerSalesTrends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_CustomerSalesTrends.m; sourceTree = "<group>"; };
 		AD2CB9B21627FDE60068ECCE /* SALES_REPORT_Customer_OrderBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_Customer_OrderBy.h; sourceTree = "<group>"; };
 		AD2CB9B31627FDE60068ECCE /* SALES_REPORT_Customer_OrderBy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_Customer_OrderBy.m; sourceTree = "<group>"; };
+		AD310003163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_by_Products_MAT.h; sourceTree = "<group>"; };
+		AD310004163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_by_Products_MAT.m; sourceTree = "<group>"; };
+		AD31000716362999005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_by_Products_MAT_FOC.h; sourceTree = "<group>"; };
+		AD3100081636299A005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_by_Products_MAT_FOC.m; sourceTree = "<group>"; };
+		AD31000A16362B12005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_by_Products_MAT_Qty.h; sourceTree = "<group>"; };
+		AD31000B16362B13005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_by_Products_MAT_Qty.m; sourceTree = "<group>"; };
+		AD31000D16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_by_Products_YTD.h; sourceTree = "<group>"; };
+		AD31000E16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_by_Products_YTD.m; sourceTree = "<group>"; };
+		AD31001416363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_by_Products_YTD_FOC.h; sourceTree = "<group>"; };
+		AD31001516363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_by_Products_YTD_FOC.m; sourceTree = "<group>"; };
+		AD31001716363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_by_Products_YTD_Qty.h; sourceTree = "<group>"; };
+		AD31001816363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_by_Products_YTD_Qty.m; sourceTree = "<group>"; };
+		AD31001A163636EC005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_Customer_OrderBy_Qty.h; sourceTree = "<group>"; };
+		AD31001B163636ED005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_Customer_OrderBy_Qty.m; sourceTree = "<group>"; };
+		AD31001D163638A3005B48E5 /* SALES_REPORT_CustomerDistribution_detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_CustomerDistribution_detail.h; sourceTree = "<group>"; };
+		AD31001E163638A4005B48E5 /* SALES_REPORT_CustomerDistribution_detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_CustomerDistribution_detail.m; sourceTree = "<group>"; };
+		AD31002016363963005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_CustomerDistribution_detail_LY.h; sourceTree = "<group>"; };
+		AD31002116363963005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_CustomerDistribution_detail_LY.m; sourceTree = "<group>"; };
+		AD310023163639BA005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_CustomerDistribution_detail_Qty.h; sourceTree = "<group>"; };
+		AD310024163639BA005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_CustomerDistribution_detail_Qty.m; sourceTree = "<group>"; };
+		AD31002616363BCC005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_CustomerDistribution_detail_YTD.h; sourceTree = "<group>"; };
+		AD31002716363BCD005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_CustomerDistribution_detail_YTD.m; sourceTree = "<group>"; };
+		AD31002916363C38005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_CustomerSalesTrends_Qty.h; sourceTree = "<group>"; };
+		AD31002A16363C39005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_CustomerSalesTrends_Qty.m; sourceTree = "<group>"; };
+		AD31002C16363D00005B48E5 /* SALES_REPORT_Dashboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_Dashboard.h; sourceTree = "<group>"; };
+		AD31002D16363D01005B48E5 /* SALES_REPORT_Dashboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_Dashboard.m; sourceTree = "<group>"; };
+		AD31002F16363ECC005B48E5 /* SALES_REPORT_Dashboard_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_Dashboard_Qty.h; sourceTree = "<group>"; };
+		AD31003016363ECD005B48E5 /* SALES_REPORT_Dashboard_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_Dashboard_Qty.m; sourceTree = "<group>"; };
 		AD3773D51628680200760031 /* SalesTrendsReportDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTrendsReportDataSource.h; sourceTree = "<group>"; };
 		AD3773D61628680200760031 /* SalesTrendsReportDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTrendsReportDataSource.m; sourceTree = "<group>"; };
 		AD3773D916287A3B00760031 /* ProductSalesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSalesDataSource.h; sourceTree = "<group>"; };
 		AD3773DA16287A3B00760031 /* ProductSalesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSalesDataSource.m; sourceTree = "<group>"; };
 		AD38F67116290D6400E4ACC1 /* CustomerAggr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerAggr.h; sourceTree = "<group>"; };
 		AD38F67216290D6400E4ACC1 /* CustomerAggr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerAggr.m; sourceTree = "<group>"; };
-		AD38F674162910CC00E4ACC1 /* CustomerAggrPerBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerAggrPerBrand.h; sourceTree = "<group>"; };
-		AD38F675162910CC00E4ACC1 /* CustomerAggrPerBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerAggrPerBrand.m; sourceTree = "<group>"; };
 		AD38F677162922CD00E4ACC1 /* SalesTrendAggrPerBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTrendAggrPerBrand.h; sourceTree = "<group>"; };
 		AD38F678162922CD00E4ACC1 /* SalesTrendAggrPerBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTrendAggrPerBrand.m; sourceTree = "<group>"; };
 		AD38F67A162933D300E4ACC1 /* ProductSalesAggrPerYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSalesAggrPerYear.h; sourceTree = "<group>"; };
 		AD38F67B162933D300E4ACC1 /* ProductSalesAggrPerYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSalesAggrPerYear.m; sourceTree = "<group>"; };
 		AD38F67D162935C800E4ACC1 /* ProductSalesAggrPerBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSalesAggrPerBrand.h; sourceTree = "<group>"; };
 		AD38F67E162935C900E4ACC1 /* ProductSalesAggrPerBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSalesAggrPerBrand.m; sourceTree = "<group>"; };
+		AD5E41401638D6360046F9C9 /* AllCustomersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCustomersDataSource.h; sourceTree = "<group>"; };
+		AD5E41411638D6360046F9C9 /* AllCustomersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCustomersDataSource.m; sourceTree = "<group>"; };
+		AD5E41441638D6420046F9C9 /* AllPracticesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllPracticesDataSource.h; sourceTree = "<group>"; };
+		AD5E41451638D6430046F9C9 /* AllPracticesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllPracticesDataSource.m; sourceTree = "<group>"; };
+		AD5E41471638D65F0046F9C9 /* AllCountriesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCountriesDataSource.h; sourceTree = "<group>"; };
+		AD5E41481638D65F0046F9C9 /* AllCountriesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCountriesDataSource.m; sourceTree = "<group>"; };
+		AD5E414A1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllKeyAccountManagersDataSource.h; sourceTree = "<group>"; };
+		AD5E414B1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllKeyAccountManagersDataSource.m; sourceTree = "<group>"; };
+		AD5E414D1638D70C0046F9C9 /* AllGroupsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllGroupsDataSource.h; sourceTree = "<group>"; };
+		AD5E414E1638D70C0046F9C9 /* AllGroupsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllGroupsDataSource.m; sourceTree = "<group>"; };
+		AD5E41501638D7220046F9C9 /* AllCountiesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCountiesDataSource.h; sourceTree = "<group>"; };
+		AD5E41511638D7220046F9C9 /* AllCountiesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCountiesDataSource.m; sourceTree = "<group>"; };
+		AD5E41541638E5720046F9C9 /* AllCustomersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCustomersViewController.h; sourceTree = "<group>"; };
+		AD5E41551638E5720046F9C9 /* AllCustomersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCustomersViewController.m; sourceTree = "<group>"; };
+		AD5E41571638E57F0046F9C9 /* AllPracticesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllPracticesViewController.h; sourceTree = "<group>"; };
+		AD5E41581638E57F0046F9C9 /* AllPracticesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllPracticesViewController.m; sourceTree = "<group>"; };
+		AD5E415A1638E5980046F9C9 /* AllCountiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCountiesViewController.h; sourceTree = "<group>"; };
+		AD5E415B1638E5980046F9C9 /* AllCountiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCountiesViewController.m; sourceTree = "<group>"; };
+		AD5E415D1638E5A70046F9C9 /* AllKeyAccountManagersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllKeyAccountManagersViewController.h; sourceTree = "<group>"; };
+		AD5E415E1638E5A70046F9C9 /* AllKeyAccountManagersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllKeyAccountManagersViewController.m; sourceTree = "<group>"; };
+		AD5E41601638E5CC0046F9C9 /* AllGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllGroupsViewController.h; sourceTree = "<group>"; };
+		AD5E41611638E5CD0046F9C9 /* AllGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllGroupsViewController.m; sourceTree = "<group>"; };
+		AD5E41631638E5D80046F9C9 /* AllCountriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCountriesViewController.h; sourceTree = "<group>"; };
+		AD5E41641638E5D80046F9C9 /* AllCountriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCountriesViewController.m; sourceTree = "<group>"; };
+		AD6602DB16378398006D7102 /* PracticeAggrPerBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggrPerBrand.h; sourceTree = "<group>"; };
+		AD6602DC16378399006D7102 /* PracticeAggrPerBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggrPerBrand.m; sourceTree = "<group>"; };
 		AD6C98B8161EBD61001FD2E2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AD6C98BA161EBD6C001FD2E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD6C98BD161EBDAB001FD2E2 /* usersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = usersModel.xcdatamodel; sourceTree = "<group>"; };
@@ -409,6 +485,18 @@
 				AD7AFACF162AF2AE0092A690 /* BrandListDataSource.m */,
 				AD7AFAD1162AF2BD0092A690 /* ProductListDataSource.h */,
 				AD7AFAD2162AF2BE0092A690 /* ProductListDataSource.m */,
+				AD5E41401638D6360046F9C9 /* AllCustomersDataSource.h */,
+				AD5E41411638D6360046F9C9 /* AllCustomersDataSource.m */,
+				AD5E41441638D6420046F9C9 /* AllPracticesDataSource.h */,
+				AD5E41451638D6430046F9C9 /* AllPracticesDataSource.m */,
+				AD5E41471638D65F0046F9C9 /* AllCountriesDataSource.h */,
+				AD5E41481638D65F0046F9C9 /* AllCountriesDataSource.m */,
+				AD5E414A1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.h */,
+				AD5E414B1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.m */,
+				AD5E414D1638D70C0046F9C9 /* AllGroupsDataSource.h */,
+				AD5E414E1638D70C0046F9C9 /* AllGroupsDataSource.m */,
+				AD5E41501638D7220046F9C9 /* AllCountiesDataSource.h */,
+				AD5E41511638D7220046F9C9 /* AllCountiesDataSource.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -418,8 +506,6 @@
 			children = (
 				AD38F67116290D6400E4ACC1 /* CustomerAggr.h */,
 				AD38F67216290D6400E4ACC1 /* CustomerAggr.m */,
-				AD38F674162910CC00E4ACC1 /* CustomerAggrPerBrand.h */,
-				AD38F675162910CC00E4ACC1 /* CustomerAggrPerBrand.m */,
 				AD38F677162922CD00E4ACC1 /* SalesTrendAggrPerBrand.h */,
 				AD38F678162922CD00E4ACC1 /* SalesTrendAggrPerBrand.m */,
 				AD38F67D162935C800E4ACC1 /* ProductSalesAggrPerBrand.h */,
@@ -444,10 +530,29 @@
 				AD7AFAC7162AE84C0092A690 /* SitesDistributionAggrItem.m */,
 				376ED14F1635AFD400066502 /* PracticeAggr.h */,
 				376ED1501635AFD400066502 /* PracticeAggr.m */,
-				376ED1531635B1CE00066502 /* PracticeAggrPerBrand.h */,
-				376ED1541635B1CF00066502 /* PracticeAggrPerBrand.m */,
+				AD6602DB16378398006D7102 /* PracticeAggrPerBrand.h */,
+				AD6602DC16378399006D7102 /* PracticeAggrPerBrand.m */,
 			);
 			path = ExtModel;
+			sourceTree = "<group>";
+		};
+		AD5E41531638E5150046F9C9 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				AD5E41541638E5720046F9C9 /* AllCustomersViewController.h */,
+				AD5E41551638E5720046F9C9 /* AllCustomersViewController.m */,
+				AD5E41571638E57F0046F9C9 /* AllPracticesViewController.h */,
+				AD5E41581638E57F0046F9C9 /* AllPracticesViewController.m */,
+				AD5E415A1638E5980046F9C9 /* AllCountiesViewController.h */,
+				AD5E415B1638E5980046F9C9 /* AllCountiesViewController.m */,
+				AD5E415D1638E5A70046F9C9 /* AllKeyAccountManagersViewController.h */,
+				AD5E415E1638E5A70046F9C9 /* AllKeyAccountManagersViewController.m */,
+				AD5E41601638E5CC0046F9C9 /* AllGroupsViewController.h */,
+				AD5E41611638E5CD0046F9C9 /* AllGroupsViewController.m */,
+				AD5E41631638E5D80046F9C9 /* AllCountriesViewController.h */,
+				AD5E41641638E5D80046F9C9 /* AllCountriesViewController.m */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		ADCCDFB316245B6E009E0BCE /* Classes */ = {
@@ -488,10 +593,38 @@
 				ADCCDFC116245B6E009E0BCE /* Product.m */,
 				ADCCDFC216245B6E009E0BCE /* User.h */,
 				ADCCDFC316245B6E009E0BCE /* User.m */,
-				AD2CB9AF1627F17C0068ECCE /* SALES_REPORT_CustomerSalesTrends.h */,
-				AD2CB9B01627F17C0068ECCE /* SALES_REPORT_CustomerSalesTrends.m */,
+				AD310003163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.h */,
+				AD310004163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.m */,
+				AD31000716362999005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.h */,
+				AD3100081636299A005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.m */,
+				AD31000A16362B12005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.h */,
+				AD31000B16362B13005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.m */,
+				AD31000D16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.h */,
+				AD31000E16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.m */,
+				AD31001416363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.h */,
+				AD31001516363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.m */,
+				AD31001716363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.h */,
+				AD31001816363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.m */,
 				AD2CB9B21627FDE60068ECCE /* SALES_REPORT_Customer_OrderBy.h */,
 				AD2CB9B31627FDE60068ECCE /* SALES_REPORT_Customer_OrderBy.m */,
+				AD31001A163636EC005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.h */,
+				AD31001B163636ED005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.m */,
+				AD31001D163638A3005B48E5 /* SALES_REPORT_CustomerDistribution_detail.h */,
+				AD31001E163638A4005B48E5 /* SALES_REPORT_CustomerDistribution_detail.m */,
+				AD31002016363963005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.h */,
+				AD31002116363963005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.m */,
+				AD310023163639BA005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.h */,
+				AD310024163639BA005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.m */,
+				AD31002616363BCC005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.h */,
+				AD31002716363BCD005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.m */,
+				AD2CB9AF1627F17C0068ECCE /* SALES_REPORT_CustomerSalesTrends.h */,
+				AD2CB9B01627F17C0068ECCE /* SALES_REPORT_CustomerSalesTrends.m */,
+				AD31002916363C38005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.h */,
+				AD31002A16363C39005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m */,
+				AD31002C16363D00005B48E5 /* SALES_REPORT_Dashboard.h */,
+				AD31002D16363D01005B48E5 /* SALES_REPORT_Dashboard.m */,
+				AD31002F16363ECC005B48E5 /* SALES_REPORT_Dashboard_Qty.h */,
+				AD31003016363ECD005B48E5 /* SALES_REPORT_Dashboard_Qty.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +632,7 @@
 		ADCCDFC416245B6E009E0BCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AD5E41531638E5150046F9C9 /* Filter */,
 				ADCCDFC516245B6E009E0BCE /* evClientSalesViewController.h */,
 				ADCCDFC616245B6E009E0BCE /* evClientSalesViewController.m */,
 				ADCCDFC716245B6E009E0BCE /* evCustomerSalesViewController.h */,
@@ -747,7 +881,6 @@
 				AD3773D71628680300760031 /* SalesTrendsReportDataSource.m in Sources */,
 				AD3773DB16287A3B00760031 /* ProductSalesDataSource.m in Sources */,
 				AD38F67316290D6400E4ACC1 /* CustomerAggr.m in Sources */,
-				AD38F676162910CC00E4ACC1 /* CustomerAggrPerBrand.m in Sources */,
 				AD38F679162922CD00E4ACC1 /* SalesTrendAggrPerBrand.m in Sources */,
 				AD38F67C162933D300E4ACC1 /* ProductSalesAggrPerYear.m in Sources */,
 				AD38F67F162935C900E4ACC1 /* ProductSalesAggrPerBrand.m in Sources */,
@@ -769,7 +902,33 @@
 				3779C8C6163469BB002A2037 /* CustomerSearchResultDataSource.m in Sources */,
 				3779C8C7163469BB002A2037 /* PracticeSearchResultDataSource.m in Sources */,
 				376ED1511635AFD500066502 /* PracticeAggr.m in Sources */,
-				376ED1551635B1CF00066502 /* PracticeAggrPerBrand.m in Sources */,
+				AD6602DE16378954006D7102 /* PracticeAggrPerBrand.m in Sources */,
+				AD310005163627B8005B48E5 /* SALES_REPORT_by_Products_MAT.m in Sources */,
+				AD3100091636299A005B48E5 /* SALES_REPORT_by_Products_MAT_FOC.m in Sources */,
+				AD31000C16362B13005B48E5 /* SALES_REPORT_by_Products_MAT_Qty.m in Sources */,
+				AD31000F16362BA6005B48E5 /* SALES_REPORT_by_Products_YTD.m in Sources */,
+				AD31001616363220005B48E5 /* SALES_REPORT_by_Products_YTD_FOC.m in Sources */,
+				AD31001916363360005B48E5 /* SALES_REPORT_by_Products_YTD_Qty.m in Sources */,
+				AD31001C163636ED005B48E5 /* SALES_REPORT_Customer_OrderBy_Qty.m in Sources */,
+				AD31001F163638A4005B48E5 /* SALES_REPORT_CustomerDistribution_detail.m in Sources */,
+				AD31002216363964005B48E5 /* SALES_REPORT_CustomerDistribution_detail_LY.m in Sources */,
+				AD310025163639BB005B48E5 /* SALES_REPORT_CustomerDistribution_detail_Qty.m in Sources */,
+				AD31002816363BCE005B48E5 /* SALES_REPORT_CustomerDistribution_detail_YTD.m in Sources */,
+				AD31002B16363C3A005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m in Sources */,
+				AD31002E16363D02005B48E5 /* SALES_REPORT_Dashboard.m in Sources */,
+				AD31003116363ECF005B48E5 /* SALES_REPORT_Dashboard_Qty.m in Sources */,
+				AD5E41421638D6360046F9C9 /* AllCustomersDataSource.m in Sources */,
+				AD5E41461638D6430046F9C9 /* AllPracticesDataSource.m in Sources */,
+				AD5E41491638D65F0046F9C9 /* AllCountriesDataSource.m in Sources */,
+				AD5E414C1638D6FD0046F9C9 /* AllKeyAccountManagersDataSource.m in Sources */,
+				AD5E414F1638D70C0046F9C9 /* AllGroupsDataSource.m in Sources */,
+				AD5E41521638D7220046F9C9 /* AllCountiesDataSource.m in Sources */,
+				AD5E41561638E5720046F9C9 /* AllCustomersViewController.m in Sources */,
+				AD5E41591638E57F0046F9C9 /* AllPracticesViewController.m in Sources */,
+				AD5E415C1638E5980046F9C9 /* AllCountiesViewController.m in Sources */,
+				AD5E415F1638E5A70046F9C9 /* AllKeyAccountManagersViewController.m in Sources */,
+				AD5E41621638E5CD0046F9C9 /* AllGroupsViewController.m in Sources */,
+				AD5E41651638E5D80046F9C9 /* AllCountriesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D7230115F3ABD4006DF8F6 /* VisionTests.m in Sources */,
+				AD6602DD16378399006D7102 /* PracticeAggrPerBrand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

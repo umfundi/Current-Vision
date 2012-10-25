@@ -64,7 +64,7 @@
     SalesDataSource *salesDataSource;
 }
 
-@property (strong, nonatomic) Customer *currentCustomer;
+//@property (strong, nonatomic) Customer *currentCustomer;
 @property (strong, nonatomic) Practice *currentPractice;
 
 - (IBAction)searchClicked:(id)sender;
@@ -73,7 +73,7 @@
 - (IBAction)setSales:(id)sender;
 - (IBAction)SyncData:(id)sender;
 
-- (void)displayCustomer;
+//- (void)displayCustomer;
 - (void)displayPractice;
 
 - (void)applyTheme:(BOOL)redTheme;

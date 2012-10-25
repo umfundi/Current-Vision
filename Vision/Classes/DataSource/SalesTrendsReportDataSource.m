@@ -11,7 +11,7 @@
 
 @implementation SalesTrendsReportDataSource
 
-@synthesize isMonthReport;
+@synthesize figureTitle;
 @synthesize reportArray;
 
 #pragma mark -
@@ -38,7 +38,7 @@
         switch (gridCoord.column)
             {
             case 0:
-                cellText = NSLocalizedString(isMonthReport ? @"Month. Figures" : @"YTD Figures", @"");
+                cellText = figureTitle;
                 break;
             case 1:
                 cellText = NSLocalizedString(@"Jan", @"");

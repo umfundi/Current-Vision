@@ -32,6 +32,7 @@
 + (NSManagedObjectModel *)managedObjectModelForUsers;
 + (NSPersistentStoreCoordinator *)persistentStoreCoordinatorForUsers;
 
++ (NSArray *)allUsers;
 + (User *)checkCredentialsWithUser:(NSString *)aUser andPassword:(NSString *)aPassword;
 
 #pragma mark for a specified User

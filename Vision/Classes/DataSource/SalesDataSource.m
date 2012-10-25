@@ -7,7 +7,7 @@
 
 #import "SalesDataSource.h"
 
-#import "CustomerAggrPerBrand.h"
+#import "PracticeAggrPerBrand.h"
 
 @implementation SalesDataSource
 
@@ -69,7 +69,7 @@
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
         
-        CustomerAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:gridCoord.section - 1];
+        PracticeAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:gridCoord.section - 1];
         
         NSString *cellText;
         switch (gridCoord.column)
@@ -172,7 +172,7 @@
             return @"Sales";
         default:
         {
-            CustomerAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:section - 1];
+            PracticeAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:section - 1];
             return aggrPerBrand.brand;
         }
     }

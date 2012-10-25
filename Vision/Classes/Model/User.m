@@ -128,6 +128,18 @@ User *gLoggedinUser;
 }
 
 
++ (NSArray *)allUsers
+{
+    NSManagedObjectContext *context = [self managedObjectContextForUsers];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    return [context executeFetchRequest:fetchRequest error:nil];
+}
+
 + (User *)checkCredentialsWithUser:(NSString *)aUser andPassword:(NSString *)aPassword
 {
     NSManagedObjectContext *context = [self managedObjectContextForUsers];
