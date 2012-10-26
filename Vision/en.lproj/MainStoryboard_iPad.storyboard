@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="w7w-kx-m0U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="w7w-kx-m0U">
     <dependencies>
         <deployment version="1296" defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -4139,6 +4139,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="countryClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="bTZ-Hs-u5Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="524" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t3F-0d-TGg">
                                 <rect key="frame" x="362" y="170" width="103" height="44"/>
@@ -4151,6 +4154,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="groupClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="ejd-Zo-Jgr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="525" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QDV-dn-ioD">
                                 <rect key="frame" x="244" y="170" width="103" height="44"/>
@@ -4163,6 +4169,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="keyAccountManagerClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="4Nz-3n-Fh3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="526" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9gU-Mu-Rgj">
                                 <rect key="frame" x="128" y="170" width="103" height="44"/>
@@ -4175,6 +4184,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="practiceClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="T8z-KZ-mau"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="527" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q1q-er-SXZ">
                                 <rect key="frame" x="12" y="170" width="103" height="44"/>
@@ -4187,6 +4199,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="customerClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="EdO-XG-3s5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="521" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AxX-FP-O6n">
                                 <rect key="frame" x="603" y="118" width="57" height="44"/>
@@ -4199,6 +4214,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="matClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="Svq-dS-mdf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="522" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sdu-3H-AiF">
                                 <rect key="frame" x="603" y="170" width="57" height="44"/>
@@ -4211,6 +4229,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ytdClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="XaY-mz-aI9"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="bb1-Ix-WrZ">
                                 <rect key="frame" x="46" y="258" width="140" height="29"/>
@@ -5282,6 +5303,14 @@ E: contact@dbm-int.fr</string>
         <class className="evCustomerSalesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/evCustomerSalesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="countryClicked:"/>
+                <relationship kind="action" name="countyClicked:"/>
+                <relationship kind="action" name="customerClicked:"/>
+                <relationship kind="action" name="groupClicked:"/>
+                <relationship kind="action" name="keyAccountManagerClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="practiceClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
                 <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
@@ -5394,6 +5423,6 @@ E: contact@dbm-int.fr</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wrR-Bx-YWB"/>
+        <segue reference="uiC-AA-qG0"/>
     </inferredMetricsTieBreakers>
 </document>

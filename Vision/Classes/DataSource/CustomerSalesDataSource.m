@@ -8,7 +8,7 @@
 #import "CustomerSalesDataSource.h"
 
 #import "CustomerSalesAggrPerYear.h"
-#import "CustomerSalesAggrPerGroup.h"
+#import "CustomerSalesAggrPerCustomer.h"
 
 @implementation CustomerSalesDataSource
 
@@ -123,7 +123,7 @@
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
         
-        CustomerSalesAggrPerGroup *aggrPerGroup = [customerSalesArray objectAtIndex:gridCoord.section - 1];
+        CustomerSalesAggrPerCustomer *aggrPerGroup = [customerSalesArray objectAtIndex:gridCoord.section - 1];
         CustomerSalesAggrPerYear *aggrPerYear = [aggrPerGroup.aggrPerYears objectAtIndex:gridCoord.rowIndex];
         
         NSString *cellText;
@@ -218,7 +218,7 @@
     if (sectionIndex == 0)
         return 1;
     
-    CustomerSalesAggrPerGroup *aggrPerGroup = [customerSalesArray objectAtIndex:sectionIndex - 1];
+    CustomerSalesAggrPerCustomer *aggrPerGroup = [customerSalesArray objectAtIndex:sectionIndex - 1];
     return [aggrPerGroup.aggrPerYears count];
 }
 
@@ -228,8 +228,8 @@
     if (section == 0)
         return nil;
     
-    CustomerSalesAggrPerGroup *aggrPerGroup = [customerSalesArray objectAtIndex:section - 1];
-    return aggrPerGroup.group;
+    CustomerSalesAggrPerCustomer *aggrPerGroup = [customerSalesArray objectAtIndex:section - 1];
+    return aggrPerGroup.customerName;
 }
 
 @end

@@ -76,7 +76,7 @@
 		AD6C98BB161EBD6C001FD2E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6C98BA161EBD6C001FD2E2 /* SystemConfiguration.framework */; };
 		AD6C98BE161EBDAB001FD2E2 /* usersModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD6C98BC161EBDAB001FD2E2 /* usersModel.xcdatamodeld */; };
 		AD7AFAB8162ADA390092A690 /* CustomerSalesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFAB7162ADA390092A690 /* CustomerSalesDataSource.m */; };
-		AD7AFABC162ADDF40092A690 /* CustomerSalesAggrPerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFABB162ADDF30092A690 /* CustomerSalesAggrPerGroup.m */; };
+		AD7AFABC162ADDF40092A690 /* CustomerSalesAggrPerCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFABB162ADDF30092A690 /* CustomerSalesAggrPerCustomer.m */; };
 		AD7AFABF162ADE040092A690 /* CustomerSalesAggrPerYear.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFABE162ADE030092A690 /* CustomerSalesAggrPerYear.m */; };
 		AD7AFAC2162AE6FA0092A690 /* SitesDistributionAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFAC1162AE6F90092A690 /* SitesDistributionAggr.m */; };
 		AD7AFAC8162AE84E0092A690 /* SitesDistributionAggrItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7AFAC7162AE84C0092A690 /* SitesDistributionAggrItem.m */; };
@@ -267,8 +267,8 @@
 		AD6C98BD161EBDAB001FD2E2 /* usersModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = usersModel.xcdatamodel; sourceTree = "<group>"; };
 		AD7AFAB6162ADA390092A690 /* CustomerSalesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerSalesDataSource.h; sourceTree = "<group>"; };
 		AD7AFAB7162ADA390092A690 /* CustomerSalesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerSalesDataSource.m; sourceTree = "<group>"; };
-		AD7AFABA162ADDF20092A690 /* CustomerSalesAggrPerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerSalesAggrPerGroup.h; sourceTree = "<group>"; };
-		AD7AFABB162ADDF30092A690 /* CustomerSalesAggrPerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerSalesAggrPerGroup.m; sourceTree = "<group>"; };
+		AD7AFABA162ADDF20092A690 /* CustomerSalesAggrPerCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerSalesAggrPerCustomer.h; sourceTree = "<group>"; };
+		AD7AFABB162ADDF30092A690 /* CustomerSalesAggrPerCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerSalesAggrPerCustomer.m; sourceTree = "<group>"; };
 		AD7AFABD162ADE020092A690 /* CustomerSalesAggrPerYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerSalesAggrPerYear.h; sourceTree = "<group>"; };
 		AD7AFABE162ADE030092A690 /* CustomerSalesAggrPerYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerSalesAggrPerYear.m; sourceTree = "<group>"; };
 		AD7AFAC0162AE6F80092A690 /* SitesDistributionAggr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SitesDistributionAggr.h; sourceTree = "<group>"; };
@@ -520,8 +520,8 @@
 				AD2B60AF1629C82F00AD00FF /* ClientSalesAggr.m */,
 				AD2B60AB1629C67900AD00FF /* ClientSalesAggrPerGroup.h */,
 				AD2B60AC1629C67A00AD00FF /* ClientSalesAggrPerGroup.m */,
-				AD7AFABA162ADDF20092A690 /* CustomerSalesAggrPerGroup.h */,
-				AD7AFABB162ADDF30092A690 /* CustomerSalesAggrPerGroup.m */,
+				AD7AFABA162ADDF20092A690 /* CustomerSalesAggrPerCustomer.h */,
+				AD7AFABB162ADDF30092A690 /* CustomerSalesAggrPerCustomer.m */,
 				AD7AFABD162ADE020092A690 /* CustomerSalesAggrPerYear.h */,
 				AD7AFABE162ADE030092A690 /* CustomerSalesAggrPerYear.m */,
 				AD7AFAC0162AE6F80092A690 /* SitesDistributionAggr.h */,
@@ -891,7 +891,7 @@
 				AD2B60AD1629C67A00AD00FF /* ClientSalesAggrPerGroup.m in Sources */,
 				AD2B60B01629C83000AD00FF /* ClientSalesAggr.m in Sources */,
 				AD7AFAB8162ADA390092A690 /* CustomerSalesDataSource.m in Sources */,
-				AD7AFABC162ADDF40092A690 /* CustomerSalesAggrPerGroup.m in Sources */,
+				AD7AFABC162ADDF40092A690 /* CustomerSalesAggrPerCustomer.m in Sources */,
 				AD7AFABF162ADE040092A690 /* CustomerSalesAggrPerYear.m in Sources */,
 				AD7AFAC2162AE6FA0092A690 /* SitesDistributionAggr.m in Sources */,
 				AD7AFAC8162AE84E0092A690 /* SitesDistributionAggrItem.m in Sources */,

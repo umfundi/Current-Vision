@@ -29,20 +29,38 @@
 @synthesize value, growth;
 @synthesize qty, qtygrowth;
 
-- (void)addCustomerSale:(NSDictionary *)customerSale
+- (void)addCustomerSale:(NSDictionary *)customerSale YDTorMAT:(BOOL)isYTD
 {
-    jan += [[customerSale objectForKey:@"janval"] doubleValue];
-    feb += [[customerSale objectForKey:@"febval"] doubleValue];
-    mar += [[customerSale objectForKey:@"marval"] doubleValue];
-    apr += [[customerSale objectForKey:@"aprval"] doubleValue];
-    may += [[customerSale objectForKey:@"mayval"] doubleValue];
-    jun += [[customerSale objectForKey:@"junval"] doubleValue];
-    jul += [[customerSale objectForKey:@"julval"] doubleValue];
-    aug += [[customerSale objectForKey:@"augval"] doubleValue];
-    sep += [[customerSale objectForKey:@"sepval"] doubleValue];
-    oct += [[customerSale objectForKey:@"octval"] doubleValue];
-    nov += [[customerSale objectForKey:@"novval"] doubleValue];
-    dec += [[customerSale objectForKey:@"decval"] doubleValue];
+//    if (isYTD)
+//    {
+//        jan += [[customerSale objectForKey:@"janval"] doubleValue];
+//        feb += [[customerSale objectForKey:@"febval"] doubleValue];
+//        mar += [[customerSale objectForKey:@"marval"] doubleValue];
+//        apr += [[customerSale objectForKey:@"aprval"] doubleValue];
+//        may += [[customerSale objectForKey:@"mayval"] doubleValue];
+//        jun += [[customerSale objectForKey:@"junval"] doubleValue];
+//        jul += [[customerSale objectForKey:@"julval"] doubleValue];
+//        aug += [[customerSale objectForKey:@"augval"] doubleValue];
+//        sep += [[customerSale objectForKey:@"sepval"] doubleValue];
+//        oct += [[customerSale objectForKey:@"octval"] doubleValue];
+//        nov += [[customerSale objectForKey:@"novval"] doubleValue];
+//        dec += [[customerSale objectForKey:@"decval"] doubleValue];
+//    }
+//    else
+    {
+        jan += [[customerSale objectForKey:@"m_11val"] doubleValue];
+        feb += [[customerSale objectForKey:@"m_10val"] doubleValue];
+        mar += [[customerSale objectForKey:@"m_9val"] doubleValue];
+        apr += [[customerSale objectForKey:@"m_8val"] doubleValue];
+        may += [[customerSale objectForKey:@"m_7val"] doubleValue];
+        jun += [[customerSale objectForKey:@"m_6val"] doubleValue];
+        jul += [[customerSale objectForKey:@"m_5val"] doubleValue];
+        aug += [[customerSale objectForKey:@"m_4val"] doubleValue];
+        sep += [[customerSale objectForKey:@"m_3val"] doubleValue];
+        oct += [[customerSale objectForKey:@"m_2val"] doubleValue];
+        nov += [[customerSale objectForKey:@"m_1val"] doubleValue];
+        dec += [[customerSale objectForKey:@"m0val"] doubleValue];
+    }
 }
 
 - (void)finishAdd
@@ -63,14 +81,13 @@
     novString = [NSString stringWithFormat:@"%.0f", round(nov)];
     decString = [NSString stringWithFormat:@"%.0f", round(dec)];
     totq4 = [NSString stringWithFormat:@"%.0f", round(oct + nov + dec)];
-#warning value in ProductSales
-    value = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning growth in ProductSales
-    growth = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning qty in ProductSales
-    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning growth in ProductSales
-    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+    value = [NSString stringWithFormat:@"%.0f", round(jan + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec)];
+//#warning growth in ProductSales
+//    growth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+//#warning qty in ProductSales
+//    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
+//#warning growth in ProductSales
+//    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
 }
 
 @end

@@ -14,7 +14,14 @@
 #import "umfundiAppDelegate.h"
 #import "umfundiViewController.h"
 #import "CustomerSalesDataSource.h"
-#import "CustomerSalesAggrPerGroup.h"
+#import "CustomerSalesAggrPerCustomer.h"
+
+#define FilterTypePractice          0
+#define FilterTypeCustomer          1
+#define FilterTypeCountry           2
+#define FilterTypeKeyAccountManager 3
+#define FilterTypeGroup             4
+#define FilterTypeCounty            5
 
 @interface evCustomerSalesViewController ()
 
@@ -23,6 +30,9 @@
 @implementation evCustomerSalesViewController
 
 @synthesize selectedPractice;
+@synthesize selectedUser;
+@synthesize selectedCustomer;
+@synthesize selectedFilterVal;
 
 #pragma mark -SGridDelegate
 
@@ -53,6 +63,10 @@
 
     umfundiAppDelegate *appDelegate = (umfundiAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.selectedPractice = appDelegate.frontViewController.currentPractice;
+    self.selectedUser = [User loginUser];
+    
+    currentFilter = FilterTypePractice;
+    isYTD = YES;
     
     lblPracticeName.text = selectedPractice.practiceName;
     lblPracticeCode.text = selectedPractice.practiceCode;
@@ -63,7 +77,6 @@
     lblIDUser.text = [User loginUser].login;
     
     customerSalesDataSource = [[CustomerSalesDataSource alloc] init];
-    customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerGroup CustomerSalesGroupByGroupFrom:selectedPractice.practiceCode];
     
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
     
@@ -97,12 +110,15 @@
     //We dont want to be able to edit our cells
     customerSalesGrid.canEditCellsViaDoubleTap = NO;
     
+ 
     //Enable dragging - we want to be able to reorder in any direction
     customerSalesGrid.canReorderColsViaLongPress = YES;
     customerSalesGrid.canReorderRowsViaLongPress = YES;
     
     customerSalesGrid.frame = CGRectMake(1, 1, 2, 2);
-    
+
+    [self displayGrids];
+
     // this displays the grid
     [self.view addSubview:customerSalesGrid];
 }
@@ -161,4 +177,215 @@ NSArray *CustomerSalesSubviews(UIView *aView)
     lblPostcode = nil;
     [super viewDidUnload];
 }
+
+
+- (void)displayPractice
+{
+    lblPracticeName.text = selectedPractice.practiceName;
+    lblPracticeCode.text = selectedPractice.practiceCode;
+    lblAddress1.text = selectedPractice.add1;
+    lblAddress2.text = selectedPractice.city;
+    lblAddress3.text = selectedPractice.province;
+    lblPostcode.text = selectedPractice.postcode;
+    
+    lblIDUser.text = selectedUser.login;
+}
+
+
+- (IBAction)customerClicked:(id)sender
+{
+    AllCustomersViewController *resultViewController = [[AllCustomersViewController alloc] init];
+    resultViewController.searchResult = [Customer allCustomers];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)practiceClicked:(id)sender
+{
+    AllPracticesViewController *resultViewController = [[AllPracticesViewController alloc] init];
+    resultViewController.searchResult = [Practice allPractices];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)countyClicked:(id)sender
+{
+    AllCountiesViewController *resultViewController = [[AllCountiesViewController alloc] init];
+    resultViewController.searchResult = [Customer allCounties];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)keyAccountManagerClicked:(id)sender
+{
+    AllKeyAccountManagersViewController *resultViewController = [[AllKeyAccountManagersViewController alloc] init];
+    resultViewController.searchResult = [User allUsers];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)groupClicked:(id)sender
+{
+    AllGroupsViewController *resultViewController = [[AllGroupsViewController alloc] init];
+    resultViewController.searchResult = [Customer allGroups];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)countryClicked:(id)sender
+{
+    AllCountriesViewController *resultViewController = [[AllCountriesViewController alloc] init];
+    resultViewController.searchResult = [Customer allCountries];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+
+- (IBAction)ytdClicked:(id)sender
+{
+    isYTD = YES;
+    
+    [self displayGrids];
+}
+
+- (IBAction)matClicked:(id)sender
+{
+    isYTD = NO;
+    
+    [self displayGrids];
+}
+
+
+#pragma mark -
+#pragma mark Filter Delegates
+
+- (void)countrySelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCountry;
+    self.selectedFilterVal = selected;
+    
+    [self displayGrids];
+}
+
+- (void)countySelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCounty;
+    self.selectedFilterVal = selected;
+    
+    [self displayGrids];
+}
+
+- (void)customerSelected:(Customer *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCustomer;
+    self.selectedCustomer = selected;
+    
+    [self displayGrids];
+}
+
+- (void)groupSelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeGroup;
+    self.selectedFilterVal = selected;
+    
+    [self displayGrids];
+}
+
+- (void)keyAccountManagerSelected:(User *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeKeyAccountManager;
+    self.selectedUser = selectedUser;
+    [self displayPractice];
+    
+    [self displayGrids];
+}
+
+- (void)practiceSelected:(Practice *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypePractice;
+    self.selectedPractice = selected;
+    [self displayPractice];
+    
+    [self displayGrids];
+}
+
+
+- (void)displayGrids
+{
+    if (currentFilter == FilterTypePractice)
+    {
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_practice" andValue:selectedPractice.practiceCode YDTorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCustomer)
+    {
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_customer" andValue:selectedCustomer.id_customer YDTorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeGroup)
+    {
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"groupName" andValue:selectedFilterVal YDTorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeKeyAccountManager)
+    {
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_user" andValue:selectedUser.id_user YDTorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCountry)
+    {
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"country" andValue:selectedFilterVal YDTorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCounty)
+    {
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"province" andValue:selectedFilterVal YDTorMAT:isYTD];
+    }
+    
+    [customerSalesGrid reload];
+}
+
 @end

@@ -223,4 +223,26 @@
     return [context executeFetchRequest:fetchRequest error:nil];
 }
 
+
++ (NSString *)CustomerNameFromID:(NSString *)id_customer
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Customer"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_customer == %@", id_customer];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *customers = [context executeFetchRequest:fetchRequest error:nil];
+    if ([customers count] != 1)
+        return nil;
+    
+    Customer *customer = (Customer *)[customers objectAtIndex:0];
+
+    return customer.customerName;
+}
+
 @end

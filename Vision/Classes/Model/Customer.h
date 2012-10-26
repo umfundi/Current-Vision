@@ -53,4 +53,6 @@
 + (NSArray *)searchCustomerIDsWithField:(NSString *)aField andValue:(NSString *)aValue;
 + (NSArray *)searchCustomersWithField:(NSString *)aField andKey:(NSString *)aKey;
 
++ (NSString *)CustomerNameFromID:(NSString *)id_customer;
+
 @end
