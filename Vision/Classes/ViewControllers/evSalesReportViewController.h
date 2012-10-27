@@ -36,7 +36,6 @@
     IBOutlet UILabel *lblCountryHdr;
     IBOutlet UILabel *lblCountyHdr;
     IBOutlet UILabel *lblBGroupHdr;
-    IBOutlet UITextField *findText;
     IBOutlet UIButton *btnMAT;
     IBOutlet UIButton *btmYTD;
     IBOutlet UIButton *btnCustomer;
@@ -45,6 +44,8 @@
     IBOutlet UIButton *btnPractice;
     IBOutlet UIButton *btnCounty;
     IBOutlet UIButton *btnCountry;
+    IBOutlet UITextField *findText;
+    
     ShinobiGrid *monthReportGrid;
     SalesTrendsReportDataSource *monthReportDataSource;
 

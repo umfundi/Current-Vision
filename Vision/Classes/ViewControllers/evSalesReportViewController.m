@@ -329,15 +329,16 @@ NSArray *SalesReportSubviews(UIView *aView)
     
     [self displayGrids];
     
-    lblIDUser.text = selectedUser.login;
-
-    
+    lblIDUser.text = selectedUser.login;    
 }
 
 - (IBAction)findClicked:(id)sender {
 }
 
 - (IBAction)nextClicked:(id)sender {
+}
+
+- (IBAction)btnPractice:(id)sender {
 }
 
 

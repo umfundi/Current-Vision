@@ -155,7 +155,6 @@
     
     productSalesGrid.frame = CGRectMake(1, 1, 2, 2);
     
-
     [self displayHeaderinfoblock];
     [self displayGrids];
 
