@@ -107,7 +107,7 @@
     [self.view addSubview:erReportGrid];
 }
 
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
     [self didRotateFromInterfaceOrientation:0];
 }
 

@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view.
 }
 
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
     [self didRotateFromInterfaceOrientation:0];
 }
 

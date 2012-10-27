@@ -116,7 +116,7 @@
     [self.view addSubview:productListGrid];
 }
 
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
     [self didRotateFromInterfaceOrientation:0];
 }
 

@@ -115,7 +115,7 @@
     [self.view addSubview:customerSalesGrid];
 }
 
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
     [self didRotateFromInterfaceOrientation:0];
 }
 

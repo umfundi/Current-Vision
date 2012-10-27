@@ -206,7 +206,7 @@ NSArray *SalesReportSubviews(UIView *aView)
     [self.view addSubview:yearReportGrid];
 }
 
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
     [self didRotateFromInterfaceOrientation:0];
 }
 
