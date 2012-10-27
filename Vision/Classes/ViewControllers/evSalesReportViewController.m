@@ -564,7 +564,6 @@ NSArray *SalesReportSubviews(UIView *aView)
         }
 }
 
-
 - (void)displayGrids
 {
     if (currentFilter == FilterTypePractice)

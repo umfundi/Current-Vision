@@ -16,6 +16,13 @@
 #import "ErReportDataSource.h"
 #import "ErReportAggrPerBrand.h"
 
+#define FilterTypePractice          0
+#define FilterTypeCustomer          1
+#define FilterTypeCountry           2
+#define FilterTypeKeyAccountManager 3
+#define FilterTypeGroup             4
+#define FilterTypeCounty            5
+
 @interface evErReportViewController ()
 
 @end
@@ -103,6 +110,11 @@
     
     erReportGrid.frame = CGRectMake(1, 1, 2, 2);
     
+    currentFilter = FilterTypePractice;
+    [self displayHeaderinfoblock];
+//    [self displayGrids];
+    
+    
     // this displays the grid
     [self.view addSubview:erReportGrid];
 }
@@ -139,6 +151,159 @@
             if(tag < 10 ) continue;
             [self.view viewWithTag:tag].frame = eachView.frame;
         }
+    }
+}
+
+- (void)displayHeaderinfoblock
+{
+    if (currentFilter == FilterTypePractice)
+    {
+        // Displaying practice so show the practice related labels and titles
+        lblPracticeHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        lblAddress1.hidden = false;
+        lblAddress2.hidden = false;
+        lblAddress3.hidden = false;
+        lblPostcode.hidden = false;
+        lblAccountHdr.hidden = false;
+        lblPracticeCode.hidden = false;
+        lblIDUser.hidden = false;
+        lblAccmgrHdr.hidden = false;
+        // Hide all the other labels
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+        
+        // And populate the practice related labels
+        lblPracticeName.text = selectedPractice.practiceName;
+        
+        lblAddress1.text = selectedPractice.add1;
+        lblAddress2.text = selectedPractice.city;
+        lblAddress3.text = selectedPractice.province;
+        lblPostcode.text = selectedPractice.postcode;
+        
+        lblPracticeCode.text = selectedPractice.practiceCode;
+        
+        lblIDUser.text = @"KAM here";  // selectedUser.login;
+    }
+    else if (currentFilter == FilterTypeCustomer)
+    {
+        // Displaying customer so show the customer related labels
+        lblPracticeHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        lblAddress1.hidden = false;
+        lblAddress2.hidden = false;
+        lblAddress3.hidden = false;
+        lblPostcode.hidden = false;
+        lblAccountHdr.hidden = false;
+        lblPracticeCode.hidden = false;
+        lblAccmgrHdr.hidden = false;
+        lblIDUser.hidden = false;
+        
+        // Hide all the other labels
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+        
+        // And populate the Customer related labels
+        lblPracticeName.text = selectedPractice.practiceName;
+        
+        lblAddress1.text = selectedPractice.add1;
+        lblAddress2.text = selectedPractice.city;
+        lblAddress3.text = selectedPractice.province;
+        lblPostcode.text = selectedPractice.postcode;
+        
+        lblPracticeCode.text = selectedPractice.practiceCode;
+        
+        lblIDUser.text = @"KAM here";  //selectedUser.login;
+    }
+    else if (currentFilter == FilterTypeGroup)
+    {
+        // Displaying Buying group so show the group related labels and titles
+        lblBGroupHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        
+        // And populate the group label
+        lblPracticeName.text = @"Group name here!";
+    }
+    else if (currentFilter == FilterTypeKeyAccountManager)
+    {
+        // Displaying County so show the Country related labels and titles
+        lblAccmgrHdr.hidden = false;
+        lblIDUser.hidden = false;
+        
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblPracticeName.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+        
+        // And populate the Country label
+        lblPracticeName.text = @"Account manager name here!";
+    }
+    else if (currentFilter == FilterTypeCountry)
+    {
+        // Displaying County so show the Country related labels and titles
+        lblCountryHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+        
+        // And populate the Country label
+        lblPracticeName.text = selectedPractice.country;
+    }
+    else if (currentFilter == FilterTypeCounty)
+    {
+        // Displaying Country so show the County related labels and titles
+        lblCountyHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+        
+        // And populate the Country label
+        lblPracticeName.text = selectedPractice.province;
     }
 }
 
