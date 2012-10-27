@@ -22,6 +22,7 @@
 
 @interface evSalesReportViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate>
 {
+    IBOutlet UILabel *lblThemeBox;
     IBOutlet UILabel *lblPracticeName;
     IBOutlet UILabel *lblAddress1;
     IBOutlet UILabel *lblAddress2;
@@ -35,6 +36,15 @@
     IBOutlet UILabel *lblCountryHdr;
     IBOutlet UILabel *lblCountyHdr;
     IBOutlet UILabel *lblBGroupHdr;
+    IBOutlet UITextField *findText;
+    IBOutlet UIButton *btnMAT;
+    IBOutlet UIButton *btmYTD;
+    IBOutlet UIButton *btnCustomer;
+    IBOutlet UIButton *btnBGroup;
+    IBOutlet UIButton *btnKAM;
+    IBOutlet UIButton *btnPractice;
+    IBOutlet UIButton *btnCounty;
+    IBOutlet UIButton *btnCountry;
     ShinobiGrid *monthReportGrid;
     SalesTrendsReportDataSource *monthReportDataSource;
 
@@ -61,6 +71,8 @@
 
 - (IBAction)ytdClicked:(id)sender;
 - (IBAction)matClicked:(id)sender;
+- (IBAction)findClicked:(id)sender;
+- (IBAction)nextClicked:(id)sender;
 
 - (void)displayGrids;
 

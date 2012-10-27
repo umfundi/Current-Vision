@@ -223,6 +223,16 @@ NSArray *SalesReportSubviews(UIView *aView)
     lblCountryHdr = nil;
     lblCountyHdr = nil;
     lblBGroupHdr = nil;
+    lblThemeBox = nil;
+    findText = nil;
+    btnMAT = nil;
+    btmYTD = nil;
+    btnCustomer = nil;
+    btnKAM = nil;
+    btnBGroup = nil;
+    btnPractice = nil;
+    btnCounty = nil;
+    btnCountry = nil;
     [super viewDidUnload];
 }
 
@@ -318,6 +328,16 @@ NSArray *SalesReportSubviews(UIView *aView)
     isYTD = NO;
     
     [self displayGrids];
+    
+    lblIDUser.text = selectedUser.login;
+
+    
+}
+
+- (IBAction)findClicked:(id)sender {
+}
+
+- (IBAction)nextClicked:(id)sender {
 }
 
 
@@ -403,9 +423,9 @@ NSArray *SalesReportSubviews(UIView *aView)
         lblPostcode.hidden = false;
         lblAccountHdr.hidden = false;
         lblPracticeCode.hidden = false;
+        lblIDUser.hidden = false;
+        lblAccmgrHdr.hidden = false;
         // Hide all the other labels
-        lblAccmgrHdr.hidden = true;
-        lblIDUser.hidden = true;
         lblCountryHdr.hidden = true;
         lblCountyHdr.hidden = true;
         lblBGroupHdr.hidden = true;
@@ -418,7 +438,9 @@ NSArray *SalesReportSubviews(UIView *aView)
         lblAddress3.text = selectedPractice.province;
         lblPostcode.text = selectedPractice.postcode;
             
-        lblPracticeCode.text = selectedPractice.practiceCode;                
+        lblPracticeCode.text = selectedPractice.practiceCode;
+            
+        lblIDUser.text = selectedUser.login;
         }
     else if (currentFilter == FilterTypeCustomer)
         {
@@ -449,8 +471,7 @@ NSArray *SalesReportSubviews(UIView *aView)
             
         lblPracticeCode.text = selectedPractice.practiceCode;
             
-        lblIDUser.text = selectedUser.login;
-            
+        lblIDUser.text = selectedUser.login;            
         }
     else if (currentFilter == FilterTypeGroup)
         {
