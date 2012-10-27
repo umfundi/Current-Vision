@@ -27,7 +27,7 @@
 @synthesize dec, decString;
 @synthesize growthString;
 
-+ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD
++ (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
@@ -65,7 +65,7 @@
             aggrPerBrand.brand = brand;
         }
         
-        [aggrPerBrand addSalesTrend:trend YDTorMAT:isYTD];
+        [aggrPerBrand addSalesTrend:trend YTDorMAT:isYTD];
     }
     
     if (aggrPerBrand.brand)
@@ -77,7 +77,7 @@
     return aggrs;
 }
 
-+ (NSArray *)SalesTrendsGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD
++ (NSArray *)SalesTrendsGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD
 {
     NSArray *filteredCustomers = [Customer searchCustomerIDsWithField:aField andValue:aValue];
     
@@ -116,7 +116,7 @@
             aggrPerBrand.brand = brand;
         }
         
-        [aggrPerBrand addSalesTrend:trend YDTorMAT:isYTD];
+        [aggrPerBrand addSalesTrend:trend YTDorMAT:isYTD];
     }
     
     if (aggrPerBrand.brand)
@@ -140,7 +140,7 @@
 }
 
 
-- (void)addSalesTrend:(NSDictionary *)trend YDTorMAT:(BOOL)isYTD
+- (void)addSalesTrend:(NSDictionary *)trend YTDorMAT:(BOOL)isYTD
 {
     if (isYTD)
     {

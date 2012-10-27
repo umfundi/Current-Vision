@@ -16,7 +16,8 @@
 
 @property (nonatomic, retain) NSMutableArray *aggrPerGroups;
 
-+ (ClientSalesAggr *)AggrByProducts:(NSArray *)products;
++ (ClientSalesAggr *)AggrWithYTDorMAT:(BOOL)isYTD;
++ (ClientSalesAggr *)AggrByProducts:(NSArray *)products YTDorMAT:(BOOL)isYTD;
 
 - (void)addAggrPerGroup:(ClientSalesAggrPerGroup *)aggrPerGroup;
 - (void)finishAdd;

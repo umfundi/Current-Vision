@@ -44,7 +44,7 @@
 @property (nonatomic, retain) NSString *qty;
 @property (nonatomic, retain) NSString *qtygrowth;
 
-- (void)addCustomerSale:(NSDictionary *)customerSale YDTorMAT:(BOOL)isYTD;
+- (void)addCustomerSale:(NSDictionary *)customerSale YTDorMAT:(BOOL)isYTD;
 - (void)finishAdd;
 
 @end

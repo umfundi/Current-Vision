@@ -18,9 +18,16 @@
     ClientSalesDataSource *clientSalesDataSource;
     ShinobiGrid *productListGrid;
     ProductListDataSource *productListDataSource;
+    
+    BOOL isYTD;
 }
 
 - (IBAction)clearButtonClicked:(id)sender;
 - (IBAction)selectButtonClicked:(id)sender;
+
+- (IBAction)ytdClicked:(id)sender;
+- (IBAction)matClicked:(id)sender;
+
+- (void)displayGrids;
 
 @end

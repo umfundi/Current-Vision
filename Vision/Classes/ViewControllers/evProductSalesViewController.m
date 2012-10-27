@@ -16,6 +16,13 @@
 #import "ProductSalesDataSource.h"
 #import "ProductSalesAggrPerBrand.h"
 
+#define FilterTypePractice          0
+#define FilterTypeCustomer          1
+#define FilterTypeCountry           2
+#define FilterTypeKeyAccountManager 3
+#define FilterTypeGroup             4
+#define FilterTypeCounty            5
+
 @interface evProductSalesViewController ()
 
 @end
@@ -23,6 +30,9 @@
 @implementation evProductSalesViewController
 
 @synthesize selectedPractice;
+@synthesize selectedUser;
+@synthesize selectedCustomer;
+@synthesize selectedFilterVal;
 
 #pragma mark -SGridDelegate
 
@@ -93,19 +103,12 @@
     
     umfundiAppDelegate *appDelegate = (umfundiAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.selectedPractice = appDelegate.frontViewController.currentPractice;
+    self.selectedUser = [User loginUser];
     
-    lblPracticeName.text = selectedPractice.practiceName;
-    lblPracticeCode.text = selectedPractice.practiceCode;
-    lblAddress1.text = selectedPractice.add1;
-    lblAddress2.text = selectedPractice.province;
-    lblAddress3.text = selectedPractice.country;
-    lblPostcode.text = selectedPractice.postcode;
-    lblIDUser.text = [User loginUser].login;
+    currentFilter = FilterTypePractice;
+    isYTD = YES;
     
     productSalesDataSource = [[ProductSalesDataSource alloc] init];
-    
-    productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:appDelegate.frontViewController.currentPractice.practiceCode];
-    
     
     NSNumberFormatter *nf = [NSNumberFormatter new];
     [nf setGroupingSize:3];
@@ -152,6 +155,8 @@
     
     productSalesGrid.frame = CGRectMake(1, 1, 2, 2);
     
+    [self displayGrids];
+
     // this displays the grid
     [self.view addSubview:productSalesGrid];
 }
@@ -211,4 +216,215 @@ NSArray *ProductSalesSubviews(UIView *aView)
     lblPostcode = nil;
     [super viewDidUnload];
 }
+
+
+- (void)displayPractice
+{
+    lblPracticeName.text = selectedPractice.practiceName;
+    lblPracticeCode.text = selectedPractice.practiceCode;
+    lblAddress1.text = selectedPractice.add1;
+    lblAddress2.text = selectedPractice.city;
+    lblAddress3.text = selectedPractice.province;
+    lblPostcode.text = selectedPractice.postcode;
+    
+    lblIDUser.text = selectedUser.login;
+}
+
+
+- (IBAction)customerClicked:(id)sender
+{
+    AllCustomersViewController *resultViewController = [[AllCustomersViewController alloc] init];
+    resultViewController.searchResult = [Customer allCustomers];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)practiceClicked:(id)sender
+{
+    AllPracticesViewController *resultViewController = [[AllPracticesViewController alloc] init];
+    resultViewController.searchResult = [Practice allPractices];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)countyClicked:(id)sender
+{
+    AllCountiesViewController *resultViewController = [[AllCountiesViewController alloc] init];
+    resultViewController.searchResult = [Customer allCounties];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)keyAccountManagerClicked:(id)sender
+{
+    AllKeyAccountManagersViewController *resultViewController = [[AllKeyAccountManagersViewController alloc] init];
+    resultViewController.searchResult = [User allUsers];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)groupClicked:(id)sender
+{
+    AllGroupsViewController *resultViewController = [[AllGroupsViewController alloc] init];
+    resultViewController.searchResult = [Customer allGroups];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)countryClicked:(id)sender
+{
+    AllCountriesViewController *resultViewController = [[AllCountriesViewController alloc] init];
+    resultViewController.searchResult = [Customer allCountries];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+
+- (IBAction)ytdClicked:(id)sender
+{
+    isYTD = YES;
+    
+    [self displayGrids];
+}
+
+- (IBAction)matClicked:(id)sender
+{
+    isYTD = NO;
+    
+    [self displayGrids];
+}
+
+
+#pragma mark -
+#pragma mark Filter Delegates
+
+- (void)countrySelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCountry;
+    self.selectedFilterVal = selected;
+    
+    [self displayGrids];
+}
+
+- (void)countySelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCounty;
+    self.selectedFilterVal = selected;
+    
+    [self displayGrids];
+}
+
+- (void)customerSelected:(Customer *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCustomer;
+    self.selectedCustomer = selected;
+    
+    [self displayGrids];
+}
+
+- (void)groupSelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeGroup;
+    self.selectedFilterVal = selected;
+    
+    [self displayGrids];
+}
+
+- (void)keyAccountManagerSelected:(User *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeKeyAccountManager;
+    self.selectedUser = selected;
+    [self displayPractice];
+    
+    [self displayGrids];
+}
+
+- (void)practiceSelected:(Practice *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypePractice;
+    self.selectedPractice = selected;
+    [self displayPractice];
+    
+    [self displayGrids];
+}
+
+
+- (void)displayGrids
+{
+    if (currentFilter == FilterTypePractice)
+    {
+        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCustomer)
+    {
+        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeGroup)
+    {
+        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeKeyAccountManager)
+    {
+        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCountry)
+    {
+        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCounty)
+    {
+        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    
+    [productSalesGrid reload];
+}
+
 @end

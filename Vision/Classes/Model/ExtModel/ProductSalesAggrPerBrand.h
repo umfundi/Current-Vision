@@ -14,7 +14,8 @@
 @property (nonatomic, retain) NSString *brand;
 @property (nonatomic, retain) NSMutableArray *aggrPerYears;
 
-+ (NSArray *)ProductSalesGroupByBrandFrom:(NSString *)customer;
++ (NSArray *)ProductSalesGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
++ (NSArray *)ProductSalesGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
 
 - (void)addAggrPerYear:(ProductSalesAggrPerYear *)aggrPerYear;
 

@@ -68,14 +68,6 @@
     currentFilter = FilterTypePractice;
     isYTD = YES;
     
-    lblPracticeName.text = selectedPractice.practiceName;
-    lblPracticeCode.text = selectedPractice.practiceCode;
-    lblAddress1.text = selectedPractice.add1;
-    lblAddress2.text = selectedPractice.province;
-    lblAddress3.text = selectedPractice.country;
-    lblPostcode.text = selectedPractice.postcode;
-    lblIDUser.text = [User loginUser].login;
-    
     customerSalesDataSource = [[CustomerSalesDataSource alloc] init];
     
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
@@ -339,7 +331,7 @@ NSArray *CustomerSalesSubviews(UIView *aView)
     searchPopoverController = nil;
     
     currentFilter = FilterTypeKeyAccountManager;
-    self.selectedUser = selectedUser;
+    self.selectedUser = selected;
     [self displayPractice];
     
     [self displayGrids];
@@ -362,27 +354,27 @@ NSArray *CustomerSalesSubviews(UIView *aView)
 {
     if (currentFilter == FilterTypePractice)
     {
-        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_practice" andValue:selectedPractice.practiceCode YDTorMAT:isYTD];
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeCustomer)
     {
-        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_customer" andValue:selectedCustomer.id_customer YDTorMAT:isYTD];
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeGroup)
     {
-        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"groupName" andValue:selectedFilterVal YDTorMAT:isYTD];
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeKeyAccountManager)
     {
-        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_user" andValue:selectedUser.id_user YDTorMAT:isYTD];
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeCountry)
     {
-        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"country" andValue:selectedFilterVal YDTorMAT:isYTD];
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeCounty)
     {
-        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"province" andValue:selectedFilterVal YDTorMAT:isYTD];
+        customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
     }
     
     [customerSalesGrid reload];

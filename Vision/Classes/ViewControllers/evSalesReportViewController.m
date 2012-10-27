@@ -197,6 +197,8 @@ NSArray *SalesReportSubviews(UIView *aView)
     yearReportGrid.canReorderColsViaLongPress = YES;
     yearReportGrid.canReorderRowsViaLongPress = YES;
     
+    currentFilter = FilterTypePractice;
+    [self displayHeaderinfoblock];
     [self displayGrids];
     
     // this displays the grid
@@ -215,20 +217,13 @@ NSArray *SalesReportSubviews(UIView *aView)
 }
 
 - (void)viewDidUnload {
+    lblPracticeHdr = nil;
+    lblAccountHdr = nil;
+    lblAccmgrHdr = nil;
+    lblCountryHdr = nil;
+    lblCountyHdr = nil;
+    lblBGroupHdr = nil;
     [super viewDidUnload];
-}
-
-
-- (void)displayPractice
-{
-    lblPracticeName.text = selectedPractice.practiceName;
-    lblPracticeCode.text = selectedPractice.practiceCode;
-    lblAddress1.text = selectedPractice.add1;
-    lblAddress2.text = selectedPractice.city;
-    lblAddress3.text = selectedPractice.province;
-    lblPostcode.text = selectedPractice.postcode;
-
-    lblIDUser.text = selectedUser.login;
 }
 
 
@@ -333,21 +328,21 @@ NSArray *SalesReportSubviews(UIView *aView)
 {
     [searchPopoverController dismissPopoverAnimated:YES];
     searchPopoverController = nil;
-    
-    currentFilter = FilterTypeCountry;
     self.selectedFilterVal = selected;
-
+   
+    currentFilter = FilterTypeCountry;
+    [self displayHeaderinfoblock];
     [self displayGrids];
 }
 
 - (void)countySelected:(NSString *)selected
 {
     [searchPopoverController dismissPopoverAnimated:YES];
-    searchPopoverController = nil;
-    
-    currentFilter = FilterTypeCounty;
+    searchPopoverController = nil;   
     self.selectedFilterVal = selected;
     
+    currentFilter = FilterTypeCounty;
+    [self displayHeaderinfoblock];
     [self displayGrids];
 }
 
@@ -355,10 +350,10 @@ NSArray *SalesReportSubviews(UIView *aView)
 {
     [searchPopoverController dismissPopoverAnimated:YES];
     searchPopoverController = nil;
+    self.selectedCustomer = selected;
     
     currentFilter = FilterTypeCustomer;
-    self.selectedCustomer = selected;
-
+    [self displayHeaderinfoblock];
     [self displayGrids];
 }
 
@@ -366,10 +361,10 @@ NSArray *SalesReportSubviews(UIView *aView)
 {
     [searchPopoverController dismissPopoverAnimated:YES];
     searchPopoverController = nil;
-    
-    currentFilter = FilterTypeGroup;
     self.selectedFilterVal = selected;
     
+    currentFilter = FilterTypeGroup;
+    [self displayHeaderinfoblock];    
     [self displayGrids];
 }
 
@@ -377,11 +372,10 @@ NSArray *SalesReportSubviews(UIView *aView)
 {
     [searchPopoverController dismissPopoverAnimated:YES];
     searchPopoverController = nil;
-    
-    currentFilter = FilterTypeKeyAccountManager;
     self.selectedUser = selectedUser;
-    [self displayPractice];
-    
+  
+    currentFilter = FilterTypeKeyAccountManager;
+    [self displayHeaderinfoblock];    
     [self displayGrids];
 }
 
@@ -389,12 +383,164 @@ NSArray *SalesReportSubviews(UIView *aView)
 {
     [searchPopoverController dismissPopoverAnimated:YES];
     searchPopoverController = nil;
-    
-    currentFilter = FilterTypePractice;
     self.selectedPractice = selected;
-    [self displayPractice];
-    
+   
+    currentFilter = FilterTypePractice;
+    [self displayHeaderinfoblock];
     [self displayGrids];
+}
+
+- (void)displayHeaderinfoblock
+{
+    if (currentFilter == FilterTypePractice)
+        {
+        // Displaying practice so show the practice related labels and titles
+        lblPracticeHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        lblAddress1.hidden = false;
+        lblAddress2.hidden = false;
+        lblAddress3.hidden = false;
+        lblPostcode.hidden = false;
+        lblAccountHdr.hidden = false;
+        lblPracticeCode.hidden = false;
+        // Hide all the other labels
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+    
+        // And populate the practice related labels
+        lblPracticeName.text = selectedPractice.practiceName;
+            
+        lblAddress1.text = selectedPractice.add1;
+        lblAddress2.text = selectedPractice.city;
+        lblAddress3.text = selectedPractice.province;
+        lblPostcode.text = selectedPractice.postcode;
+            
+        lblPracticeCode.text = selectedPractice.practiceCode;                
+        }
+    else if (currentFilter == FilterTypeCustomer)
+        {
+        // Displaying customer so show the customer related labels
+        lblPracticeHdr.hidden = false;
+        lblPracticeName.hidden = false;
+        lblAddress1.hidden = false;
+        lblAddress2.hidden = false;
+        lblAddress3.hidden = false;
+        lblPostcode.hidden = false;
+        lblAccountHdr.hidden = false;
+        lblPracticeCode.hidden = false;
+        lblAccmgrHdr.hidden = false;
+        lblIDUser.hidden = false;
+            
+        // Hide all the other labels
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+            
+        // And populate the Customer related labels
+        lblPracticeName.text = selectedPractice.practiceName;
+            
+        lblAddress1.text = selectedPractice.add1;
+        lblAddress2.text = selectedPractice.city;
+        lblAddress3.text = selectedPractice.province;
+        lblPostcode.text = selectedPractice.postcode;
+            
+        lblPracticeCode.text = selectedPractice.practiceCode;
+            
+        lblIDUser.text = selectedUser.login;
+            
+        }
+    else if (currentFilter == FilterTypeGroup)
+        {
+        // Displaying Buying group so show the group related labels and titles
+        lblBGroupHdr.hidden = false;
+        lblPracticeName.hidden = false;    
+            
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+            
+        // And populate the group label
+        lblPracticeName.text = @"Group name here!";
+        }
+    else if (currentFilter == FilterTypeKeyAccountManager)
+        {
+        // Displaying County so show the Country related labels and titles
+        lblAccmgrHdr.hidden = false;
+        lblIDUser.hidden = false;
+            
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblPracticeName.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+        
+        // And populate the Country label
+        lblPracticeName.text = @"Account manager name here!";
+        }
+    else if (currentFilter == FilterTypeCountry)
+        {
+        // Displaying County so show the Country related labels and titles
+        lblCountryHdr.hidden = false;
+        lblPracticeName.hidden = false;
+            
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountyHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+            
+        // And populate the Country label
+        lblPracticeName.text = selectedPractice.country;
+        }
+    else if (currentFilter == FilterTypeCounty)
+        {
+        // Displaying Country so show the County related labels and titles
+        lblCountyHdr.hidden = false;
+        lblPracticeName.hidden = false;
+           
+        // Hide all the other labels
+        lblPracticeHdr.hidden = true;
+        lblAddress1.hidden = true;
+        lblAddress2.hidden = true;
+        lblAddress3.hidden = true;
+        lblPostcode.hidden = true;
+        lblAccountHdr.hidden = true;
+        lblPracticeCode.hidden = true;
+        lblAccmgrHdr.hidden = true;
+        lblIDUser.hidden = true;
+        lblCountryHdr.hidden = true;
+        lblBGroupHdr.hidden = true;
+            
+        // And populate the Country label
+        lblPracticeName.text = selectedPractice.province;
+        }
+
 }
 
 
@@ -402,27 +548,27 @@ NSArray *SalesReportSubviews(UIView *aView)
 {
     if (currentFilter == FilterTypePractice)
     {
-        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YDTorMAT:isYTD];
+        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeCustomer)
     {
-        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YDTorMAT:isYTD];
+        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeGroup)
     {
-        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YDTorMAT:isYTD];
+        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeKeyAccountManager)
     {
-        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YDTorMAT:isYTD];
+        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeCountry)
     {
-        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YDTorMAT:isYTD];
+        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
     }
     else if (currentFilter == FilterTypeCounty)
     {
-        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YDTorMAT:isYTD];
+        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
     }
     
     [monthReportGrid reload];

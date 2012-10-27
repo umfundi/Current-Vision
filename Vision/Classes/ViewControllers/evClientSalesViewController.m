@@ -108,6 +108,9 @@
     productListGrid.canReorderColsViaLongPress = YES;
     productListGrid.canReorderRowsViaLongPress = YES;
     
+    isYTD = YES;
+    [self displayGrids];
+    
     // this displays the grid
     [self.view addSubview:clientSalesGrid];
     [self.view addSubview:productListGrid];
@@ -176,6 +179,24 @@ NSArray *ClientSalesSubviews(UIView *aView)
 
 - (IBAction)selectButtonClicked:(id)sender
 {
+    [self displayGrids];
+}
+
+
+- (IBAction)ytdClicked:(id)sender
+{
+    isYTD = YES;
+    [self displayGrids];
+}
+
+- (IBAction)matClicked:(id)sender
+{
+    isYTD = NO;
+    [self displayGrids];
+}
+
+- (void)displayGrids
+{
     NSMutableArray *products = [[NSMutableArray alloc] initWithCapacity:0];
     
     for (NSInteger i = 0 ; i < productListDataSource.productArray.count ; i ++ )
@@ -185,7 +206,10 @@ NSArray *ClientSalesSubviews(UIView *aView)
             [products addObject:[productListDataSource.productArray objectAtIndex:i]];
     }
     
-    clientSalesDataSource.clientSalesAggr = [ClientSalesAggr AggrByProducts:products];
+    if ([products count] == 0)
+        clientSalesDataSource.clientSalesAggr = [ClientSalesAggr AggrWithYTDorMAT:isYTD];
+    else
+        clientSalesDataSource.clientSalesAggr = [ClientSalesAggr AggrByProducts:products YTDorMAT:isYTD];
     [clientSalesGrid reload];
 }
 

@@ -29,6 +29,12 @@
     IBOutlet UILabel *lblPracticeCode;
     IBOutlet UILabel *lblIDUser;    
     IBOutlet UILabel *lblPostcode;
+    IBOutlet UILabel *lblPracticeHdr;
+    IBOutlet UILabel *lblAccountHdr;
+    IBOutlet UILabel *lblAccmgrHdr;
+    IBOutlet UILabel *lblCountryHdr;
+    IBOutlet UILabel *lblCountyHdr;
+    IBOutlet UILabel *lblBGroupHdr;
     ShinobiGrid *monthReportGrid;
     SalesTrendsReportDataSource *monthReportDataSource;
 

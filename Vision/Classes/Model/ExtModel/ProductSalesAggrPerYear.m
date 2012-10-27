@@ -29,20 +29,20 @@
 @synthesize value, growth;
 @synthesize qty, qtygrowth;
 
-- (void)addProductSale:(NSDictionary *)productSale
+- (void)addProductSale:(NSDictionary *)productSale YTDorMAT:(BOOL)isYTD
 {
-    jan += [[productSale objectForKey:@"janval"] doubleValue];
-    feb += [[productSale objectForKey:@"febval"] doubleValue];
-    mar += [[productSale objectForKey:@"marval"] doubleValue];
-    apr += [[productSale objectForKey:@"aprval"] doubleValue];
-    may += [[productSale objectForKey:@"mayval"] doubleValue];
-    jun += [[productSale objectForKey:@"junval"] doubleValue];
-    jul += [[productSale objectForKey:@"julval"] doubleValue];
-    aug += [[productSale objectForKey:@"augval"] doubleValue];
-    sep += [[productSale objectForKey:@"sepval"] doubleValue];
-    oct += [[productSale objectForKey:@"octval"] doubleValue];
-    nov += [[productSale objectForKey:@"novval"] doubleValue];
-    dec += [[productSale objectForKey:@"decval"] doubleValue];
+    jan += [[productSale objectForKey:@"m_11val"] doubleValue];
+    feb += [[productSale objectForKey:@"m_10val"] doubleValue];
+    mar += [[productSale objectForKey:@"m_9val"] doubleValue];
+    apr += [[productSale objectForKey:@"m_8val"] doubleValue];
+    may += [[productSale objectForKey:@"m_7val"] doubleValue];
+    jun += [[productSale objectForKey:@"m_6val"] doubleValue];
+    jul += [[productSale objectForKey:@"m_5val"] doubleValue];
+    aug += [[productSale objectForKey:@"m_4val"] doubleValue];
+    sep += [[productSale objectForKey:@"m_3val"] doubleValue];
+    oct += [[productSale objectForKey:@"m_2val"] doubleValue];
+    nov += [[productSale objectForKey:@"m_1val"] doubleValue];
+    dec += [[productSale objectForKey:@"m0val"] doubleValue];
 }
 
 - (void)finishAdd
@@ -63,14 +63,13 @@
     novString = [NSString stringWithFormat:@"%.0f", round(nov)];
     decString = [NSString stringWithFormat:@"%.0f", round(dec)];
     totq4 = [NSString stringWithFormat:@"%.0f", round(oct + nov + dec)];
-#warning value in ProductSales
-    value = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning growth in ProductSales
-    growth = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning qty in ProductSales
-    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning growth in ProductSales
-    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+    value = [NSString stringWithFormat:@"%.0f", round(jan + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec)];
+//#warning growth in ProductSales
+//    growth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+//#warning qty in ProductSales
+//    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
+//#warning growth in ProductSales
+//    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
 }
 
 @end

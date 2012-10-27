@@ -15,8 +15,8 @@
 @property (nonatomic, retain) NSString *customerName;
 @property (nonatomic, retain) NSMutableArray *aggrPerYears;
 
-+ (NSArray *)CustomerSalesGroupByGroupFrom:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD;
-+ (NSArray *)CustomerSalesGroupByGroupFromCustomers:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD;
++ (NSArray *)CustomerSalesGroupByGroupFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
++ (NSArray *)CustomerSalesGroupByGroupFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
 
 - (void)addAggrPerYear:(CustomerSalesAggrPerYear *)aggrPerYear;
 

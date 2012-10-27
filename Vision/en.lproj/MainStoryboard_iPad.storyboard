@@ -1472,6 +1472,27 @@ E: contact@dbm-int.fr</string>
                                     <action selector="countyClicked:" destination="YQM-Fo-GeQ" eventType="touchUpInside" id="4ZK-EO-SCU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="545" contentMode="left" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kVC-kT-0jD">
+                                <rect key="frame" x="14" y="300" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="546" contentMode="left" text="County" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kDb-OS-frg">
+                                <rect key="frame" x="14" y="329" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="547" contentMode="left" text="Buying Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k0L-mX-DZU">
+                                <rect key="frame" x="14" y="358" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1480,12 +1501,18 @@ E: contact@dbm-int.fr</string>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lblAccmgrHdr" destination="8vQ-lg-rXL" id="iNG-LG-4BJ"/>
+                        <outlet property="lblAccountHdr" destination="vLl-f9-VQf" id="kce-gV-HfF"/>
                         <outlet property="lblAddress1" destination="rm6-MB-xJl" id="WXU-wi-WW9"/>
                         <outlet property="lblAddress2" destination="Dj5-Jm-Tq2" id="5ov-LW-hXR"/>
                         <outlet property="lblAddress3" destination="ayE-q8-DET" id="57H-dm-0vN"/>
+                        <outlet property="lblBGroupHdr" destination="k0L-mX-DZU" id="D8P-06-Eh2"/>
+                        <outlet property="lblCountryHdr" destination="kVC-kT-0jD" id="hfT-LE-TZJ"/>
+                        <outlet property="lblCountyHdr" destination="kDb-OS-frg" id="3tU-8Q-zwz"/>
                         <outlet property="lblIDUser" destination="9Vq-nZ-GJQ" id="fRn-S2-WbS"/>
                         <outlet property="lblPostcode" destination="3u6-ca-Ct2" id="tCh-xG-Ujz"/>
                         <outlet property="lblPracticeCode" destination="ZTJ-j8-AbY" id="B5b-qt-7sa"/>
+                        <outlet property="lblPracticeHdr" destination="GJt-Nr-QcX" id="Pda-ce-PpA"/>
                         <outlet property="lblPracticeName" destination="784-ax-94Y" id="uq3-8b-Tlh"/>
                     </connections>
                 </viewController>
@@ -1623,6 +1650,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="countryClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="thD-Kj-GPj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="324" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="o5f-3k-Fnz">
                                 <rect key="frame" x="372" y="467" width="103" height="44"/>
@@ -1635,6 +1665,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="groupClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="IGe-r3-rRy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="325" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="19Z-BI-k80">
                                 <rect key="frame" x="254" y="467" width="103" height="44"/>
@@ -1647,6 +1680,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="keyAccountManagerClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="Yyu-r8-FjX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="326" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DdT-bl-RtW">
                                 <rect key="frame" x="138" y="467" width="103" height="44"/>
@@ -1659,6 +1695,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="practiceClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="cHB-64-i4s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="327" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KoP-Bi-YoI">
                                 <rect key="frame" x="22" y="467" width="103" height="44"/>
@@ -1671,6 +1710,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="customerClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="ECN-X8-eiz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="321" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wdS-5T-vpK">
                                 <rect key="frame" x="613" y="415" width="57" height="44"/>
@@ -1683,6 +1725,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="matClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="eJy-kC-noa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="322" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i4l-yu-lG3">
                                 <rect key="frame" x="613" y="467" width="57" height="44"/>
@@ -1695,6 +1740,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ytdClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="Ws6-Ax-Li0"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" tag="341" contentMode="scaleToFill" image="Companion_HC.png" id="1NB-3y-pfH">
                                 <rect key="frame" x="16" y="547" width="140" height="29"/>
@@ -3069,6 +3117,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="matClicked:" destination="Jy5-x4-Mvq" eventType="touchUpInside" id="37r-Bj-4la"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="716" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Sm-Qd-rX9">
                                 <rect key="frame" x="582" y="75" width="57" height="44"/>
@@ -3081,6 +3132,9 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ytdClicked:" destination="Jy5-x4-Mvq" eventType="touchUpInside" id="9U5-8H-Vod"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="718" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZUZ-5i-x7B">
                                 <rect key="frame" x="666" y="163" width="95" height="56"/>
@@ -4851,7 +4905,7 @@ E: contact@dbm-int.fr</string>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="229" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5fj-U5-2ak">
                                 <rect key="frame" x="9" y="232" width="270" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -5012,6 +5066,27 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="545" contentMode="left" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Usg-0G-dmK">
+                                <rect key="frame" x="9" y="164" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="546" contentMode="left" text="County" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KLo-un-oBQ">
+                                <rect key="frame" x="9" y="164" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="547" contentMode="left" text="Buying Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ro2-J7-j4R">
+                                <rect key="frame" x="9" y="165" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -5031,10 +5106,6 @@ E: contact@dbm-int.fr</string>
                     <view key="view" contentMode="scaleToFill" id="f6E-Yh-7cX">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <userGuides>
-                            <userLayoutGuide location="682" affinity="minX"/>
-                            <userLayoutGuide location="311" affinity="minX"/>
-                        </userGuides>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="240" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kpx-nQ-QaP">
                                 <rect key="frame" x="6" y="9" width="1014" height="73"/>
@@ -5268,6 +5339,27 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="545" contentMode="left" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UGF-WG-1fQ">
+                                <rect key="frame" x="15" y="128" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="546" contentMode="left" text="County" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FUb-P7-yEu">
+                                <rect key="frame" x="15" y="128" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="547" contentMode="left" text="Buying Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KBo-Jc-NPs">
+                                <rect key="frame" x="15" y="128" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -5297,7 +5389,9 @@ E: contact@dbm-int.fr</string>
             <source key="sourceIdentifier" type="project" relativePath="./Classes/evClientSalesViewController.h"/>
             <relationships>
                 <relationship kind="action" name="clearButtonClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
                 <relationship kind="action" name="selectButtonClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
             </relationships>
         </class>
         <class className="evCustomerSalesViewController" superclassName="UIViewController">
@@ -5343,6 +5437,14 @@ E: contact@dbm-int.fr</string>
         <class className="evProductSalesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/evProductSalesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="countryClicked:"/>
+                <relationship kind="action" name="countyClicked:"/>
+                <relationship kind="action" name="customerClicked:"/>
+                <relationship kind="action" name="groupClicked:"/>
+                <relationship kind="action" name="keyAccountManagerClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="practiceClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
                 <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
@@ -5363,12 +5465,18 @@ E: contact@dbm-int.fr</string>
                 <relationship kind="action" name="matClicked:"/>
                 <relationship kind="action" name="practiceClicked:"/>
                 <relationship kind="action" name="ytdClicked:"/>
+                <relationship kind="outlet" name="lblAccmgrHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAccountHdr" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblBGroupHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountryHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountyHdr" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblPostcode" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeHdr" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -5423,6 +5531,6 @@ E: contact@dbm-int.fr</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uiC-AA-qG0"/>
+        <segue reference="wrR-Bx-YWB"/>
     </inferredMetricsTieBreakers>
 </document>

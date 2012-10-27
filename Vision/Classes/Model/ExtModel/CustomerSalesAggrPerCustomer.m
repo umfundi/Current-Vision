@@ -18,12 +18,12 @@
 @synthesize customerName;
 @synthesize aggrPerYears;
 
-+ (NSArray *)CustomerSalesGroupByGroupFrom:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD
++ (NSArray *)CustomerSalesGroupByGroupFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_by_Products_MAT"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:isYTD ? @"SALES_REPORT_by_Products_YTD" : @"SALES_REPORT_by_Products_MAT"
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
 
@@ -89,7 +89,7 @@
             [aggrPerGroup addAggrPerYear:aggrPerYear];
         }
 
-        [aggrPerYear addCustomerSale:report YDTorMAT:isYTD];
+        [aggrPerYear addCustomerSale:report YTDorMAT:isYTD];
     }
     
     for (CustomerSalesAggrPerYear *aggrPerYear in aggrPerGroup.aggrPerYears)
@@ -135,6 +135,9 @@
             totalAggrPerYear.dec += aggrPerYear.dec;
         }
     }
+    for (CustomerSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
+        [aggrPerYear finishAdd];
+
     [sales insertObject:totalAggr atIndex:0];
     
     /* Growth */
@@ -163,14 +166,14 @@
     return sales;
 }
 
-+ (NSArray *)CustomerSalesGroupByGroupFromCustomers:(NSString *)aField andValue:(NSString *)aValue YDTorMAT:(BOOL)isYTD
++ (NSArray *)CustomerSalesGroupByGroupFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD
 {
     NSArray *filteredCustomers = [Customer searchCustomerIDsWithField:aField andValue:aValue];
     
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_by_Products_MAT"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:isYTD ? @"SALES_REPORT_by_Products_YTD" : @"SALES_REPORT_by_Products_MAT"
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
@@ -236,7 +239,7 @@
             [aggrPerCustomer addAggrPerYear:aggrPerYear];
         }
         
-        [aggrPerYear addCustomerSale:report YDTorMAT:isYTD];
+        [aggrPerYear addCustomerSale:report YTDorMAT:isYTD];
     }
     
     if (aggrPerYear.year)
@@ -285,6 +288,9 @@
             totalAggrPerYear.dec += aggrPerYear.dec;
         }
     }
+    for (CustomerSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
+        [aggrPerYear finishAdd];
+
     [sales insertObject:totalAggr atIndex:0];
     
     /* Growth */

@@ -204,10 +204,10 @@
                 cellText = @"";
                 break;
             }
-        NSNumber *number=[NSNumber numberWithInteger:[cellText integerValue]];    
-        cell.textField.text = [self.numberFormat stringFromNumber:number];
+//        NSNumber *number=[NSNumber numberWithInteger:[cellText integerValue]];    
+//        cell.textField.text = [self.numberFormat stringFromNumber:number];
             
- //       cell.textField.text = cellText;
+        cell.textField.text = cellText;
         return cell;
         }
 }
