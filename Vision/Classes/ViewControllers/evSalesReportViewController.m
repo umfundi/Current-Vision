@@ -540,7 +540,6 @@ NSArray *SalesReportSubviews(UIView *aView)
         // And populate the Country label
         lblPracticeName.text = selectedPractice.province;
         }
-
 }
 
 
