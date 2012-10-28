@@ -13,6 +13,13 @@
 #import "ProductListDataSource.h"
 #import "Product.h"
 
+#define FilterTypePractice          0
+#define FilterTypeCustomer          1
+#define FilterTypeCountry           2
+#define FilterTypeKeyAccountManager 3
+#define FilterTypeGroup             4
+#define FilterTypeCounty            5
+
 @interface evClientSalesViewController ()
 
 @end

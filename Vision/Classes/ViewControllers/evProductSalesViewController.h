@@ -44,7 +44,8 @@
     IBOutlet UIButton *btnKAM;
     IBOutlet UIButton *btnPractice;
     IBOutlet UIButton *btnCounty;
-    IBOutlet UIButton *btnCountry;    IBOutlet UITextField *findText;
+    IBOutlet UIButton *btnCountry;
+    IBOutlet UITextField *findText;
     
     ShinobiGrid *productSalesGrid;
     ProductSalesDataSource *productSalesDataSource;
@@ -70,6 +71,7 @@
 - (IBAction)ytdClicked:(id)sender;
 - (IBAction)matClicked:(id)sender;
 - (IBAction)fullClicked:(id)sender;
+
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
 

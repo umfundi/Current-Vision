@@ -62,7 +62,7 @@
 - (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int)secIndex{
     SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
     
-    NSLog(@"Sect %d row %d", secIndex, rowIndex);
+//    NSLog(@"Sect %d row %d", secIndex, rowIndex);
     
     //Set Height of rows
     if(rowIndex == 0 && secIndex == 0)
@@ -89,10 +89,6 @@
         style.size = [NSNumber numberWithFloat:56];
         return style;
     }
-/*    else if (colIndex == 2) {
-        style.size = [NSNumber numberWithFloat:150];
-        return style;
-    }  */
     return nil;
 }
 

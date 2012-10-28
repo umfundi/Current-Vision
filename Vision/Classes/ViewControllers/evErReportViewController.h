@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
 
+#import "AllCustomersViewController.h"
+#import "AllPracticesViewController.h"
+#import "AllCountiesViewController.h"
+#import "AllKeyAccountManagersViewController.h"
+#import "AllGroupsViewController.h"
+#import "AllCountriesViewController.h"
+
+@class User;
 @class Practice;
 @class ErReportDataSource;
 
@@ -29,7 +37,7 @@
     IBOutlet UILabel *lblCountyHdr;
     IBOutlet UILabel *lblBGroupHdr;
     IBOutlet UIButton *btnMAT;
-    IBOutlet UIButton *btmYTD;
+    IBOutlet UIButton *btnYTD;
     IBOutlet UIButton *btnCustomer;
     IBOutlet UIButton *btnBGroup;
     IBOutlet UIButton *btnKAM;
@@ -41,10 +49,29 @@
     ShinobiGrid *erReportGrid;
     ErReportDataSource *erReportDataSource;
     
-    NSInteger currentFilter;
+    UIPopoverController *searchPopoverController;
     
+    NSInteger currentFilter;
+    BOOL isYTD;
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;
+@property (nonatomic, retain) User *selectedUser;
+@property (nonatomic, retain) Customer *selectedCustomer;
+@property (nonatomic, retain) NSString *selectedFilterVal;
+
+- (IBAction)customerClicked:(id)sender;
+- (IBAction)practiceClicked:(id)sender;
+- (IBAction)countyClicked:(id)sender;
+- (IBAction)keyAccountManagerClicked:(id)sender;
+- (IBAction)groupClicked:(id)sender;
+- (IBAction)countryClicked:(id)sender;
+
+- (IBAction)ytdClicked:(id)sender;
+- (IBAction)matClicked:(id)sender;
+- (IBAction)fullClicked:(id)sender;
+
+- (IBAction)findClicked:(id)sender;
+- (IBAction)nextClicked:(id)sender;
 
 @end

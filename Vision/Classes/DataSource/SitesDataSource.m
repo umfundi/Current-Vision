@@ -69,21 +69,29 @@
         }
     else
         {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+        SGridNumberCell *cell = (SGridNumberCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+            
         if (!cell)
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
-        
+            cell = [[SGridNumberCell alloc] initWithReuseIdentifier:@"valueCell"];
+            
+        if (gridCoord.column<4)
+            cell.textField.textAlignment = UITextAlignmentLeft;
+        else
+            cell.textField.textAlignment = UITextAlignmentRight;
+            
         cell.textField.font = [UIFont fontWithName:@"Arial" size:14.0f];
         cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:14.0f];
-        
         cell.textField.backgroundColor = [UIColor whiteColor];
+            
         cell.backgroundColor = [UIColor whiteColor];
-        
+            
+        // Create formatter
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        NSString *cellText;
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            
         Customer *customer = [sitesArray objectAtIndex:gridCoord.rowIndex - 1];
         
-        NSString *cellText;
         switch (gridCoord.column)
         {
             case 0:
@@ -99,13 +107,16 @@
                 cellText = customer.postcode;
                 break;
             case 4:
-                cellText = customer.aggrValue.monthString;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:customer.aggrValue.month]];
+//                cellText = customer.aggrValue.monthString;
                 break;
             case 5:
-                cellText = customer.aggrValue.ytdString;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:customer.aggrValue.ytd]];
+//                cellText = customer.aggrValue.ytdString;
                 break;
             case 6:
-                cellText = customer.aggrValue.matString;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:customer.aggrValue.mat]];
+//              cellText = customer.aggrValue.matString;
                 break;
             default:
                 cellText = @"";

@@ -326,7 +326,151 @@ NSArray *ErReportSubviews(UIView *aView)
 }
 
 - (void)viewDidUnload {
-    lblPostcode = nil;
     [super viewDidUnload];
 }
+
+- (IBAction)customerClicked:(id)sender
+{
+    AllCustomersViewController *resultViewController = [[AllCustomersViewController alloc] init];
+    resultViewController.searchResult = [Customer allCustomers];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)practiceClicked:(id)sender
+{
+    AllPracticesViewController *resultViewController = [[AllPracticesViewController alloc] init];
+    resultViewController.searchResult = [Practice allPractices];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)countyClicked:(id)sender
+{
+    AllCountiesViewController *resultViewController = [[AllCountiesViewController alloc] init];
+    resultViewController.searchResult = [Customer allCounties];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)keyAccountManagerClicked:(id)sender
+{
+    AllKeyAccountManagersViewController *resultViewController = [[AllKeyAccountManagersViewController alloc] init];
+    resultViewController.searchResult = [User allUsers];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)groupClicked:(id)sender
+{
+    AllGroupsViewController *resultViewController = [[AllGroupsViewController alloc] init];
+    resultViewController.searchResult = [Customer allGroups];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (IBAction)countryClicked:(id)sender
+{
+    AllCountriesViewController *resultViewController = [[AllCountriesViewController alloc] init];
+    resultViewController.searchResult = [Customer allCountries];
+    resultViewController.delegate = self;
+    
+    searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
+    [searchPopoverController presentPopoverFromRect:[sender frame]
+                                             inView:self.view
+                           permittedArrowDirections:UIPopoverArrowDirectionUp
+                                           animated:YES];
+}
+
+- (void)displayGrids
+{
+    if (currentFilter == FilterTypePractice)
+    {
+//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCustomer)
+    {
+//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeGroup)
+    {
+//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeKeyAccountManager)
+    {
+//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCountry)
+    {
+//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCounty)
+    {
+//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    
+//    [monthReportGrid reload];
+    
+//  yearReportDataSource.reportArray = [SalesTrendAggrPerBrand yearReportsFrom:monthReportDataSource.reportArray];
+//    yearReportDataSource.figureTitle = NSLocalizedString(isYTD ? @"YTD. Figures" : @"MAT. Figures", @"");
+//    [yearReportGrid reload];
+}
+
+
+- (IBAction)ytdClicked:(id)sender
+{
+    isYTD = YES;
+    
+    [self displayGrids];
+}
+
+- (IBAction)matClicked:(id)sender
+{
+    isYTD = NO;
+    
+    [self displayGrids];
+    
+  //  lblIDUser.text = selectedUser.login;
+}
+
+- (IBAction)findClicked:(id)sender {
+}
+
+- (IBAction)nextClicked:(id)sender {
+}
+
+- (IBAction)fullClicked:(id)sender {
+}
+
+- (IBAction)btnPractice:(id)sender {
+}
+
+
+
+
 @end

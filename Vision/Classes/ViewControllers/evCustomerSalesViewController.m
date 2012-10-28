@@ -167,6 +167,8 @@ NSArray *CustomerSalesSubviews(UIView *aView)
 
 - (void)viewDidUnload {
     lblPostcode = nil;
+    btnNext = nil;
+    btnFind = nil;
     [super viewDidUnload];
 }
 

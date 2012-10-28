@@ -114,19 +114,16 @@
         {
         SGridNumberCell *cell = (SGridNumberCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
             
-//        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
         if (!cell)
-//            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
               cell = [[SGridNumberCell alloc] initWithReuseIdentifier:@"valueCell"];
-        
-//        cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
-//        cell.textField.textColor = [UIColor blackColor];
-//        cell.textField.textAlignment = UITextAlignmentLeft;
-//        cell.textField.backgroundColor = [UIColor whiteColor];
             
+        if (gridCoord.column==0)
+            cell.textField.textAlignment = UITextAlignmentCenter;
+        else
+            cell.textField.textAlignment = UITextAlignmentRight;
+                        
         cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
         cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentRight;
         cell.textField.backgroundColor = [UIColor whiteColor];
             
         cell.backgroundColor = [UIColor whiteColor];

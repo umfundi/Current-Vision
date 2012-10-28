@@ -56,22 +56,30 @@
         return cell;
     }
     else
-    {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+        {
+        SGridNumberCell *cell = (SGridNumberCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+            
         if (!cell)
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
-        
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:14.0f];
+            cell = [[SGridNumberCell alloc] initWithReuseIdentifier:@"valueCell"];
+            
+        if (gridCoord.column==0)
+            cell.textField.textAlignment = UITextAlignmentCenter;
+        else
+            cell.textField.textAlignment = UITextAlignmentRight;
+            
+        cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
         cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:14.0f];
-        
         cell.textField.backgroundColor = [UIColor whiteColor];
+            
         cell.backgroundColor = [UIColor whiteColor];
         
         PracticeAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:gridCoord.section - 1];
         
+        // Create formatter
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         NSString *cellText;
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            
         switch (gridCoord.column)
         {
             case 0:
@@ -95,13 +103,16 @@
                 switch (gridCoord.rowIndex)
                 {
                     case 0:
-                        cellText = aggrPerBrand.monthprvString;
+                        cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.monthprv]];
+//                        cellText = aggrPerBrand.monthprvString;
                         break;
                     case 1:
-                        cellText = aggrPerBrand.ytdprvString;
+                        cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.ytdprv]];
+//                        cellText = aggrPerBrand.ytdprvString;
                         break;
                     case 2:
-                        cellText = aggrPerBrand.matprvString;
+                        cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.matprv]];
+//                        cellText = aggrPerBrand.matprvString;
                         break;
                 }
                 break;
@@ -109,13 +120,16 @@
                 switch (gridCoord.rowIndex)
                 {
                     case 0:
-                        cellText = aggrPerBrand.monthString;
+                        cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.month]];
+//                        cellText = aggrPerBrand.monthString;
                         break;
                     case 1:
-                        cellText = aggrPerBrand.ytdString;
+                        cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.ytd]];
+//                        cellText = aggrPerBrand.ytdString;
                         break;
                     case 2:
-                        cellText = aggrPerBrand.matString;
+                        cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.mat]];
+//                        cellText = aggrPerBrand.matString;
                         break;
                 }
                 break;
