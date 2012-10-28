@@ -29,4 +29,26 @@
     return [context executeFetchRequest:fetchRequest error:nil];
 }
 
+
++ (NSString *)brandClassFromName:(NSString *)brandName
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Focused_brand"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand_name == %@", brandName];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *brands = [context executeFetchRequest:fetchRequest error:nil];
+    if ([brands count] != 1)
+        return nil;
+    
+    Focused_brand *brand = (Focused_brand *)[brands objectAtIndex:0];
+    
+    return brand.brand_class;
+}
+
 @end

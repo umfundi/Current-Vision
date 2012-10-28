@@ -30,6 +30,9 @@
 @implementation evErReportViewController
 
 @synthesize selectedPractice;
+@synthesize selectedUser;
+@synthesize selectedCustomer;
+@synthesize selectedFilterVal;
 
 #pragma mark -SGridDelegate
 
@@ -60,18 +63,13 @@
     
     umfundiAppDelegate *appDelegate = (umfundiAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.selectedPractice = appDelegate.frontViewController.currentPractice;
+    self.selectedUser = [User loginUser];
     
-    lblPracticeName.text = selectedPractice.practiceName;
-    lblPracticeCode.text = selectedPractice.practiceCode;
-    lblAddress1.text = selectedPractice.add1;
-    lblAddress2.text = selectedPractice.province;
-    lblAddress3.text = selectedPractice.country;
-    lblPostcode.text = selectedPractice.postcode;
-    lblIDUser.text = [User loginUser].login;
+    currentFilter = FilterTypePractice;
+    isYTD = YES;
     
     erReportDataSource = [[ErReportDataSource alloc] init];
-    erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:appDelegate.frontViewController.currentPractice.practiceCode];
-    
+
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
     
     //Create the grid
@@ -112,7 +110,7 @@
     
     currentFilter = FilterTypePractice;
     [self displayHeaderinfoblock];
-//    [self displayGrids];
+    [self displayGrids];
     
     
     // this displays the grid
@@ -407,39 +405,6 @@ NSArray *ErReportSubviews(UIView *aView)
                                            animated:YES];
 }
 
-- (void)displayGrids
-{
-    if (currentFilter == FilterTypePractice)
-    {
-//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeCustomer)
-    {
-//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeGroup)
-    {
-//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeKeyAccountManager)
-    {
-//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeCountry)
-    {
-//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeCounty)
-    {
-//        monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
-    }
-    
-//    [monthReportGrid reload];
-    
-//  yearReportDataSource.reportArray = [SalesTrendAggrPerBrand yearReportsFrom:monthReportDataSource.reportArray];
-//    yearReportDataSource.figureTitle = NSLocalizedString(isYTD ? @"YTD. Figures" : @"MAT. Figures", @"");
-//    [yearReportGrid reload];
-}
 
 
 - (IBAction)ytdClicked:(id)sender
@@ -454,8 +419,6 @@ NSArray *ErReportSubviews(UIView *aView)
     isYTD = NO;
     
     [self displayGrids];
-    
-  //  lblIDUser.text = selectedUser.login;
 }
 
 - (IBAction)findClicked:(id)sender {
@@ -471,6 +434,110 @@ NSArray *ErReportSubviews(UIView *aView)
 }
 
 
+#pragma mark -
+#pragma mark Filter Delegates
 
+- (void)countrySelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCountry;
+    self.selectedFilterVal = selected;
+    
+    [self displayHeaderinfoblock];
+    [self displayGrids];
+}
+
+- (void)countySelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCounty;
+    self.selectedFilterVal = selected;
+    
+    [self displayHeaderinfoblock];
+    [self displayGrids];
+}
+
+- (void)customerSelected:(Customer *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeCustomer;
+    self.selectedCustomer = selected;
+    
+    [self displayHeaderinfoblock];
+    [self displayGrids];
+}
+
+- (void)groupSelected:(NSString *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeGroup;
+    self.selectedFilterVal = selected;
+    
+    [self displayHeaderinfoblock];
+    [self displayGrids];
+}
+
+- (void)keyAccountManagerSelected:(User *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypeKeyAccountManager;
+    self.selectedUser = selected;
+    
+    [self displayHeaderinfoblock];
+    [self displayGrids];
+}
+
+- (void)practiceSelected:(Practice *)selected
+{
+    [searchPopoverController dismissPopoverAnimated:YES];
+    searchPopoverController = nil;
+    
+    currentFilter = FilterTypePractice;
+    self.selectedPractice = selected;
+    
+    [self displayHeaderinfoblock];
+    [self displayGrids];
+}
+
+
+- (void)displayGrids
+{
+    if (currentFilter == FilterTypePractice)
+    {
+        erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCustomer)
+    {
+        erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeGroup)
+    {
+        erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeKeyAccountManager)
+    {
+        erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCountry)
+    {
+        erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    else if (currentFilter == FilterTypeCounty)
+    {
+        erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+    }
+    
+    [erReportGrid reload];
+}
 
 @end

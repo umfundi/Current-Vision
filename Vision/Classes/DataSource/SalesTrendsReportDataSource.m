@@ -17,26 +17,14 @@
 #pragma mark -
 #pragma mark ShinobiGridDataSource
 
-- (SGridCell *)shinobiGrid:(ShinobiGrid *)grid cellForGridCoord:(const SGridCoord *) gridCoord
+- (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord
 {
+    NSString *cellText;
+
     if (gridCoord.rowIndex == 0)
-        {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
-        if (!cell)
-            {
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
-            }
-        
-        cell.textField.textAlignment = UITextAlignmentCenter;
-        cell.textField.backgroundColor = [UIColor darkGrayColor];
-        cell.backgroundColor = [UIColor darkGrayColor];
-        cell.textField.textColor = [UIColor whiteColor];
-        
-        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:12.f];
-        
-        NSString *cellText;
+    {
         switch (gridCoord.column)
-            {
+        {
             case 0:
                 cellText = figureTitle;
                 break;
@@ -83,8 +71,99 @@
                 cellText = @"";
                 break;
         }
+    }
+    else
+    {
+        // Create formatter
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         
-        cell.textField.text = cellText;        
+        SalesTrendAggrPerBrand *aggr = [reportArray objectAtIndex:gridCoord.rowIndex - 1];
+        switch (gridCoord.column)
+        {
+            case 0:
+                cellText = aggr.brand;
+                break;
+            case 1:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jan]];
+                //                cellText = aggr.janString;
+                break;
+            case 2:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.feb]];
+                //                cellText = aggr.febString;
+                break;
+            case 3:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.mar]];
+                //                cellText = aggr.marString;
+                break;
+            case 4:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.apr]];
+                //                cellText = aggr.aprString;
+                break;
+            case 5:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.may]];
+                //                cellText = aggr.mayString;
+                break;
+            case 6:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jun]];
+                //                cellText = aggr.junString;
+                break;
+            case 7:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jul]];
+                //                cellText = aggr.julString;
+                break;
+            case 8:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.aug]];
+                //                cellText = aggr.augString;
+                break;
+            case 9:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.sep]];
+                //                cellText = aggr.sepString;
+                break;
+            case 10:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.oct]];
+                //                cellText = aggr.octString;
+                break;
+            case 11:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.nov]];
+                //                cellText = aggr.novString;
+                break;
+            case 12:
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.dec]];
+                //                cellText = aggr.decString;
+                break;
+            case 13:
+                //                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jan]];
+                cellText = aggr.growthString;
+                break;
+            default:
+                cellText = @"";
+                break;
+        }
+    }
+    
+    return cellText;
+}
+
+- (SGridCell *)shinobiGrid:(ShinobiGrid *)grid cellForGridCoord:(const SGridCoord *) gridCoord
+{
+    NSString *cellText = [self shinobiGrid:grid textForGridCoord:gridCoord];
+
+    if (gridCoord.rowIndex == 0)
+        {
+        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
+        if (!cell)
+            {
+            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
+            }
+        
+        cell.textField.textAlignment = UITextAlignmentCenter;
+        cell.textField.backgroundColor = [UIColor darkGrayColor];
+        cell.backgroundColor = [UIColor darkGrayColor];
+        cell.textField.textColor = [UIColor whiteColor];
+        
+        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:12.f];
+        cell.textField.text = cellText;
         return cell;
         }
     else
@@ -103,83 +182,7 @@
         cell.textField.backgroundColor = [UIColor whiteColor];
             
         cell.backgroundColor = [UIColor whiteColor];
-            
-            
-        // Create formatter
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        NSString *cellText;
-        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-            
-/*        if (gridCoord.rowIndex%2 == 0)
-            cell.backgroundColor = [UIColor lightGrayColor];
-        else
-            cell.backgroundColor = [UIColor whiteColor];    */
-            
-        SalesTrendAggrPerBrand *aggr = [reportArray objectAtIndex:gridCoord.rowIndex - 1];
-        
-        switch (gridCoord.column)
-            {
-            case 0:
-                cellText = aggr.brand;
-                break;
-            case 1:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jan]];
-//                cellText = aggr.janString;
-                break;
-            case 2:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.feb]];
-//                cellText = aggr.febString;
-                break;
-            case 3:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.mar]];
-//                cellText = aggr.marString;
-                break;
-            case 4:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.apr]];
-//                cellText = aggr.aprString;
-                break;
-            case 5:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.may]];
-//                cellText = aggr.mayString;
-                break;
-            case 6:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jun]];
-//                cellText = aggr.junString;
-                break;
-            case 7:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jul]];
-//                cellText = aggr.julString;
-                break;
-            case 8:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.aug]];
-//                cellText = aggr.augString;
-                break;
-            case 9:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.sep]];
-//                cellText = aggr.sepString;
-                break;
-            case 10:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.oct]];
-//                cellText = aggr.octString;
-                break;
-            case 11:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.nov]];
-//                cellText = aggr.novString;
-                break;
-            case 12:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.dec]];
-//                cellText = aggr.decString;
-                break;
-            case 13:
-//                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jan]];
-                cellText = aggr.growthString;
-                break;
-            default:
-                cellText = @"";
-                break;
-            }
-        
-        cell.textField.text = cellText;        
+        cell.textField.text = cellText;
         return cell;
     }
 }

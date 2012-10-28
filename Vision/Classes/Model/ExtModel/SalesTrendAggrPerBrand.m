@@ -73,6 +73,27 @@
         [aggrPerBrand finishAdd];
         [aggrs addObject:aggrPerBrand];
     }
+
+    /* Total */
+    SalesTrendAggrPerBrand *totalAggr = [[SalesTrendAggrPerBrand alloc] init];
+    totalAggr.brand = @"TOTAL";
+    for (SalesTrendAggrPerBrand *aggrPerBrand in aggrs)
+    {
+        totalAggr.jan += aggrPerBrand.jan;
+        totalAggr.feb += aggrPerBrand.feb;
+        totalAggr.mar += aggrPerBrand.mar;
+        totalAggr.apr += aggrPerBrand.apr;
+        totalAggr.may += aggrPerBrand.may;
+        totalAggr.jun += aggrPerBrand.jun;
+        totalAggr.jul += aggrPerBrand.jul;
+        totalAggr.aug += aggrPerBrand.aug;
+        totalAggr.sep += aggrPerBrand.sep;
+        totalAggr.oct += aggrPerBrand.oct;
+        totalAggr.nov += aggrPerBrand.nov;
+        totalAggr.dec += aggrPerBrand.dec;
+    }
+    [totalAggr finishAdd];
+    [aggrs addObject:totalAggr];
     
     return aggrs;
 }
@@ -125,6 +146,27 @@
         [aggrs addObject:aggrPerBrand];
     }
     
+    /* Total */
+    SalesTrendAggrPerBrand *totalAggr = [[SalesTrendAggrPerBrand alloc] init];
+    totalAggr.brand = @"TOTAL";
+    for (SalesTrendAggrPerBrand *aggrPerBrand in aggrs)
+    {
+        totalAggr.jan += aggrPerBrand.jan;
+        totalAggr.feb += aggrPerBrand.feb;
+        totalAggr.mar += aggrPerBrand.mar;
+        totalAggr.apr += aggrPerBrand.apr;
+        totalAggr.may += aggrPerBrand.may;
+        totalAggr.jun += aggrPerBrand.jun;
+        totalAggr.jul += aggrPerBrand.jul;
+        totalAggr.aug += aggrPerBrand.aug;
+        totalAggr.sep += aggrPerBrand.sep;
+        totalAggr.oct += aggrPerBrand.oct;
+        totalAggr.nov += aggrPerBrand.nov;
+        totalAggr.dec += aggrPerBrand.dec;
+    }
+    [totalAggr finishAdd];
+    [aggrs addObject:totalAggr];
+
     return aggrs;
 }
 

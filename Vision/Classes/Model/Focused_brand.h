@@ -18,4 +18,6 @@
 
 + (NSArray *)AllBrands;
 
++ (NSString *)brandClassFromName:(NSString *)brandName;
+
 @end

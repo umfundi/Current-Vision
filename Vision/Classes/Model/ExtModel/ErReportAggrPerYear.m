@@ -29,20 +29,20 @@
 @synthesize value, growth;
 @synthesize qty, qtygrowth;
 
-- (void)addErReport:(NSDictionary *)erReport
+- (void)addErReport:(NSDictionary *)erReport YTDorMAT:(BOOL)isYTD
 {
-    jan += [[erReport objectForKey:@"janval"] doubleValue];
-    feb += [[erReport objectForKey:@"febval"] doubleValue];
-    mar += [[erReport objectForKey:@"marval"] doubleValue];
-    apr += [[erReport objectForKey:@"aprval"] doubleValue];
-    may += [[erReport objectForKey:@"mayval"] doubleValue];
-    jun += [[erReport objectForKey:@"junval"] doubleValue];
-    jul += [[erReport objectForKey:@"julval"] doubleValue];
-    aug += [[erReport objectForKey:@"augval"] doubleValue];
-    sep += [[erReport objectForKey:@"sepval"] doubleValue];
-    oct += [[erReport objectForKey:@"octval"] doubleValue];
-    nov += [[erReport objectForKey:@"novval"] doubleValue];
-    dec += [[erReport objectForKey:@"decval"] doubleValue];
+    jan += [[erReport objectForKey:@"m_11val"] doubleValue];
+    feb += [[erReport objectForKey:@"m_10val"] doubleValue];
+    mar += [[erReport objectForKey:@"m_9val"] doubleValue];
+    apr += [[erReport objectForKey:@"m_8val"] doubleValue];
+    may += [[erReport objectForKey:@"m_7val"] doubleValue];
+    jun += [[erReport objectForKey:@"m_6val"] doubleValue];
+    jul += [[erReport objectForKey:@"m_5val"] doubleValue];
+    aug += [[erReport objectForKey:@"m_4val"] doubleValue];
+    sep += [[erReport objectForKey:@"m_3val"] doubleValue];
+    oct += [[erReport objectForKey:@"m_2val"] doubleValue];
+    nov += [[erReport objectForKey:@"m_1val"] doubleValue];
+    dec += [[erReport objectForKey:@"m0val"] doubleValue];
 }
 
 - (void)finishAdd
@@ -63,14 +63,13 @@
     novString = [NSString stringWithFormat:@"%.0f", round(nov)];
     decString = [NSString stringWithFormat:@"%.0f", round(dec)];
     totq4 = [NSString stringWithFormat:@"%.0f", round(oct + nov + dec)];
-#warning value in ErReport
-    value = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning growth in ErReport
-    growth = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning qty in ErReport
-    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
-#warning growth in ErReport
-    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+    value = [NSString stringWithFormat:@"%.0f", round(jan + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec)];
+//#warning growth in ErReport
+//    growth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+//#warning qty in ProductSales
+//    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
+//#warning growth in ProductSales
+//    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
 }
 
 @end

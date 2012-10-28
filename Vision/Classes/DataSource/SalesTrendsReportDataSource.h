@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *figureTitle;
 @property (nonatomic, strong) NSArray *reportArray;
 
+- (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord;
+
 @end

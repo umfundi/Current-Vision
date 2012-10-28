@@ -346,7 +346,8 @@ NSArray *SalesReportSubviews(UIView *aView)
     [self nextClicked:sender];
 }
 
-- (IBAction)nextClicked:(id)sender {
+- (IBAction)nextClicked:(id)sender
+{
     [findText resignFirstResponder];
     if ([findText.text length] == 0)
         return;
@@ -364,6 +365,7 @@ NSArray *SalesReportSubviews(UIView *aView)
         NSInteger cell_in_grid = cell % total_cell_count;
         
         ShinobiGrid *grid;
+        SalesTrendsReportDataSource *datasource;
         NSInteger col;
         NSInteger row;
         
@@ -374,6 +376,7 @@ NSArray *SalesReportSubviews(UIView *aView)
             row = cell_in_grid / month_col_count;
             
             grid = monthReportGrid;
+            datasource = monthReportDataSource;
         }
         else
         {
@@ -384,10 +387,8 @@ NSArray *SalesReportSubviews(UIView *aView)
             row = cell_in_grid / year_col_count;
             
             grid = yearReportGrid;
+            datasource = yearReportDataSource;
         }
-        
-        if (row == 0)
-            continue;
         
         CGRect cell_rect = CGRectMake(1, 1, 0, 0);
         for (NSInteger i = 0 ; i < col ; i ++ )
@@ -420,17 +421,7 @@ NSArray *SalesReportSubviews(UIView *aView)
         else
             cell_rect.size.height = [grid.defaultRowStyle.size doubleValue] + 1;
         
-        [grid scrollRectToVisible:cell_rect animated:NO];
-        
-        SGridTextCell *grid_cell = (SGridTextCell *)[grid visibleCellAtCol:col andRow:SGridRowMake(row, 0)];
-        if (!grid_cell)
-        {
-            temp_cell = cell;
-            [self performSelector:@selector(nextClicked:) withObject:sender afterDelay:0.2];
-            return;
-        }
-        
-        NSString *text = [grid_cell.textField text];
+        NSString *text = [datasource shinobiGrid:grid textForGridCoord:[[SGridCoord alloc] initWithColumn:col withRow:SGridRowMake(row, 0)]];
         if ([text rangeOfString:findText.text].location != NSNotFound)
         {
             if (grid == monthReportGrid)
@@ -438,7 +429,8 @@ NSArray *SalesReportSubviews(UIView *aView)
             else
                 [monthReportGrid reload];
             
-            [grid_cell setSelected:YES animated:YES];
+            [grid scrollRectToVisible:cell_rect animated:NO];
+            [self performSelector:@selector(cellFound) withObject:nil afterDelay:0.1];
             
             last_col = col;
             last_row = row;
@@ -448,6 +440,16 @@ NSArray *SalesReportSubviews(UIView *aView)
             return;
         }
     }
+}
+
+- (void)cellFound
+{
+    SGridCell *grid_cell;
+    if (posInMonth)
+        grid_cell = [monthReportGrid visibleCellAtCol:last_col andRow:SGridRowMake(last_row, 0)];
+    else
+        grid_cell = [yearReportGrid visibleCellAtCol:last_col andRow:SGridRowMake(last_row, 0)];
+    [grid_cell setSelected:YES animated:YES];
 }
 
 

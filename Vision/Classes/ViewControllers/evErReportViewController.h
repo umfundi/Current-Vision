@@ -20,7 +20,7 @@
 @class Practice;
 @class ErReportDataSource;
 
-@interface evErReportViewController : UIViewController <SGridDelegate>
+@interface evErReportViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate>
 {
     IBOutlet UILabel *lblThemeBox;
     IBOutlet UILabel *lblPracticeName;
