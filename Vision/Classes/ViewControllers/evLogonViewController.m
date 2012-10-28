@@ -150,7 +150,7 @@
                 [HUDDownload show:YES];
 
                 downloadPath = [User sqliteFilepathForData];
-                NSLog(@"Download territory file %@",downloadPath);
+//                NSLog(@"Download territory file %@",downloadPath);
                 conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[User sqliteDownloadURLForData]]] delegate:self startImmediately:YES];
 
                 return;
@@ -213,7 +213,7 @@
         int count = 0;
         for (UIView *eachView in LogonSubviews(templateController.view))
         {
-            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
+//            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
             
             int tag = eachView.tag;
             if(tag < 10 ) continue;

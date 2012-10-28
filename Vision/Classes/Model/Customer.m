@@ -53,7 +53,7 @@
     NSArray *array = [context executeFetchRequest:fetchRequest error:nil];
     if ([array count] > 0)
         self.practice = [array objectAtIndex:0];
-    NSLog(@"%@", array);
+//    NSLog(@"%@", array);
     
     aggr = [CustomerAggr AggrFrom:self.id_customer];
 }

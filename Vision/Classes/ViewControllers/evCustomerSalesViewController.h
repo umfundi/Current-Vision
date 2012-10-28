@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import <ShinobiGrids/ShinobiGrid.h>
+#import <ShinobiCharts/ShinobiChart.h>
 
 #import "AllCustomersViewController.h"
 #import "AllPracticesViewController.h"
@@ -51,6 +52,10 @@
     IBOutlet UIButton *btnFind;
     
     ShinobiGrid *customerSalesGrid;
+    ShinobiChart *lineChart;
+    
+//    CustomerSalesChartSource *datasource;
+    
     CustomerSalesDataSource *customerSalesDataSource;
     
     UIPopoverController *searchPopoverController;

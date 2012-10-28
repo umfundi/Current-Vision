@@ -73,13 +73,14 @@
             
         cell.backgroundColor = [UIColor whiteColor];
         
-        PracticeAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:gridCoord.section - 1];
         
         // Create formatter
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         NSString *cellText;
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
             
+        PracticeAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:gridCoord.section - 1];
+           
         switch (gridCoord.column)
         {
             case 0:
@@ -104,15 +105,12 @@
                 {
                     case 0:
                         cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.monthprv]];
-//                        cellText = aggrPerBrand.monthprvString;
                         break;
                     case 1:
                         cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.ytdprv]];
-//                        cellText = aggrPerBrand.ytdprvString;
                         break;
                     case 2:
                         cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.matprv]];
-//                        cellText = aggrPerBrand.matprvString;
                         break;
                 }
                 break;
@@ -121,15 +119,12 @@
                 {
                     case 0:
                         cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.month]];
-//                        cellText = aggrPerBrand.monthString;
                         break;
                     case 1:
                         cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.ytd]];
-//                        cellText = aggrPerBrand.ytdString;
                         break;
                     case 2:
                         cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.mat]];
-//                        cellText = aggrPerBrand.matString;
                         break;
                 }
                 break;

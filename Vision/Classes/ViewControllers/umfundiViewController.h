@@ -56,8 +56,6 @@
     MBProgressHUD *HUDSearch;
     MBProgressHUD *HUDProcessing;
     
-//    PracticeSearchResultDataSource *dataSource;
-    
     // Sites & Sales
     ShinobiGrid *sitesGrid, *salesGrid;
     SitesDataSource *sitesDataSource;

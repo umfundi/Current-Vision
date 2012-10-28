@@ -145,7 +145,7 @@
         int count = 0;
         for (UIView *eachView in ErReportSubviews(templateController.view))
         {
-            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
+ //           NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
             
             int tag = eachView.tag;
             if(tag < 10 ) continue;

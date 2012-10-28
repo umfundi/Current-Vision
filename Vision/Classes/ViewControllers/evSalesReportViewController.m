@@ -62,10 +62,10 @@
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"SalesReportPortraitView" : @"SalesReportLandscapeView"];
     if (templateController)
     {
-        int count = 0;
+//        int count = 0;
         for (UIView *eachView in SalesReportSubviews(templateController.view))
         {
-            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
+//            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
             
             int tag = eachView.tag;
             if(tag < 10 ) continue;
@@ -332,13 +332,122 @@ NSArray *SalesReportSubviews(UIView *aView)
     lblIDUser.text = selectedUser.login;    
 }
 
-- (IBAction)findClicked:(id)sender {
+- (IBAction)findClicked:(id)sender
+{
+    [findText resignFirstResponder];
+    if ([findText.text length] == 0)
+        return;
+    
+    posInMonth = YES;
+    last_col = -1;
+    last_row = 0;
+    temp_cell = -1;
+
+    [self nextClicked:sender];
 }
 
 - (IBAction)nextClicked:(id)sender {
-}
-
-- (IBAction)btnPractice:(id)sender {
+    [findText resignFirstResponder];
+    if ([findText.text length] == 0)
+        return;
+ 
+    NSInteger month_col_count = monthReportGrid.numberOfColumns;
+    NSInteger month_row_count = [monthReportGrid numberOfRowsForSection:0];
+    NSInteger year_col_count = yearReportGrid.numberOfColumns;
+    NSInteger year_row_count = [yearReportGrid numberOfRowsForSection:0];
+    
+    NSInteger total_cell_count = month_col_count * month_row_count + year_col_count * year_row_count;
+    NSInteger last_cell = posInMonth ? (last_row * month_col_count + last_col) : (month_col_count * month_row_count + last_row * year_col_count + last_col);
+    
+    for (NSInteger cell = (temp_cell == -1) ? (last_cell + 1) : temp_cell; cell < last_cell + 1 + total_cell_count ; cell ++ )
+    {
+        NSInteger cell_in_grid = cell % total_cell_count;
+        
+        ShinobiGrid *grid;
+        NSInteger col;
+        NSInteger row;
+        
+        if (cell_in_grid < month_col_count * month_row_count)
+        {
+            // Month Grid
+            col = cell_in_grid % month_col_count;
+            row = cell_in_grid / month_col_count;
+            
+            grid = monthReportGrid;
+        }
+        else
+        {
+            // Year Grid
+            cell_in_grid -= month_col_count * month_row_count;
+            
+            col = cell_in_grid % year_col_count;
+            row = cell_in_grid / year_col_count;
+            
+            grid = yearReportGrid;
+        }
+        
+        if (row == 0)
+            continue;
+        
+        CGRect cell_rect = CGRectMake(1, 1, 0, 0);
+        for (NSInteger i = 0 ; i < col ; i ++ )
+        {
+            SGridColRowStyle *style = [self shinobiGrid:grid styleForColAtIndex:i];
+            if (style)
+                cell_rect.origin.x += [style.size doubleValue] + 1;
+            else
+                cell_rect.origin.x += [grid.defaultColumnStyle.size doubleValue] + 1;
+        }
+        
+        SGridColRowStyle *col_style = [self shinobiGrid:grid styleForColAtIndex:col];
+        if (col_style)
+            cell_rect.size.width = [col_style.size doubleValue] + 1;
+        else
+            cell_rect.size.width = [grid.defaultColumnStyle.size doubleValue] + 1;
+        
+        for (NSInteger j = 0 ; j < row ; j ++ )
+        {
+            SGridColRowStyle *style = [self shinobiGrid:grid styleForRowAtIndex:j inSection:0];
+            if (style)
+                cell_rect.origin.y += [style.size doubleValue];
+            else
+                cell_rect.origin.y += [grid.defaultRowStyle.size doubleValue] + 1;
+        }
+        
+        SGridColRowStyle *row_style = [self shinobiGrid:grid styleForRowAtIndex:row inSection:0];
+        if (row_style)
+            cell_rect.size.height = [row_style.size doubleValue];
+        else
+            cell_rect.size.height = [grid.defaultRowStyle.size doubleValue] + 1;
+        
+        [grid scrollRectToVisible:cell_rect animated:NO];
+        
+        SGridTextCell *grid_cell = (SGridTextCell *)[grid visibleCellAtCol:col andRow:SGridRowMake(row, 0)];
+        if (!grid_cell)
+        {
+            temp_cell = cell;
+            [self performSelector:@selector(nextClicked:) withObject:sender afterDelay:0.2];
+            return;
+        }
+        
+        NSString *text = [grid_cell.textField text];
+        if ([text rangeOfString:findText.text].location != NSNotFound)
+        {
+            if (grid == monthReportGrid)
+                [yearReportGrid reload];
+            else
+                [monthReportGrid reload];
+            
+            [grid_cell setSelected:YES animated:YES];
+            
+            last_col = col;
+            last_row = row;
+            posInMonth = (grid == monthReportGrid);
+            temp_cell = -1;
+            
+            return;
+        }
+    }
 }
 
 
@@ -596,6 +705,11 @@ NSArray *SalesReportSubviews(UIView *aView)
     yearReportDataSource.reportArray = [SalesTrendAggrPerBrand yearReportsFrom:monthReportDataSource.reportArray];
     yearReportDataSource.figureTitle = NSLocalizedString(isYTD ? @"YTD. Figures" : @"MAT. Figures", @"");
     [yearReportGrid reload];
+    
+    posInMonth = YES;
+    last_col = -1;
+    last_row = 0;
+    temp_cell = -1;
 }
 
 @end

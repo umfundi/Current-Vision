@@ -34,17 +34,17 @@
     
     if ([searchResult count] == 0)
     {
-        // No result
+    // No result
         
-        UILabel *noresultLabel = [[UILabel alloc] initWithFrame:self.view.bounds];
+    UILabel *noresultLabel = [[UILabel alloc] initWithFrame:self.view.bounds];
         
-        noresultLabel.autoresizingMask = ~UIViewAutoresizingNone;
-        noresultLabel.textAlignment = UITextAlignmentCenter;
-        noresultLabel.font = [UIFont boldSystemFontOfSize:16];
-        noresultLabel.text = NSLocalizedString(@"No results!", @"");
+    noresultLabel.autoresizingMask = ~UIViewAutoresizingNone;
+    noresultLabel.textAlignment = UITextAlignmentCenter;
+    noresultLabel.font = [UIFont boldSystemFontOfSize:16];
+    noresultLabel.text = NSLocalizedString(@"No results!", @"");
         
-        [self.view addSubview:noresultLabel];
-        return;
+    [self.view addSubview:noresultLabel];
+    return;
     }
     
     dataSource = [[AllGroupsDataSource alloc] init];

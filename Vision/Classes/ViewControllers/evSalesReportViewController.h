@@ -56,6 +56,12 @@
     
     NSInteger currentFilter;
     BOOL isYTD;
+    
+    NSInteger last_col;
+    NSInteger last_row;
+    BOOL posInMonth;
+    
+    NSInteger temp_cell;
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;

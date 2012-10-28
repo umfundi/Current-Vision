@@ -74,7 +74,7 @@
     
     NSArray *results = [context executeFetchRequest:fetchRequest error:nil];
     self.customers = [NSSet setWithArray:results];
-    NSLog(@"%@", self.customers);
+//    NSLog(@"%@", self.customers);
 }
 
 - (void)loadAggrValues
