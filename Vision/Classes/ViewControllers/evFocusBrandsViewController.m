@@ -46,7 +46,6 @@
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"FocusBrandsPortraitView" : @"FocusBrandsLandscapeView"];
     if (templateController)
     {
-        int count = 0;
         for (UIView *eachView in FocusBrandsSubviews(templateController.view))
         {
  //           NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);

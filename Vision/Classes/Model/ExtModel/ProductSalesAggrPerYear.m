@@ -6,6 +6,7 @@
 //
 
 #import "ProductSalesAggrPerYear.h"
+#import "Product.h"
 
 @implementation ProductSalesAggrPerYear
 

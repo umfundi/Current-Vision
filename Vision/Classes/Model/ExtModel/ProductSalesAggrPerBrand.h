@@ -16,6 +16,7 @@
 
 + (NSArray *)ProductSalesGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
 + (NSArray *)ProductSalesGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
++ (NSArray *)ProductSalesGroupByBrandFrom:(NSArray *)reports YTDorMAT:(BOOL)isYTD;
 
 - (void)addAggrPerYear:(ProductSalesAggrPerYear *)aggrPerYear;
 

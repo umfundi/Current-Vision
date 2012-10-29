@@ -54,6 +54,9 @@
     
     NSInteger currentFilter;
     BOOL isYTD;
+    
+    NSInteger last_col;
+    NSInteger last_row;
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;

@@ -17,24 +17,12 @@
 #pragma mark -
 #pragma mark ShinobiGridDataSource
 
-- (SGridCell *)shinobiGrid:(ShinobiGrid *)grid cellForGridCoord:(const SGridCoord *) gridCoord
+- (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord
 {
+    NSString *cellText;
+
     if (gridCoord.section == 0)
     {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
-        if (!cell)
-        {
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
-        }
-        
-        cell.textField.textAlignment = UITextAlignmentCenter;
-        cell.textField.backgroundColor = [UIColor darkGrayColor];
-        cell.backgroundColor = [UIColor darkGrayColor];
-        cell.textField.textColor = [UIColor whiteColor];
-        
-        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:14.f];
-        
-        NSString *cellText;
         switch (gridCoord.column)
         {
             case 0:
@@ -104,29 +92,12 @@
                 cellText = @"";
                 break;
         }
-        
-        cell.textField.text = cellText;
-        
-        return cell;
     }
     else
     {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
-        if (!cell)
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
-        
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        
-        cell.textField.backgroundColor = [UIColor whiteColor];
-        cell.backgroundColor = [UIColor whiteColor];
-        
         ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:gridCoord.section - 1];
         ErReportAggrPerYear *aggrPerYear = [aggrPerBrand.aggrPerYears objectAtIndex:gridCoord.rowIndex];
         
-        NSString *cellText;
         switch (gridCoord.column)
         {
             case 0:
@@ -196,6 +167,46 @@
                 cellText = @"";
                 break;
         }
+    }
+    
+    return cellText;
+}
+
+- (SGridCell *)shinobiGrid:(ShinobiGrid *)grid cellForGridCoord:(const SGridCoord *) gridCoord
+{
+    NSString *cellText = [self shinobiGrid:grid textForGridCoord:gridCoord];
+
+    if (gridCoord.section == 0)
+    {
+        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
+        if (!cell)
+        {
+            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
+        }
+        
+        cell.textField.textAlignment = UITextAlignmentCenter;
+        cell.textField.backgroundColor = [UIColor darkGrayColor];
+        cell.backgroundColor = [UIColor darkGrayColor];
+        cell.textField.textColor = [UIColor whiteColor];
+        
+        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:14.f];
+        cell.textField.text = cellText;
+        
+        return cell;
+    }
+    else
+    {
+        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+        if (!cell)
+            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
+        
+        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+        cell.textField.textColor = [UIColor blackColor];
+        cell.textField.textAlignment = UITextAlignmentLeft;
+        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+        
+        cell.textField.backgroundColor = [UIColor whiteColor];
+        cell.backgroundColor = [UIColor whiteColor];
         
         cell.textField.text = cellText;
         

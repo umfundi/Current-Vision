@@ -38,14 +38,12 @@
 
 - (SGridSectionHeaderStyle *)shinobiGrid:(ShinobiGrid *)grid styleForSectionHeaderAtIndex:(int) sectionIndex
 {
-    if (sectionIndex != 0)
-    {
-        SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:15.f withBackgroundColor:[UIColor lightGrayColor]];
-        s.font = [UIFont fontWithName:@"Arial" size:10.0f];
-        return s;
-    }
+    if (![grid.dataSource shinobiGrid:grid titleForHeaderInSection:sectionIndex])
+        return nil;
     
-    return nil;
+    SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:15.f withBackgroundColor:[UIColor lightGrayColor]];
+    s.font = [UIFont fontWithName:@"Arial" size:10.0f];
+    return s;
 }
 
 
@@ -179,7 +177,6 @@
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"ProductSalesPortraitView" : @"ProductSalesLandscapeView"];
     if (templateController)
     {
-        int count = 0;
         for (UIView *eachView in ProductSalesSubviews(templateController.view))
         {
 //            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
@@ -468,10 +465,125 @@ NSArray *ProductSalesSubviews(UIView *aView)
 - (IBAction)fullClicked:(id)sender {
 }
 
-- (IBAction)findClicked:(id)sender {
+- (IBAction)findClicked:(id)sender
+{
+    [findText resignFirstResponder];
+    if ([findText.text length] == 0)
+        return;
+    
+    last_col = -1;
+    last_row = 0;
+    
+    [self nextClicked:sender];
 }
 
-- (IBAction)nextClicked:(id)sender {
+- (IBAction)nextClicked:(id)sender
+{
+    [findText resignFirstResponder];
+    if ([findText.text length] == 0)
+        return;
+    
+    NSInteger col_count = productSalesGrid.numberOfColumns;
+    NSInteger section_count = productSalesGrid.numberOfSections;
+    NSInteger row_count = 0;
+    for (NSInteger section = 0 ; section < section_count ; section ++ )
+        row_count += [productSalesGrid numberOfRowsForSection:section];
+    
+    NSInteger total_cell_count = col_count * row_count;
+    NSInteger last_cell = last_row * col_count + last_col;
+    
+    for (NSInteger cell = last_cell + 1; cell < last_cell + 1 + total_cell_count ; cell ++ )
+    {
+        NSInteger cell_in_grid = cell % total_cell_count;
+        
+        NSInteger col = cell_in_grid % col_count;
+        NSInteger row = cell_in_grid / col_count;
+        
+        CGRect cell_rect = CGRectMake(1, 1, 0, 0);
+        for (NSInteger i = 0 ; i < col ; i ++ )
+        {
+            SGridColRowStyle *style = [self shinobiGrid:productSalesGrid styleForColAtIndex:i];
+            if (style)
+                cell_rect.origin.x += [style.size doubleValue] + 1;
+            else
+                cell_rect.origin.x += [productSalesGrid.defaultColumnStyle.size doubleValue] + 1;
+        }
+        
+        SGridColRowStyle *col_style = [self shinobiGrid:productSalesGrid styleForColAtIndex:col];
+        if (col_style)
+            cell_rect.size.width = [col_style.size doubleValue] + 1;
+        else
+            cell_rect.size.width = [productSalesGrid.defaultColumnStyle.size doubleValue] + 1;
+        
+        
+        BOOL broken;
+        NSInteger j = 0;
+        for (NSInteger section = 0 ; section < section_count ; section ++ )
+        {
+            broken = NO;
+            NSInteger rows = [productSalesGrid numberOfRowsForSection:section];
+            for (NSInteger row_no = 0 ; row_no < rows ; row_no ++ )
+            {
+                SGridColRowStyle *style = [self shinobiGrid:productSalesGrid styleForRowAtIndex:row_no inSection:section];
+                double height;
+                if (style)
+                    height = [style.size doubleValue];
+                else
+                    height = [productSalesGrid.defaultRowStyle.size doubleValue] + 1;
+
+                if (j < row)
+                    cell_rect.origin.y += height;
+                else if (j == row)
+                {
+                    cell_rect.size.height = height;
+
+                    NSString *text = [productSalesDataSource shinobiGrid:productSalesGrid textForGridCoord:[[SGridCoord alloc] initWithColumn:col withRow:SGridRowMake(row_no, section)]];
+                    if (text && [text rangeOfString:findText.text].location != NSNotFound)
+                    {
+                        [productSalesGrid scrollRectToVisible:cell_rect animated:NO];
+                        [self performSelector:@selector(cellFound) withObject:nil afterDelay:0.1];
+                        
+                        last_col = col;
+                        last_row = row;
+                        
+                        return;
+                    }
+
+                    broken = YES;
+                    break;
+                }
+
+                j ++ ;
+            }
+            
+            if (broken)
+                break;
+        }
+    }
+}
+
+- (void)cellFound
+{
+    NSInteger row_no = last_row;
+    NSInteger section_count = productSalesGrid.numberOfSections;
+    for (NSInteger section = 0 ; section < section_count ; section ++ )
+    {
+        NSInteger rows = [productSalesGrid numberOfRowsForSection:section];
+        if (row_no < rows)
+        {
+            SGridCell *grid_cell = [productSalesGrid visibleCellAtCol:last_col andRow:SGridRowMake(row_no, section)];
+            if (!grid_cell)
+            {
+                [self performSelector:@selector(cellFound) withObject:nil afterDelay:0.1];
+                return;
+            }
+            [grid_cell setSelected:YES animated:YES];
+            
+            return;
+        }
+        
+        row_no -= rows;
+    }
 }
 
 
@@ -579,6 +691,9 @@ NSArray *ProductSalesSubviews(UIView *aView)
     }
     
     [productSalesGrid reload];
+
+    last_col = -1;
+    last_row = 0;
 }
 
 @end

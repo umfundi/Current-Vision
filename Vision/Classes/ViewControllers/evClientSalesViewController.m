@@ -67,7 +67,6 @@
     //Create the grid
     clientSalesGrid = [[ShinobiGrid alloc] initWithFrame:self.view.bounds];
     productListGrid = [[ShinobiGrid alloc] initWithFrame:self.view.bounds];
-    productListGrid.tag = 717;
     
     clientSalesGrid.licenseKey = licencekey;
     productListGrid.licenseKey = licencekey;
@@ -139,11 +138,11 @@
     BOOL isPortrait = UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
     
     clientSalesGrid.frame = CGRectMake(9, 350, self.view.bounds.size.width-20, self.view.bounds.size.height-390);
+    productListGrid.frame = CGRectMake(9, 165, self.view.bounds.size.width-130, 170);
 
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"ClientSalesPortraitView" : @"ClientSalesLandscapeView"];
     if (templateController)
     {
-        int count = 0;
         for (UIView *eachView in ClientSalesSubviews(templateController.view))
         {
 //            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);

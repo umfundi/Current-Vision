@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) NSNumberFormatter *numberFormat;
 
+- (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord;
+
 @end

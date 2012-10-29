@@ -47,55 +47,8 @@
     [fetchRequest setPredicate:predicate];
     
     NSArray *trends = [context executeFetchRequest:fetchRequest error:nil];
-    
-    NSMutableArray *aggrs = [[NSMutableArray alloc] initWithCapacity:0];
-    SalesTrendAggrPerBrand *aggrPerBrand = [[SalesTrendAggrPerBrand alloc] init];
-    for (NSDictionary *trend in trends)
-    {
-        NSString *brand = [trend objectForKey:@"brand"];
-        
-        if (aggrPerBrand.brand == nil)
-            aggrPerBrand.brand = brand;
-        else if (![aggrPerBrand.brand isEqualToString:brand])
-        {
-            [aggrPerBrand finishAdd];
-            [aggrs addObject:aggrPerBrand];
-            
-            aggrPerBrand = [[SalesTrendAggrPerBrand alloc] init];
-            aggrPerBrand.brand = brand;
-        }
-        
-        [aggrPerBrand addSalesTrend:trend YTDorMAT:isYTD];
-    }
-    
-    if (aggrPerBrand.brand)
-    {
-        [aggrPerBrand finishAdd];
-        [aggrs addObject:aggrPerBrand];
-    }
 
-    /* Total */
-    SalesTrendAggrPerBrand *totalAggr = [[SalesTrendAggrPerBrand alloc] init];
-    totalAggr.brand = @"TOTAL";
-    for (SalesTrendAggrPerBrand *aggrPerBrand in aggrs)
-    {
-        totalAggr.jan += aggrPerBrand.jan;
-        totalAggr.feb += aggrPerBrand.feb;
-        totalAggr.mar += aggrPerBrand.mar;
-        totalAggr.apr += aggrPerBrand.apr;
-        totalAggr.may += aggrPerBrand.may;
-        totalAggr.jun += aggrPerBrand.jun;
-        totalAggr.jul += aggrPerBrand.jul;
-        totalAggr.aug += aggrPerBrand.aug;
-        totalAggr.sep += aggrPerBrand.sep;
-        totalAggr.oct += aggrPerBrand.oct;
-        totalAggr.nov += aggrPerBrand.nov;
-        totalAggr.dec += aggrPerBrand.dec;
-    }
-    [totalAggr finishAdd];
-    [aggrs addObject:totalAggr];
-    
-    return aggrs;
+    return [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:trends YTDorMAT:isYTD];
 }
 
 + (NSArray *)SalesTrendsGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD
@@ -120,6 +73,11 @@
     
     NSArray *trends = [context executeFetchRequest:fetchRequest error:nil];
     
+    return [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:trends YTDorMAT:isYTD];
+}
+
++ (NSArray *)SalesTrendsGroupByBrandFrom:(NSArray *)trends YTDorMAT:(BOOL)isYTD
+{
     NSMutableArray *aggrs = [[NSMutableArray alloc] initWithCapacity:0];
     SalesTrendAggrPerBrand *aggrPerBrand = [[SalesTrendAggrPerBrand alloc] init];
     for (NSDictionary *trend in trends)

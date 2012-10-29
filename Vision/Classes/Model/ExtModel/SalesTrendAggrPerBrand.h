@@ -39,6 +39,7 @@
 
 + (NSArray *)SalesTrendsGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
 + (NSArray *)SalesTrendsGroupByBrandFromCustomers:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD;
++ (NSArray *)SalesTrendsGroupByBrandFrom:(NSArray *)trends YTDorMAT:(BOOL)isYTD;
 
 + (NSArray *)yearReportsFrom:(NSArray *)monthReports;
 

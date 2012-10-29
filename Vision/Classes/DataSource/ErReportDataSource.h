@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSArray *erReportArray;
 
+- (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord;
+
 @end

@@ -200,7 +200,6 @@
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"SitesDistributionPortraitView" : @"SitesDistributionLandscapeView"];
     if (templateController)
     {
-        int count = 0;
         for (UIView *eachView in SitesDistributionSubviews(templateController.view))
         {
  //           NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);

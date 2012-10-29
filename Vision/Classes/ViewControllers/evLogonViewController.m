@@ -210,7 +210,6 @@
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"LogonPortraitView" : @"LogonLandscapeView"];
     if (templateController)
     {
-        int count = 0;
         for (UIView *eachView in LogonSubviews(templateController.view))
         {
 //            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);

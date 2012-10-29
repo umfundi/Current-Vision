@@ -341,7 +341,6 @@ NSArray *SalesReportSubviews(UIView *aView)
     posInMonth = YES;
     last_col = -1;
     last_row = 0;
-    temp_cell = -1;
 
     [self nextClicked:sender];
 }
@@ -360,7 +359,7 @@ NSArray *SalesReportSubviews(UIView *aView)
     NSInteger total_cell_count = month_col_count * month_row_count + year_col_count * year_row_count;
     NSInteger last_cell = posInMonth ? (last_row * month_col_count + last_col) : (month_col_count * month_row_count + last_row * year_col_count + last_col);
     
-    for (NSInteger cell = (temp_cell == -1) ? (last_cell + 1) : temp_cell; cell < last_cell + 1 + total_cell_count ; cell ++ )
+    for (NSInteger cell = last_cell + 1; cell < last_cell + 1 + total_cell_count ; cell ++ )
     {
         NSInteger cell_in_grid = cell % total_cell_count;
         
@@ -422,7 +421,7 @@ NSArray *SalesReportSubviews(UIView *aView)
             cell_rect.size.height = [grid.defaultRowStyle.size doubleValue] + 1;
         
         NSString *text = [datasource shinobiGrid:grid textForGridCoord:[[SGridCoord alloc] initWithColumn:col withRow:SGridRowMake(row, 0)]];
-        if ([text rangeOfString:findText.text].location != NSNotFound)
+        if (text && [text rangeOfString:findText.text].location != NSNotFound)
         {
             if (grid == monthReportGrid)
                 [yearReportGrid reload];
@@ -435,7 +434,6 @@ NSArray *SalesReportSubviews(UIView *aView)
             last_col = col;
             last_row = row;
             posInMonth = (grid == monthReportGrid);
-            temp_cell = -1;
             
             return;
         }
@@ -449,6 +447,11 @@ NSArray *SalesReportSubviews(UIView *aView)
         grid_cell = [monthReportGrid visibleCellAtCol:last_col andRow:SGridRowMake(last_row, 0)];
     else
         grid_cell = [yearReportGrid visibleCellAtCol:last_col andRow:SGridRowMake(last_row, 0)];
+    if (!grid_cell)
+    {
+        [self performSelector:@selector(cellFound) withObject:nil afterDelay:0.1];
+        return;
+    }
     [grid_cell setSelected:YES animated:YES];
 }
 
@@ -711,7 +714,6 @@ NSArray *SalesReportSubviews(UIView *aView)
     posInMonth = YES;
     last_col = -1;
     last_row = 0;
-    temp_cell = -1;
 }
 
 @end
