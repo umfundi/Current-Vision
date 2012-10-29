@@ -14,12 +14,15 @@
 #import "Focused_brand.h"
 #import "Product.h"
 #import "SitesDistributionAggr.h"
+#import "User.h"
 
 @interface evSitesDistributionViewController ()
 
 @end
 
 @implementation evSitesDistributionViewController
+
+@synthesize selectedUser;
 
 #pragma mark -
 #pragma mark SGridDelegate
@@ -172,6 +175,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [self didRotateFromInterfaceOrientation:0];
+    [self applyTheme:[[User loginUser].data isEqualToString:@"companion"]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -261,4 +265,29 @@ NSArray *SitesDistributionSubviews(UIView *aView)
     [sitesDistByProductGrid reload];
 }
 
+- (void)viewDidUnload {
+    imgLogo = nil;
+    [super viewDidUnload];
+}
+
+
+- (void)applyTheme:(BOOL)redTheme
+{
+    // About Button Background Image
+    NSString *logo = redTheme ? @"Companion_HC.png" : @"Ruminant_HB.png";
+    [imgLogo setImage:[UIImage imageNamed:logo]];
+    
+    // Buttons Title Color
+    UIColor *titleColor = redTheme ? [UIColor colorWithRed:180.0 / 255 green:0 blue:0 alpha:1] :
+    [UIColor colorWithRed:50.0 / 255 green:79.0 / 255 blue:133.0 / 255 alpha:1];
+    
+//    [umfundiCommon applyColorToButton:btnMAT withColor:titleColor];
+//    [umfundiCommon applyColorToButton:btnYTD withColor:titleColor];
+    
+//    [umfundiCommon applyColorToButton:btnDone withColor:titleColor];
+    
+//    [umfundiCommon applyColorToButton:btnClear withColor:titleColor];
+//    [umfundiCommon applyColorToButton:btnSelect withColor:titleColor];
+//    [umfundiCommon applyColorToButton:btnSelFocus withColor:titleColor];
+}
 @end

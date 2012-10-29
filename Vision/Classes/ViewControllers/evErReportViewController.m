@@ -131,7 +131,6 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [self didRotateFromInterfaceOrientation:0];
-
     [self applyTheme:[[User loginUser].data isEqualToString:@"companion"]];
 }
 
@@ -559,10 +558,6 @@ NSArray *ErReportSubviews(UIView *aView)
 - (IBAction)fullClicked:(id)sender {
 }
 
-- (IBAction)btnPractice:(id)sender {
-}
-
-
 #pragma mark -
 #pragma mark Filter Delegates
 
@@ -685,7 +680,7 @@ NSArray *ErReportSubviews(UIView *aView)
     
     // Buttons Title Color
     UIColor *titleColor = redTheme ? [UIColor colorWithRed:180.0 / 255 green:0 blue:0 alpha:1] :
-    [UIColor colorWithRed:50.0 / 255 green:79.0 / 255 blue:133.0 / 255 alpha:1];
+       [UIColor colorWithRed:50.0 / 255 green:79.0 / 255 blue:133.0 / 255 alpha:1];
     
     [umfundiCommon applyColorToButton:btnMAT withColor:titleColor];
     [umfundiCommon applyColorToButton:btnYTD withColor:titleColor];

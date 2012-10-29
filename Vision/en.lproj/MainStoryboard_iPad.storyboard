@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="w7w-kx-m0U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="w7w-kx-m0U">
     <dependencies>
         <deployment version="1296" defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -1062,7 +1062,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wvr-6q-wDi">
-                                <rect key="frame" x="135" y="979" width="105" height="37"/>
+                                <rect key="frame" x="136" y="979" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="P Product Sales Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1075,7 +1075,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kg5-OW-aIX">
-                                <rect key="frame" x="257" y="978" width="105" height="37"/>
+                                <rect key="frame" x="264" y="979" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="P ER Report Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1088,7 +1088,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mfG-Tw-Dx1">
-                                <rect key="frame" x="514" y="979" width="105" height="37"/>
+                                <rect key="frame" x="526" y="979" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="P Client Sales Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1101,7 +1101,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="204" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ddb-aW-sab">
-                                <rect key="frame" x="382" y="977" width="105" height="37"/>
+                                <rect key="frame" x="393" y="979" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="P Sites Distribution Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1114,7 +1114,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="205" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gHA-VE-XoE">
-                                <rect key="frame" x="643" y="979" width="105" height="37"/>
+                                <rect key="frame" x="655" y="979" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="P Customer Sales Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1407,9 +1407,12 @@ E: contact@dbm-int.fr</string>
                                     <action selector="ytdClicked:" destination="YQM-Fo-GeQ" eventType="touchUpInside" id="vhl-bz-sRF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Companion_HC.png" id="1Ag-2Z-KMe">
-                                <rect key="frame" x="117" y="65" width="140" height="29"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="1Ag-2Z-KMe">
+                                <rect key="frame" x="117" y="65" width="106" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="242" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3u6-ca-Ct2" userLabel="Label - Postcode">
                                 <rect key="frame" x="14" y="252" width="162" height="21"/>
@@ -1602,10 +1605,6 @@ E: contact@dbm-int.fr</string>
                                     <segue destination="2" kind="modal" id="VZn-4K-wkf"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" tag="341" contentMode="scaleToFill" image="Companion_HC.png" id="1NB-3y-pfH">
-                                <rect key="frame" x="16" y="20" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B63-W2-dcr">
                                 <rect key="frame" x="163" y="94" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1888,6 +1887,13 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="eWK-yv-TBS">
+                                <rect key="frame" x="29" y="13" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1905,7 +1911,7 @@ E: contact@dbm-int.fr</string>
                         <outlet property="btnNext" destination="m0K-vL-PBQ" id="gSJ-HT-tsB"/>
                         <outlet property="btnPractice" destination="66f-jE-dtx" id="HeD-ut-piu"/>
                         <outlet property="findText" destination="dAY-cS-ksS" id="tSe-ll-x2f"/>
-                        <outlet property="imgLogo" destination="1NB-3y-pfH" id="ck6-tI-e85"/>
+                        <outlet property="imgLogo" destination="eWK-yv-TBS" id="D6W-GR-meE"/>
                         <outlet property="lblAccmgrHdr" destination="DT6-QE-kcv" id="Nff-wQ-TdE"/>
                         <outlet property="lblAccountHdr" destination="2e8-0a-Vow" id="Wgu-OC-do8"/>
                         <outlet property="lblAddress1" destination="xVz-GT-gel" id="266-fc-tq6"/>
@@ -1953,10 +1959,6 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" tag="341" contentMode="scaleToFill" image="Companion_HC.png" id="DuT-6m-Qgj">
-                                <rect key="frame" x="8" y="12" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PYj-4c-XcK">
                                 <rect key="frame" x="185" y="1003" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2209,6 +2211,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="7Nq-pS-GxJ"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="ACr-Io-YMT">
+                                <rect key="frame" x="3" y="5" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2233,10 +2242,6 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="341" contentMode="scaleToFill" image="Companion_HC.png" id="ZtP-Cq-pUd">
-                                <rect key="frame" x="8" y="11" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HTp-Mf-N10">
                                 <rect key="frame" x="313" y="747" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2501,6 +2506,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="9zC-88-pYL"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="1s5-aG-xR2">
+                                <rect key="frame" x="8" y="4" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -2542,10 +2554,6 @@ E: contact@dbm-int.fr</string>
                                     <segue destination="2" kind="modal" id="reL-rs-CtC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="iyt-3f-iwV">
-                                <rect key="frame" x="20" y="12" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4fx-xt-fa4">
                                 <rect key="frame" x="173" y="74" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2828,6 +2836,13 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="rVb-eI-CvZ">
+                                <rect key="frame" x="24" y="11" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2845,7 +2860,7 @@ E: contact@dbm-int.fr</string>
                         <outlet property="btnPractice" destination="Qr2-UK-Hq7" id="2hd-GN-rPx"/>
                         <outlet property="btnYTD" destination="Qzi-PV-QhE" id="oUu-Xg-Mgu"/>
                         <outlet property="findText" destination="DbS-HY-ykV" id="6TP-SK-h4c"/>
-                        <outlet property="imgLogo" destination="iyt-3f-iwV" id="W6t-kj-CDJ"/>
+                        <outlet property="imgLogo" destination="rVb-eI-CvZ" id="euV-bf-fmq"/>
                         <outlet property="lblAccmgrHdr" destination="mWt-zp-9Oq" id="Pt8-If-D5U"/>
                         <outlet property="lblAccountHdr" destination="7e7-Bj-c4O" id="aUA-rQ-DWz"/>
                         <outlet property="lblAddress1" destination="uXf-fV-I5v" id="hOu-J7-fZw"/>
@@ -2931,16 +2946,12 @@ E: contact@dbm-int.fr</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="410" contentMode="left" text="Product Sales Report by Client (ER Version )" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g3p-uF-5YC">
-                                <rect key="frame" x="187" y="12" width="561" height="24"/>
+                                <rect key="frame" x="207" y="19" width="561" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="stt-sN-nt6">
-                                <rect key="frame" x="10" y="8" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o2S-dW-oW1">
                                 <rect key="frame" x="215" y="1003" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3205,6 +3216,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="sD3-wa-zqv"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="2KI-2I-F58">
+                                <rect key="frame" x="5" y="5" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -3228,10 +3246,6 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="B5b-M9-qje">
-                                <rect key="frame" x="11" y="12" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nzq-c9-IBZ">
                                 <rect key="frame" x="313" y="747" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3496,6 +3510,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="EeT-Ob-FqR"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="wHQ-Lx-cFX">
+                                <rect key="frame" x="8" y="6" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -3515,7 +3536,7 @@ E: contact@dbm-int.fr</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" tag="720" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lt8-Jr-225">
-                                <rect key="frame" x="681" y="11" width="65" height="66"/>
+                                <rect key="frame" x="681" y="11" width="45" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -3543,10 +3564,6 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="711" contentMode="scaleToFill" image="Companion_HC.png" id="wv4-fY-3Re">
-                                <rect key="frame" x="21" y="20" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="713" contentMode="left" text="Product Selection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arc-TM-rwQ">
                                 <rect key="frame" x="21" y="134" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3639,6 +3656,13 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="5SK-l5-c0W">
+                                <rect key="frame" x="21" y="13" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -3649,7 +3673,7 @@ E: contact@dbm-int.fr</string>
                         <outlet property="btnSelFocus" destination="87e-wP-u0i" id="oGV-Tq-iOa"/>
                         <outlet property="btnSelect" destination="x3h-bE-ENv" id="3yZ-p9-dcd"/>
                         <outlet property="btnYTD" destination="1Sm-Qd-rX9" id="RCV-gw-nGj"/>
-                        <outlet property="imgLogo" destination="wv4-fY-3Re" id="5Gi-KI-RD3"/>
+                        <outlet property="imgLogo" destination="5SK-l5-c0W" id="MYl-kX-o2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apJ-cE-Va4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3664,20 +3688,8 @@ E: contact@dbm-int.fr</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="720" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a1p-YK-vMI">
-                                <rect key="frame" x="686" y="11" width="65" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="710" contentMode="left" text="Customer Sales Report By Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7SS-dG-ck8">
-                                <rect key="frame" x="249" y="31" width="445" height="21"/>
+                                <rect key="frame" x="249" y="26" width="445" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3690,10 +3702,6 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="711" contentMode="scaleToFill" image="Companion_HC.png" id="cne-Fh-efn">
-                                <rect key="frame" x="19" y="23" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="713" contentMode="left" text="Product Selection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="veC-mq-JwT">
                                 <rect key="frame" x="19" y="137" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3767,6 +3775,25 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="2M7-TT-7Bp">
+                                <rect key="frame" x="8" y="11" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" tag="720" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JL7-Qt-0wi">
+                                <rect key="frame" x="717" y="14" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -3783,18 +3810,6 @@ E: contact@dbm-int.fr</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="720" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tZY-S8-RqZ">
-                                <rect key="frame" x="930" y="10" width="65" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="710" contentMode="left" text="Customer Sales Report By Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZWa-79-hbN">
                                 <rect key="frame" x="321" y="26" width="445" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3809,10 +3824,6 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="711" contentMode="scaleToFill" image="Companion_HC.png" id="jcH-Kd-YSU">
-                                <rect key="frame" x="30" y="18" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="713" contentMode="left" text="Product Selection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eGe-bo-YCN">
                                 <rect key="frame" x="30" y="132" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3827,7 +3838,7 @@ E: contact@dbm-int.fr</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" tag="715" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PX7-n6-Jop">
-                                <rect key="frame" x="759" y="21" width="57" height="44"/>
+                                <rect key="frame" x="774" y="15" width="57" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="MAT">
@@ -3839,7 +3850,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="716" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ahD-Qt-Vdz">
-                                <rect key="frame" x="835" y="21" width="57" height="44"/>
+                                <rect key="frame" x="840" y="15" width="57" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="YTD">
@@ -3879,6 +3890,25 @@ E: contact@dbm-int.fr</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Select">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="Qnj-HO-Ouz">
+                                <rect key="frame" x="30" y="11" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" tag="720" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nMH-gu-NX1">
+                                <rect key="frame" x="974" y="14" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -4265,7 +4295,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0bq-WC-hWT">
-                                <rect key="frame" x="733" y="725" width="105" height="37"/>
+                                <rect key="frame" x="724" y="724" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="L Client Sales Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -4291,7 +4321,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="205" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ofv-bh-1oV">
-                                <rect key="frame" x="899" y="725" width="105" height="37"/>
+                                <rect key="frame" x="914" y="724" width="105" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="L Customer Sales Button"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -4394,7 +4424,7 @@ E: contact@dbm-int.fr</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="akS-jx-Bk3">
-                                <rect key="frame" x="695" y="8" width="65" height="66"/>
+                                <rect key="frame" x="718" y="8" width="45" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -4438,9 +4468,26 @@ E: contact@dbm-int.fr</string>
                                     <action selector="filterbyProductClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="h6w-VU-s7X"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="57i-XP-0Tb">
+                                <rect key="frame" x="8" y="8" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sites Distribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mtj-CK-2ap">
+                                <rect key="frame" x="175" y="11" width="480" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="57i-XP-0Tb" id="r6E-ah-HBt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adG-QK-es8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4454,8 +4501,15 @@ E: contact@dbm-int.fr</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fau-eI-UWe">
-                                <rect key="frame" x="695" y="7" width="65" height="66"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="KA7-h1-xhk">
+                                <rect key="frame" x="8" y="7" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Za-q0-3Ae">
+                                <rect key="frame" x="716" y="10" width="45" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -4466,6 +4520,13 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sites Distribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zhO-y3-xWg">
+                                <rect key="frame" x="144" y="13" width="480" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -4482,8 +4543,15 @@ E: contact@dbm-int.fr</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ob6-UO-Byd">
-                                <rect key="frame" x="952" y="8" width="65" height="66"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="4OW-U4-437">
+                                <rect key="frame" x="7" y="8" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="55p-Rp-bOe">
+                                <rect key="frame" x="970" y="11" width="45" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -4494,6 +4562,13 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sites Distribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GWO-jN-CT3">
+                                <rect key="frame" x="272" y="14" width="480" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -4516,7 +4591,7 @@ E: contact@dbm-int.fr</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="510" contentMode="left" text="Customer Sales Report By Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VYa-wD-qQ0">
-                                <rect key="frame" x="213" y="15" width="467" height="21"/>
+                                <rect key="frame" x="214" y="19" width="467" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -4537,10 +4612,6 @@ E: contact@dbm-int.fr</string>
                                     <segue destination="2" kind="modal" id="uiC-AA-qG0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="bb1-Ix-WrZ">
-                                <rect key="frame" x="5" y="7" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="90V-3M-Cfc">
                                 <rect key="frame" x="185" y="983" width="399" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4823,6 +4894,13 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="k83-Bt-3ih">
+                                <rect key="frame" x="1" y="4" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -4840,7 +4918,7 @@ E: contact@dbm-int.fr</string>
                         <outlet property="btnNext" destination="hQa-cR-gCk" id="EAU-aF-hik"/>
                         <outlet property="btnPractice" destination="trk-eU-AhG" id="RgJ-L8-QMN"/>
                         <outlet property="findText" destination="8pi-BU-vux" id="fH3-Q7-YIa"/>
-                        <outlet property="imgLogo" destination="bb1-Ix-WrZ" id="XCp-hJ-fnw"/>
+                        <outlet property="imgLogo" destination="k83-Bt-3ih" id="rRE-MX-2fd"/>
                         <outlet property="lblAccmgrHdr" destination="7BD-uf-IEg" id="b2B-em-JR2"/>
                         <outlet property="lblAccountHdr" destination="qoa-aM-d9E" id="2HF-EC-yOR"/>
                         <outlet property="lblAddress1" destination="upz-yR-omK" id="JWT-n1-Rir"/>
@@ -4869,12 +4947,8 @@ E: contact@dbm-int.fr</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="Z2z-qV-1ji">
-                                <rect key="frame" x="5" y="13" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="510" contentMode="left" text="Customer Sales Report By Client " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ws5-uK-63X">
-                                <rect key="frame" x="236" y="21" width="467" height="21"/>
+                                <rect key="frame" x="240" y="17" width="467" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -4888,7 +4962,7 @@ E: contact@dbm-int.fr</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="520" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YR4-DT-lNO">
-                                <rect key="frame" x="716" y="9" width="45" height="46"/>
+                                <rect key="frame" x="719" y="5" width="45" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -5144,6 +5218,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="Txb-Dl-SdU"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="WtG-Wd-cnj">
+                                <rect key="frame" x="5" y="2" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -5160,10 +5241,6 @@ E: contact@dbm-int.fr</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="441" contentMode="scaleToFill" image="Companion_HC.png" id="oEn-vg-7bf">
-                                <rect key="frame" x="10" y="9" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="510" contentMode="left" text="Customer Sales Report By Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bk2-oB-M7X">
                                 <rect key="frame" x="386" y="20" width="467" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -5435,6 +5512,13 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="UUe-io-ZFe">
+                                <rect key="frame" x="8" y="3" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -5573,10 +5657,6 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView tag="241" contentMode="scaleToFill" image="Companion_HC.png" id="geg-AW-PsH">
-                                <rect key="frame" x="9" y="13" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="242" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EVI-cS-GC2" userLabel="Label - Postcode">
                                 <rect key="frame" x="9" y="232" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -5736,6 +5816,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="nextClicked:" destination="YQM-Fo-GeQ" eventType="touchUpInside" id="bGG-lA-mSd"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="6yQ-aY-2TH">
+                                <rect key="frame" x="5" y="2" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -5941,10 +6028,6 @@ E: contact@dbm-int.fr</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Companion_HC.png" id="Eub-1B-mNQ">
-                                <rect key="frame" x="8" y="14" width="140" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="242" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2j-op-j8R">
                                 <rect key="frame" x="8" y="225" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -6039,6 +6122,13 @@ E: contact@dbm-int.fr</string>
                                     <action selector="nextClicked:" destination="YQM-Fo-GeQ" eventType="touchUpInside" id="bGd-yc-6w0"/>
                                 </connections>
                             </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="hmC-6K-rTV">
+                                <rect key="frame" x="8" y="3" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -6055,8 +6145,8 @@ E: contact@dbm-int.fr</string>
     </scenes>
     <resources>
         <image name="Background.jpg" width="496" height="228"/>
-        <image name="Companion_HC.png" width="208" height="59"/>
         <image name="Graph-icon.png" width="256" height="256"/>
+        <image name="Ruminant_HB.png" width="200" height="106"/>
         <image name="dbplogo.png" width="125" height="60"/>
         <image name="email-icon.png" width="128" height="128"/>
         <image name="filter.png" width="45" height="57"/>
@@ -6129,7 +6219,6 @@ E: contact@dbm-int.fr</string>
         <class className="evErReportViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/evErReportViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnPractice:"/>
                 <relationship kind="action" name="countryClicked:"/>
                 <relationship kind="action" name="countyClicked:"/>
                 <relationship kind="action" name="customerClicked:"/>
@@ -6272,6 +6361,7 @@ E: contact@dbm-int.fr</string>
             <relationships>
                 <relationship kind="action" name="filterbyBrandClicked:"/>
                 <relationship kind="action" name="filterbyProductClicked:"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="umfundiViewController" superclassName="UIViewController">
@@ -6318,6 +6408,6 @@ E: contact@dbm-int.fr</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uiC-AA-qG0"/>
+        <segue reference="RM5-HV-muh"/>
     </inferredMetricsTieBreakers>
 </document>

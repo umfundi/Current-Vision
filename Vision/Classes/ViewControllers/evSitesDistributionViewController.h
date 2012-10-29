@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@class User;
+
 @class SitesDistributionDataSource;
 @class BrandListDataSource;
 @class ProductListDataSource;
 
 @interface evSitesDistributionViewController : UIViewController <SGridDelegate>
 {
+    IBOutlet UIImageView *imgLogo;
+    
     ShinobiGrid *brandListGrid;
     BrandListDataSource *brandListDataSource;
     ShinobiGrid *sitesDistByBrandGrid;
@@ -26,7 +30,11 @@
     SitesDistributionDataSource *sitesDistByProductDataSource;
 }
 
+@property (nonatomic, retain) User *selectedUser;
+
 - (IBAction)filterbyBrandClicked:(id)sender;
 - (IBAction)filterbyProductClicked:(id)sender;
+
+- (void)applyTheme:(BOOL)redTheme;
 
 @end
