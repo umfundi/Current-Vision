@@ -20,6 +20,14 @@
     ProductListDataSource *productListDataSource;
     
     BOOL isYTD;
+    
+    IBOutlet UIImageView *imgLogo;
+    IBOutlet UIButton *btnDone;
+    IBOutlet UIButton *btnMAT;
+    IBOutlet UIButton *btnYTD;
+    IBOutlet UIButton *btnClear;
+    IBOutlet UIButton *btnSelect;
+    IBOutlet UIButton *btnSelFocus;
 }
 
 - (IBAction)clearButtonClicked:(id)sender;
@@ -29,5 +37,6 @@
 - (IBAction)matClicked:(id)sender;
 
 - (void)displayGrids;
+- (void)applyTheme:(BOOL)redTheme;
 
 @end

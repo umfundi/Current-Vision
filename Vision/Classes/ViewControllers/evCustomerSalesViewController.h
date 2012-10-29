@@ -50,6 +50,8 @@
     IBOutlet UITextField *findText;
     IBOutlet UIButton *btnNext;
     IBOutlet UIButton *btnFind;
+    IBOutlet UIButton *btnDone;
+    IBOutlet UIImageView *imgLogo;
     
     ShinobiGrid *customerSalesGrid;
     ShinobiChart *lineChart;
@@ -85,5 +87,6 @@
 - (IBAction)nextClicked:(id)sender;
 
 - (void)displayGrids;
+- (void)applyTheme:(BOOL)redTheme;
 
 @end

@@ -46,6 +46,10 @@
     IBOutlet UIButton *btnCounty;
     IBOutlet UIButton *btnCountry;
     IBOutlet UITextField *findText;
+    IBOutlet UIButton *btnDone;
+    IBOutlet UIButton *btnFind;
+    IBOutlet UIButton *btnNext;
+    IBOutlet UIImageView *imgLogo;
     
     ShinobiGrid *productSalesGrid;
     ProductSalesDataSource *productSalesDataSource;
@@ -79,5 +83,6 @@
 - (IBAction)nextClicked:(id)sender;
 
 - (void)displayGrids;
+- (void)applyTheme:(BOOL)redTheme;
 
 @end

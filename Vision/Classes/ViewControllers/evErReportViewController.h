@@ -38,6 +38,7 @@
     IBOutlet UILabel *lblBGroupHdr;
     IBOutlet UIButton *btnMAT;
     IBOutlet UIButton *btnYTD;
+    IBOutlet UIButton *btnFull;
     IBOutlet UIButton *btnCustomer;
     IBOutlet UIButton *btnBGroup;
     IBOutlet UIButton *btnKAM;
@@ -45,6 +46,10 @@
     IBOutlet UIButton *btnCounty;
     IBOutlet UIButton *btnCountry;
     IBOutlet UITextField *findText;
+    IBOutlet UIButton *btnFind;
+    IBOutlet UIButton *btnNext;
+    IBOutlet UIButton *btnDone;
+    IBOutlet UIImageView *imgLogo;
     
     ShinobiGrid *erReportGrid;
     ErReportDataSource *erReportDataSource;
@@ -76,5 +81,8 @@
 
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
+
+- (void)displayGrids;
+- (void)applyTheme:(BOOL)redTheme;
 
 @end
