@@ -187,4 +187,25 @@
     }
 }
 
+- (UIView *)shinobiGrid:(ShinobiGrid *)grid viewForHeaderInSection:(int)section inFrame:(CGRect)frame
+{
+    NSString *title = [self shinobiGrid:grid titleForHeaderInSection:section];
+    if (!title)
+        return nil;
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:frame];
+    headerView.backgroundColor = [UIColor clearColor];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 5, 0)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.font = [UIFont boldSystemFontOfSize:10];
+    titleLabel.autoresizingMask = ~UIViewAutoresizingNone;
+    [titleLabel setText:title];
+    
+    [headerView addSubview:titleLabel];
+    
+    return headerView;
+}
+
 @end

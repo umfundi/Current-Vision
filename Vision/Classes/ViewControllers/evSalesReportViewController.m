@@ -184,9 +184,9 @@ NSArray *SalesReportSubviews(UIView *aView)
     
     //ensure that section header is hidden (a grid has one section by default)
     monthReportGrid.defaultSectionHeaderStyle.hidden = YES;
-    monthReportGrid.defaultSectionHeaderStyle.hidden = YES;
+    monthReportGrid.defaultSectionHeaderStyle.height = 30;
     yearReportGrid.defaultSectionHeaderStyle.hidden = YES;
-    yearReportGrid.defaultSectionHeaderStyle.hidden = YES;
+    yearReportGrid.defaultSectionHeaderStyle.height = 30;
     
     //We dont want to be able to edit our cells
     monthReportGrid.canEditCellsViaDoubleTap = NO;
@@ -237,6 +237,7 @@ NSArray *SalesReportSubviews(UIView *aView)
     btnPractice = nil;
     btnCounty = nil;
     btnCountry = nil;
+    btnAll = nil;
     [super viewDidUnload];
 }
 
@@ -442,6 +443,9 @@ NSArray *SalesReportSubviews(UIView *aView)
             return;
         }
     }
+}
+
+- (IBAction)allClicked:(id)sender {
 }
 
 - (void)cellFound

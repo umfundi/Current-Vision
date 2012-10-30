@@ -41,7 +41,7 @@
 {
     if (sectionIndex != 0)
     {
-        SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:25.f withBackgroundColor:[UIColor grayColor]];
+        SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:25.f withBackgroundColor:[UIColor lightGrayColor]];
         return s;
     }
     
@@ -127,6 +127,8 @@
     [self displayHeaderinfoblock];
     [self displayGrids];
     
+    btnAll.hidden = true;
+    
     // this displays the grid
     [self.view addSubview:customerSalesGrid];
 }
@@ -187,6 +189,7 @@ NSArray *CustomerSalesSubviews(UIView *aView)
     lblPostcode = nil;
     btnNext = nil;
     btnFind = nil;
+    btnAll = nil;
     [super viewDidUnload];
 }
 
@@ -534,6 +537,9 @@ NSArray *CustomerSalesSubviews(UIView *aView)
                 break;
         }
     }
+}
+
+- (IBAction)allClicked:(id)sender {
 }
 
 - (void)cellFound

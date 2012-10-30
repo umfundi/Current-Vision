@@ -43,7 +43,13 @@
     aggr.year = [NSString stringWithFormat:@"%d", curyear];
     aggr.lastyear = [NSString stringWithFormat:@"%d", curyear - 1];
 
+    ClientSalesAggrPerGroup *aggrTotal = [[ClientSalesAggrPerGroup alloc] init];
+    aggrTotal.aggrPerPractices = [[NSMutableArray alloc] initWithCapacity:0];
+    aggrTotal.group = @"All Accounts";
+    [aggr addAggrPerGroup:aggrTotal];
+    
     ClientSalesAggrPerGroup *aggrPerGroup = [[ClientSalesAggrPerGroup alloc] init];
+    aggrPerGroup.aggrPerPractices = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *report in reports)
     {
         NSString *group = [report objectForKey:@"groupName"];
@@ -57,10 +63,14 @@
             
             aggrPerGroup = [[ClientSalesAggrPerGroup alloc] init];
             aggrPerGroup.group = group;
+            aggrPerGroup.aggrPerPractices = [[NSMutableArray alloc] initWithCapacity:0];
         }
         
         [aggrPerGroup addClientSales:report YTDorMAT:isYTD];
+        [aggrTotal addClientSales:report YTDorMAT:isYTD];
     }
+    
+    [aggrTotal finishAdd];
     
     if (aggrPerGroup.group)
     {
@@ -106,7 +116,13 @@
     aggr.year = [NSString stringWithFormat:@"%d", curyear];
     aggr.lastyear = [NSString stringWithFormat:@"%d", curyear - 1];
 
+    ClientSalesAggrPerGroup *aggrTotal = [[ClientSalesAggrPerGroup alloc] init];
+    aggrTotal.aggrPerPractices = [[NSMutableArray alloc] initWithCapacity:0];
+    aggrTotal.group = @"All Accounts";
+    [aggr addAggrPerGroup:aggrTotal];
+
     ClientSalesAggrPerGroup *aggrPerGroup = [[ClientSalesAggrPerGroup alloc] init];
+    aggrPerGroup.aggrPerPractices = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSDictionary *report in reports)
     {
         NSString *group = [report objectForKey:@"groupName"];
@@ -120,11 +136,15 @@
             
             aggrPerGroup = [[ClientSalesAggrPerGroup alloc] init];
             aggrPerGroup.group = group;
+            aggrPerGroup.aggrPerPractices = [[NSMutableArray alloc] initWithCapacity:0];
         }
         
         [aggrPerGroup addClientSales:report YTDorMAT:isYTD curYear:aggr.year lastYear:aggr.lastyear];
+        [aggrTotal addClientSales:report YTDorMAT:isYTD curYear:aggr.year lastYear:aggr.lastyear];
     }
     
+    [aggrTotal finishAdd];
+
     if (aggrPerGroup.group)
     {
         [aggrPerGroup finishAdd];
@@ -150,10 +170,7 @@
     if ([aggrPerGroups count] == 0)
         return;
     
-    ClientSalesAggrPerGroup *aggrTotal = [[ClientSalesAggrPerGroup alloc] init];
-    aggrTotal.group = @"All Accounts";
-
-    for (NSInteger i = 0 ; i < aggrPerGroups.count - 1 ; i ++ )
+    for (NSInteger i = 1 ; i < aggrPerGroups.count - 1 ; i ++ )
     {
         for (NSInteger j = i + 1 ; j < aggrPerGroups.count ; j ++ )
         {
@@ -164,43 +181,31 @@
         }
     }
     
-    NSInteger rank = 1;
+    NSInteger rank = 0;
     for (ClientSalesAggrPerGroup *aggrPerGroup in aggrPerGroups)
     {
         if ([aggrPerGroup.group isEqualToString:@"-"])
             aggrPerGroup.group = @"No Group";
-        
-        aggrTotal.jan += aggrPerGroup.jan;
-        aggrTotal.feb += aggrPerGroup.feb;
-        aggrTotal.mar += aggrPerGroup.mar;
-        aggrTotal.apr += aggrPerGroup.apr;
-        aggrTotal.may += aggrPerGroup.may;
-        aggrTotal.jun += aggrPerGroup.jun;
-        aggrTotal.jul += aggrPerGroup.jul;
-        aggrTotal.aug += aggrPerGroup.aug;
-        aggrTotal.sep += aggrPerGroup.sep;
-        aggrTotal.oct += aggrPerGroup.oct;
-        aggrTotal.nov += aggrPerGroup.nov;
-        aggrTotal.dec += aggrPerGroup.dec;
-        
-        aggrPerGroup.rank = [NSString stringWithFormat:@"%d", rank];
+
+        if (rank)
+            aggrPerGroup.rank = [NSString stringWithFormat:@"%d", rank];
         rank ++;
     }
-    
-    [aggrTotal finishAdd];
-    
+
+    ClientSalesAggrPerGroup *aggrTotal = [aggrPerGroups objectAtIndex:0];
     if (aggrTotal.yearsum > 0)
     {
         aggrTotal.totpro = @"100%";
-
+        
         for (ClientSalesAggrPerGroup *aggrPerGroup in aggrPerGroups)
         {
+            if (aggrPerGroup == aggrTotal)
+                continue;
+            
             double pro = aggrPerGroup.yearsum / aggrTotal.yearsum * 100;
             aggrPerGroup.totpro = [NSString stringWithFormat:@"%.1f%%", pro];
         }
     }
-    
-    [aggrPerGroups insertObject:aggrTotal atIndex:0];
 }
 
 @end

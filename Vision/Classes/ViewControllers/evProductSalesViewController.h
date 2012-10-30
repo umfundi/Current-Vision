@@ -15,12 +15,12 @@
 #import "AllKeyAccountManagersViewController.h"
 #import "AllGroupsViewController.h"
 #import "AllCountriesViewController.h"
+#import "ProductSalesDataSource.h"
 
 @class User;
 @class Practice;
-@class ProductSalesDataSource;
 
-@interface evProductSalesViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate>
+@interface evProductSalesViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate, ProductSalesDataSourceDelegate>
 {
     IBOutlet UILabel *lblThemeBox;
     IBOutlet UILabel *lblPracticeName;
@@ -45,6 +45,7 @@
     IBOutlet UIButton *btnPractice;
     IBOutlet UIButton *btnCounty;
     IBOutlet UIButton *btnCountry;
+    IBOutlet UIButton *btnAll;
     IBOutlet UITextField *findText;
     IBOutlet UIButton *btnDone;
     IBOutlet UIButton *btnFind;
@@ -81,6 +82,7 @@
 
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
+- (IBAction)allClicked:(id)sender;
 
 - (void)displayGrids;
 - (void)applyTheme:(BOOL)redTheme;

@@ -6,6 +6,7 @@
 //
 
 #import "ClientSalesAggrPerGroup.h"
+#import "Practice.h"
 
 @implementation ClientSalesAggrPerGroup
 
@@ -44,8 +45,31 @@
 @synthesize diffpro;
 @synthesize diffsum;
 
+@synthesize aggrPerPractices;
+
 - (void)addClientSales:(NSDictionary *)report YTDorMAT:(BOOL)isYTD
 {
+    if (aggrPerPractices)
+    {
+        NSString *id_practice = [report objectForKey:@"id_practice"];
+        NSString *practiceName = [Practice PracticeNameFrom:id_practice];
+        
+        ClientSalesAggrPerGroup *aggrPerPractice;
+        for (aggrPerPractice in aggrPerPractices)
+        {
+            if ([aggrPerPractice.group isEqualToString:practiceName])
+                break;
+        }
+        if (!aggrPerPractice)
+        {
+            aggrPerPractice = [[ClientSalesAggrPerGroup alloc] init];
+            aggrPerPractice.group = practiceName;
+            
+            [aggrPerPractices addObject:aggrPerPractice];
+        }
+        [aggrPerPractice addClientSales:report YTDorMAT:isYTD];
+    }
+    
     if (isYTD)
     {
         jan += [[report objectForKey:@"janval"] doubleValue];
@@ -84,6 +108,27 @@
 
 - (void)addClientSales:(NSDictionary *)report YTDorMAT:(BOOL)isYTD curYear:(NSString *)curYear lastYear:(NSString *)lastYear
 {
+    if (aggrPerPractices)
+    {
+        NSString *id_practice = [report objectForKey:@"id_practice"];
+        NSString *practiceName = [Practice PracticeNameFrom:id_practice];
+        
+        ClientSalesAggrPerGroup *aggrPerPractice;
+        for (aggrPerPractice in aggrPerPractices)
+        {
+            if ([aggrPerPractice.group isEqualToString:practiceName])
+                break;
+        }
+        if (!aggrPerPractice)
+        {
+            aggrPerPractice = [[ClientSalesAggrPerGroup alloc] init];
+            aggrPerPractice.group = practiceName;
+            
+            [aggrPerPractices addObject:aggrPerPractice];
+        }
+        [aggrPerPractice addClientSales:report YTDorMAT:isYTD curYear:curYear lastYear:lastYear];
+    }
+    
     NSString *period = [report objectForKey:@"period"];
     NSRange seperator_range = [period rangeOfString:@"-"];
     if (seperator_range.location != NSNotFound)
@@ -165,6 +210,61 @@
 
 - (void)finishAdd
 {
+    if (aggrPerPractices)
+    {
+        for (ClientSalesAggrPerGroup *aggrPerPractice in aggrPerPractices)
+            [aggrPerPractice finishAdd];
+
+        ClientSalesAggrPerGroup *aggrTotal = [[ClientSalesAggrPerGroup alloc] init];
+        aggrTotal.group = @"Total";
+        
+        for (NSInteger i = 0 ; i < aggrPerPractices.count - 1 ; i ++ )
+        {
+            for (NSInteger j = i + 1 ; j < aggrPerPractices.count ; j ++ )
+            {
+                ClientSalesAggrPerGroup *aggrX = [aggrPerPractices objectAtIndex:i];
+                ClientSalesAggrPerGroup *aggrY = [aggrPerPractices objectAtIndex:j];
+                if (aggrX.yearsum < aggrY.yearsum)
+                    [aggrPerPractices exchangeObjectAtIndex:i withObjectAtIndex:j];
+            }
+        }
+        
+        NSInteger _rank = 1;
+        for (ClientSalesAggrPerGroup *aggrPerGroup in aggrPerPractices)
+        {
+            aggrTotal.jan += aggrPerGroup.jan;
+            aggrTotal.feb += aggrPerGroup.feb;
+            aggrTotal.mar += aggrPerGroup.mar;
+            aggrTotal.apr += aggrPerGroup.apr;
+            aggrTotal.may += aggrPerGroup.may;
+            aggrTotal.jun += aggrPerGroup.jun;
+            aggrTotal.jul += aggrPerGroup.jul;
+            aggrTotal.aug += aggrPerGroup.aug;
+            aggrTotal.sep += aggrPerGroup.sep;
+            aggrTotal.oct += aggrPerGroup.oct;
+            aggrTotal.nov += aggrPerGroup.nov;
+            aggrTotal.dec += aggrPerGroup.dec;
+            
+            aggrPerGroup.rank = [NSString stringWithFormat:@"%d", _rank];
+            _rank ++;
+        }
+        
+        [aggrTotal finishAdd];
+        
+        if (aggrTotal.yearsum > 0)
+        {
+            aggrTotal.totpro = @"100%";
+            
+            for (ClientSalesAggrPerGroup *aggrPerGroup in aggrPerPractices)
+            {
+                double pro = aggrPerGroup.yearsum / aggrTotal.yearsum * 100;
+                aggrPerGroup.totpro = [NSString stringWithFormat:@"%.1f%%", pro];
+            }
+        }
+        
+        [aggrPerPractices insertObject:aggrTotal atIndex:0];
+    }
+    
     janString = [NSString stringWithFormat:@"%.0f", round(jan)];
     febString = [NSString stringWithFormat:@"%.0f", round(feb)];
     marString = [NSString stringWithFormat:@"%.0f", round(mar)];

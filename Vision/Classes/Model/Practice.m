@@ -88,6 +88,28 @@
 }
 
 
++ (NSString *)PracticeNameFrom:(NSString *)id_practice
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Practice"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"practiceCode == %@", id_practice];
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *practices = [context executeFetchRequest:fetchRequest error:nil];
+    if ([practices count] != 1)
+        return nil;
+    
+    Practice *practice = (Practice *)[practices objectAtIndex:0];
+    
+    return practice.practiceName;
+}
+
+
 + (NSArray *)searchPracticesWithField:(NSString *)aField andKey:(NSString *)aKey
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];

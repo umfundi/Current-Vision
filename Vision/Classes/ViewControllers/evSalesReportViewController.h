@@ -38,6 +38,7 @@
     IBOutlet UILabel *lblBGroupHdr;
     IBOutlet UIButton *btnMAT;
     IBOutlet UIButton *btmYTD;
+    IBOutlet UIButton *btnAll;
     IBOutlet UIButton *btnCustomer;
     IBOutlet UIButton *btnBGroup;
     IBOutlet UIButton *btnKAM;
@@ -84,6 +85,7 @@
 - (IBAction)matClicked:(id)sender;
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
+- (IBAction)allClicked:(id)sender;
 
 - (void)displayGrids;
 - (void)applyTheme:(BOOL)redTheme;

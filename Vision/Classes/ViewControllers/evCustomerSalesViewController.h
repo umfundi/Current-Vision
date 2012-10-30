@@ -51,6 +51,7 @@
     IBOutlet UIButton *btnNext;
     IBOutlet UIButton *btnFind;
     IBOutlet UIButton *btnDone;
+    IBOutlet UIButton *btnAll;
     IBOutlet UIImageView *imgLogo;
     
     ShinobiGrid *customerSalesGrid;
@@ -85,6 +86,7 @@
 
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
+- (IBAction)allClicked:(id)sender;
 
 - (void)displayGrids;
 - (void)applyTheme:(BOOL)redTheme;

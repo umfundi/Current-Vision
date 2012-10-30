@@ -13,7 +13,6 @@
 #import "Practice.h"
 #import "umfundiAppDelegate.h"
 #import "umfundiViewController.h"
-#import "ProductSalesDataSource.h"
 #import "ProductSalesAggrPerBrand.h"
 #import "umfundiCommon.h"
 
@@ -42,8 +41,7 @@
     if (![grid.dataSource shinobiGrid:grid titleForHeaderInSection:sectionIndex])
         return nil;
     
-    SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:15.f withBackgroundColor:[UIColor lightGrayColor]];
-    s.font = [UIFont fontWithName:@"Arial" size:10.0f];
+    SGridSectionHeaderStyle *s = [[SGridSectionHeaderStyle alloc] initWithHeight:20 withBackgroundColor:[UIColor lightGrayColor]];
     return s;
 }
 
@@ -105,10 +103,12 @@
     
     productSalesDataSource = [[ProductSalesDataSource alloc] init];
     
-    NSNumberFormatter *nf = [NSNumberFormatter new];
-    [nf setGroupingSize:3];
-    [nf setGroupingSeparator: [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator]];
-    productSalesDataSource.numberFormat = nf;
+//    NSNumberFormatter *nf = [NSNumberFormatter new];
+//    [nf setGroupingSize:3];
+//    [nf setGroupingSeparator: [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator]];
+//    productSalesDataSource.numberFormat = nf;
+
+    productSalesDataSource.delegate = self;
     
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
     
@@ -131,15 +131,11 @@
     productSalesGrid.defaultBorderStyle.color = [UIColor darkGrayColor];
     productSalesGrid.defaultBorderStyle.width = 1.0f;
     
-    productSalesGrid.defaultSectionHeaderStyle.font = [UIFont fontWithName:@"Arial" size:10.0f];
+    productSalesGrid.defaultSectionHeaderStyle.hidden = YES;
     
     //provide default row heights and col widths
     productSalesGrid.defaultRowStyle.size = [NSNumber numberWithFloat:25];
     productSalesGrid.defaultColumnStyle.size = [NSNumber numberWithFloat:43];
-    
-    //ensure that section header is hidden (a grid has one section by default)
-    productSalesGrid.defaultSectionHeaderStyle.hidden = YES;
-    productSalesGrid.defaultSectionHeaderStyle.hidden = YES;
     
     //We dont want to be able to edit our cells
     productSalesGrid.canEditCellsViaDoubleTap = NO;
@@ -153,6 +149,8 @@
     currentFilter = FilterTypePractice;
     [self displayHeaderinfoblock];
     [self displayGrids];
+    
+    btnAll.hidden = true;
 
     // this displays the grid
     [self.view addSubview:productSalesGrid];
@@ -183,7 +181,7 @@
     {
         for (UIView *eachView in ProductSalesSubviews(templateController.view))
         {
-//            NSLog(@"Tag %d %@ %d", count++, eachView.accessibilityLabel  , eachView.tag);
+            NSLog(@"Tag %@ %d", eachView.accessibilityLabel  , eachView.tag);
             
             int tag = eachView.tag;
             if(tag < 10 ) continue;
@@ -214,6 +212,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
 - (void)viewDidUnload {
     lblPostcode = nil;
     btnFull = nil;
+    btnAll = nil;
     [super viewDidUnload];
 }
 
@@ -566,6 +565,17 @@ NSArray *ProductSalesSubviews(UIView *aView)
     }
 }
 
+
+- (IBAction)allClicked:(id)sender {
+    
+    // Switch back to the brand view of the data here
+//    productSalesDataSource.productSalesArray = ;
+    
+    
+    btnAll.hidden = false;
+    [productSalesGrid reload];
+}
+
 - (void)cellFound
 {
     NSInteger row_no = last_row;
@@ -718,6 +728,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
     [umfundiCommon applyColorToButton:btnMAT withColor:titleColor];
     [umfundiCommon applyColorToButton:btmYTD withColor:titleColor];
     [umfundiCommon applyColorToButton:btnFull withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnAll withColor:titleColor];
     
     [umfundiCommon applyColorToButton:btnCustomer withColor:titleColor];
     [umfundiCommon applyColorToButton:btnBGroup withColor:titleColor];
@@ -730,6 +741,17 @@ NSArray *ProductSalesSubviews(UIView *aView)
     [umfundiCommon applyColorToButton:btnNext withColor:titleColor];
     
     [umfundiCommon applyColorToButton:btnDone withColor:titleColor];
+}
+
+#pragma mark -
+#pragma mark ProductSalesDataSourceDelegate
+
+- (void)brandSelected:(ProductSalesAggrPerBrand *)brand
+{
+    
+    productSalesDataSource.productSalesArray = brand.aggrPerProducts;
+    [productSalesGrid reload];
+    btnAll.hidden = false;
 }
 
 @end

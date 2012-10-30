@@ -9,10 +9,12 @@
 
 #import "ErReportAggrPerYear.h"
 #import "ErReportAggrPerBrand.h"
+#import "UIUnderlinedButton.h"
 
 @implementation ErReportDataSource
 
 @synthesize erReportArray;
+@synthesize delegate;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -241,6 +243,53 @@
     
     ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:section - 1];
     return aggrPerBrand.brand;
+}
+
+- (UIView *)shinobiGrid:(ShinobiGrid *)grid viewForHeaderInSection:(int)section inFrame:(CGRect)frame
+{
+    NSString *title = [self shinobiGrid:grid titleForHeaderInSection:section];
+    if (!title)
+        return nil;
+    
+    ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:section - 1];
+
+    UIView *headerView = [[UIView alloc] initWithFrame:frame];
+    headerView.backgroundColor = [UIColor clearColor];
+    
+    UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButton];
+    titleButton.underline = (aggrPerBrand.aggrPerProducts != nil);
+    titleButton.backgroundColor = [UIColor clearColor];
+    titleButton.autoresizingMask = ~UIViewAutoresizingNone;
+    if (titleButton.underline)
+    {
+        [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchDown];
+        [titleButton setShowsTouchWhenHighlighted:YES];
+        [self performSelector:@selector(enableButton:) withObject:headerView afterDelay:0.1];
+    }
+    [titleButton setFrame:CGRectInset(headerView.bounds, 5, 3)];
+    [titleButton.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    [titleButton.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [titleButton setTitle:title forState:UIControlStateNormal];
+    [titleButton setFrame:CGRectMake(titleButton.frame.origin.x, titleButton.frame.origin.y,
+                                     titleButton.titleLabel.frame.size.width, titleButton.frame.size.height)];
+    [titleButton setTag:section];
+    
+    [headerView addSubview:titleButton];
+    
+    return headerView;
+}
+
+- (void)enableButton:(id)sender
+{
+    [[sender superview] setUserInteractionEnabled:YES];
+}
+
+- (void)titleButtonClicked:(id)sender
+{
+    ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:[sender tag] - 1];
+    
+    [delegate performSelector:@selector(brandSelected:) withObject:aggrPerBrand];
 }
 
 @end

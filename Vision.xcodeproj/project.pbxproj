@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		373D56851630A6AA00337947 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D56841630A6AA00337947 /* ShinobiGrids.framework */; };
 		376ED1511635AFD500066502 /* PracticeAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = 376ED1501635AFD400066502 /* PracticeAggr.m */; };
 		3779C8C016346562002A2037 /* PracticeSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8BE16346562002A2037 /* PracticeSearchResultViewController.m */; };
 		3779C8C6163469BB002A2037 /* CustomerSearchResultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8C3163469BB002A2037 /* CustomerSearchResultDataSource.m */; };
@@ -18,7 +17,6 @@
 		37B75DC8163D579B003EBA8B /* tables-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37B75DC7163D579B003EBA8B /* tables-icon.png */; };
 		37B75DCB163D57F1003EBA8B /* Graph-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37B75DCA163D57F1003EBA8B /* Graph-icon.png */; };
 		37B75DCD163D592A003EBA8B /* email-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37B75DCC163D592A003EBA8B /* email-icon.png */; };
-		37B75DD6163D5BF1003EBA8B /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B75DD5163D5BF1003EBA8B /* ShinobiCharts.framework */; };
 		37CBBF891604D9D2003AA83E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CBBF881604D9D2003AA83E /* CoreData.framework */; };
 		37D722D315F3ABD4006DF8F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D722D215F3ABD4006DF8F6 /* UIKit.framework */; };
 		37D722D515F3ABD4006DF8F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D722D415F3ABD4006DF8F6 /* Foundation.framework */; };
@@ -57,6 +55,10 @@
 		AD31002B16363C3A005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002A16363C39005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m */; };
 		AD31002E16363D02005B48E5 /* SALES_REPORT_Dashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002D16363D01005B48E5 /* SALES_REPORT_Dashboard.m */; };
 		AD31003116363ECF005B48E5 /* SALES_REPORT_Dashboard_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31003016363ECD005B48E5 /* SALES_REPORT_Dashboard_Qty.m */; };
+		AD31776F163F61B000DD0646 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD31776E163F61B000DD0646 /* ShinobiCharts.framework */; };
+		AD317771163F61B600DD0646 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD317770163F61B600DD0646 /* ShinobiGrids.framework */; };
+		AD317774163F6D5200DD0646 /* UIUnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD317773163F6D5200DD0646 /* UIUnderlinedButton.m */; };
+		AD317775163F6E3B00DD0646 /* UIUnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD317773163F6D5200DD0646 /* UIUnderlinedButton.m */; };
 		AD3773D71628680300760031 /* SalesTrendsReportDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3773D61628680200760031 /* SalesTrendsReportDataSource.m */; };
 		AD3773DB16287A3B00760031 /* ProductSalesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3773DA16287A3B00760031 /* ProductSalesDataSource.m */; };
 		AD38F67316290D6400E4ACC1 /* CustomerAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = AD38F67216290D6400E4ACC1 /* CustomerAggr.m */; };
@@ -139,7 +141,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		373D56841630A6AA00337947 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = "../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial/ShinobiGrids.framework"; sourceTree = "<group>"; };
 		376ED14F1635AFD400066502 /* PracticeAggr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggr.h; sourceTree = "<group>"; };
 		376ED1501635AFD400066502 /* PracticeAggr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggr.m; sourceTree = "<group>"; };
 		3779C8BD16346562002A2037 /* PracticeSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeSearchResultViewController.h; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 		37B75DC7163D579B003EBA8B /* tables-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tables-icon.png"; sourceTree = "<group>"; };
 		37B75DCA163D57F1003EBA8B /* Graph-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Graph-icon.png"; path = "../Graph-icon.png"; sourceTree = "<group>"; };
 		37B75DCC163D592A003EBA8B /* email-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-icon.png"; sourceTree = "<group>"; };
-		37B75DD5163D5BF1003EBA8B /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = "../ShinobiControls Trial-2/ShinobiCharts Trial/ShinobiCharts.embeddedframework/ShinobiCharts.framework"; sourceTree = "<group>"; };
 		37CBBF881604D9D2003AA83E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		37D722CE15F3ABD4006DF8F6 /* Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D722D215F3ABD4006DF8F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -223,6 +223,10 @@
 		AD31002D16363D01005B48E5 /* SALES_REPORT_Dashboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_Dashboard.m; sourceTree = "<group>"; };
 		AD31002F16363ECC005B48E5 /* SALES_REPORT_Dashboard_Qty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SALES_REPORT_Dashboard_Qty.h; sourceTree = "<group>"; };
 		AD31003016363ECD005B48E5 /* SALES_REPORT_Dashboard_Qty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SALES_REPORT_Dashboard_Qty.m; sourceTree = "<group>"; };
+		AD31776E163F61B000DD0646 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = ../components/ShinobiCharts.framework; sourceTree = "<group>"; };
+		AD317770163F61B600DD0646 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = ../components/ShinobiGridsQuickStart/ShinobiGrids.framework; sourceTree = "<group>"; };
+		AD317772163F6D5200DD0646 /* UIUnderlinedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUnderlinedButton.h; sourceTree = "<group>"; };
+		AD317773163F6D5200DD0646 /* UIUnderlinedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUnderlinedButton.m; sourceTree = "<group>"; };
 		AD3773D51628680200760031 /* SalesTrendsReportDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTrendsReportDataSource.h; sourceTree = "<group>"; };
 		AD3773D61628680200760031 /* SalesTrendsReportDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTrendsReportDataSource.m; sourceTree = "<group>"; };
 		AD3773D916287A3B00760031 /* ProductSalesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSalesDataSource.h; sourceTree = "<group>"; };
@@ -343,8 +347,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B75DD6163D5BF1003EBA8B /* ShinobiCharts.framework in Frameworks */,
-				373D56851630A6AA00337947 /* ShinobiGrids.framework in Frameworks */,
 				AD6C98BB161EBD6C001FD2E2 /* SystemConfiguration.framework in Frameworks */,
 				37CBBF891604D9D2003AA83E /* CoreData.framework in Frameworks */,
 				379C13FA16004A33003828DD /* QuartzCore.framework in Frameworks */,
@@ -352,6 +354,8 @@
 				379C13F816004A10003828DD /* Security.framework in Frameworks */,
 				37D722D315F3ABD4006DF8F6 /* UIKit.framework in Frameworks */,
 				37D722D515F3ABD4006DF8F6 /* Foundation.framework in Frameworks */,
+				AD31776F163F61B000DD0646 /* ShinobiCharts.framework in Frameworks */,
+				AD317771163F61B600DD0646 /* ShinobiGrids.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,8 +394,8 @@
 		37D722D115F3ABD4006DF8F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37B75DD5163D5BF1003EBA8B /* ShinobiCharts.framework */,
-				373D56841630A6AA00337947 /* ShinobiGrids.framework */,
+				AD317770163F61B600DD0646 /* ShinobiGrids.framework */,
+				AD31776E163F61B000DD0646 /* ShinobiCharts.framework */,
 				AD6C98BA161EBD6C001FD2E2 /* SystemConfiguration.framework */,
 				AD6C98B8161EBD61001FD2E2 /* CFNetwork.framework */,
 				37CBBF881604D9D2003AA83E /* CoreData.framework */,
@@ -565,6 +569,8 @@
 				ADCCDFB616245B6E009E0BCE /* MBProgressHUD.m */,
 				ADCCDFB716245B6E009E0BCE /* Reachability.h */,
 				ADCCDFB816245B6E009E0BCE /* Reachability.m */,
+				AD317772163F6D5200DD0646 /* UIUnderlinedButton.h */,
+				AD317773163F6D5200DD0646 /* UIUnderlinedButton.m */,
 				AD026D151626A9A000A880E6 /* umfundiCommon.h */,
 				AD026D161626A9A000A880E6 /* umfundiCommon.m */,
 			);
@@ -909,6 +915,7 @@
 				AD5E415F1638E5A70046F9C9 /* AllKeyAccountManagersViewController.m in Sources */,
 				AD5E41621638E5CD0046F9C9 /* AllGroupsViewController.m in Sources */,
 				AD5E41651638E5D80046F9C9 /* AllCountriesViewController.m in Sources */,
+				AD317775163F6E3B00DD0646 /* UIUnderlinedButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +925,7 @@
 			files = (
 				37D7230115F3ABD4006DF8F6 /* VisionTests.m in Sources */,
 				AD6602DD16378399006D7102 /* PracticeAggrPerBrand.m in Sources */,
+				AD317774163F6D5200DD0646 /* UIUnderlinedButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1043,7 @@
 					"\"$(SRCROOT)/../ShinobiControls Trial-2/ShinobiGrids Trial\"",
 					"\"$(SRCROOT)/../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial\"",
 					"\"$(SRCROOT)/../ShinobiControls Trial-2/ShinobiCharts Trial/ShinobiCharts.embeddedframework\"",
+					"\"$(SRCROOT)/../components\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vision/Vision-Prefix.pch";
@@ -1060,6 +1069,7 @@
 					"\"$(SRCROOT)/../ShinobiControls Trial-2/ShinobiGrids Trial\"",
 					"\"$(SRCROOT)/../../Downloads/ShinobiControls Trial-3/ShinobiGrids Trial\"",
 					"\"$(SRCROOT)/../ShinobiControls Trial-2/ShinobiCharts Trial/ShinobiCharts.embeddedframework\"",
+					"\"$(SRCROOT)/../components\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vision/Vision-Prefix.pch";

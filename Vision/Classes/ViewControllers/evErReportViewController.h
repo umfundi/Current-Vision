@@ -15,12 +15,12 @@
 #import "AllKeyAccountManagersViewController.h"
 #import "AllGroupsViewController.h"
 #import "AllCountriesViewController.h"
+#import "ErReportDataSource.h"
 
 @class User;
 @class Practice;
-@class ErReportDataSource;
 
-@interface evErReportViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate>
+@interface evErReportViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate, ErReportDataSourceDelegate>
 {
     IBOutlet UILabel *lblThemeBox;
     IBOutlet UILabel *lblPracticeName;
@@ -49,6 +49,7 @@
     IBOutlet UIButton *btnFind;
     IBOutlet UIButton *btnNext;
     IBOutlet UIButton *btnDone;
+    IBOutlet UIButton *btnAll;
     IBOutlet UIImageView *imgLogo;
     
     ShinobiGrid *erReportGrid;
@@ -81,6 +82,7 @@
 
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
+- (IBAction)allClicked:(id)sender;
 
 - (void)displayGrids;
 - (void)applyTheme:(BOOL)redTheme;

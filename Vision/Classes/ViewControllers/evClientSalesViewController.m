@@ -14,6 +14,7 @@
 #import "Product.h"
 #import "User.h"
 #import "umfundiCommon.h"
+#import "ClientSalesAggrPerGroup.h"
 
 #define FilterTypePractice          0
 #define FilterTypeCustomer          1
@@ -58,6 +59,7 @@
     
     clientSalesDataSource = [[ClientSalesDataSource alloc] init];
     clientSalesDataSource.clientSalesAggr = nil;
+    clientSalesDataSource.delegate = self;
     productListDataSource = [[ProductListDataSource alloc] init];
     productListDataSource.productArray = [Product AllProducts];
     productListDataSource.itemSelected = [[NSMutableArray alloc] initWithCapacity:0];
@@ -242,6 +244,22 @@ NSArray *ClientSalesSubviews(UIView *aView)
     [umfundiCommon applyColorToButton:btnClear withColor:titleColor];
     [umfundiCommon applyColorToButton:btnSelect withColor:titleColor];
     [umfundiCommon applyColorToButton:btnSelFocus withColor:titleColor];
+}
+
+
+#pragma mark -
+#pragma mark ClientSalesDataSourceDelegate
+
+- (void)groupSelected:(ClientSalesAggrPerGroup *)group
+{
+    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] init];
+    aggr.year = clientSalesDataSource.clientSalesAggr.year;
+    aggr.lastyear = clientSalesDataSource.clientSalesAggr.lastyear;
+    aggr.aggrPerGroups = group.aggrPerPractices;
+    
+    clientSalesDataSource.clientSalesAggr = aggr;
+
+    [clientSalesGrid reload];
 }
 
 @end

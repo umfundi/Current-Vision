@@ -9,10 +9,12 @@
 
 #import "ClientSalesAggr.h"
 #import "ClientSalesAggrPerGroup.h"
+#import "UIUnderlinedButton.h"
 
 @implementation ClientSalesDataSource
 
 @synthesize clientSalesAggr;
+@synthesize delegate;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -105,88 +107,122 @@
     }
     else
     {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
-        if (!cell)
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
-        
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        
-        cell.textField.backgroundColor = [UIColor whiteColor];
-        cell.backgroundColor = [UIColor whiteColor];
-        
         ClientSalesAggrPerGroup *aggrPerGroup = [clientSalesAggr.aggrPerGroups objectAtIndex:gridCoord.rowIndex - 1];
-        
-        NSString *cellText;
-        switch (gridCoord.column)
+
+        if (aggrPerGroup.aggrPerPractices && gridCoord.column == 1)
         {
-            case 0:
-                cellText = aggrPerGroup.rank;
-                break;
-            case 1:
-                cellText = aggrPerGroup.group;
-                break;
-            case 2:
-                cellText = aggrPerGroup.janString;
-                break;
-            case 3:
-                cellText = aggrPerGroup.febString;
-                break;
-            case 4:
-                cellText = aggrPerGroup.marString;
-                break;
-            case 5:
-                cellText = aggrPerGroup.aprString;
-                break;
-            case 6:
-                cellText = aggrPerGroup.mayString;
-                break;
-            case 7:
-                cellText = aggrPerGroup.junString;
-                break;
-            case 8:
-                cellText = aggrPerGroup.julString;
-                break;
-            case 9:
-                cellText = aggrPerGroup.augString;
-                break;
-            case 10:
-                cellText = aggrPerGroup.sepString;
-                break;
-            case 11:
-                cellText = aggrPerGroup.octString;
-                break;
-            case 12:
-                cellText = aggrPerGroup.novString;
-                break;
-            case 13:
-                cellText = aggrPerGroup.decString;
-                break;
-            case 14:
-                cellText = aggrPerGroup.yearsumString;
-                break;
-            case 15:
-                cellText = aggrPerGroup.totpro;
-                break;
-            case 16:
-                cellText = aggrPerGroup.lastyearsumString;
-                break;
-            case 17:
-                cellText = aggrPerGroup.diffpro;
-                break;
-            case 18:
-                cellText = aggrPerGroup.diffsum;
-                break;
-            default:
-                cellText = @"";
-                break;
+            SGridCell *cell = (SGridCell *)[grid dequeueReusableCellWithIdentifier:@"buttonCell"];
+            if (!cell)
+                cell = [[SGridCell alloc] initWithReuseIdentifier:@"buttonCell"];
+            else
+            {
+                for (UIView *subview in cell.subviews)
+                    [subview removeFromSuperview];
+            }
+
+            UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButton];
+            titleButton.backgroundColor = [UIColor whiteColor];
+            titleButton.autoresizingMask = ~UIViewAutoresizingNone;
+            if (titleButton.underline)
+            {
+                [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchDown];
+                [titleButton setShowsTouchWhenHighlighted:YES];
+            }
+            [titleButton setFrame:cell.bounds];
+            [titleButton.titleLabel setFont:[UIFont fontWithName:@"Arial" size:15.0f]];
+            [titleButton.titleLabel setTextAlignment:NSTextAlignmentLeft];
+            [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [titleButton setTitle:aggrPerGroup.group forState:UIControlStateNormal];
+            [titleButton setFrame:CGRectMake(titleButton.frame.origin.x, titleButton.frame.origin.y,
+                                             titleButton.titleLabel.frame.size.width, titleButton.frame.size.height)];
+            titleButton.tag = gridCoord.rowIndex;
+            
+            [cell addSubview:titleButton];
+            
+            return cell;
         }
-        
-        cell.textField.text = cellText;
-        
-        return cell;
+        else
+        {
+            SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+            if (!cell)
+                cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
+            
+            cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+            cell.textField.textColor = [UIColor blackColor];
+            cell.textField.textAlignment = UITextAlignmentLeft;
+            
+            cell.textField.backgroundColor = [UIColor whiteColor];
+            cell.backgroundColor = [UIColor whiteColor];
+            
+            NSString *cellText;
+            switch (gridCoord.column)
+            {
+                case 0:
+                    cellText = aggrPerGroup.rank;
+                    break;
+                case 1:
+                    cellText = aggrPerGroup.group;
+                    break;
+                case 2:
+                    cellText = aggrPerGroup.janString;
+                    break;
+                case 3:
+                    cellText = aggrPerGroup.febString;
+                    break;
+                case 4:
+                    cellText = aggrPerGroup.marString;
+                    break;
+                case 5:
+                    cellText = aggrPerGroup.aprString;
+                    break;
+                case 6:
+                    cellText = aggrPerGroup.mayString;
+                    break;
+                case 7:
+                    cellText = aggrPerGroup.junString;
+                    break;
+                case 8:
+                    cellText = aggrPerGroup.julString;
+                    break;
+                case 9:
+                    cellText = aggrPerGroup.augString;
+                    break;
+                case 10:
+                    cellText = aggrPerGroup.sepString;
+                    break;
+                case 11:
+                    cellText = aggrPerGroup.octString;
+                    break;
+                case 12:
+                    cellText = aggrPerGroup.novString;
+                    break;
+                case 13:
+                    cellText = aggrPerGroup.decString;
+                    break;
+                case 14:
+                    cellText = aggrPerGroup.yearsumString;
+                    break;
+                case 15:
+                    cellText = aggrPerGroup.totpro;
+                    break;
+                case 16:
+                    cellText = aggrPerGroup.lastyearsumString;
+                    break;
+                case 17:
+                    cellText = aggrPerGroup.diffpro;
+                    break;
+                case 18:
+                    cellText = aggrPerGroup.diffsum;
+                    break;
+                default:
+                    cellText = @"";
+                    break;
+            }
+            
+            cell.textField.text = cellText;
+
+            return cell;
+        }
     }
 }
 
@@ -198,6 +234,13 @@
 - (NSUInteger)shinobiGrid:(ShinobiGrid *)grid numberOfRowsInSection:(int) sectionIndex
 {
     return [clientSalesAggr.aggrPerGroups count] + 1;
+}
+
+- (void)titleButtonClicked:(id)sender
+{
+    ClientSalesAggrPerGroup *aggrPerGroup = [clientSalesAggr.aggrPerGroups objectAtIndex:[sender tag] - 1];
+    
+    [delegate performSelector:@selector(groupSelected:) withObject:aggrPerGroup];
 }
 
 @end

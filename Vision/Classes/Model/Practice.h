@@ -40,6 +40,7 @@
 - (void)loadAggrValues;
 - (PracticeAggr *)aggrValue;
 
++ (NSString *)PracticeNameFrom:(NSString *)id_practice;
 
 + (NSArray *)searchPracticesWithField:(NSString *)aField andKey:(NSString *)aKey;
 

@@ -40,7 +40,7 @@
 }
 
 
-+ (NSString *)BrandFromProductID:(NSString *)id_product
++ (Product *)ProductFromProductID:(NSString *)id_product
 {
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
@@ -56,30 +56,7 @@
     if ([products count] != 1)
         return nil;
     
-    Product *product = (Product *)[products objectAtIndex:0];
-    
-    return product.brand;
-}
-
-+ (NSString *)ClassFromProductID:(NSString *)id_product
-{
-    NSManagedObjectContext *context = [User managedObjectContextForData];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Product"
-                                              inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pcode == %@", id_product];
-    [fetchRequest setPredicate:predicate];
-    
-    NSArray *products = [context executeFetchRequest:fetchRequest error:nil];
-    if ([products count] != 1)
-        return nil;
-    
-    Product *product = (Product *)[products objectAtIndex:0];
-    
-    return product.pclass;
+    return (Product *)[products objectAtIndex:0];
 }
 
 @end

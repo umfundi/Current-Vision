@@ -44,6 +44,8 @@
 @property (nonatomic, retain) NSString *diffpro;
 @property (nonatomic, retain) NSString *diffsum;
 
+@property (nonatomic, retain) NSMutableArray *aggrPerPractices;
+
 - (void)addClientSales:(NSDictionary *)report YTDorMAT:(BOOL)isYTD;
 - (void)addClientSales:(NSDictionary *)report YTDorMAT:(BOOL)isYTD curYear:(NSString *)curYear lastYear:(NSString *)lastYear;
 - (void)finishAdd;

@@ -17,6 +17,7 @@
 
 @synthesize brand;
 @synthesize aggrPerYears;
+@synthesize aggrPerProducts;
 
 + (NSArray *)ErReportGroupByBrandFrom:(NSString *)aField andValue:(NSString *)aValue YTDorMAT:(BOOL)isYTD
 {
@@ -77,10 +78,10 @@
     for (NSDictionary *report in reports)
     {
         NSString *id_product = [report objectForKey:@"id_product"];
-        NSString *pclass = [Product ClassFromProductID:id_product];
-        NSString *brand = [Product BrandFromProductID:id_product];
-        NSString *class = [Focused_brand brandClassFromName:brand];
-        if (![class isEqualToString:@"FOCUSED"] && ![class isEqualToString:isCompanion ? @"companion" : @"ruminant"])
+        Product *product = [Product ProductFromProductID:id_product];
+        NSString *brand_class = [Focused_brand brandClassFromName:product.pname];
+
+        if (![brand_class isEqualToString:@"FOCUSED"] && ![brand_class isEqualToString:isCompanion ? @"companion" : @"ruminant"])
             continue;
         
         NSString *period = [report objectForKey:@"period"];
@@ -94,25 +95,40 @@
                 period = [period substringFromIndex:seperator_range.location + 1];
         }
         
-        ErReportAggrPerBrand *totalAggrPerClass = [totalSales objectForKey:pclass];
+        ErReportAggrPerBrand *totalAggrPerClass = [totalSales objectForKey:product.pclass];
         if (!totalAggrPerClass)
         {
             totalAggrPerClass = [[ErReportAggrPerBrand alloc] init];
-            totalAggrPerClass.brand = pclass;
+            totalAggrPerClass.brand = product.pclass;
             
-            [totalSales setObject:totalAggrPerClass forKey:pclass];
+            [totalSales setObject:totalAggrPerClass forKey:product.pclass];
         }
         
-        ErReportAggrPerBrand *aggrPerBrand = [sales objectForKey:brand];
+        ErReportAggrPerBrand *aggrPerBrand = [sales objectForKey:product.brand];
         if (!aggrPerBrand)
         {
             aggrPerBrand = [[ErReportAggrPerBrand alloc] init];
-            aggrPerBrand.brand = brand;
+            aggrPerBrand.brand = product.brand;
             
-            [sales setObject:aggrPerBrand forKey:brand];
+            [sales setObject:aggrPerBrand forKey:product.brand];
         }
         
+        ErReportAggrPerBrand *aggrPerProduct;
+        for (aggrPerProduct in aggrPerBrand.aggrPerProducts)
+        {
+            if ([aggrPerProduct.brand isEqualToString:product.pname])
+                break;
+        }
+        if (!aggrPerProduct)
+        {
+            aggrPerProduct = [[ErReportAggrPerBrand alloc] init];
+            aggrPerProduct.brand = product.pname;
+            
+            [aggrPerBrand addAggrPerProduct:aggrPerProduct];
+        }
+
         ErReportAggrPerYear *aggrPerYear;
+        /* Add in Total */
         for (aggrPerYear in totalAggrPerClass.aggrPerYears)
         {
             if ([aggrPerYear.year isEqualToString:period])
@@ -127,7 +143,22 @@
         }
         [aggrPerYear addErReport:report YTDorMAT:isYTD];
 
+        /* Add in Product */
+        for (aggrPerYear in aggrPerProduct.aggrPerYears)
+        {
+            if ([aggrPerYear.year isEqualToString:period])
+                break;
+        }
+        if (!aggrPerYear)
+        {
+            aggrPerYear = [[ErReportAggrPerYear alloc] init];
+            aggrPerYear.year = period;
+            
+            [aggrPerProduct addAggrPerYear:aggrPerYear];
+        }
+        [aggrPerYear addErReport:report YTDorMAT:isYTD];
         
+        /* Add in Brand */
         for (aggrPerYear in aggrPerBrand.aggrPerYears)
         {
             if ([aggrPerYear.year isEqualToString:period])
@@ -155,6 +186,12 @@
     {
         for (ErReportAggrPerYear *aggrPerYear in aggrPerBrand.aggrPerYears)
             [aggrPerYear finishAdd];
+        
+        for (ErReportAggrPerBrand *aggrPerProduct in aggrPerBrand.aggrPerProducts)
+        {
+            for (ErReportAggrPerYear *aggrPerYear in aggrPerProduct.aggrPerYears)
+                [aggrPerYear finishAdd];
+        }
     }
     
     
@@ -226,6 +263,28 @@
             else
                 aggrPerYear.growth = [NSString stringWithFormat:@"%.0f%%", round((curVal / prvVal - 1) * 100)];
         }
+        
+        for (ErReportAggrPerBrand *aggrPerProduct in aggrPerCustomer.aggrPerProducts)
+        {
+            ErReportAggrPerYear *prvAggrPerYear = nil;
+            double prvVal;
+            for (ErReportAggrPerYear *aggrPerYear in aggrPerProduct.aggrPerYears)
+            {
+                if (prvAggrPerYear == nil)
+                {
+                    aggrPerYear.growth = @"";
+                    prvAggrPerYear = aggrPerYear;
+                    prvVal = aggrPerYear.jan + aggrPerYear.feb + aggrPerYear.mar + aggrPerYear.apr + aggrPerYear.may + aggrPerYear.jun + aggrPerYear.jul + aggrPerYear.aug + aggrPerYear.sep + aggrPerYear.oct + aggrPerYear.nov + aggrPerYear.sep;
+                    continue;
+                }
+                
+                double curVal = aggrPerYear.jan + aggrPerYear.feb + aggrPerYear.mar + aggrPerYear.apr + aggrPerYear.may + aggrPerYear.jun + aggrPerYear.jul + aggrPerYear.aug + aggrPerYear.sep + aggrPerYear.oct + aggrPerYear.nov + aggrPerYear.sep;
+                if (prvVal == 0)
+                    aggrPerYear.growth = @"";
+                else
+                    aggrPerYear.growth = [NSString stringWithFormat:@"%.0f%%", round((curVal / prvVal - 1) * 100)];
+            }
+        }
     }
     
     for (ErReportAggrPerBrand *aggrPerCustomer in totalSales.allValues)
@@ -248,6 +307,14 @@
         aggrPerYears = [[NSMutableArray alloc] initWithCapacity:0];
     
     [aggrPerYears addObject:aggrPerYear];
+}
+
+- (void)addAggrPerProduct:(ErReportAggrPerBrand *)aggrPerProduct
+{
+    if (!aggrPerProducts)
+        aggrPerProducts = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    [aggrPerProducts addObject:aggrPerProduct];
 }
 
 @end

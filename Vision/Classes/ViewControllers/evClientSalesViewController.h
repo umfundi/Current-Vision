@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
+#import "ClientSalesDataSource.h"
 
-@class ClientSalesDataSource;
 @class ProductListDataSource;
 
-@interface evClientSalesViewController : UIViewController <SGridDelegate>
+@interface evClientSalesViewController : UIViewController <SGridDelegate, ClientSalesDataSourceDelegate>
 {
     ShinobiGrid *clientSalesGrid;
     ClientSalesDataSource *clientSalesDataSource;
