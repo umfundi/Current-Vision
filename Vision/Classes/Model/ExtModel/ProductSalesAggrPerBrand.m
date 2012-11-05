@@ -186,48 +186,52 @@
         }
     }
     
+
+    NSMutableArray *productSales = [[NSMutableArray alloc] initWithArray:sales.allValues];
     
     /* Add Total */
-    ProductSalesAggrPerBrand *totalAggr = [[ProductSalesAggrPerBrand alloc] init];
-    totalAggr.brand = @"Total";
-    
-    for (ProductSalesAggrPerBrand *aggrPerCustomer in sales.allValues)
+    if ([sales count] > 0)
     {
-        for (ProductSalesAggrPerYear *aggrPerYear in aggrPerCustomer.aggrPerYears)
+        ProductSalesAggrPerBrand *totalAggr = [[ProductSalesAggrPerBrand alloc] init];
+        totalAggr.brand = @"Total";
+        
+        for (ProductSalesAggrPerBrand *aggrPerCustomer in sales.allValues)
         {
-            ProductSalesAggrPerYear *totalAggrPerYear;
-            for (totalAggrPerYear in totalAggr.aggrPerYears)
+            for (ProductSalesAggrPerYear *aggrPerYear in aggrPerCustomer.aggrPerYears)
             {
-                if ([aggrPerYear.year isEqualToString:totalAggrPerYear.year])
-                    break;
+                ProductSalesAggrPerYear *totalAggrPerYear;
+                for (totalAggrPerYear in totalAggr.aggrPerYears)
+                {
+                    if ([aggrPerYear.year isEqualToString:totalAggrPerYear.year])
+                        break;
+                }
+                
+                if (!totalAggrPerYear)
+                {
+                    totalAggrPerYear = [[ProductSalesAggrPerYear alloc] init];
+                    totalAggrPerYear.year = aggrPerYear.year;
+                    [totalAggr addAggrPerYear:totalAggrPerYear];
+                }
+                
+                totalAggrPerYear.jan += aggrPerYear.jan;
+                totalAggrPerYear.feb += aggrPerYear.feb;
+                totalAggrPerYear.mar += aggrPerYear.mar;
+                totalAggrPerYear.apr += aggrPerYear.apr;
+                totalAggrPerYear.may += aggrPerYear.may;
+                totalAggrPerYear.jun += aggrPerYear.jun;
+                totalAggrPerYear.jul += aggrPerYear.jul;
+                totalAggrPerYear.aug += aggrPerYear.aug;
+                totalAggrPerYear.sep += aggrPerYear.sep;
+                totalAggrPerYear.oct += aggrPerYear.oct;
+                totalAggrPerYear.nov += aggrPerYear.nov;
+                totalAggrPerYear.dec += aggrPerYear.dec;
             }
-            
-            if (!totalAggrPerYear)
-            {
-                totalAggrPerYear = [[ProductSalesAggrPerYear alloc] init];
-                totalAggrPerYear.year = aggrPerYear.year;
-                [totalAggr addAggrPerYear:totalAggrPerYear];
-            }
-            
-            totalAggrPerYear.jan += aggrPerYear.jan;
-            totalAggrPerYear.feb += aggrPerYear.feb;
-            totalAggrPerYear.mar += aggrPerYear.mar;
-            totalAggrPerYear.apr += aggrPerYear.apr;
-            totalAggrPerYear.may += aggrPerYear.may;
-            totalAggrPerYear.jun += aggrPerYear.jun;
-            totalAggrPerYear.jul += aggrPerYear.jul;
-            totalAggrPerYear.aug += aggrPerYear.aug;
-            totalAggrPerYear.sep += aggrPerYear.sep;
-            totalAggrPerYear.oct += aggrPerYear.oct;
-            totalAggrPerYear.nov += aggrPerYear.nov;
-            totalAggrPerYear.dec += aggrPerYear.dec;
         }
+        for (ProductSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
+            [aggrPerYear finishAdd];
+
+        [productSales insertObject:totalAggr atIndex:0];
     }
-    for (ProductSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
-        [aggrPerYear finishAdd];
-    
-    NSMutableArray *productSales = [[NSMutableArray alloc] initWithArray:sales.allValues];
-    [productSales insertObject:totalAggr atIndex:0];
     [productSales addObjectsFromArray:totalSales.allValues];
     
     /* Growth */

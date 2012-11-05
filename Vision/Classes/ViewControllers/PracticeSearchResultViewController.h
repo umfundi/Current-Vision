@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
+#import "PracticeSearchResultDataSource.h"
 
 @class Practice;
-@class PracticeSearchResultDataSource;
 
 @protocol PracticeSearchSelectDelegate <NSObject>
 
@@ -18,7 +18,7 @@
 
 @end
 
-@interface PracticeSearchResultViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface PracticeSearchResultViewController : UIViewController<SGridDataSource, SGridDelegate, PracticeSearchResultDataSourceDelegate>
 {
     ShinobiGrid *practiceGrid;
     PracticeSearchResultDataSource *dataSource;

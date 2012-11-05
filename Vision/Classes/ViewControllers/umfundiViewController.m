@@ -39,17 +39,43 @@
 - (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int) sectionIndex
 {
     SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
-    //Set the size and text colour of the first row
-    if (rowIndex == 0)
-    {
-        style.size = [NSNumber numberWithInt:30];
-    } else {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            style.size = [NSNumber numberWithInt:25];
-        } else {
-            style.size = [NSNumber numberWithInt:26];
+    if (grid == sitesGrid )
+        {
+        //Set the size and text colour of the first row
+        if (rowIndex == 0)
+            {
+            style.size = [NSNumber numberWithInt:30];
+            }
+        else
+            {
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+                {
+                style.size = [NSNumber numberWithInt:25];
+                }
+            else
+                {
+                style.size = [NSNumber numberWithInt:26];
+                }
+            }
         }
-    }
+    else
+    {
+        if (sectionIndex ==0 && rowIndex == 0)
+            {
+            style.size = [NSNumber numberWithInt:30];
+        }
+        else        {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+            style.size = [NSNumber numberWithInt:18];
+            }
+        else
+            {
+            style.size = [NSNumber numberWithInt:16];
+            }
+        }
+}
+
     
     style.backgroundColor = [UIColor whiteColor];
     return style;
@@ -72,25 +98,48 @@
     SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
     
     if (grid == sitesGrid )
-    {
+        {
         //Set fixed width for certain columns
         if(colIndex == 0) {
             style.size = [NSNumber numberWithFloat:80];
             return style;
         } else if(colIndex == 1) {
-            style.size = [NSNumber numberWithFloat:200];
+            style.size = [NSNumber numberWithFloat:175];
             return style;
         } else if (colIndex == 2) {
-            style.size = [NSNumber numberWithFloat:125];
+            style.size = [NSNumber numberWithFloat:100];
             return style;
-        } else if (colIndex > 3) {
-            style.size = [NSNumber numberWithFloat:70];
+        } else if (colIndex == 3) {
+            style.size = [NSNumber numberWithFloat:80];
+            return style;
+        } else {
+            style.size = [NSNumber numberWithFloat:40];
+            return style;
+        }
+
+    }
+    if (grid == salesGrid )
+    {
+        //Set fixed width for certain columns
+        if(colIndex == 0) {
+            style.size = [NSNumber numberWithFloat:50];
+            return style;
+        } else if(colIndex == 1) {
+            style.size = [NSNumber numberWithFloat:80];
+            return style;
+        } else if (colIndex == 2) {
+            style.size = [NSNumber numberWithFloat:80];
+            return style;
+        } else if (colIndex == 4) {
+            style.size = [NSNumber numberWithFloat:50];
             return style;
         }
     }
     
+    
     return nil;
 }
+
 
 - (void)viewDidLoad
 {
@@ -168,6 +217,10 @@
     [self.view addSubview:sitesGrid];
     [self.view addSubview:salesGrid];
     [salesGrid setHidden:YES];
+
+    HUDDownload = [[MBProgressHUD alloc] initWithView:self.view];
+    HUDDownload.labelText = @"Downloading Territory Data";
+    [self.view addSubview:HUDDownload];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -180,6 +233,24 @@
     [self displayPractice];
     [self applyTheme:[[User loginUser].data isEqualToString:@"companion"]];
     
+
+    NSInteger month = [[[User loginUser].timestamp substringToIndex:2] integerValue];
+    NSInteger day = [[[User loginUser].timestamp substringFromIndex:2] integerValue];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorian components:NSMonthCalendarUnit | NSDayCalendarUnit
+                                                fromDate:[NSDate date]];
+    NSInteger curmonth = [components month];
+    NSInteger curday = [components day];
+    
+    NSInteger month_diff = (curmonth - month + 12) % 12;
+    if (month_diff > 1 || (month_diff == 1 && curday > day))
+    {
+        // Need to update.
+        syncButton.enabled = YES;
+    }
+    else
+        syncButton.enabled = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -295,8 +366,58 @@ NSArray *allSubviews(UIView *aView)
 - (IBAction)SyncData:(id)sender
 {
     [searchField resignFirstResponder];
+
+    [HUDDownload show:YES];
+    
+    downloadPath = [User sqliteFilepathForData];
+    conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[User sqliteDownloadURLForData]]] delegate:self startImmediately:YES];
 }
 
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"%d Bytes Downloaded", [data length]);
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[downloadPath stringByAppendingString:@".tmp"]])
+        [[NSFileManager defaultManager] createFileAtPath:[downloadPath stringByAppendingString:@".tmp"] contents:data attributes:nil];
+    else
+    {
+        NSFileHandle *file = [NSFileHandle fileHandleForWritingAtPath:[downloadPath stringByAppendingString:@".tmp"]];
+        
+        [file seekToFileOffset:[file seekToEndOfFile]];
+        [file writeData:data];
+        
+        [file closeFile];
+    }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [HUDDownload hide:YES];
+    HUDDownload = nil;
+    
+    [[NSFileManager defaultManager] removeItemAtPath:downloadPath error:nil];
+    [[NSFileManager defaultManager] moveItemAtPath:[downloadPath stringByAppendingString:@".tmp"] toPath:downloadPath error:nil];
+
+    self.currentPractice = nil;
+    
+    [self viewWillAppear:NO];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [[NSFileManager defaultManager] removeItemAtPath:[downloadPath stringByAppendingString:@".tmp"] error:nil];
+    
+    [HUDDownload hide:YES];
+    HUDDownload = nil;
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", @"")
+                                                        message:NSLocalizedString(@"Failed to connect to server. Please try again.", @"")
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
 
 //- (void)displayCustomer
 //{
@@ -352,17 +473,20 @@ NSArray *allSubviews(UIView *aView)
 
 - (void)displayPractice
 {
-    if (!currentPractice)
+    if (!self.currentPractice)
     {
-        self.currentPractice = [Practice firstPractice];
-        if (!currentPractice)
-            return;
+        if (!HUDProcessing)
+        {
+            HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
+            HUDProcessing.labelText = @"Processing tables ...";
+            [self.view addSubview:HUDProcessing];
+        }
         
-        [currentPractice loadCustomers];
-        for (Customer *customer in currentPractice.customers)
-            [customer loadPracticeAndValues];
-
-        [currentPractice loadAggrValues];
+        [HUDProcessing show:YES];
+        
+        [NSThread detachNewThreadSelector:@selector(loadValuesThread) toTarget:self withObject:nil];
+        
+        return;
     }
     
     accountNoField.text = currentPractice.practiceCode;
@@ -508,14 +632,39 @@ NSArray *allSubviews(UIView *aView)
     [searchPopoverController dismissPopoverAnimated:YES];
     searchPopoverController = nil;
     
-    self.currentPractice = selected;
-    [currentPractice loadCustomers];
-    for (Customer *customer in currentPractice.customers)
-        [customer loadPracticeAndValues];
+    if (!HUDProcessing)
+    {
+        HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
+        HUDProcessing.labelText = @"Processing tables ...";
+        [self.view addSubview:HUDProcessing];
+    }
     
-    [currentPractice loadAggrValues];
+    [HUDProcessing show:YES];
+    
+    self.currentPractice = selected;
+    [NSThread detachNewThreadSelector:@selector(loadValuesThread) toTarget:self withObject:nil];
     
     [self displayPractice];
+}
+
+
+- (void)loadValuesThread
+{
+    @autoreleasepool
+    {
+        if (!self.currentPractice)
+            self.currentPractice = [Practice firstPractice];
+        
+        [currentPractice loadCustomers];
+        for (Customer *customer in currentPractice.customers)
+            [customer loadPracticeAndValues];
+        
+        [currentPractice loadAggrValues];
+        
+        [self performSelectorOnMainThread:@selector(displayPractice) withObject:nil waitUntilDone:YES];
+        
+        [HUDProcessing hide:YES];
+    }
 }
 
 @end

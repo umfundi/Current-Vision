@@ -89,6 +89,17 @@
     return nil;
 }
 
+
+- (void) shinobiGrid:(ShinobiGrid *)grid willExpandSectionAtIndex: (NSUInteger)sectionIndex
+{
+    
+}
+
+- (void) shinobiGrid:(ShinobiGrid *)grid willCollapseSectionAtIndex:(NSUInteger)sectionIndex
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -148,12 +159,17 @@
     
     currentFilter = FilterTypePractice;
     [self displayHeaderinfoblock];
-    [self displayGrids];
     
     btnAll.hidden = true;
 
     // this displays the grid
     [self.view addSubview:productSalesGrid];
+
+    HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
+    HUDProcessing.labelText = @"Processing tables ...";
+    [self.view addSubview:HUDProcessing];
+
+    [self displayGrids];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -246,7 +262,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
         
         lblPracticeCode.text = selectedPractice.practiceCode;
         
-        lblIDUser.text = selectedUser.login;
+        lblIDUser.text = [User loginUser].login;
     }
     else if (currentFilter == FilterTypeCustomer)
     {
@@ -268,16 +284,16 @@ NSArray *ProductSalesSubviews(UIView *aView)
         lblBGroupHdr.hidden = true;
         
         // And populate the Customer related labels
-        lblPracticeName.text = selectedPractice.practiceName;
+        lblPracticeName.text = selectedCustomer.practice.practiceName;
         
-        lblAddress1.text = selectedPractice.add1;
-        lblAddress2.text = selectedPractice.city;
-        lblAddress3.text = selectedPractice.province;
-        lblPostcode.text = selectedPractice.postcode;
+        lblAddress1.text = selectedCustomer.practice.add1;
+        lblAddress2.text = selectedCustomer.practice.city;
+        lblAddress3.text = selectedCustomer.practice.province;
+        lblPostcode.text = selectedCustomer.practice.postcode;
         
-        lblPracticeCode.text = selectedPractice.practiceCode;
+        lblPracticeCode.text = selectedCustomer.practice.practiceCode;
         
-        lblIDUser.text = selectedUser.login;
+        lblIDUser.text = selectedCustomer.customerName;
         
     }
     else if (currentFilter == FilterTypeGroup)
@@ -300,7 +316,10 @@ NSArray *ProductSalesSubviews(UIView *aView)
         lblCountyHdr.hidden = true;
         
         // And populate the group label
-        lblPracticeName.text = @"Group name here!";
+        if ([selectedFilterVal isEqualToString:@"-"])
+            lblPracticeName.text = @"No Group";
+        else
+            lblPracticeName.text = selectedFilterVal;
     }
     else if (currentFilter == FilterTypeKeyAccountManager)
     {
@@ -322,7 +341,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
         lblBGroupHdr.hidden = true;
         
         // And populate the Country label
-        lblPracticeName.text = @"Account manager name here!";
+        lblIDUser.text = selectedUser.login;
     }
     else if (currentFilter == FilterTypeCountry)
     {
@@ -344,7 +363,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
         lblBGroupHdr.hidden = true;
         
         // And populate the Country label
-        lblPracticeName.text = selectedPractice.country;
+        lblPracticeName.text = selectedFilterVal;
     }
     else if (currentFilter == FilterTypeCounty)
     {
@@ -366,16 +385,38 @@ NSArray *ProductSalesSubviews(UIView *aView)
         lblBGroupHdr.hidden = true;
         
         // And populate the Country label
-        lblPracticeName.text = selectedPractice.province;
+        lblPracticeName.text = selectedFilterVal;
     }
 }
 
 
+- (IBAction)doneClicked:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 - (IBAction)customerClicked:(id)sender
 {
+    [HUDProcessing show:YES];
+    
+    [NSThread detachNewThreadSelector:@selector(loadAllCustomers:) toTarget:self withObject:sender];
+}
+
+- (void)loadAllCustomers:(id)sender
+{
+    @autoreleasepool
+    {
+        allCustomers = [Customer allCustomers];
+        [self performSelectorOnMainThread:@selector(showAllCustomers:) withObject:sender waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+    }
+}
+
+- (void)showAllCustomers:(id)sender
+{
     AllCustomersViewController *resultViewController = [[AllCustomersViewController alloc] init];
-    resultViewController.searchResult = [Customer allCustomers];
+    resultViewController.searchResult = allCustomers;
     resultViewController.delegate = self;
     
     searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
@@ -385,10 +426,28 @@ NSArray *ProductSalesSubviews(UIView *aView)
                                            animated:YES];
 }
 
+
 - (IBAction)practiceClicked:(id)sender
 {
+    [HUDProcessing show:YES];
+    
+    [NSThread detachNewThreadSelector:@selector(loadAllPractices:) toTarget:self withObject:sender];
+}
+
+- (void)loadAllPractices:(id)sender
+{
+    @autoreleasepool
+    {
+        allPractices = [Practice allPractices];
+        [self performSelectorOnMainThread:@selector(showAllPractices:) withObject:sender waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+    }
+}
+
+- (void)showAllPractices:(id)sender
+{
     AllPracticesViewController *resultViewController = [[AllPracticesViewController alloc] init];
-    resultViewController.searchResult = [Practice allPractices];
+    resultViewController.searchResult = allPractices;
     resultViewController.delegate = self;
     
     searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
@@ -400,8 +459,25 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (IBAction)countyClicked:(id)sender
 {
+    [HUDProcessing show:YES];
+    
+    [NSThread detachNewThreadSelector:@selector(loadAllCounties:) toTarget:self withObject:sender];
+}
+
+- (void)loadAllCounties:(id)sender
+{
+    @autoreleasepool
+    {
+        allCounties = [Customer allCounties];
+        [self performSelectorOnMainThread:@selector(showAllCounties:) withObject:sender waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+    }
+}
+
+- (void)showAllCounties:(id)sender
+{
     AllCountiesViewController *resultViewController = [[AllCountiesViewController alloc] init];
-    resultViewController.searchResult = [Customer allCounties];
+    resultViewController.searchResult = allCounties;
     resultViewController.delegate = self;
     
     searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
@@ -413,8 +489,25 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (IBAction)keyAccountManagerClicked:(id)sender
 {
+    [HUDProcessing show:YES];
+    
+    [NSThread detachNewThreadSelector:@selector(loadAllKeyAccountManagers:) toTarget:self withObject:sender];
+}
+
+- (void)loadAllKeyAccountManagers:(id)sender
+{
+    @autoreleasepool
+    {
+        allKeyAccountManagers = [User allUsers];
+        [self performSelectorOnMainThread:@selector(showAllKeyAccountManagers:) withObject:sender waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+    }
+}
+
+- (void)showAllKeyAccountManagers:(id)sender
+{
     AllKeyAccountManagersViewController *resultViewController = [[AllKeyAccountManagersViewController alloc] init];
-    resultViewController.searchResult = [User allUsers];
+    resultViewController.searchResult = allKeyAccountManagers;
     resultViewController.delegate = self;
     
     searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
@@ -426,8 +519,25 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (IBAction)groupClicked:(id)sender
 {
+    [HUDProcessing show:YES];
+    
+    [NSThread detachNewThreadSelector:@selector(loadAllGroups:) toTarget:self withObject:sender];
+}
+
+- (void)loadAllGroups:(id)sender
+{
+    @autoreleasepool
+    {
+        allGroups = [Customer allGroups];
+        [self performSelectorOnMainThread:@selector(showAllGroups:) withObject:sender waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+    }
+}
+
+- (void)showAllGroups:(id)sender
+{
     AllGroupsViewController *resultViewController = [[AllGroupsViewController alloc] init];
-    resultViewController.searchResult = [Customer allGroups];
+    resultViewController.searchResult = allGroups;
     resultViewController.delegate = self;
     
     searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
@@ -439,8 +549,25 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (IBAction)countryClicked:(id)sender
 {
+    [HUDProcessing show:YES];
+    
+    [NSThread detachNewThreadSelector:@selector(loadAllCountries:) toTarget:self withObject:sender];
+}
+
+- (void)loadAllCountries:(id)sender
+{
+    @autoreleasepool
+    {
+        allCountries = [Customer allCountries];
+        [self performSelectorOnMainThread:@selector(showAllCountries:) withObject:sender waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+    }
+}
+
+- (void)showAllCountries:(id)sender
+{
     AllCountriesViewController *resultViewController = [[AllCountriesViewController alloc] init];
-    resultViewController.searchResult = [Customer allCountries];
+    resultViewController.searchResult = allCountries;
     resultViewController.delegate = self;
     
     searchPopoverController = [[UIPopoverController alloc] initWithContentViewController:resultViewController];
@@ -569,10 +696,9 @@ NSArray *ProductSalesSubviews(UIView *aView)
 - (IBAction)allClicked:(id)sender {
     
     // Switch back to the brand view of the data here
-//    productSalesDataSource.productSalesArray = ;
+    productSalesDataSource.productSalesArray = productSalesArray;
     
-    
-    btnAll.hidden = false;
+    btnAll.hidden = YES;
     [productSalesGrid reload];
 }
 
@@ -679,35 +805,46 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (void)displayGrids
 {
-    if (currentFilter == FilterTypePractice)
-    {
-        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeCustomer)
-    {
-        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeGroup)
-    {
-        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeKeyAccountManager)
-    {
-        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeCountry)
-    {
-        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
-    }
-    else if (currentFilter == FilterTypeCounty)
-    {
-        productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
-    }
+    [HUDProcessing show:YES];
     
-    [productSalesGrid reload];
+    [NSThread detachNewThreadSelector:@selector(loadValues) toTarget:self withObject:nil];
+}
 
-    last_col = -1;
-    last_row = 0;
+- (void)loadValues
+{
+    @autoreleasepool
+    {
+        if (currentFilter == FilterTypePractice)
+        {
+            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+        }
+        else if (currentFilter == FilterTypeCustomer)
+        {
+            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+        }
+        else if (currentFilter == FilterTypeGroup)
+        {
+            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+        }
+        else if (currentFilter == FilterTypeKeyAccountManager)
+        {
+            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+        }
+        else if (currentFilter == FilterTypeCountry)
+        {
+            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+        }
+        else if (currentFilter == FilterTypeCounty)
+        {
+            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+        }
+        
+        [productSalesGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
+        [HUDProcessing hide:YES];
+
+        last_col = -1;
+        last_row = 0;
+    }
 }
 
 - (void)applyTheme:(BOOL)redTheme
@@ -748,10 +885,10 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (void)brandSelected:(ProductSalesAggrPerBrand *)brand
 {
-    
+    productSalesArray = productSalesDataSource.productSalesArray;
     productSalesDataSource.productSalesArray = brand.aggrPerProducts;
     [productSalesGrid reload];
-    btnAll.hidden = false;
+    btnAll.hidden = NO;
 }
 
 @end

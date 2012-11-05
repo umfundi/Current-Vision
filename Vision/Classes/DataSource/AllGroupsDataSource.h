@@ -10,8 +10,19 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@protocol AllGroupsDataSourceDelegate <NSObject>
+
+- (void)gridSorted;
+
+@end
+
 @interface AllGroupsDataSource : NSObject <SGridDataSource>
+{
+    NSInteger sortedColumn;
+    NSComparisonResult sortedResult;
+}
 
 @property (nonatomic, strong) NSArray *groupArray;
+@property (nonatomic, assign) id<AllGroupsDataSourceDelegate> delegate;
 
 @end

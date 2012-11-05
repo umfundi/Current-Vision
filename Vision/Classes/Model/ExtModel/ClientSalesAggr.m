@@ -9,6 +9,7 @@
 
 #import "User.h"
 #import "ClientSalesAggrPerGroup.h"
+#import "Focused_brand.h"
 #import "Product.h"
 
 @implementation ClientSalesAggr
@@ -83,11 +84,14 @@
     return aggr;
 }
 
-+ (ClientSalesAggr *)AggrByProducts:(NSArray *)products YTDorMAT:(BOOL)isYTD
++ (ClientSalesAggr *)AggrByBrands:(NSArray *)brands YTDorMAT:(BOOL)isYTD
 {
-    NSMutableArray *product_ids = [[NSMutableArray alloc] initWithCapacity:products.count];
-    for (Product *product in products)
-        [product_ids addObject:product.pcode];
+    NSMutableArray *product_ids = [[NSMutableArray alloc] initWithCapacity:0];
+    for (Focused_brand *brand in brands)
+    {
+        for (Product *product in [Product AllProductsFromBrand:brand.brand_name])
+            [product_ids addObject:product.pcode];
+    }
     
     NSManagedObjectContext *context = [User managedObjectContextForData];
     

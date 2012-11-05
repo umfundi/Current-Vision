@@ -10,8 +10,19 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@protocol AllCountiesDataSourceDelegate <NSObject>
+
+- (void)gridSorted;
+
+@end
+
 @interface AllCountiesDataSource : NSObject <SGridDataSource>
+{
+    NSInteger sortedColumn;
+    NSComparisonResult sortedResult;
+}
 
 @property (nonatomic, strong) NSArray *countyArray;
+@property (nonatomic, assign) id<AllCountiesDataSourceDelegate> delegate;
 
 @end

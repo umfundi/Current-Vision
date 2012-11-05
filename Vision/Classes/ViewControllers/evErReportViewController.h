@@ -16,6 +16,7 @@
 #import "AllGroupsViewController.h"
 #import "AllCountriesViewController.h"
 #import "ErReportDataSource.h"
+#import "MBProgressHUD.h"
 
 @class User;
 @class Practice;
@@ -54,6 +55,7 @@
     
     ShinobiGrid *erReportGrid;
     ErReportDataSource *erReportDataSource;
+    NSArray *erReportArray;
     
     UIPopoverController *searchPopoverController;
     
@@ -62,12 +64,22 @@
     
     NSInteger last_col;
     NSInteger last_row;
+
+    MBProgressHUD *HUDProcessing;
+    NSArray *allCustomers;
+    NSArray *allPractices;
+    NSArray *allCounties;
+    NSArray *allKeyAccountManagers;
+    NSArray *allGroups;
+    NSArray *allCountries;
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;
 @property (nonatomic, retain) User *selectedUser;
 @property (nonatomic, retain) Customer *selectedCustomer;
 @property (nonatomic, retain) NSString *selectedFilterVal;
+
+- (IBAction)doneClicked:(id)sender;
 
 - (IBAction)customerClicked:(id)sender;
 - (IBAction)practiceClicked:(id)sender;

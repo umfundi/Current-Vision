@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
+#import "AllCustomersDataSource.h"
 
 @class Customer;
-@class AllCustomersDataSource;
 
 @protocol AllCustomersDelegate <NSObject>
 
@@ -18,7 +18,7 @@
 
 @end
 
-@interface AllCustomersViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface AllCustomersViewController : UIViewController<SGridDataSource, SGridDelegate, AllCustomersDataSourceDelegate>
 {
     ShinobiGrid *customerGrid;
     AllCustomersDataSource *dataSource;

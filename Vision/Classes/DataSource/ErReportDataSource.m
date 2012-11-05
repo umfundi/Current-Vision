@@ -256,13 +256,13 @@
     UIView *headerView = [[UIView alloc] initWithFrame:frame];
     headerView.backgroundColor = [UIColor clearColor];
     
-    UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButton];
+    UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButtonWithOrder:NSOrderedSame];
     titleButton.underline = (aggrPerBrand.aggrPerProducts != nil);
     titleButton.backgroundColor = [UIColor clearColor];
     titleButton.autoresizingMask = ~UIViewAutoresizingNone;
     if (titleButton.underline)
     {
-        [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchDown];
+        [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [titleButton setShowsTouchWhenHighlighted:YES];
         [self performSelector:@selector(enableButton:) withObject:headerView afterDelay:0.1];
     }

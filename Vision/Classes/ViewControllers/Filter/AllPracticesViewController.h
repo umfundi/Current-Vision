@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
+#import "AllPracticesDataSource.h"
 
 @class Practice;
-@class AllPracticesDataSource;
 
 @protocol AllPracticesDelegate <NSObject>
 
@@ -18,7 +18,7 @@
 
 @end
 
-@interface AllPracticesViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface AllPracticesViewController : UIViewController<SGridDataSource, SGridDelegate, AllPracticesDataSourceDelegate>
 {
     ShinobiGrid *practiceGrid;
     AllPracticesDataSource *dataSource;

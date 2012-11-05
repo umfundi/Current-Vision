@@ -16,7 +16,7 @@
 @class SitesDataSource;
 @class SalesDataSource;
 
-@interface umfundiViewController : UIViewController <UITextFieldDelegate, PracticeSearchSelectDelegate, SGridDelegate>
+@interface umfundiViewController : UIViewController <UITextFieldDelegate, PracticeSearchSelectDelegate, SGridDelegate, NSURLConnectionDelegate>
 {
     IBOutlet UITextField *accountNoField;
     IBOutlet UITextField *nameField;
@@ -60,6 +60,11 @@
     ShinobiGrid *sitesGrid, *salesGrid;
     SitesDataSource *sitesDataSource;
     SalesDataSource *salesDataSource;
+    
+    IBOutlet UIButton *syncButton;
+    MBProgressHUD *HUDDownload;
+    NSString *downloadPath;
+    NSURLConnection *conn;
 }
 
 //@property (strong, nonatomic) Customer *currentCustomer;
@@ -78,5 +83,7 @@
 
 - (void)searchThread:(id)sender;
 - (void)searchFinished:(id)sender;
+
+- (void)loadValuesThread;
 
 @end

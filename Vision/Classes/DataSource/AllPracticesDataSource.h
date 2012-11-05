@@ -10,8 +10,19 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@protocol AllPracticesDataSourceDelegate <NSObject>
+
+- (void)gridSorted;
+
+@end
+
 @interface AllPracticesDataSource : NSObject <SGridDataSource>
+{
+    NSInteger sortedColumn;
+    NSComparisonResult sortedResult;
+}
 
 @property (nonatomic, strong) NSArray *practiceArray;
+@property (nonatomic, assign) id<AllPracticesDataSourceDelegate> delegate;
 
 @end

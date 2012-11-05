@@ -100,45 +100,48 @@
     
     
     /* Add Total */
-    CustomerSalesAggrPerCustomer *totalAggr = [[CustomerSalesAggrPerCustomer alloc] init];
-    totalAggr.customerName = @"Total";
-    
-    for (CustomerSalesAggrPerCustomer *aggrPerCustomer in sales)
+    if ([sales count] > 0)
     {
-        for (CustomerSalesAggrPerYear *aggrPerYear in aggrPerCustomer.aggrPerYears)
+        CustomerSalesAggrPerCustomer *totalAggr = [[CustomerSalesAggrPerCustomer alloc] init];
+        totalAggr.customerName = @"Total";
+        
+        for (CustomerSalesAggrPerCustomer *aggrPerCustomer in sales)
         {
-            CustomerSalesAggrPerYear *totalAggrPerYear;
-            for (totalAggrPerYear in totalAggr.aggrPerYears)
+            for (CustomerSalesAggrPerYear *aggrPerYear in aggrPerCustomer.aggrPerYears)
             {
-                if ([aggrPerYear.year isEqualToString:totalAggrPerYear.year])
-                    break;
+                CustomerSalesAggrPerYear *totalAggrPerYear;
+                for (totalAggrPerYear in totalAggr.aggrPerYears)
+                {
+                    if ([aggrPerYear.year isEqualToString:totalAggrPerYear.year])
+                        break;
+                }
+                
+                if (!totalAggrPerYear)
+                {
+                    totalAggrPerYear = [[CustomerSalesAggrPerYear alloc] init];
+                    totalAggrPerYear.year = aggrPerYear.year;
+                    [totalAggr addAggrPerYear:totalAggrPerYear];
+                }
+                
+                totalAggrPerYear.jan += aggrPerYear.jan;
+                totalAggrPerYear.feb += aggrPerYear.feb;
+                totalAggrPerYear.mar += aggrPerYear.mar;
+                totalAggrPerYear.apr += aggrPerYear.apr;
+                totalAggrPerYear.may += aggrPerYear.may;
+                totalAggrPerYear.jun += aggrPerYear.jun;
+                totalAggrPerYear.jul += aggrPerYear.jul;
+                totalAggrPerYear.aug += aggrPerYear.aug;
+                totalAggrPerYear.sep += aggrPerYear.sep;
+                totalAggrPerYear.oct += aggrPerYear.oct;
+                totalAggrPerYear.nov += aggrPerYear.nov;
+                totalAggrPerYear.dec += aggrPerYear.dec;
             }
-            
-            if (!totalAggrPerYear)
-            {
-                totalAggrPerYear = [[CustomerSalesAggrPerYear alloc] init];
-                totalAggrPerYear.year = aggrPerYear.year;
-                [totalAggr addAggrPerYear:totalAggrPerYear];
-            }
-            
-            totalAggrPerYear.jan += aggrPerYear.jan;
-            totalAggrPerYear.feb += aggrPerYear.feb;
-            totalAggrPerYear.mar += aggrPerYear.mar;
-            totalAggrPerYear.apr += aggrPerYear.apr;
-            totalAggrPerYear.may += aggrPerYear.may;
-            totalAggrPerYear.jun += aggrPerYear.jun;
-            totalAggrPerYear.jul += aggrPerYear.jul;
-            totalAggrPerYear.aug += aggrPerYear.aug;
-            totalAggrPerYear.sep += aggrPerYear.sep;
-            totalAggrPerYear.oct += aggrPerYear.oct;
-            totalAggrPerYear.nov += aggrPerYear.nov;
-            totalAggrPerYear.dec += aggrPerYear.dec;
         }
-    }
-    for (CustomerSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
-        [aggrPerYear finishAdd];
+        for (CustomerSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
+            [aggrPerYear finishAdd];
 
-    [sales insertObject:totalAggr atIndex:0];
+        [sales insertObject:totalAggr atIndex:0];
+    }
     
     /* Growth */
     for (CustomerSalesAggrPerCustomer *aggrPerCustomer in sales)
@@ -253,45 +256,48 @@
     
     
     /* Add Total */
-    CustomerSalesAggrPerCustomer *totalAggr = [[CustomerSalesAggrPerCustomer alloc] init];
-    totalAggr.customerName = @"Total";
-    
-    for (CustomerSalesAggrPerCustomer *aggrPerCustomer in sales)
+    if ([sales count] > 0)
     {
-        for (CustomerSalesAggrPerYear *aggrPerYear in aggrPerCustomer.aggrPerYears)
+        CustomerSalesAggrPerCustomer *totalAggr = [[CustomerSalesAggrPerCustomer alloc] init];
+        totalAggr.customerName = @"Total";
+        
+        for (CustomerSalesAggrPerCustomer *aggrPerCustomer in sales)
         {
-            CustomerSalesAggrPerYear *totalAggrPerYear;
-            for (totalAggrPerYear in totalAggr.aggrPerYears)
+            for (CustomerSalesAggrPerYear *aggrPerYear in aggrPerCustomer.aggrPerYears)
             {
-                if ([aggrPerYear.year isEqualToString:totalAggrPerYear.year])
-                    break;
+                CustomerSalesAggrPerYear *totalAggrPerYear;
+                for (totalAggrPerYear in totalAggr.aggrPerYears)
+                {
+                    if ([aggrPerYear.year isEqualToString:totalAggrPerYear.year])
+                        break;
+                }
+                
+                if (!totalAggrPerYear)
+                {
+                    totalAggrPerYear = [[CustomerSalesAggrPerYear alloc] init];
+                    totalAggrPerYear.year = aggrPerYear.year;
+                    [totalAggr addAggrPerYear:totalAggrPerYear];
+                }
+                
+                totalAggrPerYear.jan += aggrPerYear.jan;
+                totalAggrPerYear.feb += aggrPerYear.feb;
+                totalAggrPerYear.mar += aggrPerYear.mar;
+                totalAggrPerYear.apr += aggrPerYear.apr;
+                totalAggrPerYear.may += aggrPerYear.may;
+                totalAggrPerYear.jun += aggrPerYear.jun;
+                totalAggrPerYear.jul += aggrPerYear.jul;
+                totalAggrPerYear.aug += aggrPerYear.aug;
+                totalAggrPerYear.sep += aggrPerYear.sep;
+                totalAggrPerYear.oct += aggrPerYear.oct;
+                totalAggrPerYear.nov += aggrPerYear.nov;
+                totalAggrPerYear.dec += aggrPerYear.dec;
             }
-            
-            if (!totalAggrPerYear)
-            {
-                totalAggrPerYear = [[CustomerSalesAggrPerYear alloc] init];
-                totalAggrPerYear.year = aggrPerYear.year;
-                [totalAggr addAggrPerYear:totalAggrPerYear];
-            }
-            
-            totalAggrPerYear.jan += aggrPerYear.jan;
-            totalAggrPerYear.feb += aggrPerYear.feb;
-            totalAggrPerYear.mar += aggrPerYear.mar;
-            totalAggrPerYear.apr += aggrPerYear.apr;
-            totalAggrPerYear.may += aggrPerYear.may;
-            totalAggrPerYear.jun += aggrPerYear.jun;
-            totalAggrPerYear.jul += aggrPerYear.jul;
-            totalAggrPerYear.aug += aggrPerYear.aug;
-            totalAggrPerYear.sep += aggrPerYear.sep;
-            totalAggrPerYear.oct += aggrPerYear.oct;
-            totalAggrPerYear.nov += aggrPerYear.nov;
-            totalAggrPerYear.dec += aggrPerYear.dec;
         }
-    }
-    for (CustomerSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
-        [aggrPerYear finishAdd];
+        for (CustomerSalesAggrPerYear *aggrPerYear in totalAggr.aggrPerYears)
+            [aggrPerYear finishAdd];
 
-    [sales insertObject:totalAggr atIndex:0];
+        [sales insertObject:totalAggr atIndex:0];
+    }
     
     /* Growth */
     for (CustomerSalesAggrPerCustomer *aggrPerCustomer in sales)

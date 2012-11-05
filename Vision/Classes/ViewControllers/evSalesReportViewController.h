@@ -15,6 +15,7 @@
 #import "AllKeyAccountManagersViewController.h"
 #import "AllGroupsViewController.h"
 #import "AllCountriesViewController.h"
+#import "MBProgressHUD.h"
 
 @class User;
 @class Practice;
@@ -67,12 +68,22 @@
     NSInteger last_col;
     NSInteger last_row;
     BOOL posInMonth;
+    
+    MBProgressHUD *HUDProcessing;
+    NSArray *allCustomers;
+    NSArray *allPractices;
+    NSArray *allCounties;
+    NSArray *allKeyAccountManagers;
+    NSArray *allGroups;
+    NSArray *allCountries;
 }
 
 @property (nonatomic, retain) Practice *selectedPractice;
 @property (nonatomic, retain) User *selectedUser;
 @property (nonatomic, retain) Customer *selectedCustomer;
 @property (nonatomic, retain) NSString *selectedFilterVal;
+
+- (IBAction)doneClicked:(id)sender;
 
 - (IBAction)customerClicked:(id)sender;
 - (IBAction)practiceClicked:(id)sender;

@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
-
-@class AllCountriesDataSource;
+#import "AllCountriesDataSource.h"
 
 @protocol AllCountriesDelegate <NSObject>
 
@@ -17,7 +16,7 @@
 
 @end
 
-@interface AllCountriesViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface AllCountriesViewController : UIViewController<SGridDataSource, SGridDelegate, AllCountriesDataSourceDelegate>
 {
     ShinobiGrid *countryGrid;
     AllCountriesDataSource *dataSource;

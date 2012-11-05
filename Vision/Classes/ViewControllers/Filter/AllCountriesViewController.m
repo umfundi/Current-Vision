@@ -49,6 +49,7 @@
     
     dataSource = [[AllCountriesDataSource alloc] init];
     dataSource.countryArray = searchResult;
+    dataSource.delegate = self;
     
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
     
@@ -101,7 +102,7 @@
     countryGrid.canEditCellsViaDoubleTap = NO;
     
     // Selected
-    NSString *selectedCounty = [searchResult objectAtIndex:cell.gridCoord.rowIndex];
+    NSString *selectedCounty = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
     
     [delegate performSelector:@selector(countrySelected:) withObject:selectedCounty];
 }
@@ -112,8 +113,17 @@
     if ([searchResult count] == 0)
         return CGSizeMake(200, 30);
     
-    CGFloat height = 30 * [searchResult count];
+    CGFloat height = 30 * ([searchResult count] + 1);
     return CGSizeMake(200, height);
+}
+
+
+#pragma mark -
+#pragma mark AllCountriesDataSourceDelegate
+
+- (void)gridSorted
+{
+    [countryGrid reload];
 }
 
 @end

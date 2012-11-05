@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
-
-@class AllKeyAccountManagersDataSource;
+#import "AllKeyAccountManagersDataSource.h"
 
 @protocol AllKeyAccountManagersDelegate <NSObject>
 
@@ -17,7 +16,7 @@
 
 @end
 
-@interface AllKeyAccountManagersViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface AllKeyAccountManagersViewController : UIViewController<SGridDataSource, SGridDelegate, AllKeyAccountManagersDataSourceDelegate>
 {
     ShinobiGrid *keyAccountManagerGrid;
     AllKeyAccountManagersDataSource *dataSource;

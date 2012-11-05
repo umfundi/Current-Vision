@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
 
-@class AllCountiesDataSource;
+#import "AllCountiesDataSource.h"
 
 @protocol AllCountiesDelegate <NSObject>
 
@@ -17,7 +17,7 @@
 
 @end
 
-@interface AllCountiesViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface AllCountiesViewController : UIViewController<SGridDataSource, SGridDelegate, AllCountiesDataSourceDelegate>
 {
     ShinobiGrid *countyGrid;
     AllCountiesDataSource *dataSource;

@@ -120,12 +120,12 @@
                     [subview removeFromSuperview];
             }
 
-            UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButton];
+            UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButtonWithOrder:NSOrderedSame];
             titleButton.backgroundColor = [UIColor whiteColor];
             titleButton.autoresizingMask = ~UIViewAutoresizingNone;
             if (titleButton.underline)
             {
-                [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchDown];
+                [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
                 [titleButton setShowsTouchWhenHighlighted:YES];
             }
             [titleButton setFrame:cell.bounds];

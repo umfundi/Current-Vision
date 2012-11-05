@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="w7w-kx-m0U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="w7w-kx-m0U">
     <dependencies>
         <deployment version="1296" defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -486,6 +486,7 @@
                         <outlet property="selectLabel" destination="UiA-8y-yHu" id="atz-DD-9Ir"/>
                         <outlet property="sitesButton" destination="NFi-Ee-r4Q" id="XV1-gV-yct"/>
                         <outlet property="sitesDistributionButton" destination="IG1-O1-YeD" id="lco-WW-1jO"/>
+                        <outlet property="syncButton" destination="giF-YE-kV2" id="9JB-cp-ETZ"/>
                         <outlet property="townButton" destination="DxV-5F-qWZ" id="Zjt-GV-7A3"/>
                         <outlet property="townField" destination="6M3-N2-Fz3" id="SFD-nb-ufz"/>
                     </connections>
@@ -1247,7 +1248,7 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="wrR-Bx-YWB"/>
+                                    <action selector="doneClicked:" destination="YQM-Fo-GeQ" eventType="touchUpInside" id="Cpj-Mv-EuL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sales Trends By Client ( Value )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uK2-46-XVf">
@@ -1607,7 +1608,7 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="VZn-4K-wkf"/>
+                                    <action selector="doneClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="4yj-b5-CFM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B63-W2-dcr">
@@ -1960,9 +1961,9 @@ E: contact@dbm-int.fr</string>
                         <outlet property="lblBGroupHdr" destination="lVn-be-HmE" id="JXQ-4S-cel"/>
                         <outlet property="lblCountryHdr" destination="r4f-XF-5AR" id="0IQ-3I-X79"/>
                         <outlet property="lblCountyHdr" destination="ibR-ot-jLa" id="qh7-8I-Mpd"/>
-                        <outlet property="lblIDUser" destination="12u-Uq-VVK" id="PUE-Rl-mJB"/>
+                        <outlet property="lblIDUser" destination="12u-Uq-VVK" id="8US-d2-bqv"/>
                         <outlet property="lblPostcode" destination="ya7-P2-lK7" id="3Sh-fo-gAK"/>
-                        <outlet property="lblPracticeCode" destination="ya7-P2-lK7" id="9kE-H9-7Js"/>
+                        <outlet property="lblPracticeCode" destination="Jb7-eD-32R" id="txm-d0-iQ5"/>
                         <outlet property="lblPracticeHdr" destination="jn5-kH-bHm" id="sOJ-n1-Gqh"/>
                         <outlet property="lblPracticeName" destination="dvC-MU-uOf" id="6oQ-0q-fap"/>
                         <outlet property="lblThemeBox" destination="03z-OJ-egf" id="HLa-vv-dtZ"/>
@@ -2685,7 +2686,7 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="reL-rs-CtC"/>
+                                    <action selector="doneClicked:" destination="rJ4-NJ-LlT" eventType="touchUpInside" id="1CA-A6-Mbo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4fx-xt-fa4">
@@ -3786,7 +3787,7 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="PdE-Hg-WXd"/>
+                                    <action selector="doneClicked:" destination="Jy5-x4-Mvq" eventType="touchUpInside" id="BaX-xR-hDa"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="710" contentMode="left" text="Customer Sales Report By Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SgS-eJ-Uv7">
@@ -3914,10 +3915,26 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" tag="282" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GIl-qr-nhk">
+                                <rect key="frame" x="666" y="75" width="95" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="All">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allClicked:" destination="Jy5-x4-Mvq" eventType="touchUpInside" id="rer-HE-rR2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="btnAll" destination="GIl-qr-nhk" id="Q6k-td-GQu"/>
                         <outlet property="btnClear" destination="ZUZ-5i-x7B" id="qsi-qF-Dka"/>
                         <outlet property="btnDone" destination="lt8-Jr-225" id="D90-cc-gzb"/>
                         <outlet property="btnMAT" destination="CIv-Pj-iWK" id="Dnv-bN-UXV"/>
@@ -4057,6 +4074,21 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" tag="282" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hXI-r0-FTW">
+                                <rect key="frame" x="662" y="79" width="95" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="All">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allClicked:" destination="Jy5-x4-Mvq" eventType="touchUpInside" id="dE2-nC-XYw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -4190,6 +4222,21 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" tag="282" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TNI-DE-RNi">
+                                <rect key="frame" x="915" y="84" width="95" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="All">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allClicked:" destination="Jy5-x4-Mvq" eventType="touchUpInside" id="XFN-4x-DuH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -4710,10 +4757,10 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="RM5-HV-muh"/>
+                                    <action selector="doneClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="AE2-bQ-pl0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k8u-af-LyZ">
+                            <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k8u-af-LyZ">
                                 <rect key="frame" x="20" y="131" width="67" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -4728,7 +4775,7 @@ E: contact@dbm-int.fr</string>
                                     <action selector="filterbyBrandClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="fVt-DK-enY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sy8-1Q-Foc">
+                            <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sy8-1Q-Foc">
                                 <rect key="frame" x="20" y="593" width="67" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -4809,11 +4856,65 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" tag="283" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dyX-pt-WId">
+                                <rect key="frame" x="294" y="166" width="92" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="prev.year">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="prevYearClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="y7P-kl-JyW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="284" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5DH-op-Geh">
+                                <rect key="frame" x="394" y="166" width="92" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="cur.year">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="curYearClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="Tia-1d-2UN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="285" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UbJ-T4-9E6">
+                                <rect key="frame" x="493" y="166" width="95" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ytd vs ytd">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="YTDClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="Edy-D6-vTX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="btnCharts" destination="vLu-ec-zi8" id="ihq-0B-YSi"/>
+                        <outlet property="btnCurYear" destination="5DH-op-Geh" id="V8D-UT-nye"/>
+                        <outlet property="btnDone" destination="akS-jx-Bk3" id="bgi-dh-4Y5"/>
+                        <outlet property="btnEmail" destination="1iD-AH-WNy" id="Dcu-Gy-G3l"/>
+                        <outlet property="btnFilterByBrands" destination="k8u-af-LyZ" id="fTj-OI-WzD"/>
+                        <outlet property="btnFilterByProducts" destination="Sy8-1Q-Foc" id="jYe-Nf-UKY"/>
+                        <outlet property="btnPrevYear" destination="dyX-pt-WId" id="0lp-fI-tSk"/>
+                        <outlet property="btnYTD" destination="UbJ-T4-9E6" id="PgS-N5-hfU"/>
                         <outlet property="imgLogo" destination="57i-XP-0Tb" id="r6E-ah-HBt"/>
+                        <outlet property="lblThemeBox" destination="H7E-FO-iok" id="Q0Z-14-e9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adG-QK-es8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4882,149 +4983,8 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" tag="221" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="HuN-Cq-TT6">
-                                <rect key="frame" x="416" y="74" width="73" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" tag="233" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QHo-ZI-qla">
-                                <rect key="frame" x="718" y="74" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="MAT">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="234" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ljF-ov-6oF">
-                                <rect key="frame" x="675" y="73" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="YTD">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="236" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DgB-Un-DrJ">
-                                <rect key="frame" x="74" y="73" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Practice">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="235" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wTf-AP-XFl">
-                                <rect key="frame" x="19" y="73" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Cust">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="237" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TDE-Rf-XMH">
-                                <rect key="frame" x="189" y="73" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="KAM">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="238" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uJw-um-Spt">
-                                <rect key="frame" x="131" y="73" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="B/Group">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="239" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nIk-55-zb9">
-                                <rect key="frame" x="302" y="73" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Country">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="245" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zm2-iv-m6p">
-                                <rect key="frame" x="245" y="73" width="55" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="County">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="243" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6CY-tN-h62">
-                                <rect key="frame" x="491" y="73" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="244" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zB6-PE-YqV">
-                                <rect key="frame" x="373" y="73" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Find">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="251" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rbb-Uz-Dbo" userLabel="Button - Next">
-                                <rect key="frame" x="632" y="73" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Full">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="bkF-as-Wse"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="282" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LRe-td-q5z">
-                                <rect key="frame" x="584" y="73" width="40" height="41"/>
+                                <rect key="frame" x="708" y="73" width="40" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="All">
@@ -5036,7 +4996,7 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="280" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cZW-bB-Nlw" userLabel="Button - Next">
-                                <rect key="frame" x="536" y="73" width="40" height="41"/>
+                                <rect key="frame" x="660" y="73" width="40" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" image="Graph-icon.png">
@@ -5047,6 +5007,81 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" tag="283" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QmU-4h-eg9">
+                                <rect key="frame" x="373" y="73" width="80" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="prev.year">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="prevYearClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="UWx-9z-KNp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="284" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dlp-QY-TGW">
+                                <rect key="frame" x="461" y="73" width="80" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="cur.year">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="curYearClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="OSP-Lo-8jO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="285" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Owi-mh-I0R">
+                                <rect key="frame" x="549" y="73" width="84" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ytd vs ytd">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="YTDClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="fkU-hA-q2M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FLp-we-isn">
+                                <rect key="frame" x="20" y="150" width="67" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="filter.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterbyBrandClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="Wui-cD-v26"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Rh8-g8-ppj">
+                                <rect key="frame" x="20" y="593" width="67" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="filter.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterbyProductClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="BHI-fM-i5u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -5054,6 +5089,146 @@ E: contact@dbm-int.fr</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9L-eZ-ftM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2633" y="39"/>
+        </scene>
+        <!--Ev Sites Distribution Sub View Controller-->
+        <scene sceneID="CMZ-KY-1Iu">
+            <objects>
+                <viewController storyboardIdentifier="evSitesDistributionSubViewController" id="0pd-cm-vu6" customClass="evSitesDistributionSubViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sud-AL-NCK">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oQs-gb-o7C">
+                                <rect key="frame" x="718" y="8" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="8EL-Lo-tME"/>
+                                    <action selector="doneClicked:" destination="0pd-cm-vu6" eventType="touchUpInside" id="V7c-mq-fPo"/>
+                                </connections>
+                            </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="gaM-zb-DT1">
+                                <rect key="frame" x="8" y="8" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sites Distribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LOP-Qv-qad">
+                                <rect key="frame" x="175" y="11" width="480" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnDone" destination="oQs-gb-o7C" id="sgq-Qk-z1Y"/>
+                        <outlet property="imgLogo" destination="gaM-zb-DT1" id="3DZ-HV-g7P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilc-oO-QB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2629" y="1263"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LAc-KH-DgB">
+            <objects>
+                <viewController storyboardIdentifier="SitesDistributionSubLandscapeView" id="fAz-zu-mrw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vt8-Qu-v90">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="hBM-cv-ORA">
+                                <rect key="frame" x="7" y="8" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7W9-5t-h47">
+                                <rect key="frame" x="970" y="11" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sites Distribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y14-8f-aTI">
+                                <rect key="frame" x="272" y="14" width="480" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eb1-40-ppU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2583" y="2199"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aUg-Vw-Xql">
+            <objects>
+                <viewController storyboardIdentifier="SitesDistributionSubPortraitView" id="uZv-F3-gMc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Mc-Bh-Fab">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="620" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CxH-UL-6Uz">
+                                <rect key="frame" x="718" y="8" width="45" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneClicked:" destination="0pd-cm-vu6" eventType="touchUpInside" id="0bh-iy-XPf"/>
+                                    <action selector="doneClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="v42-34-8YO"/>
+                                </connections>
+                            </button>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="Ruminant_HB.png" id="c9H-oP-X9b">
+                                <rect key="frame" x="8" y="8" width="106" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="223" contentMode="left" text="Sites Distribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F25-uZ-fAS">
+                                <rect key="frame" x="175" y="11" width="480" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXE-SM-Idn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1855" y="1295"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2hx-Qh-PSh">
@@ -5117,149 +5292,8 @@ E: contact@dbm-int.fr</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="233" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m5B-XT-PxN">
-                                <rect key="frame" x="968" y="80" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="MAT">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="234" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6cs-st-Ojn">
-                                <rect key="frame" x="920" y="80" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="YTD">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="236" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z97-80-DkT">
-                                <rect key="frame" x="98" y="81" width="70" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Practice">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="235" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SZI-qG-GpK">
-                                <rect key="frame" x="20" y="81" width="70" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Cust">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="237" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hks-dx-VE6">
-                                <rect key="frame" x="254" y="81" width="70" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="KAM">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="238" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nvZ-2l-heE">
-                                <rect key="frame" x="176" y="81" width="70" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="B/Group">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="239" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dyj-0E-hO1">
-                                <rect key="frame" x="410" y="81" width="70" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Country">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="221" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="fKR-kI-Pvv">
-                                <rect key="frame" x="563" y="82" width="79" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" tag="243" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KF0-kq-ozR">
-                                <rect key="frame" x="645" y="80" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="244" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aPs-VQ-8qO">
-                                <rect key="frame" x="521" y="80" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Find">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="245" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P1s-kg-sxM">
-                                <rect key="frame" x="332" y="81" width="70" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="County">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="251" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nxw-j3-5yL" userLabel="Button - Next">
-                                <rect key="frame" x="872" y="80" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Full">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="fullClicked:" destination="Zex-gc-HjN" eventType="touchUpInside" id="eGO-HS-AKI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="280" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m17-Z1-SR3" userLabel="Button - Next">
-                                <rect key="frame" x="734" y="80" width="40" height="41"/>
+                                <rect key="frame" x="809" y="80" width="40" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" image="Graph-icon.png">
@@ -5271,10 +5305,79 @@ E: contact@dbm-int.fr</string>
                                 </state>
                             </button>
                             <button opaque="NO" tag="282" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zl5-4u-eSL">
-                                <rect key="frame" x="824" y="80" width="40" height="41"/>
+                                <rect key="frame" x="857" y="80" width="40" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="All">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="283" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pqe-dn-vPi">
+                                <rect key="frame" x="497" y="80" width="92" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="prev.year">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="prevYearClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="YY1-8y-mRj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="284" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3sD-gW-9zB">
+                                <rect key="frame" x="597" y="80" width="92" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="cur.year">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="curYearClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="cfH-Ff-7qV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="285" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TXg-9u-HIY">
+                                <rect key="frame" x="696" y="80" width="95" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ytd vs ytd">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="YTDClicked:" destination="nR5-GR-ugb" eventType="touchUpInside" id="rJY-Ma-HUq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vaj-ID-pOL">
+                                <rect key="frame" x="20" y="150" width="67" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="filter.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Lp-wy-wrK">
+                                <rect key="frame" x="20" y="464" width="67" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="filter.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -5338,7 +5441,7 @@ E: contact@dbm-int.fr</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="uiC-AA-qG0"/>
+                                    <action selector="doneClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="CN8-Ic-140"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="444" contentMode="left" text="All sales data are derived from multiplying sold quantities by the Standard Elanco Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="90V-3M-Cfc">
@@ -5628,9 +5731,6 @@ E: contact@dbm-int.fr</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="allClicked:" destination="ubl-Un-fwn" eventType="touchUpInside" id="gFD-qY-8yw"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="280" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EqL-wu-9CO" userLabel="Button - Next">
                                 <rect key="frame" x="629" y="463" width="40" height="41"/>
@@ -5664,7 +5764,6 @@ E: contact@dbm-int.fr</string>
                     </view>
                     <connections>
                         <outlet property="btmYTD" destination="nYP-eQ-AoG" id="liw-AU-mTz"/>
-                        <outlet property="btnAll" destination="dGk-w4-N2m" id="5YO-xf-42T"/>
                         <outlet property="btnBGroup" destination="RVS-wl-Nzm" id="Om6-mA-sti"/>
                         <outlet property="btnCountry" destination="MQS-WE-Akz" id="9B8-x5-end"/>
                         <outlet property="btnCounty" destination="iHt-dc-9ts" id="jwK-ci-Een"/>
@@ -7007,12 +7106,291 @@ E: contact@dbm-int.fr</string>
         <image name="reload.png" width="92" height="92"/>
         <image name="visionlogo.png" width="100" height="50"/>
     </resources>
+    <classes>
+        <class className="evClientSalesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evClientSalesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="allClicked:"/>
+                <relationship kind="action" name="clearButtonClicked:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="selectButtonClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
+                <relationship kind="outlet" name="btnAll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnClear" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMAT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnSelFocus" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnSelect" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnYTD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="evCustomerSalesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evCustomerSalesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="countryClicked:"/>
+                <relationship kind="action" name="countyClicked:"/>
+                <relationship kind="action" name="customerClicked:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="findClicked:"/>
+                <relationship kind="action" name="fullClicked:"/>
+                <relationship kind="action" name="groupClicked:"/>
+                <relationship kind="action" name="keyAccountManagerClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="nextClicked:"/>
+                <relationship kind="action" name="practiceClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
+                <relationship kind="outlet" name="btmYTD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnBGroup" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCountry" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCounty" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCustomer" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFind" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFull" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnKAM" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMAT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNext" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPractice" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="findText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblAccmgrHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAccountHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblBGroupHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountryHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountyHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPostcode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblThemeBox" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evErReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evErReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="allClicked:"/>
+                <relationship kind="action" name="countryClicked:"/>
+                <relationship kind="action" name="countyClicked:"/>
+                <relationship kind="action" name="customerClicked:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="findClicked:"/>
+                <relationship kind="action" name="fullClicked:"/>
+                <relationship kind="action" name="groupClicked:"/>
+                <relationship kind="action" name="keyAccountManagerClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="nextClicked:"/>
+                <relationship kind="action" name="practiceClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
+                <relationship kind="outlet" name="btnAll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnBGroup" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCountry" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCounty" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCustomer" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFind" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFull" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnKAM" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMAT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNext" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPractice" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnYTD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="findText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblAccmgrHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAccountHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblBGroupHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountryHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountyHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPostcode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblThemeBox" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evLogonViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evLogonViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="CheckCredentials:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="evProductSalesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evProductSalesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="allClicked:"/>
+                <relationship kind="action" name="countryClicked:"/>
+                <relationship kind="action" name="countyClicked:"/>
+                <relationship kind="action" name="customerClicked:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="findClicked:"/>
+                <relationship kind="action" name="fullClicked:"/>
+                <relationship kind="action" name="groupClicked:"/>
+                <relationship kind="action" name="keyAccountManagerClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="nextClicked:"/>
+                <relationship kind="action" name="practiceClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
+                <relationship kind="outlet" name="btmYTD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnAll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnBGroup" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCountry" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCounty" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCustomer" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFind" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFull" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnKAM" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMAT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNext" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPractice" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="findText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblAccmgrHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAccountHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblBGroupHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountryHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountyHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPostcode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblThemeBox" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evSalesReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evSalesReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="allClicked:"/>
+                <relationship kind="action" name="countryClicked:"/>
+                <relationship kind="action" name="countyClicked:"/>
+                <relationship kind="action" name="customerClicked:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="findClicked:"/>
+                <relationship kind="action" name="groupClicked:"/>
+                <relationship kind="action" name="keyAccountManagerClicked:"/>
+                <relationship kind="action" name="matClicked:"/>
+                <relationship kind="action" name="nextClicked:"/>
+                <relationship kind="action" name="practiceClicked:"/>
+                <relationship kind="action" name="ytdClicked:"/>
+                <relationship kind="outlet" name="btmYTD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnAll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnBGroup" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCharts" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCountry" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCounty" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCustomer" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnEmail" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFind" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnKAM" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMAT" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnNext" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPractice" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="findText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblAccmgrHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAccountHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblAddress3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblBGroupHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountryHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCountyHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblIDUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPostcode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeCode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeHdr" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPracticeName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblThemeBox" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="evSitesDistributionSubViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evSitesDistributionSubViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="evSitesDistributionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/evSitesDistributionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="YTDClicked:"/>
+                <relationship kind="action" name="curYearClicked:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="filterbyBrandClicked:"/>
+                <relationship kind="action" name="filterbyProductClicked:"/>
+                <relationship kind="action" name="prevYearClicked:"/>
+                <relationship kind="outlet" name="btnCharts" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnCurYear" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnEmail" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFilterByBrands" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnFilterByProducts" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPrevYear" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnYTD" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblThemeBox" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="umfundiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/umfundiViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SyncData:"/>
+                <relationship kind="action" name="searchClicked:"/>
+                <relationship kind="action" name="setSales:"/>
+                <relationship kind="action" name="setSites:"/>
+                <relationship kind="outlet" name="KAMField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="MATField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="MonthField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="SAPCodeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="YTDField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="aboutButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="accountButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="accountNoField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="brickField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="clientSalesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="countryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="customerSalesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="erReportButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="postcodeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="postcodeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="practiceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="productSalesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="salesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="salesTrendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="selectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sitesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sitesDistributionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="syncButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="townButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="townField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="reL-rs-CtC"/>
-    </inferredMetricsTieBreakers>
 </document>

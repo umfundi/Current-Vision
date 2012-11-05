@@ -79,7 +79,7 @@
     {
         NSString *id_product = [report objectForKey:@"id_product"];
         Product *product = [Product ProductFromProductID:id_product];
-        NSString *brand_class = [Focused_brand brandClassFromName:product.pname];
+        NSString *brand_class = [Focused_brand brandClassFromName:product.brand];
 
         if (![brand_class isEqualToString:@"FOCUSED"] && ![brand_class isEqualToString:isCompanion ? @"companion" : @"ruminant"])
             continue;

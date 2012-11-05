@@ -26,6 +26,13 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand_name <> %@", @"-"];
+    [fetchRequest setPredicate:predicate];
+
+    // Sort
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"brand_name" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    
     return [context executeFetchRequest:fetchRequest error:nil];
 }
 

@@ -30,5 +30,6 @@
 + (NSArray *)AllProducts;
 
 + (Product *)ProductFromProductID:(NSString *)id_product;
++ (NSArray *)AllProductsFromBrand:(NSString *)brand;
 
 @end

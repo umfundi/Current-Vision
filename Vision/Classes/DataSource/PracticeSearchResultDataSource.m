@@ -8,18 +8,23 @@
 #import "PracticeSearchResultDataSource.h"
 
 #import "Practice.h"
+#import "UIUnderlinedButton.h"
 
 @implementation PracticeSearchResultDataSource
 
 @synthesize searchResult;
+@synthesize delegate;
 
 - (id)initWithResults:(NSArray *)resultArray
 {
     self = [super init];
     if (self)
-        {
+    {
         self.searchResult = resultArray;
-        }
+        sortedColumn = -1;
+        sortedResult = NSOrderedAscending;
+    }
+    
     return self;
 }
 
@@ -30,19 +35,29 @@
 {
     if (gridCoord.rowIndex == 0)
     {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"headerCell"];
+        SGridCell *cell = (SGridCell *)[grid dequeueReusableCellWithIdentifier:@"buttonCell"];
         if (!cell)
         {
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"headerCell"];
+            cell = [[SGridCell alloc] initWithReuseIdentifier:@"buttonCell"];
+            cell.backgroundColor = [UIColor darkGrayColor];
         }
-        
-        cell.textField.textAlignment = UITextAlignmentCenter;
-        cell.textField.backgroundColor = [UIColor darkGrayColor];
-        cell.backgroundColor = [UIColor darkGrayColor];
-        cell.textField.textColor = [UIColor whiteColor];
-        
-        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:14.f];
-        
+        else
+        {
+            for (UIView *subview in cell.subviews)
+                [subview removeFromSuperview];
+        }
+       
+        UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButtonWithOrder:(sortedColumn == gridCoord.column) ? sortedResult : NSOrderedSame];
+        [titleButton setBackgroundColor:[UIColor darkGrayColor]];
+        titleButton.autoresizingMask = ~UIViewAutoresizingNone;
+        [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [titleButton setShowsTouchWhenHighlighted:YES];
+        [titleButton setFrame:cell.bounds];
+        [titleButton.titleLabel setFont:[UIFont fontWithName:@"Verdana-Bold" size:14.f]];
+        [titleButton.titleLabel setTextAlignment:NSTextAlignmentLeft];
+        [titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        titleButton.tag = gridCoord.column;
+
         NSString *cellText;
         switch (gridCoord.column)
         {
@@ -67,7 +82,11 @@
                 break;
         }
         
-        cell.textField.text = cellText;
+        [titleButton setTitle:cellText forState:UIControlStateNormal];
+        [titleButton setFrame:CGRectMake(titleButton.frame.origin.x, titleButton.frame.origin.y,
+                                         titleButton.titleLabel.frame.size.width, titleButton.frame.size.height)];
+        
+        [cell addSubview:titleButton];
         
         return cell;
     }
@@ -125,6 +144,57 @@
 - (NSUInteger)shinobiGrid:(ShinobiGrid *)grid numberOfRowsInSection:(int) sectionIndex
 {
     return [searchResult count] + 1;
+}
+
+
+- (void)titleButtonClicked:(id)sender
+{
+    NSMutableArray *newResult = [NSMutableArray arrayWithArray:searchResult];
+    
+    NSInteger count = [newResult count];
+    NSComparisonResult result = ([sender tag] != sortedColumn) ? NSOrderedAscending :
+        (sortedResult == NSOrderedAscending ? NSOrderedDescending : NSOrderedAscending);
+    
+    for (NSInteger i = 0 ; i < count - 1 ; i ++ )
+    {
+        for (NSInteger j = i + 1; j < count ; j ++ )
+        {
+            Practice *practice_i = [newResult objectAtIndex:i];
+            Practice *practice_j = [newResult objectAtIndex:j];
+
+            NSComparisonResult res;
+            switch ([sender tag])
+            {
+                case 0:
+                    // Account
+                    res = [practice_i.practiceCode compare:practice_j.practiceCode];
+                    break;
+                case 1:
+                    // Name
+                    res = [practice_i.practiceName compare:practice_j.practiceName];
+                    break;
+                case 2:
+                    // Town
+                    res = [practice_i.province compare:practice_j.province];
+                    break;
+                case 3:
+                    // P/code
+                    res = [practice_i.postcode compare:practice_j.postcode];
+                    break;
+                default:
+                    return;
+            }
+            
+            if (res != result)
+                [newResult exchangeObjectAtIndex:i withObjectAtIndex:j];
+        }
+    }
+    
+    self.searchResult = newResult;
+    sortedColumn = [sender tag];
+    sortedResult = result;
+
+    [delegate performSelector:@selector(gridSorted)];
 }
 
 @end

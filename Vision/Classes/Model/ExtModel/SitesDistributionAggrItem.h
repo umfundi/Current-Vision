@@ -6,10 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SitesDistributionAggr.h"
 
 @interface SitesDistributionAggrItem : NSObject
 
-@property (nonatomic, assign) NSInteger cursites;
 @property (nonatomic, retain) NSString *cursitesString;
 @property (nonatomic, assign) double prvqtr;
 @property (nonatomic, retain) NSString *prvqtrString;
@@ -19,6 +19,10 @@
 @property (nonatomic, retain) NSString *changeString;
 @property (nonatomic, retain) NSString *prvqtrAvg;
 @property (nonatomic, retain) NSString *curqtrAvg;
+
+@property (nonatomic, retain) NSMutableArray *aggrPerCustomerArray;
+@property (nonatomic, assign) NSInteger count;
+@property (nonatomic, assign) SitesDistributionType type;
 
 - (void)addSitesDistribution:(NSDictionary *)sitesDistribution;
 - (void)finishAdd;

@@ -37,6 +37,7 @@
     UIImage *backImage = [umfundiCommon imageFromColor:color];
     [button setBackgroundImage:backImage forState:UIControlStateHighlighted];
     [button setBackgroundImage:backImage forState:UIControlStateSelected];
+    [button setBackgroundImage:[umfundiCommon imageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
 
     button.layer.masksToBounds = YES;
     button.layer.borderColor = color.CGColor;

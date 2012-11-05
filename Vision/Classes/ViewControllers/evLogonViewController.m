@@ -44,6 +44,9 @@
     NSString *user = [User lastLoginUser];
     if (user)
         [userField setText:user];
+
+    HUDDownload = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUDDownload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,10 +146,7 @@
             if (![User existsSqliteFileForData:YES])
             {
                 // Start Download from the server - <name>.sqlite!
-                HUDDownload = [[MBProgressHUD alloc] initWithView:self.view];
                 HUDDownload.labelText = @"Downloading Territory Data";
-                [self.view addSubview:HUDDownload];
-                
                 [HUDDownload show:YES];
 
                 downloadPath = [User sqliteFilepathForData];
@@ -175,10 +175,7 @@
     else
         {
         // Start Download from the server - users.sqlite
-        HUDDownload = [[MBProgressHUD alloc] initWithView:self.view];
         HUDDownload.labelText = @"Validating User with server";
-        [self.view addSubview:HUDDownload];
-        
         [HUDDownload show:YES];
 
         downloadPath = [User sqliteFilepathForUsers];
@@ -244,11 +241,11 @@ NSArray *LogonSubviews(UIView *aView)
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    if (![[NSFileManager defaultManager] fileExistsAtPath:downloadPath])
-        [[NSFileManager defaultManager] createFileAtPath:downloadPath contents:data attributes:nil];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[downloadPath stringByAppendingString:@".tmp"]])
+        [[NSFileManager defaultManager] createFileAtPath:[downloadPath stringByAppendingString:@".tmp"] contents:data attributes:nil];
     else
     {
-        NSFileHandle *file = [NSFileHandle fileHandleForWritingAtPath:downloadPath];
+        NSFileHandle *file = [NSFileHandle fileHandleForWritingAtPath:[downloadPath stringByAppendingString:@".tmp"]];
         
         [file seekToFileOffset:[file seekToEndOfFile]];
         [file writeData:data];
@@ -261,6 +258,12 @@ NSArray *LogonSubviews(UIView *aView)
 {
     [HUDDownload hide:YES];
     HUDDownload = nil;
+    
+    if (![[NSFileManager defaultManager] moveItemAtPath:[downloadPath stringByAppendingString:@".tmp"] toPath:downloadPath error:nil])
+    {
+        [self connection:connection didFailWithError:nil];
+        return;
+    }
 
     if (![User existsSqliteFileForData:NO])
     {
@@ -273,7 +276,7 @@ NSArray *LogonSubviews(UIView *aView)
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    [[NSFileManager defaultManager] removeItemAtPath:downloadPath error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[downloadPath stringByAppendingString:@".tmp"] error:nil];
 
     [HUDDownload hide:YES];
     HUDDownload = nil;

@@ -9,15 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
 #import "ClientSalesDataSource.h"
+#import "MBProgressHUD.h"
 
-@class ProductListDataSource;
+@class BrandListDataSource;
 
 @interface evClientSalesViewController : UIViewController <SGridDelegate, ClientSalesDataSourceDelegate>
 {
     ShinobiGrid *clientSalesGrid;
     ClientSalesDataSource *clientSalesDataSource;
-    ShinobiGrid *productListGrid;
-    ProductListDataSource *productListDataSource;
+    ShinobiGrid *brandListGrid;
+    BrandListDataSource *brandListDataSource;
+    
+    ClientSalesAggr *clientSalesAggr;
     
     BOOL isYTD;
     
@@ -28,13 +31,20 @@
     IBOutlet UIButton *btnClear;
     IBOutlet UIButton *btnSelect;
     IBOutlet UIButton *btnSelFocus;
+    IBOutlet UIButton *btnAll;
+
+    MBProgressHUD *HUDProcessing;
 }
+
+- (IBAction)doneClicked:(id)sender;
 
 - (IBAction)clearButtonClicked:(id)sender;
 - (IBAction)selectButtonClicked:(id)sender;
 
 - (IBAction)ytdClicked:(id)sender;
 - (IBAction)matClicked:(id)sender;
+
+- (IBAction)allClicked:(id)sender;
 
 - (void)displayGrids;
 - (void)applyTheme:(BOOL)redTheme;

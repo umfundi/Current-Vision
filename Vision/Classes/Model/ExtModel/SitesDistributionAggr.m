@@ -19,8 +19,7 @@
 @synthesize lostItem;
 @synthesize totalItem;
 
-#warning Sites Distribution Filtered by Brands
-+ (SitesDistributionAggr *)AggrFilteredByBrands:(NSArray *)brands
++ (SitesDistributionAggr *)AggrFilteredByBrands:(NSArray *)brands period:(SitesDistributionPeriod)period
 {
     NSMutableArray *brandNames = [[NSMutableArray alloc] initWithCapacity:brands.count];
     for (Focused_brand *brand in brands)
@@ -28,28 +27,51 @@
     
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
+    NSString *table;
+    switch (period)
+    {
+        case PrevYear:
+            table = @"SALES_REPORT_CustomerDistribution_detail_LY";
+            break;
+        case CurYear:
+            table = @"SALES_REPORT_CustomerDistribution_detail";
+            break;
+        case YTD:
+            table = @"SALES_REPORT_CustomerDistribution_detail_YTD";
+            break;
+    }
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_Customer_OrderBy"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:table
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
     [fetchRequest setResultType:NSDictionaryResultType];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand IN %@", brandNames];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(brand IN %@) AND (plevel == %@)",
+                              brandNames, @"brand"];
     [fetchRequest setPredicate:predicate];
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
     SitesDistributionAggr *aggr = [[SitesDistributionAggr alloc] init];
     aggr.retainedItem = [[SitesDistributionAggrItem alloc] init];
+    aggr.retainedItem.type = Retained;
     aggr.gainedItem = [[SitesDistributionAggrItem alloc] init];
+    aggr.gainedItem.type = Gained;
     aggr.lostItem = [[SitesDistributionAggrItem alloc] init];
+    aggr.lostItem.type = Lost;
     
     for (NSDictionary *report in reports)
     {
-        [aggr.retainedItem addSitesDistribution:report];
-        [aggr.gainedItem addSitesDistribution:report];
-        [aggr.lostItem addSitesDistribution:report];
+        NSString *ctype = [report objectForKey:@"ctype"];
+        
+        if ([ctype isEqualToString:@"retained"])
+            [aggr.retainedItem addSitesDistribution:report];
+        else if ([ctype isEqualToString:@"gained"])
+            [aggr.gainedItem addSitesDistribution:report];
+        else if ([ctype isEqualToString:@"lost"])
+            [aggr.lostItem addSitesDistribution:report];
     }
     
     [aggr.retainedItem finishAdd];
@@ -61,37 +83,59 @@
     return aggr;
 }
 
-#warning Sites Distribution Filtered by Products
-+ (SitesDistributionAggr *)AggrFilteredByProducts:(NSArray *)products
++ (SitesDistributionAggr *)AggrFilteredByProducts:(NSArray *)products period:(SitesDistributionPeriod)period
 {
-    NSMutableArray *brandNames = [[NSMutableArray alloc] initWithCapacity:products.count];
+    NSMutableArray *productNames = [[NSMutableArray alloc] initWithCapacity:products.count];
     for (Product *product in products)
-        [brandNames addObject:product.brand];
+        [productNames addObject:product.pname];
     
     NSManagedObjectContext *context = [User managedObjectContextForData];
     
+    NSString *table;
+    switch (period)
+    {
+        case PrevYear:
+            table = @"SALES_REPORT_CustomerDistribution_detail_LY";
+            break;
+        case CurYear:
+            table = @"SALES_REPORT_CustomerDistribution_detail";
+            break;
+        case YTD:
+            table = @"SALES_REPORT_CustomerDistribution_detail_YTD";
+            break;
+    }
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SALES_REPORT_Customer_OrderBy"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:table
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
     [fetchRequest setResultType:NSDictionaryResultType];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand IN %@", brandNames];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(pname IN %@) AND (plevel == %@)",
+                              productNames, @"product"];
     [fetchRequest setPredicate:predicate];
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
     SitesDistributionAggr *aggr = [[SitesDistributionAggr alloc] init];
     aggr.retainedItem = [[SitesDistributionAggrItem alloc] init];
+    aggr.retainedItem.type = Retained;
     aggr.gainedItem = [[SitesDistributionAggrItem alloc] init];
+    aggr.gainedItem.type = Gained;
     aggr.lostItem = [[SitesDistributionAggrItem alloc] init];
+    aggr.lostItem.type = Lost;
     
     for (NSDictionary *report in reports)
     {
-        [aggr.retainedItem addSitesDistribution:report];
-        [aggr.gainedItem addSitesDistribution:report];
-        [aggr.lostItem addSitesDistribution:report];
+        NSString *ctype = [report objectForKey:@"ctype"];
+        
+        if ([ctype isEqualToString:@"retained"])
+            [aggr.retainedItem addSitesDistribution:report];
+        else if ([ctype isEqualToString:@"gained"])
+            [aggr.gainedItem addSitesDistribution:report];
+        else if ([ctype isEqualToString:@"lost"])
+            [aggr.lostItem addSitesDistribution:report];
     }
     
     [aggr.retainedItem finishAdd];
@@ -108,12 +152,12 @@
 {
     totalItem = [[SitesDistributionAggrItem alloc] init];
     
-    totalItem.cursites = retainedItem.cursites + gainedItem.cursites + lostItem.cursites;
     totalItem.prvqtr = retainedItem.prvqtr + gainedItem.prvqtr + lostItem.prvqtr;
     totalItem.curqtr = retainedItem.curqtr + gainedItem.curqtr + lostItem.curqtr;
     totalItem.change = retainedItem.change + gainedItem.change + lostItem.change;
     
     [totalItem finishAdd];
+    totalItem.cursitesString = [NSString stringWithFormat:@"%d", [retainedItem.aggrPerCustomerArray count] + [gainedItem.aggrPerCustomerArray count] + [lostItem.aggrPerCustomerArray count]];
     totalItem.prvqtrAvg = @"";
     totalItem.curqtrAvg = @"";
 }

@@ -260,7 +260,7 @@
     UIView *headerView = [[UIView alloc] initWithFrame:frame];
     headerView.backgroundColor = [UIColor clearColor];
 
-    UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButton];
+    UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButtonWithOrder:NSOrderedSame];
     titleButton.tag = section;
     titleButton.underline = (aggrPerBrand.aggrPerProducts != nil);
     titleButton.backgroundColor = [UIColor clearColor];
@@ -270,8 +270,12 @@
         [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchDown];
         [titleButton setShowsTouchWhenHighlighted:YES];
         [self performSelector:@selector(enableButton:) withObject:headerView afterDelay:0.1];
+        
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleButtonClicked:)];
+        [titleButton addGestureRecognizer:gesture];
+        
     }
-    [titleButton setFrame:CGRectInset(headerView.bounds, 5, 3)];
+    [titleButton setFrame:CGRectInset(headerView.bounds, 5, 0)];
     [titleButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
     [titleButton.titleLabel setTextAlignment:NSTextAlignmentLeft];
     [titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -291,7 +295,10 @@
 
 - (void)titleButtonClicked:(id)sender
 {
-    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:[sender tag] - 1];
+    UITapGestureRecognizer *gesture = sender;
+    NSInteger tag = [gesture.view tag];
+    
+    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:tag - 1];
 
     [delegate performSelector:@selector(brandSelected:) withObject:aggrPerBrand];
 }

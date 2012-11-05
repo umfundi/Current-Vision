@@ -9,10 +9,12 @@
 
 #import "SitesDistributionAggr.h"
 #import "SitesDistributionAggrItem.h"
+#import "UIUnderlinedButton.h"
 
 @implementation SitesDistributionDataSource
 
 @synthesize sitesDistributionAggr;
+@synthesize delegate;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -67,23 +69,37 @@
     }
     else
     {
-        SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
-        if (!cell)
-            cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
-        
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentRight;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        
-        cell.textField.backgroundColor = [UIColor whiteColor];
-        cell.backgroundColor = [UIColor whiteColor];
-        
-        NSString *cellText;
-        switch (gridCoord.column)
+        if (gridCoord.column == 0)
         {
-            case 0:
-                switch (gridCoord.rowIndex)
+            SGridCell *cell = (SGridCell *)[grid dequeueReusableCellWithIdentifier:@"buttonCell"];
+            if (!cell)
+            {
+                cell = [[SGridCell alloc] initWithReuseIdentifier:@"buttonCell"];
+                cell.backgroundColor = [UIColor darkGrayColor];
+            }
+            else
+            {
+                for (UIView *subview in cell.subviews)
+                    [subview removeFromSuperview];
+            }
+            
+            UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButtonWithOrder:NSOrderedSame];
+            titleButton.underline = (gridCoord.rowIndex >= 0 && gridCoord.rowIndex <= 2);
+            [titleButton setBackgroundColor:[UIColor whiteColor]];
+            titleButton.autoresizingMask = ~UIViewAutoresizingNone;
+            if (titleButton.underline)
+            {
+                [titleButton addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                [titleButton setShowsTouchWhenHighlighted:YES];
+            }
+            [titleButton setFrame:cell.bounds];
+            [titleButton.titleLabel setFont:[UIFont fontWithName:@"Verdana-Bold" size:14.f]];
+            [titleButton.titleLabel setTextAlignment:NSTextAlignmentLeft];
+            [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            titleButton.tag = gridCoord.rowIndex;
+            
+            NSString *cellText;
+            switch (gridCoord.rowIndex)
             {
                 case 0:
                     cellText = @"Retained";
@@ -101,125 +117,151 @@
                     cellText = @"";
                     break;
             }
-                break;
-            case 1:
-                switch (gridCoord.rowIndex)
-            {
-                case 0:
-                    cellText = sitesDistributionAggr.retainedItem.cursitesString;
-                    break;
-                case 1:
-                    cellText = sitesDistributionAggr.gainedItem.cursitesString;
-                    break;
-                case 2:
-                    cellText = sitesDistributionAggr.lostItem.cursitesString;
-                    break;
-                case 3:
-                    cellText = sitesDistributionAggr.totalItem.cursitesString;
-                    break;
-            }
-                break;
-            case 2:
-                switch (gridCoord.rowIndex)
-            {
-                case 0:
-                    cellText = sitesDistributionAggr.retainedItem.prvqtrString;
-                    break;
-                case 1:
-                    cellText = sitesDistributionAggr.gainedItem.prvqtrString;
-                    break;
-                case 2:
-                    cellText = sitesDistributionAggr.lostItem.prvqtrString;
-                    break;
-                case 3:
-                    cellText = sitesDistributionAggr.totalItem.prvqtrString;
-                    break;
-            }
-                break;
-            case 3:
-            {
-                switch (gridCoord.rowIndex)
-                {
-                    case 0:
-                        cellText = sitesDistributionAggr.retainedItem.curqtrString;
-                        break;
-                    case 1:
-                        cellText = sitesDistributionAggr.gainedItem.curqtrString;
-                        break;
-                    case 2:
-                        cellText = sitesDistributionAggr.lostItem.curqtrString;
-                        break;
-                    case 3:
-                        cellText = sitesDistributionAggr.totalItem.curqtrString;
-                        break;
-                }
-                break;
-            }
-            case 4:
-            {
-                switch (gridCoord.rowIndex)
-                {
-                    case 0:
-                        cellText = sitesDistributionAggr.retainedItem.changeString;
-                        break;
-                    case 1:
-                        cellText = sitesDistributionAggr.gainedItem.changeString;
-                        break;
-                    case 2:
-                        cellText = sitesDistributionAggr.lostItem.changeString;
-                        break;
-                    case 3:
-                        cellText = sitesDistributionAggr.totalItem.changeString;
-                        break;
-                }
-                break;
-            }
-            case 5:
-            {
-                switch (gridCoord.rowIndex)
-                {
-                    case 0:
-                        cellText = sitesDistributionAggr.retainedItem.prvqtrAvg;
-                        break;
-                    case 1:
-                        cellText = sitesDistributionAggr.gainedItem.prvqtrAvg;
-                        break;
-                    case 2:
-                        cellText = sitesDistributionAggr.lostItem.prvqtrAvg;
-                        break;
-                    case 3:
-                        cellText = sitesDistributionAggr.totalItem.prvqtrAvg;
-                        break;
-                }
-                break;
-            }
-            case 6:
-            {
-                switch (gridCoord.rowIndex)
-                {
-                    case 0:
-                        cellText = sitesDistributionAggr.retainedItem.curqtrAvg;
-                        break;
-                    case 1:
-                        cellText = sitesDistributionAggr.gainedItem.curqtrAvg;
-                        break;
-                    case 2:
-                        cellText = sitesDistributionAggr.lostItem.curqtrAvg;
-                        break;
-                    case 3:
-                        cellText = sitesDistributionAggr.totalItem.curqtrAvg;
-                        break;
-                }
-                break;
-            }
-            default:
-                cellText = @"";
-                break;
+            
+            [titleButton setTitle:cellText forState:UIControlStateNormal];
+            [titleButton setFrame:CGRectMake(titleButton.frame.origin.x, titleButton.frame.origin.y,
+                                             titleButton.titleLabel.frame.size.width, titleButton.frame.size.height)];
+            
+            [cell addSubview:titleButton];
+            
+            return cell;
         }
-        
-        cell.textField.text = cellText;
-        
-        return cell;
+        else
+        {
+            SGridTextCell *cell = (SGridTextCell *)[grid dequeueReusableCellWithIdentifier:@"valueCell"];
+            if (!cell)
+                cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
+            
+            cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+            cell.textField.textColor = [UIColor blackColor];
+            cell.textField.textAlignment = UITextAlignmentRight;
+            cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
+            
+            cell.textField.backgroundColor = [UIColor whiteColor];
+            cell.backgroundColor = [UIColor whiteColor];
+            
+            NSString *cellText;
+            switch (gridCoord.column)
+            {
+                case 1:
+                    switch (gridCoord.rowIndex)
+                {
+                    case 0:
+                        cellText = sitesDistributionAggr.retainedItem.cursitesString;
+                        break;
+                    case 1:
+                        cellText = sitesDistributionAggr.gainedItem.cursitesString;
+                        break;
+                    case 2:
+                        cellText = sitesDistributionAggr.lostItem.cursitesString;
+                        break;
+                    case 3:
+                        cellText = sitesDistributionAggr.totalItem.cursitesString;
+                        break;
+                }
+                    break;
+                case 2:
+                    switch (gridCoord.rowIndex)
+                {
+                    case 0:
+                        cellText = sitesDistributionAggr.retainedItem.prvqtrString;
+                        break;
+                    case 1:
+                        cellText = sitesDistributionAggr.gainedItem.prvqtrString;
+                        break;
+                    case 2:
+                        cellText = sitesDistributionAggr.lostItem.prvqtrString;
+                        break;
+                    case 3:
+                        cellText = sitesDistributionAggr.totalItem.prvqtrString;
+                        break;
+                }
+                    break;
+                case 3:
+                {
+                    switch (gridCoord.rowIndex)
+                    {
+                        case 0:
+                            cellText = sitesDistributionAggr.retainedItem.curqtrString;
+                            break;
+                        case 1:
+                            cellText = sitesDistributionAggr.gainedItem.curqtrString;
+                            break;
+                        case 2:
+                            cellText = sitesDistributionAggr.lostItem.curqtrString;
+                            break;
+                        case 3:
+                            cellText = sitesDistributionAggr.totalItem.curqtrString;
+                            break;
+                    }
+                    break;
+                }
+                case 4:
+                {
+                    switch (gridCoord.rowIndex)
+                    {
+                        case 0:
+                            cellText = sitesDistributionAggr.retainedItem.changeString;
+                            break;
+                        case 1:
+                            cellText = sitesDistributionAggr.gainedItem.changeString;
+                            break;
+                        case 2:
+                            cellText = sitesDistributionAggr.lostItem.changeString;
+                            break;
+                        case 3:
+                            cellText = sitesDistributionAggr.totalItem.changeString;
+                            break;
+                    }
+                    break;
+                }
+                case 5:
+                {
+                    switch (gridCoord.rowIndex)
+                    {
+                        case 0:
+                            cellText = sitesDistributionAggr.retainedItem.prvqtrAvg;
+                            break;
+                        case 1:
+                            cellText = sitesDistributionAggr.gainedItem.prvqtrAvg;
+                            break;
+                        case 2:
+                            cellText = sitesDistributionAggr.lostItem.prvqtrAvg;
+                            break;
+                        case 3:
+                            cellText = sitesDistributionAggr.totalItem.prvqtrAvg;
+                            break;
+                    }
+                    break;
+                }
+                case 6:
+                {
+                    switch (gridCoord.rowIndex)
+                    {
+                        case 0:
+                            cellText = sitesDistributionAggr.retainedItem.curqtrAvg;
+                            break;
+                        case 1:
+                            cellText = sitesDistributionAggr.gainedItem.curqtrAvg;
+                            break;
+                        case 2:
+                            cellText = sitesDistributionAggr.lostItem.curqtrAvg;
+                            break;
+                        case 3:
+                            cellText = sitesDistributionAggr.totalItem.curqtrAvg;
+                            break;
+                    }
+                    break;
+                }
+                default:
+                    cellText = @"";
+                    break;
+            }
+            
+            cell.textField.text = cellText;
+            
+            return cell;
+        }
     }
 }
 
@@ -240,6 +282,23 @@
     if (sectionIndex == 0)
         return 1;
     return 4;
+}
+
+
+- (void)titleButtonClicked:(id)sender
+{
+    switch ([sender tag])
+    {
+        case 0:
+            [delegate aggrItemSelected:sitesDistributionAggr.retainedItem dataSource:self];
+            break;
+        case 1:
+            [delegate aggrItemSelected:sitesDistributionAggr.gainedItem dataSource:self];
+            break;
+        case 2:
+            [delegate aggrItemSelected:sitesDistributionAggr.lostItem dataSource:self];
+            break;
+    }
 }
 
 @end

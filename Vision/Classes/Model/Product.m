@@ -36,6 +36,10 @@
                                               inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
+    // Sort
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"pname" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    
     return [context executeFetchRequest:fetchRequest error:nil];
 }
 
@@ -57,6 +61,21 @@
         return nil;
     
     return (Product *)[products objectAtIndex:0];
+}
+
++ (NSArray *)AllProductsFromBrand:(NSString *)brand
+{
+    NSManagedObjectContext *context = [User managedObjectContextForData];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Product"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"brand == %@", brand];
+    [fetchRequest setPredicate:predicate];
+    
+    return [context executeFetchRequest:fetchRequest error:nil];
 }
 
 @end

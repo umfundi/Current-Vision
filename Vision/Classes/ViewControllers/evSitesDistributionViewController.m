@@ -15,6 +15,8 @@
 #import "Product.h"
 #import "SitesDistributionAggr.h"
 #import "User.h"
+#import "umfundiCommon.h"
+#import "evSitesDistributionSubViewController.h"
 
 @interface evSitesDistributionViewController ()
 
@@ -60,6 +62,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    selectedPeriod = CurYear;
+    
     brandListDataSource = [[BrandListDataSource alloc] init];
     brandListDataSource.brandArray = [Focused_brand AllBrands];
     brandListDataSource.itemSelected = [[NSMutableArray alloc] initWithCapacity:0];
@@ -67,6 +71,7 @@
         [brandListDataSource.itemSelected addObject:[NSNumber numberWithBool:NO]];
 
     sitesDistByBrandDataSource = [[SitesDistributionDataSource alloc] init];
+    sitesDistByBrandDataSource.delegate = self;
     
     productListDataSource = [[ProductListDataSource alloc] init];
     productListDataSource.productArray = [Product AllProducts];
@@ -75,6 +80,7 @@
         [productListDataSource.itemSelected addObject:[NSNumber numberWithBool:NO]];
 
     sitesDistByProductDataSource = [[SitesDistributionDataSource alloc] init];
+    sitesDistByProductDataSource.delegate = self;
     
     NSString *licencekey = @"qgi64t6X5laUi6GMjAxMjExMTNpbmZvQHNoaW5vYmljb250cm9scy5jb20=UQ5WGyladC7SlbiYUt2BGUgxvt5ympt45rNMEzT1QST5KGlUA/v4WpV2NKh6yvMzqNQ/DmXZ0Uqya51NUqOn1m9u53sQpdOXKeJnkm127zUN6nOWKgY6wTEsh6vc71uYwcaVuB5lErG9+qDD9BZZdVQJ4Q7s=BQxSUisl3BaWf/7myRmmlIjRnMU2cA7q+/03ZX9wdj30RzapYANf51ee3Pi8m2rVW6aD7t6Hi4Qy5vv9xpaQYXF5T7XzsafhzS3hbBokp36BoJZg8IrceBj742nQajYyV7trx5GIw9jy/V6r0bvctKYwTim7Kzq+YPWGMtqtQoU=PFJTQUtleVZhbHVlPjxNb2R1bHVzPnh6YlRrc2dYWWJvQUh5VGR6dkNzQXUrUVAxQnM5b2VrZUxxZVdacnRFbUx3OHZlWStBK3pteXg4NGpJbFkzT2hGdlNYbHZDSjlKVGZQTTF4S2ZweWZBVXBGeXgxRnVBMThOcDNETUxXR1JJbTJ6WXA3a1YyMEdYZGU3RnJyTHZjdGhIbW1BZ21PTTdwMFBsNWlSKzNVMDg5M1N4b2hCZlJ5RHdEeE9vdDNlMD08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjwvUlNBS2V5VmFsdWU+";
     
@@ -99,9 +105,7 @@
     sitesDistByProductGrid.delegate = self;
     
     //Freeze our top and left most rows
-    [brandListGrid freezeRowsAboveAndIncludingRow:SGridRowMake(0, 0)];
     [sitesDistByBrandGrid freezeRowsAboveAndIncludingRow:SGridRowMake(0, 0)];
-    [productListGrid freezeRowsAboveAndIncludingRow:SGridRowMake(0, 0)];
     [sitesDistByProductGrid freezeRowsAboveAndIncludingRow:SGridRowMake(0, 0)];
     
     //Some basic grid styling
@@ -171,9 +175,14 @@
     [self.view addSubview:sitesDistByBrandGrid];
     [self.view addSubview:productListGrid];
     [self.view addSubview:sitesDistByProductGrid];
+
+    HUDProcessing = [[MBProgressHUD alloc] initWithView:self.view];
+    HUDProcessing.labelText = @"Processing tables ...";
+    [self.view addSubview:HUDProcessing];
 }
 
--(void) viewWillAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated
+{
     [self didRotateFromInterfaceOrientation:0];
     [self applyTheme:[[User loginUser].data isEqualToString:@"companion"]];
 }
@@ -188,18 +197,18 @@
 {
     BOOL isPortrait = UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
     
-    brandListGrid.frame = CGRectMake(100, 100,
+    brandListGrid.frame = CGRectMake(100, 150,
                                      self.view.bounds.size.width - 130,
-                                     (self.view.bounds.size.height-200) / 4);
-    sitesDistByBrandGrid.frame = CGRectMake(10, (self.view.bounds.size.height-200) / 4 + 120,
-                                            self.view.bounds.size.width - 30,
-                                            (self.view.bounds.size.height-200) / 4);
-    productListGrid.frame = CGRectMake(100, 140 + (self.view.bounds.size.height-200) / 2,
+                                     (self.view.bounds.size.height - 484) / 2);
+    sitesDistByBrandGrid.frame = CGRectMake(10, 155 + brandListGrid.frame.size.height,
+                                            self.view.bounds.size.width - 30, 157);
+    productListGrid.frame = CGRectMake(100,
+                                       sitesDistByBrandGrid.frame.origin.y + sitesDistByBrandGrid.frame.size.height + 10,
                                        self.view.bounds.size.width - 130,
-                                       (self.view.bounds.size.height-200) / 4);
-    sitesDistByProductGrid.frame = CGRectMake(10, 160 + (self.view.bounds.size.height-200) / 4 * 3,
-                                            self.view.bounds.size.width - 30,
-                                              (self.view.bounds.size.height-200) / 4);
+                                       (self.view.bounds.size.height - 484) / 2);
+    sitesDistByProductGrid.frame = CGRectMake(10,
+                                              productListGrid.frame.origin.y + productListGrid.frame.size.height + 5,
+                                            self.view.bounds.size.width - 30, 157);
 
     UIViewController *templateController = [self.storyboard instantiateViewControllerWithIdentifier:isPortrait ? @"SitesDistributionPortraitView" : @"SitesDistributionLandscapeView"];
     if (templateController)
@@ -235,34 +244,89 @@ NSArray *SitesDistributionSubviews(UIView *aView)
 }
 
 
+- (IBAction)doneClicked:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (IBAction)prevYearClicked:(id)sender
+{
+    selectedPeriod = PrevYear;
+    btnPrevYear.selected = YES;
+    btnCurYear.selected = NO;
+    btnYTD.selected = NO;
+}
+
+- (IBAction)curYearClicked:(id)sender
+{
+    selectedPeriod = CurYear;
+    btnPrevYear.selected = NO;
+    btnCurYear.selected = YES;
+    btnYTD.selected = NO;
+}
+
+- (IBAction)YTDClicked:(id)sender
+{
+    selectedPeriod = YTD;
+    btnPrevYear.selected = NO;
+    btnCurYear.selected = NO;
+    btnYTD.selected = YES;
+}
+
+
 - (IBAction)filterbyBrandClicked:(id)sender
 {
-    NSMutableArray *brands = [[NSMutableArray alloc] initWithCapacity:0];
+    [HUDProcessing show:YES];
     
-    for (NSInteger i = 0 ; i < brandListDataSource.brandArray.count ; i ++ )
+    [NSThread detachNewThreadSelector:@selector(filterByBrand) toTarget:self withObject:nil];
+}
+
+- (void)filterByBrand
+{
+    @autoreleasepool
     {
-        NSNumber *selected = [brandListDataSource.itemSelected objectAtIndex:i];
-        if ([selected boolValue])
-            [brands addObject:[brandListDataSource.brandArray objectAtIndex:i]];
+        NSMutableArray *brands = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (NSInteger i = 0 ; i < brandListDataSource.brandArray.count ; i ++ )
+        {
+            NSNumber *selected = [brandListDataSource.itemSelected objectAtIndex:i];
+            if ([selected boolValue])
+                [brands addObject:[brandListDataSource.brandArray objectAtIndex:i]];
+        }
+        
+        sitesDistByBrandDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByBrands:brands period:selectedPeriod];
+        [sitesDistByBrandGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
+        
+        [HUDProcessing hide:YES];
     }
-    
-    sitesDistByBrandDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByBrands:brands];
-    [sitesDistByBrandGrid reload];
 }
 
 - (IBAction)filterbyProductClicked:(id)sender
 {
-    NSMutableArray *products = [[NSMutableArray alloc] initWithCapacity:0];
+    [HUDProcessing show:YES];
     
-    for (NSInteger i = 0 ; i < productListDataSource.productArray.count ; i ++ )
+    [NSThread detachNewThreadSelector:@selector(filterByProduct) toTarget:self withObject:nil];
+}
+
+- (void)filterByProduct
+{
+    @autoreleasepool
     {
-        NSNumber *selected = [productListDataSource.itemSelected objectAtIndex:i];
-        if ([selected boolValue])
-            [products addObject:[productListDataSource.productArray objectAtIndex:i]];
+        NSMutableArray *products = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (NSInteger i = 0 ; i < productListDataSource.productArray.count ; i ++ )
+        {
+            NSNumber *selected = [productListDataSource.itemSelected objectAtIndex:i];
+            if ([selected boolValue])
+                [products addObject:[productListDataSource.productArray objectAtIndex:i]];
+        }
+        
+        sitesDistByProductDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByProducts:products period:selectedPeriod];
+        [sitesDistByProductGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
+        
+        [HUDProcessing hide:YES];
     }
-    
-    sitesDistByProductDataSource.sitesDistributionAggr = [SitesDistributionAggr AggrFilteredByProducts:products];
-    [sitesDistByProductGrid reload];
 }
 
 - (void)viewDidUnload {
@@ -277,17 +341,64 @@ NSArray *SitesDistributionSubviews(UIView *aView)
     NSString *logo = redTheme ? @"Companion_HC.png" : @"Ruminant_HB.png";
     [imgLogo setImage:[UIImage imageNamed:logo]];
     
+    // Select Label Background Color
+    UIColor *backColor = redTheme ? [UIColor colorWithRed:220.0 / 255 green:0 blue:0 alpha:1] :
+    [UIColor colorWithRed:0 green:0.5 blue:1 alpha:1];
+    [lblThemeBox setBackgroundColor:backColor];
+
     // Buttons Title Color
     UIColor *titleColor = redTheme ? [UIColor colorWithRed:180.0 / 255 green:0 blue:0 alpha:1] :
     [UIColor colorWithRed:50.0 / 255 green:79.0 / 255 blue:133.0 / 255 alpha:1];
     
-//    [umfundiCommon applyColorToButton:btnMAT withColor:titleColor];
-//    [umfundiCommon applyColorToButton:btnYTD withColor:titleColor];
-    
-//    [umfundiCommon applyColorToButton:btnDone withColor:titleColor];
-    
-//    [umfundiCommon applyColorToButton:btnClear withColor:titleColor];
-//    [umfundiCommon applyColorToButton:btnSelect withColor:titleColor];
-//    [umfundiCommon applyColorToButton:btnSelFocus withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnDone withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnEmail withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnCharts withColor:titleColor];
+
+    [umfundiCommon applyColorToButton:btnFilterByBrands withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnFilterByProducts withColor:titleColor];
+
+    [umfundiCommon applyColorToButton:btnCurYear withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnPrevYear withColor:titleColor];
+    [umfundiCommon applyColorToButton:btnYTD withColor:titleColor];
 }
+
+
+#pragma mark -
+#pragma mark SitesDistributionDataSourceDelegate
+
+- (void)aggrItemSelected:(SitesDistributionAggrItem *)selected dataSource:(SitesDistributionDataSource *)dataSource
+{
+    evSitesDistributionSubViewController *subViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"evSitesDistributionSubViewController"];
+    
+    subViewController.aggrItem = selected;
+    if (dataSource == sitesDistByBrandDataSource)
+    {
+        NSMutableArray *brands = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (NSInteger i = 0 ; i < brandListDataSource.brandArray.count ; i ++ )
+        {
+            NSNumber *selected = [brandListDataSource.itemSelected objectAtIndex:i];
+            if ([selected boolValue])
+                [brands addObject:[brandListDataSource.brandArray objectAtIndex:i]];
+        }
+        
+        subViewController.selectedBrands = brands;
+    }
+    else
+    {
+        NSMutableArray *products = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (NSInteger i = 0 ; i < productListDataSource.productArray.count ; i ++ )
+        {
+            NSNumber *selected = [productListDataSource.itemSelected objectAtIndex:i];
+            if ([selected boolValue])
+                [products addObject:[productListDataSource.productArray objectAtIndex:i]];
+        }
+
+        subViewController.selectedProducts = products;
+    }
+    
+    [self presentViewController:subViewController animated:YES completion:nil];
+}
+
 @end

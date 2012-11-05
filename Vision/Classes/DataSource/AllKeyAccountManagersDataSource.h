@@ -10,8 +10,19 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@protocol AllKeyAccountManagersDataSourceDelegate <NSObject>
+
+- (void)gridSorted;
+
+@end
+
 @interface AllKeyAccountManagersDataSource : NSObject <SGridDataSource>
+{
+    NSInteger sortedColumn;
+    NSComparisonResult sortedResult;
+}
 
 @property (nonatomic, strong) NSArray *keyAccountManagerArray;
+@property (nonatomic, assign) id<AllKeyAccountManagersDataSourceDelegate> delegate;
 
 @end

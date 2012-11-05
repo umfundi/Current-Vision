@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ShinobiGrids/ShinobiGrid.h>
-
-@class AllGroupsDataSource;
+#import "AllGroupsDataSource.h"
 
 @protocol AllGroupsDelegate <NSObject>
 
@@ -17,7 +16,7 @@
 
 @end
 
-@interface AllGroupsViewController : UIViewController<SGridDataSource, SGridDelegate>
+@interface AllGroupsViewController : UIViewController<SGridDataSource, SGridDelegate, AllGroupsDataSourceDelegate>
 {
     ShinobiGrid *groupGrid;
     AllGroupsDataSource *dataSource;

@@ -47,7 +47,7 @@
                 cellText = NSLocalizedString(@"Town", @"");
                 break;
             case 3:
-                cellText = NSLocalizedString(@"Postcode", @"");
+                cellText = NSLocalizedString(@"P/code", @"");
                 break;
             case 4:
                 cellText = NSLocalizedString(@"Month", @"");
