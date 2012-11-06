@@ -11,6 +11,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+NSArray *monthArray;
+
 @implementation umfundiCommon
 
 + (UIImage *)imageFromColor:(UIColor *)color
@@ -28,6 +30,7 @@
     return img;
 }
 
+
 + (void)applyColorToButton:(UIButton *)button withColor:(UIColor *)color
 {
     [button setTitleColor:color forState:UIControlStateNormal];
@@ -43,6 +46,29 @@
     button.layer.borderColor = color.CGColor;
     button.layer.borderWidth = 1.0f;
     button.layer.cornerRadius = 10.0f;
+}
+
+
++ (NSString *)monthString:(NSInteger)month
+{
+    if (!monthArray)
+    {
+        monthArray = [NSArray arrayWithObjects:
+                      NSLocalizedString(@"Jan", @""),
+                      NSLocalizedString(@"Feb", @""),
+                      NSLocalizedString(@"Mar", @""),
+                      NSLocalizedString(@"Apr", @""),
+                      NSLocalizedString(@"May", @""),
+                      NSLocalizedString(@"Jun", @""),
+                      NSLocalizedString(@"Jul", @""),
+                      NSLocalizedString(@"Aug", @""),
+                      NSLocalizedString(@"Sep", @""),
+                      NSLocalizedString(@"Oct", @""),
+                      NSLocalizedString(@"Nov", @""),
+                      NSLocalizedString(@"Dec", @""), nil];
+    }
+    
+    return [monthArray objectAtIndex:(month + 11) % 12];
 }
 
 @end

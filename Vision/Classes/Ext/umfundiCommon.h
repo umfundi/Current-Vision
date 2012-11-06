@@ -13,4 +13,6 @@
 
 + (void)applyColorToButton:(UIButton *)button withColor:(UIColor *)color;
 
++ (NSString *)monthString:(NSInteger)month;
+
 @end

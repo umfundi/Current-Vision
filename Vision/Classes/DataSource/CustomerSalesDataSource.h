@@ -9,9 +9,13 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@class CustomerSalesAggr;
+
 @interface CustomerSalesDataSource : NSObject <SGridDataSource>
 
-@property (nonatomic, strong) NSArray *customerSalesArray;
+@property (nonatomic, strong) CustomerSalesAggr *customerSalesAggr;
+@property (nonatomic, assign) BOOL isYTD;
+@property (nonatomic, assign) BOOL isFull;
 
 - (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord;
 

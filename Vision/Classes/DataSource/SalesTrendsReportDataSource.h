@@ -9,10 +9,12 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@class SalesTrendAggr;
+
 @interface SalesTrendsReportDataSource : NSObject <SGridDataSource>
 
 @property (nonatomic, strong) NSString *figureTitle;
-@property (nonatomic, strong) NSArray *reportArray;
+@property (nonatomic, strong) SalesTrendAggr *salesTrendAggr;
 
 - (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord;
 

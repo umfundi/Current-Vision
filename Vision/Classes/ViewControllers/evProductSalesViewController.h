@@ -55,12 +55,13 @@
     
     ShinobiGrid *productSalesGrid;
     ProductSalesDataSource *productSalesDataSource;
-    NSArray *productSalesArray;
+    ProductSalesAggr *productSalesAggr;
     
     UIPopoverController *searchPopoverController;
     
     NSInteger currentFilter;
     BOOL isYTD;
+    BOOL isFull;
     
     NSInteger last_col;
     NSInteger last_row;

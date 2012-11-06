@@ -118,7 +118,7 @@
                 // Name
                 break;
             case 2:
-                cellText = practice.province;
+                cellText = practice.city;
                 // Town
                 break;
             case 3:
@@ -175,7 +175,7 @@
                     break;
                 case 2:
                     // Town
-                    res = [practice_i.province compare:practice_j.province];
+                    res = [practice_i.city compare:practice_j.city];
                     break;
                 case 3:
                     // P/code

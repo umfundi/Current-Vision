@@ -11,12 +11,43 @@
 #import "ClientSalesAggrPerGroup.h"
 #import "Focused_brand.h"
 #import "Product.h"
+#import "umfundiCommon.h"
 
 @implementation ClientSalesAggr
+
+@synthesize monthArray;
 
 @synthesize year;
 @synthesize lastyear;
 @synthesize aggrPerGroups;
+
+- (id)initWithYTDorMAT:(BOOL)isYTD
+{
+    self = [super init];
+    if (self)
+    {
+        NSInteger currentMonth;
+        if (isYTD)
+            currentMonth = 1;
+        else
+            currentMonth = [[User loginUser] monthForData];
+        
+        monthArray = [NSArray arrayWithObjects:[umfundiCommon monthString:currentMonth],
+                      [umfundiCommon monthString:currentMonth + 1],
+                      [umfundiCommon monthString:currentMonth + 2],
+                      [umfundiCommon monthString:currentMonth + 3],
+                      [umfundiCommon monthString:currentMonth + 4],
+                      [umfundiCommon monthString:currentMonth + 5],
+                      [umfundiCommon monthString:currentMonth + 6],
+                      [umfundiCommon monthString:currentMonth + 7],
+                      [umfundiCommon monthString:currentMonth + 8],
+                      [umfundiCommon monthString:currentMonth + 9],
+                      [umfundiCommon monthString:currentMonth + 10],
+                      [umfundiCommon monthString:currentMonth + 11], nil];
+    }
+    
+    return self;
+}
 
 + (ClientSalesAggr *)AggrWithYTDorMAT:(BOOL)isYTD
 {
@@ -35,7 +66,7 @@
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
-    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] init];
+    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] initWithYTDorMAT:isYTD];
 
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [gregorian components:NSYearCalendarUnit fromDate:[NSDate date]];
@@ -111,7 +142,7 @@
     
     NSArray *reports = [context executeFetchRequest:fetchRequest error:nil];
     
-    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] init];
+    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] initWithYTDorMAT:isYTD];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [gregorian components:NSYearCalendarUnit fromDate:[NSDate date]];

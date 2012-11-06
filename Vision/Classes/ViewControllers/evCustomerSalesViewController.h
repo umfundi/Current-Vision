@@ -63,6 +63,7 @@
     
     NSInteger currentFilter;
     BOOL isYTD;
+    BOOL isFull;
     
     NSInteger last_col;
     NSInteger last_row;

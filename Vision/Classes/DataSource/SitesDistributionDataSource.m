@@ -84,7 +84,31 @@
             }
             
             UIUnderlinedButton *titleButton = [UIUnderlinedButton underlinedButtonWithOrder:NSOrderedSame];
-            titleButton.underline = (gridCoord.rowIndex >= 0 && gridCoord.rowIndex <= 2);
+
+            NSString *cellText;
+            switch (gridCoord.rowIndex)
+            {
+                case 0:
+                    cellText = @"Retained";
+                    titleButton.underline = [sitesDistributionAggr.retainedItem.aggrPerCustomerArray count] > 0;
+                    break;
+                case 1:
+                    cellText = @"Gained";
+                    titleButton.underline =  [sitesDistributionAggr.gainedItem.aggrPerCustomerArray count] > 0;
+                    break;
+                case 2:
+                    cellText = @"Lost";
+                    titleButton.underline =  [sitesDistributionAggr.lostItem.aggrPerCustomerArray count] > 0;
+                    break;
+                case 3:
+                    cellText = @"Total";
+                    titleButton.underline = NO;
+                    break;
+                default:
+                    cellText = @"";
+                    titleButton.underline = NO;
+                    break;
+            }
             [titleButton setBackgroundColor:[UIColor whiteColor]];
             titleButton.autoresizingMask = ~UIViewAutoresizingNone;
             if (titleButton.underline)
@@ -97,26 +121,6 @@
             [titleButton.titleLabel setTextAlignment:NSTextAlignmentLeft];
             [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             titleButton.tag = gridCoord.rowIndex;
-            
-            NSString *cellText;
-            switch (gridCoord.rowIndex)
-            {
-                case 0:
-                    cellText = @"Retained";
-                    break;
-                case 1:
-                    cellText = @"Gained";
-                    break;
-                case 2:
-                    cellText = @"Lost";
-                    break;
-                case 3:
-                    cellText = @"Total";
-                    break;
-                default:
-                    cellText = @"";
-                    break;
-            }
             
             [titleButton setTitle:cellText forState:UIControlStateNormal];
             [titleButton setFrame:CGRectMake(titleButton.frame.origin.x, titleButton.frame.origin.y,

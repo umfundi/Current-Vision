@@ -7,67 +7,137 @@
 
 #import "CustomerSalesAggrPerYear.h"
 
+#import "User.h"
+
 @implementation CustomerSalesAggrPerYear
 
 @synthesize year;
-@synthesize jan, janString;
-@synthesize feb, febString;
-@synthesize mar, marString;
+@synthesize monthValArray, monthValStringArray;
 @synthesize totq1;
-@synthesize apr, aprString;
-@synthesize may, mayString;
-@synthesize jun, junString;
 @synthesize totq2;
-@synthesize jul, julString;
-@synthesize aug, augString;
-@synthesize sep, sepString;
 @synthesize totq3;
-@synthesize oct, octString;
-@synthesize nov, novString;
-@synthesize dec, decString;
 @synthesize totq4;
 @synthesize value, growth;
 @synthesize qty, qtygrowth;
 
-- (void)addCustomerSale:(NSDictionary *)customerSale YTDorMAT:(BOOL)isYTD
+- (id)init
 {
-    jan += [[customerSale objectForKey:@"m_11val"] doubleValue];
-    feb += [[customerSale objectForKey:@"m_10val"] doubleValue];
-    mar += [[customerSale objectForKey:@"m_9val"] doubleValue];
-    apr += [[customerSale objectForKey:@"m_8val"] doubleValue];
-    may += [[customerSale objectForKey:@"m_7val"] doubleValue];
-    jun += [[customerSale objectForKey:@"m_6val"] doubleValue];
-    jul += [[customerSale objectForKey:@"m_5val"] doubleValue];
-    aug += [[customerSale objectForKey:@"m_4val"] doubleValue];
-    sep += [[customerSale objectForKey:@"m_3val"] doubleValue];
-    oct += [[customerSale objectForKey:@"m_2val"] doubleValue];
-    nov += [[customerSale objectForKey:@"m_1val"] doubleValue];
-    dec += [[customerSale objectForKey:@"m0val"] doubleValue];
+    self = [super init];
+    if (self)
+    {
+        monthValArray = (double *)malloc(sizeof(double) * 13);
+        for (NSInteger i = 0 ; i < 12 ; i ++ )
+            monthValArray[i] = 0;
+    }
+    
+    return self;
+}
+
+- (void)addCustomerSale:(NSDictionary *)customerSale YTDorMAT:(BOOL)isYTD isFull:(BOOL)isFull Year:(NSString *)yearInData
+{
+    if (!isYTD && !isFull)
+    {
+        if (![yearInData isEqualToString:year])
+            return;
+        
+        // MAT
+        for (NSInteger i = 0 ; i < 12 ; i ++ )
+        {
+            NSInteger col_index = 11 - i;
+            if (col_index == 0)
+                monthValArray[i] += [[customerSale objectForKey:@"m0val"] doubleValue];
+            else
+                monthValArray[i] += [[customerSale objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+        }
+    }
+    else if (isYTD && !isFull)
+    {
+        // YTD
+        NSInteger currentMonth = [[User loginUser] monthForData] - 1;
+        
+        if (![yearInData isEqualToString:year])
+        {
+            for (NSInteger i = currentMonth ; i < 12 ; i ++ )
+            {
+                NSInteger col_index = (11 - i + currentMonth);
+                if (col_index == 0)
+                    monthValArray[i] += [[customerSale objectForKey:@"m0val"] doubleValue];
+                else
+                    monthValArray[i] += [[customerSale objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+            }
+        }
+        else
+        {
+            for (NSInteger i = 0 ; i < currentMonth ; i ++ )
+            {
+                NSInteger col_index = currentMonth - i - 1;
+                if (col_index == 0)
+                    monthValArray[i] += [[customerSale objectForKey:@"m0val"] doubleValue];
+                else
+                    monthValArray[i] += [[customerSale objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+            }
+        }
+    }
+    else if (isFull)
+    {
+        // Full
+        NSInteger currentMonth = [[User loginUser] monthForData] - 1;
+        
+        if (![yearInData isEqualToString:year])
+        {
+            for (NSInteger i = currentMonth ; i < 12 ; i ++ )
+            {
+                NSInteger col_index = (11 - i + currentMonth);
+                if (col_index == 0)
+                    monthValArray[i] += [[customerSale objectForKey:@"m0val"] doubleValue];
+                else
+                    monthValArray[i] += [[customerSale objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+            }
+        }
+        else
+        {
+            for (NSInteger i = 0 ; i < currentMonth ; i ++ )
+            {
+                NSInteger col_index = currentMonth - i - 1;
+                if (col_index == 0)
+                    monthValArray[i] += [[customerSale objectForKey:@"m0val"] doubleValue];
+                else
+                    monthValArray[i] += [[customerSale objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+            }
+        }
+    }
 }
 
 - (void)finishAdd
 {
-    janString = [NSString stringWithFormat:@"%.0f", round(jan)];
-    febString = [NSString stringWithFormat:@"%.0f", round(feb)];
-    marString = [NSString stringWithFormat:@"%.0f", round(mar)];
-    totq1 = [NSString stringWithFormat:@"%.0f", round(jan + feb + mar)];
-    aprString = [NSString stringWithFormat:@"%.0f", round(apr)];
-    mayString = [NSString stringWithFormat:@"%.0f", round(may)];
-    junString = [NSString stringWithFormat:@"%.0f", round(jun)];
-    totq2 = [NSString stringWithFormat:@"%.0f", round(apr + may + jun)];
-    julString = [NSString stringWithFormat:@"%.0f", round(jul)];
-    augString = [NSString stringWithFormat:@"%.0f", round(aug)];
-    sepString = [NSString stringWithFormat:@"%.0f", round(sep)];
-    totq3 = [NSString stringWithFormat:@"%.0f", round(jul + aug + sep)];
-    octString = [NSString stringWithFormat:@"%.0f", round(oct)];
-    novString = [NSString stringWithFormat:@"%.0f", round(nov)];
-    decString = [NSString stringWithFormat:@"%.0f", round(dec)];
-    totq4 = [NSString stringWithFormat:@"%.0f", round(oct + nov + dec)];
-    value = [NSString stringWithFormat:@"%.0f", round(jan + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec)];
-//#warning qty in ProductSales
-//    qty = [NSString stringWithFormat:@"%.0f%%", round(0)];
-//#warning growth in ProductSales
-//    qtygrowth = [NSString stringWithFormat:@"%.0f%%", round(0)];
+    monthValStringArray = [NSArray arrayWithObjects:
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[0])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[1])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[2])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[3])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[4])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[5])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[6])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[7])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[8])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[9])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[10])],
+                           [NSString stringWithFormat:@"%.0f", round(monthValArray[11])],
+                           nil];
+    
+    double tot1 = monthValArray[0] + monthValArray[1] + monthValArray[2];
+    totq1 = [NSString stringWithFormat:@"%.0f", round(tot1)];
+    
+    double tot2 = monthValArray[3] + monthValArray[4] + monthValArray[5];
+    totq2 = [NSString stringWithFormat:@"%.0f", round(tot2)];
+    
+    double tot3 = monthValArray[6] + monthValArray[7] + monthValArray[8];
+    totq3 = [NSString stringWithFormat:@"%.0f", round(tot3)];
+    
+    double tot4 = monthValArray[9] + monthValArray[10] + monthValArray[11];
+    totq4 = [NSString stringWithFormat:@"%.0f", round(tot4)];
+    
+    value = [NSString stringWithFormat:@"%.0f", round(tot1 + tot2 + tot3 + tot4)];
 }
 
 @end

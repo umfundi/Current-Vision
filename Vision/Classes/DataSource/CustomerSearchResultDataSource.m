@@ -99,7 +99,7 @@
                 // Name
                 break;
             case 2:
-                cellText = customer.province;
+                cellText = customer.city;
                 // Town
                 break;
             case 3:

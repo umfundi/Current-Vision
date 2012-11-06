@@ -13,6 +13,7 @@
 #import "Practice.h"
 #import "umfundiAppDelegate.h"
 #import "umfundiViewController.h"
+#import "ErReportAggr.h"
 #import "ErReportAggrPerBrand.h"
 #import "umfundiCommon.h"
 
@@ -76,6 +77,7 @@
     
     currentFilter = FilterTypePractice;
     isYTD = YES;
+    isFull = NO;
     
     erReportDataSource = [[ErReportDataSource alloc] init];
     erReportDataSource.delegate = self;
@@ -541,6 +543,7 @@ NSArray *ErReportSubviews(UIView *aView)
 - (IBAction)ytdClicked:(id)sender
 {
     isYTD = YES;
+    isFull = NO;
     
     [self displayGrids];
 }
@@ -548,6 +551,7 @@ NSArray *ErReportSubviews(UIView *aView)
 - (IBAction)matClicked:(id)sender
 {
     isYTD = NO;
+    isFull = NO;
     
     [self displayGrids];
 }
@@ -651,7 +655,7 @@ NSArray *ErReportSubviews(UIView *aView)
 
 - (IBAction)allClicked:(id)sender {
     // Switch back to the brand view of the data here
-    erReportDataSource.erReportArray = erReportArray;
+    erReportDataSource.erReportAggr = erReportAggr;
     
     btnAll.hidden = YES;
     [erReportGrid reload];
@@ -682,7 +686,12 @@ NSArray *ErReportSubviews(UIView *aView)
 }
 
 
-- (IBAction)fullClicked:(id)sender {
+- (IBAction)fullClicked:(id)sender
+{
+    isYTD = NO;
+    isFull = YES;
+    
+    [self displayGrids];
 }
 
 #pragma mark -
@@ -774,29 +783,31 @@ NSArray *ErReportSubviews(UIView *aView)
     {
         if (currentFilter == FilterTypePractice)
         {
-            erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+            erReportDataSource.erReportAggr = [ErReportAggr ErReportGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCustomer)
         {
-            erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+            erReportDataSource.erReportAggr = [ErReportAggr ErReportGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeGroup)
         {
-            erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+            erReportDataSource.erReportAggr = [ErReportAggr ErReportGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeKeyAccountManager)
         {
-            erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+            erReportDataSource.erReportAggr = [ErReportAggr ErReportGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCountry)
         {
-            erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+            erReportDataSource.erReportAggr = [ErReportAggr ErReportGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCounty)
         {
-            erReportDataSource.erReportArray = [ErReportAggrPerBrand ErReportGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+            erReportDataSource.erReportAggr = [ErReportAggr ErReportGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         
+        erReportDataSource.isYTD = isYTD;
+        erReportDataSource.isFull = isFull;
         [erReportGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
         [HUDProcessing hide:YES];
 
@@ -844,8 +855,8 @@ NSArray *ErReportSubviews(UIView *aView)
 
 - (void)brandSelected:(ErReportAggrPerBrand *)brand
 {
-    erReportArray = erReportDataSource.erReportArray;
-    erReportDataSource.erReportArray = brand.aggrPerProducts;
+    erReportAggr = erReportDataSource.erReportAggr;
+    erReportDataSource.erReportAggr = [ErReportAggr aggrFromAggrPerBrandsArray:brand.aggrPerProducts YTDorMAT:isYTD isFull:isFull];
     btnAll.hidden = NO;
     [erReportGrid reload];
 }

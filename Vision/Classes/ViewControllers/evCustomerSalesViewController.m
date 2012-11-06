@@ -14,6 +14,7 @@
 #import "umfundiAppDelegate.h"
 #import "umfundiViewController.h"
 #import "CustomerSalesDataSource.h"
+#import "CustomerSalesAggr.h"
 #import "CustomerSalesAggrPerCustomer.h"
 #import "umfundiCommon.h"
 
@@ -81,6 +82,7 @@
     
     currentFilter = FilterTypePractice;
     isYTD = YES;
+    isFull = NO;
     
     customerSalesDataSource = [[CustomerSalesDataSource alloc] init];
     
@@ -543,18 +545,24 @@ NSArray *CustomerSalesSubviews(UIView *aView)
 
 - (IBAction)ytdClicked:(id)sender
 {
-    isYTD = YES;    
+    isYTD = YES;
+    isFull = NO;
     [self displayGrids];
 }
 
 - (IBAction)matClicked:(id)sender
 {
     isYTD = NO;
+    isFull = NO;
     [self displayGrids];
 }
 
 
-- (IBAction)fullClicked:(id)sender {
+- (IBAction)fullClicked:(id)sender
+{
+    isYTD = NO;
+    isFull = YES;
+    [self displayGrids];
 }
 
 - (IBAction)findClicked:(id)sender
@@ -761,29 +769,31 @@ NSArray *CustomerSalesSubviews(UIView *aView)
     {
         if (currentFilter == FilterTypePractice)
         {
-            customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+            customerSalesDataSource.customerSalesAggr = [CustomerSalesAggr CustomerSalesGroupByGroupFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCustomer)
         {
-            customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+            customerSalesDataSource.customerSalesAggr = [CustomerSalesAggr CustomerSalesGroupByGroupFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeGroup)
         {
-            customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+            customerSalesDataSource.customerSalesAggr = [CustomerSalesAggr CustomerSalesGroupByGroupFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeKeyAccountManager)
         {
-            customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+            customerSalesDataSource.customerSalesAggr = [CustomerSalesAggr CustomerSalesGroupByGroupFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCountry)
         {
-            customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+            customerSalesDataSource.customerSalesAggr = [CustomerSalesAggr CustomerSalesGroupByGroupFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCounty)
         {
-            customerSalesDataSource.customerSalesArray = [CustomerSalesAggrPerCustomer CustomerSalesGroupByGroupFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+            customerSalesDataSource.customerSalesAggr = [CustomerSalesAggr CustomerSalesGroupByGroupFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         
+        customerSalesDataSource.isYTD = isYTD;
+        customerSalesDataSource.isFull = isFull;
         [customerSalesGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
         [HUDProcessing hide:YES];
         

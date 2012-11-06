@@ -45,42 +45,6 @@
             case 1:
                 cellText = NSLocalizedString(@"Buying Group", @"");
                 break;
-            case 2:
-                cellText = NSLocalizedString(@"Jan", @"");
-                break;
-            case 3:
-                cellText = NSLocalizedString(@"Feb", @"");
-                break;
-            case 4:
-                cellText = NSLocalizedString(@"Mar", @"");
-                break;
-            case 5:
-                cellText = NSLocalizedString(@"Apr", @"");
-                break;
-            case 6:
-                cellText = NSLocalizedString(@"May", @"");
-                break;
-            case 7:
-                cellText = NSLocalizedString(@"Jun", @"");
-                break;
-            case 8:
-                cellText = NSLocalizedString(@"Jul", @"");
-                break;
-            case 9:
-                cellText = NSLocalizedString(@"Aug", @"");
-                break;
-            case 10:
-                cellText = NSLocalizedString(@"Sep", @"");
-                break;
-            case 11:
-                cellText = NSLocalizedString(@"Oct", @"");
-                break;
-            case 12:
-                cellText = NSLocalizedString(@"Nov", @"");
-                break;
-            case 13:
-                cellText = NSLocalizedString(@"Dec", @"");
-                break;
             case 14:
                 cellText = clientSalesAggr.year;
                 break;
@@ -97,7 +61,7 @@
                 cellText = NSLocalizedString(@"+/-", @"");
                 break;
             default:
-                cellText = @"";
+                cellText = clientSalesAggr.monthArray[gridCoord.column - 2];
                 break;
         }
         
@@ -163,42 +127,6 @@
                 case 1:
                     cellText = aggrPerGroup.group;
                     break;
-                case 2:
-                    cellText = aggrPerGroup.janString;
-                    break;
-                case 3:
-                    cellText = aggrPerGroup.febString;
-                    break;
-                case 4:
-                    cellText = aggrPerGroup.marString;
-                    break;
-                case 5:
-                    cellText = aggrPerGroup.aprString;
-                    break;
-                case 6:
-                    cellText = aggrPerGroup.mayString;
-                    break;
-                case 7:
-                    cellText = aggrPerGroup.junString;
-                    break;
-                case 8:
-                    cellText = aggrPerGroup.julString;
-                    break;
-                case 9:
-                    cellText = aggrPerGroup.augString;
-                    break;
-                case 10:
-                    cellText = aggrPerGroup.sepString;
-                    break;
-                case 11:
-                    cellText = aggrPerGroup.octString;
-                    break;
-                case 12:
-                    cellText = aggrPerGroup.novString;
-                    break;
-                case 13:
-                    cellText = aggrPerGroup.decString;
-                    break;
                 case 14:
                     cellText = aggrPerGroup.yearsumString;
                     break;
@@ -215,7 +143,7 @@
                     cellText = aggrPerGroup.diffsum;
                     break;
                 default:
-                    cellText = @"";
+                    cellText = aggrPerGroup.monthValStringArray[gridCoord.column - 2];
                     break;
             }
             

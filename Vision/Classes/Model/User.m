@@ -275,4 +275,15 @@ User *gLoggedinUser;
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+
+- (NSInteger)monthForData
+{
+    return [[self.timestamp substringToIndex:2] integerValue];
+}
+
+- (NSInteger)dayForData
+{
+    return [[self.timestamp substringFromIndex:2] integerValue];
+}
+
 @end

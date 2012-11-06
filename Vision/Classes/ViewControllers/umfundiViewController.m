@@ -234,8 +234,8 @@
     [self applyTheme:[[User loginUser].data isEqualToString:@"companion"]];
     
 
-    NSInteger month = [[[User loginUser].timestamp substringToIndex:2] integerValue];
-    NSInteger day = [[[User loginUser].timestamp substringFromIndex:2] integerValue];
+    NSInteger month = [[User loginUser] monthForData];
+    NSInteger day = [[User loginUser] dayForData];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [gregorian components:NSMonthCalendarUnit | NSDayCalendarUnit
@@ -567,7 +567,7 @@ NSArray *allSubviews(UIView *aView)
             keyField = @"practiceName";
             break;
         case 212:
-            keyField = @"province";
+            keyField = @"city";
             break;
         case 213:
             keyField = @"postcode";
@@ -592,8 +592,7 @@ NSArray *allSubviews(UIView *aView)
         }
     
     searchResults = resultCustomers;
-*/
-    
+*/    
     
     [self performSelectorOnMainThread:@selector(searchFinished:) withObject:sender waitUntilDone:YES];
 }

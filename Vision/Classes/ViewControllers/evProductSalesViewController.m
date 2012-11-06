@@ -13,6 +13,7 @@
 #import "Practice.h"
 #import "umfundiAppDelegate.h"
 #import "umfundiViewController.h"
+#import "ProductSalesAggr.h"
 #import "ProductSalesAggrPerBrand.h"
 #import "umfundiCommon.h"
 
@@ -111,6 +112,7 @@
     
     currentFilter = FilterTypePractice;
     isYTD = YES;
+    isFull = NO;
     
     productSalesDataSource = [[ProductSalesDataSource alloc] init];
     
@@ -581,6 +583,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
 - (IBAction)ytdClicked:(id)sender
 {
     isYTD = YES;
+    isFull = NO;
     
     [self displayGrids];
 }
@@ -588,11 +591,17 @@ NSArray *ProductSalesSubviews(UIView *aView)
 - (IBAction)matClicked:(id)sender
 {
     isYTD = NO;
+    isFull = NO;
     
     [self displayGrids];
 }
 
-- (IBAction)fullClicked:(id)sender {
+- (IBAction)fullClicked:(id)sender
+{
+    isYTD = NO;
+    isFull = YES;
+    
+    [self displayGrids];
 }
 
 - (IBAction)findClicked:(id)sender
@@ -696,7 +705,7 @@ NSArray *ProductSalesSubviews(UIView *aView)
 - (IBAction)allClicked:(id)sender {
     
     // Switch back to the brand view of the data here
-    productSalesDataSource.productSalesArray = productSalesArray;
+    productSalesDataSource.productSalesAggr = productSalesAggr;
     
     btnAll.hidden = YES;
     [productSalesGrid reload];
@@ -816,29 +825,31 @@ NSArray *ProductSalesSubviews(UIView *aView)
     {
         if (currentFilter == FilterTypePractice)
         {
-            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+            productSalesDataSource.productSalesAggr = [ProductSalesAggr ProductSalesGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCustomer)
         {
-            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+            productSalesDataSource.productSalesAggr = [ProductSalesAggr ProductSalesGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeGroup)
         {
-            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+            productSalesDataSource.productSalesAggr = [ProductSalesAggr ProductSalesGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeKeyAccountManager)
         {
-            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+            productSalesDataSource.productSalesAggr = [ProductSalesAggr ProductSalesGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCountry)
         {
-            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+            productSalesDataSource.productSalesAggr = [ProductSalesAggr ProductSalesGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         else if (currentFilter == FilterTypeCounty)
         {
-            productSalesDataSource.productSalesArray = [ProductSalesAggrPerBrand ProductSalesGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+            productSalesDataSource.productSalesAggr = [ProductSalesAggr ProductSalesGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD isFull:isFull];
         }
         
+        productSalesDataSource.isYTD = isYTD;
+        productSalesDataSource.isFull = isFull;
         [productSalesGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
         [HUDProcessing hide:YES];
 
@@ -885,8 +896,8 @@ NSArray *ProductSalesSubviews(UIView *aView)
 
 - (void)brandSelected:(ProductSalesAggrPerBrand *)brand
 {
-    productSalesArray = productSalesDataSource.productSalesArray;
-    productSalesDataSource.productSalesArray = brand.aggrPerProducts;
+    productSalesAggr = productSalesDataSource.productSalesAggr;
+    productSalesDataSource.productSalesAggr = [ProductSalesAggr aggrFromAggrPerBrandsArray:brand.aggrPerProducts YTDorMAT:isYTD isFull:isFull];
     [productSalesGrid reload];
     btnAll.hidden = NO;
 }

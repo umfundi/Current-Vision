@@ -7,14 +7,17 @@
 
 #import "ErReportDataSource.h"
 
+#import "ErReportAggr.h"
 #import "ErReportAggrPerYear.h"
 #import "ErReportAggrPerBrand.h"
 #import "UIUnderlinedButton.h"
 
 @implementation ErReportDataSource
 
-@synthesize erReportArray;
+@synthesize erReportAggr;
 @synthesize delegate;
+@synthesize isYTD;
+@synthesize isFull;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -28,52 +31,52 @@
         switch (gridCoord.column)
         {
             case 0:
-                cellText = NSLocalizedString(@"Year", @"");
+                cellText = (!isYTD && !isFull) ? NSLocalizedString(@"Period", @"") : NSLocalizedString(@"Year", @"");
                 break;
             case 1:
-                cellText = NSLocalizedString(@"Jan", @"");
+                cellText = erReportAggr.monthArray[0];
                 break;
             case 2:
-                cellText = NSLocalizedString(@"Feb", @"");
+                cellText = erReportAggr.monthArray[1];
                 break;
             case 3:
-                cellText = NSLocalizedString(@"Mar", @"");
+                cellText = erReportAggr.monthArray[2];
                 break;
             case 4:
                 cellText = NSLocalizedString(@"Tot. Q-1", @"");
                 break;
             case 5:
-                cellText = NSLocalizedString(@"Apr", @"");
+                cellText = erReportAggr.monthArray[3];
                 break;
             case 6:
-                cellText = NSLocalizedString(@"May", @"");
+                cellText = erReportAggr.monthArray[4];
                 break;
             case 7:
-                cellText = NSLocalizedString(@"Jun", @"");
+                cellText = erReportAggr.monthArray[5];
                 break;
             case 8:
                 cellText = NSLocalizedString(@"Tot. Q-2", @"");
                 break;
             case 9:
-                cellText = NSLocalizedString(@"Jul", @"");
+                cellText = erReportAggr.monthArray[6];
                 break;
             case 10:
-                cellText = NSLocalizedString(@"Aug", @"");
+                cellText = erReportAggr.monthArray[7];
                 break;
             case 11:
-                cellText = NSLocalizedString(@"Sep", @"");
+                cellText = erReportAggr.monthArray[8];
                 break;
             case 12:
                 cellText = NSLocalizedString(@"Tot. Q-3", @"");
                 break;
             case 13:
-                cellText = NSLocalizedString(@"Oct", @"");
+                cellText = erReportAggr.monthArray[9];
                 break;
             case 14:
-                cellText = NSLocalizedString(@"Nov", @"");
+                cellText = erReportAggr.monthArray[10];
                 break;
             case 15:
-                cellText = NSLocalizedString(@"Dec", @"");
+                cellText = erReportAggr.monthArray[11];
                 break;
             case 16:
                 cellText = NSLocalizedString(@"Tot. Q-4", @"");
@@ -97,7 +100,7 @@
     }
     else
     {
-        ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:gridCoord.section - 1];
+        ErReportAggrPerBrand *aggrPerBrand = [erReportAggr.aggrPerBrands objectAtIndex:gridCoord.section - 1];
         ErReportAggrPerYear *aggrPerYear = [aggrPerBrand.aggrPerYears objectAtIndex:gridCoord.rowIndex];
         
         switch (gridCoord.column)
@@ -106,49 +109,49 @@
                 cellText = aggrPerYear.year;
                 break;
             case 1:
-                cellText = aggrPerYear.janString;
+                cellText = aggrPerYear.monthValStringArray[0];
                 break;
             case 2:
-                cellText = aggrPerYear.febString;
+                cellText = aggrPerYear.monthValStringArray[1];
                 break;
             case 3:
-                cellText = aggrPerYear.marString;
+                cellText = aggrPerYear.monthValStringArray[2];
                 break;
             case 4:
                 cellText = aggrPerYear.totq1;
                 break;
             case 5:
-                cellText = aggrPerYear.aprString;
+                cellText = aggrPerYear.monthValStringArray[3];
                 break;
             case 6:
-                cellText = aggrPerYear.mayString;
+                cellText = aggrPerYear.monthValStringArray[4];
                 break;
             case 7:
-                cellText = aggrPerYear.junString;
+                cellText = aggrPerYear.monthValStringArray[5];
                 break;
             case 8:
                 cellText = aggrPerYear.totq2;
                 break;
             case 9:
-                cellText = aggrPerYear.julString;
+                cellText = aggrPerYear.monthValStringArray[6];
                 break;
             case 10:
-                cellText = aggrPerYear.augString;
+                cellText = aggrPerYear.monthValStringArray[7];
                 break;
             case 11:
-                cellText = aggrPerYear.sepString;
+                cellText = aggrPerYear.monthValStringArray[8];
                 break;
             case 12:
                 cellText = aggrPerYear.totq3;
                 break;
             case 13:
-                cellText = aggrPerYear.octString;
+                cellText = aggrPerYear.monthValStringArray[9];
                 break;
             case 14:
-                cellText = aggrPerYear.novString;
+                cellText = aggrPerYear.monthValStringArray[10];
                 break;
             case 15:
-                cellText = aggrPerYear.decString;
+                cellText = aggrPerYear.monthValStringArray[11];
                 break;
             case 16:
                 cellText = aggrPerYear.totq4;
@@ -223,7 +226,7 @@
 
 - (NSUInteger) numberOfSectionsInShinobiGrid:(ShinobiGrid *) grid
 {
-    return [erReportArray count] + 1;
+    return [erReportAggr.aggrPerBrands count] + 1;
 }
 
 - (NSUInteger)shinobiGrid:(ShinobiGrid *)grid numberOfRowsInSection:(int) sectionIndex
@@ -231,7 +234,7 @@
     if (sectionIndex == 0)
         return 1;
     
-    ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:sectionIndex - 1];
+    ErReportAggrPerBrand *aggrPerBrand = [erReportAggr.aggrPerBrands objectAtIndex:sectionIndex - 1];
     return [aggrPerBrand.aggrPerYears count];
 }
 
@@ -241,7 +244,7 @@
     if (section == 0)
         return nil;
     
-    ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:section - 1];
+    ErReportAggrPerBrand *aggrPerBrand = [erReportAggr.aggrPerBrands objectAtIndex:section - 1];
     return aggrPerBrand.brand;
 }
 
@@ -251,7 +254,7 @@
     if (!title)
         return nil;
     
-    ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:section - 1];
+    ErReportAggrPerBrand *aggrPerBrand = [erReportAggr.aggrPerBrands objectAtIndex:section - 1];
 
     UIView *headerView = [[UIView alloc] initWithFrame:frame];
     headerView.backgroundColor = [UIColor clearColor];
@@ -287,7 +290,7 @@
 
 - (void)titleButtonClicked:(id)sender
 {
-    ErReportAggrPerBrand *aggrPerBrand = [erReportArray objectAtIndex:[sender tag] - 1];
+    ErReportAggrPerBrand *aggrPerBrand = [erReportAggr.aggrPerBrands objectAtIndex:[sender tag] - 1];
     
     [delegate performSelector:@selector(brandSelected:) withObject:aggrPerBrand];
 }

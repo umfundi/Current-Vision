@@ -51,4 +51,7 @@
 + (NSString *)lastLoginUser;
 + (void)setLastLoginUser:(NSString *)user;
 
+- (NSInteger)monthForData;
+- (NSInteger)dayForData;
+
 @end

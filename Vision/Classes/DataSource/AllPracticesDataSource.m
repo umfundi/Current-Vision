@@ -121,10 +121,10 @@
                 cellText = practice.add1;
                 break;
             case 3:
-                cellText = practice.province;
+                cellText = practice.city;
                 break;
             case 4:
-                cellText = practice.city;
+                cellText = practice.province;
                 break;
             case 5:
                 cellText = practice.postcode;

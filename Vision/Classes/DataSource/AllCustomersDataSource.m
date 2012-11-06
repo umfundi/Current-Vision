@@ -131,10 +131,10 @@
                 cellText = customer.address1;
                 break;
             case 3:
-                cellText = customer.province;
+                cellText = customer.city;
                 break;
             case 4:
-                cellText = customer.city;
+                cellText = customer.province;
                 break;
             case 5:
                 cellText = customer.postcode;

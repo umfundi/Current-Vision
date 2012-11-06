@@ -14,8 +14,10 @@
 @property (nonatomic, retain) NSString *year;
 @property (nonatomic, retain) NSString *lastyear;
 
+@property (nonatomic, retain) NSArray *monthArray;
 @property (nonatomic, retain) NSMutableArray *aggrPerGroups;
 
+- (id)initWithYTDorMAT:(BOOL)isYTD;
 + (ClientSalesAggr *)AggrWithYTDorMAT:(BOOL)isYTD;
 + (ClientSalesAggr *)AggrByBrands:(NSArray *)brands YTDorMAT:(BOOL)isYTD;
 

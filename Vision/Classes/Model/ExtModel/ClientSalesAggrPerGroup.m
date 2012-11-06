@@ -13,30 +13,7 @@
 @synthesize group;
 @synthesize rank;
 
-@synthesize jan;
-@synthesize janString;
-@synthesize feb;
-@synthesize febString;
-@synthesize mar;
-@synthesize marString;
-@synthesize apr;
-@synthesize aprString;
-@synthesize may;
-@synthesize mayString;
-@synthesize jun;
-@synthesize junString;
-@synthesize jul;
-@synthesize julString;
-@synthesize aug;
-@synthesize augString;
-@synthesize sep;
-@synthesize sepString;
-@synthesize oct;
-@synthesize octString;
-@synthesize nov;
-@synthesize novString;
-@synthesize dec;
-@synthesize decString;
+@synthesize monthValArray, monthValStringArray;
 @synthesize yearsum;
 @synthesize yearsumString;
 @synthesize totpro;
@@ -46,6 +23,19 @@
 @synthesize diffsum;
 
 @synthesize aggrPerPractices;
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        monthValArray = (double *)malloc(sizeof(double) * 13);
+        for (NSInteger i = 0 ; i < 12 ; i ++ )
+            monthValArray[i] = 0;
+    }
+    
+    return self;
+}
 
 - (void)addClientSales:(NSDictionary *)report YTDorMAT:(BOOL)isYTD
 {
@@ -72,35 +62,31 @@
     
     if (isYTD)
     {
-        jan += [[report objectForKey:@"janval"] doubleValue];
-        feb += [[report objectForKey:@"febval"] doubleValue];
-        mar += [[report objectForKey:@"marval"] doubleValue];
-        apr += [[report objectForKey:@"aprval"] doubleValue];
-        may += [[report objectForKey:@"mayval"] doubleValue];
-        jun += [[report objectForKey:@"junval"] doubleValue];
-        jul += [[report objectForKey:@"julval"] doubleValue];
-        aug += [[report objectForKey:@"augval"] doubleValue];
-        sep += [[report objectForKey:@"sepval"] doubleValue];
-        oct += [[report objectForKey:@"octval"] doubleValue];
-        nov += [[report objectForKey:@"novval"] doubleValue];
-        dec += [[report objectForKey:@"decval"] doubleValue];
+        monthValArray[0] += [[report objectForKey:@"janval"] doubleValue];
+        monthValArray[1] += [[report objectForKey:@"febval"] doubleValue];
+        monthValArray[2] += [[report objectForKey:@"marval"] doubleValue];
+        monthValArray[3] += [[report objectForKey:@"aprval"] doubleValue];
+        monthValArray[4] += [[report objectForKey:@"mayval"] doubleValue];
+        monthValArray[5] += [[report objectForKey:@"junval"] doubleValue];
+        monthValArray[6] += [[report objectForKey:@"julval"] doubleValue];
+        monthValArray[7] += [[report objectForKey:@"augval"] doubleValue];
+        monthValArray[8] += [[report objectForKey:@"sepval"] doubleValue];
+        monthValArray[9] += [[report objectForKey:@"octval"] doubleValue];
+        monthValArray[10] += [[report objectForKey:@"novval"] doubleValue];
+        monthValArray[11] += [[report objectForKey:@"decval"] doubleValue];
         
         lastyearsum += [[report objectForKey:@"ytdvalprv"] doubleValue];
     }
     else
     {
-        jan += [[report objectForKey:@"m_11val"] doubleValue];
-        feb += [[report objectForKey:@"m_10val"] doubleValue];
-        mar += [[report objectForKey:@"m_9val"] doubleValue];
-        apr += [[report objectForKey:@"m_8val"] doubleValue];
-        may += [[report objectForKey:@"m_7val"] doubleValue];
-        jun += [[report objectForKey:@"m_6val"] doubleValue];
-        jul += [[report objectForKey:@"m_5val"] doubleValue];
-        aug += [[report objectForKey:@"m_4val"] doubleValue];
-        sep += [[report objectForKey:@"m_3val"] doubleValue];
-        oct += [[report objectForKey:@"m_2val"] doubleValue];
-        nov += [[report objectForKey:@"m_1val"] doubleValue];
-        dec += [[report objectForKey:@"m0val"] doubleValue];
+        for (NSInteger i = 0 ; i < 12 ; i ++ )
+        {
+            NSInteger col_index = 11 - i;
+            if (col_index == 0)
+                monthValArray[i] += [[report objectForKey:@"m0val"] doubleValue];
+            else
+                monthValArray[i] += [[report objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+        }
         
         lastyearsum += [[report objectForKey:@"matvalprv"] doubleValue];
     }
@@ -144,18 +130,18 @@
     {
         if ([period isEqualToString:curYear])
         {
-            jan += [[report objectForKey:@"janval"] doubleValue];
-            feb += [[report objectForKey:@"febval"] doubleValue];
-            mar += [[report objectForKey:@"marval"] doubleValue];
-            apr += [[report objectForKey:@"aprval"] doubleValue];
-            may += [[report objectForKey:@"mayval"] doubleValue];
-            jun += [[report objectForKey:@"junval"] doubleValue];
-            jul += [[report objectForKey:@"julval"] doubleValue];
-            aug += [[report objectForKey:@"augval"] doubleValue];
-            sep += [[report objectForKey:@"sepval"] doubleValue];
-            oct += [[report objectForKey:@"octval"] doubleValue];
-            nov += [[report objectForKey:@"novval"] doubleValue];
-            dec += [[report objectForKey:@"decval"] doubleValue];
+            monthValArray[0] += [[report objectForKey:@"janval"] doubleValue];
+            monthValArray[1] += [[report objectForKey:@"febval"] doubleValue];
+            monthValArray[2] += [[report objectForKey:@"marval"] doubleValue];
+            monthValArray[3] += [[report objectForKey:@"aprval"] doubleValue];
+            monthValArray[4] += [[report objectForKey:@"mayval"] doubleValue];
+            monthValArray[5] += [[report objectForKey:@"junval"] doubleValue];
+            monthValArray[6] += [[report objectForKey:@"julval"] doubleValue];
+            monthValArray[7] += [[report objectForKey:@"augval"] doubleValue];
+            monthValArray[8] += [[report objectForKey:@"sepval"] doubleValue];
+            monthValArray[9] += [[report objectForKey:@"octval"] doubleValue];
+            monthValArray[10] += [[report objectForKey:@"novval"] doubleValue];
+            monthValArray[11] += [[report objectForKey:@"decval"] doubleValue];
         }
         else if ([period isEqualToString:lastYear])
         {
@@ -177,33 +163,25 @@
     {
         if ([period isEqualToString:curYear])
         {
-            jan += [[report objectForKey:@"m_11val"] doubleValue];
-            feb += [[report objectForKey:@"m_10val"] doubleValue];
-            mar += [[report objectForKey:@"m_9val"] doubleValue];
-            apr += [[report objectForKey:@"m_8val"] doubleValue];
-            may += [[report objectForKey:@"m_7val"] doubleValue];
-            jun += [[report objectForKey:@"m_6val"] doubleValue];
-            jul += [[report objectForKey:@"m_5val"] doubleValue];
-            aug += [[report objectForKey:@"m_4val"] doubleValue];
-            sep += [[report objectForKey:@"m_3val"] doubleValue];
-            oct += [[report objectForKey:@"m_2val"] doubleValue];
-            nov += [[report objectForKey:@"m_1val"] doubleValue];
-            dec += [[report objectForKey:@"m0val"] doubleValue];
+            for (NSInteger i = 0 ; i < 12 ; i ++ )
+            {
+                NSInteger col_index = 11 - i;
+                if (col_index == 0)
+                    monthValArray[i] += [[report objectForKey:@"m0val"] doubleValue];
+                else
+                    monthValArray[i] += [[report objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+            }
         }
         else if ([period isEqualToString:lastYear])
         {
-            lastyearsum += [[report objectForKey:@"m_11val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_10val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_9val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_8val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_7val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_6val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_5val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_4val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_3val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_2val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m_1val"] doubleValue];
-            lastyearsum += [[report objectForKey:@"m0val"] doubleValue];
+            for (NSInteger i = 0 ; i < 12 ; i ++ )
+            {
+                NSInteger col_index = 11 - i;
+                if (col_index == 0)
+                    lastyearsum += [[report objectForKey:@"m0val"] doubleValue];
+                else
+                    lastyearsum += [[report objectForKey:[NSString stringWithFormat:@"m_%dval", col_index]] doubleValue];
+            }
         }
     }
 }
@@ -232,18 +210,8 @@
         NSInteger _rank = 1;
         for (ClientSalesAggrPerGroup *aggrPerGroup in aggrPerPractices)
         {
-            aggrTotal.jan += aggrPerGroup.jan;
-            aggrTotal.feb += aggrPerGroup.feb;
-            aggrTotal.mar += aggrPerGroup.mar;
-            aggrTotal.apr += aggrPerGroup.apr;
-            aggrTotal.may += aggrPerGroup.may;
-            aggrTotal.jun += aggrPerGroup.jun;
-            aggrTotal.jul += aggrPerGroup.jul;
-            aggrTotal.aug += aggrPerGroup.aug;
-            aggrTotal.sep += aggrPerGroup.sep;
-            aggrTotal.oct += aggrPerGroup.oct;
-            aggrTotal.nov += aggrPerGroup.nov;
-            aggrTotal.dec += aggrPerGroup.dec;
+            for (NSInteger i = 0 ; i < 12 ; i ++ )
+                aggrTotal.monthValArray[i] += aggrPerGroup.monthValArray[i];
             
             aggrPerGroup.rank = [NSString stringWithFormat:@"%d", _rank];
             _rank ++;
@@ -264,21 +232,15 @@
         
         [aggrPerPractices insertObject:aggrTotal atIndex:0];
     }
+
+    NSMutableArray *stringArray = [[NSMutableArray alloc] initWithCapacity:12];
+    for (NSInteger i = 0 ; i < 12 ; i ++ )
+    {
+        [stringArray addObject:[NSString stringWithFormat:@"%.0f", round(monthValArray[i])]];
+        yearsum += monthValArray[i];
+    }
+    monthValStringArray = stringArray;
     
-    janString = [NSString stringWithFormat:@"%.0f", round(jan)];
-    febString = [NSString stringWithFormat:@"%.0f", round(feb)];
-    marString = [NSString stringWithFormat:@"%.0f", round(mar)];
-    aprString = [NSString stringWithFormat:@"%.0f", round(apr)];
-    mayString = [NSString stringWithFormat:@"%.0f", round(may)];
-    junString = [NSString stringWithFormat:@"%.0f", round(jun)];
-    julString = [NSString stringWithFormat:@"%.0f", round(jul)];
-    augString = [NSString stringWithFormat:@"%.0f", round(aug)];
-    sepString = [NSString stringWithFormat:@"%.0f", round(sep)];
-    octString = [NSString stringWithFormat:@"%.0f", round(oct)];
-    novString = [NSString stringWithFormat:@"%.0f", round(nov)];
-    decString = [NSString stringWithFormat:@"%.0f", round(dec)];
-    
-    yearsum = jan + feb + mar + apr + may + jun + jul + aug + sep + oct + nov + dec;
     yearsumString = [NSString stringWithFormat:@"%.0f", round(yearsum)];
 
     lastyearsumString = [NSString stringWithFormat:@"%.0f", round(lastyearsum)];

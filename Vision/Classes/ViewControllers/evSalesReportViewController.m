@@ -14,7 +14,7 @@
 #import "umfundiAppDelegate.h"
 #import "umfundiViewController.h"
 #import "SalesTrendsReportDataSource.h"
-#import "SalesTrendAggrPerBrand.h"
+#import "SalesTrendAggr.h"
 #import "umfundiCommon.h"
 
 #define FilterTypePractice          0
@@ -815,32 +815,32 @@ NSArray *SalesReportSubviews(UIView *aView)
     {
         if (currentFilter == FilterTypePractice)
         {
-            monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
+            monthReportDataSource.salesTrendAggr = [SalesTrendAggr SalesTrendsGroupByBrandFrom:@"id_practice" andValue:selectedPractice.practiceCode YTDorMAT:isYTD];
         }
         else if (currentFilter == FilterTypeCustomer)
         {
-            monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
+            monthReportDataSource.salesTrendAggr = [SalesTrendAggr SalesTrendsGroupByBrandFrom:@"id_customer" andValue:selectedCustomer.id_customer YTDorMAT:isYTD];
         }
         else if (currentFilter == FilterTypeGroup)
         {
-            monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
+            monthReportDataSource.salesTrendAggr = [SalesTrendAggr SalesTrendsGroupByBrandFrom:@"groupName" andValue:selectedFilterVal YTDorMAT:isYTD];
         }
         else if (currentFilter == FilterTypeKeyAccountManager)
         {
-            monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
+            monthReportDataSource.salesTrendAggr = [SalesTrendAggr SalesTrendsGroupByBrandFrom:@"id_user" andValue:selectedUser.id_user YTDorMAT:isYTD];
         }
         else if (currentFilter == FilterTypeCountry)
         {
-            monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
+            monthReportDataSource.salesTrendAggr = [SalesTrendAggr SalesTrendsGroupByBrandFromCustomers:@"country" andValue:selectedFilterVal YTDorMAT:isYTD];
         }
         else if (currentFilter == FilterTypeCounty)
         {
-            monthReportDataSource.reportArray = [SalesTrendAggrPerBrand SalesTrendsGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
+            monthReportDataSource.salesTrendAggr = [SalesTrendAggr SalesTrendsGroupByBrandFromCustomers:@"province" andValue:selectedFilterVal YTDorMAT:isYTD];
         }
         
         [monthReportGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
 
-        yearReportDataSource.reportArray = [SalesTrendAggrPerBrand yearReportsFrom:monthReportDataSource.reportArray];
+        yearReportDataSource.salesTrendAggr = [SalesTrendAggr yearReportsFrom:monthReportDataSource.salesTrendAggr.aggrPerBrands YTDorMAT:isYTD];
         yearReportDataSource.figureTitle = NSLocalizedString(isYTD ? @"YTD. Figures" : @"MAT. Figures", @"");
         [yearReportGrid performSelectorOnMainThread:@selector(reload) withObject:nil waitUntilDone:YES];
         

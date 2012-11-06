@@ -7,15 +7,18 @@
 
 #import "ProductSalesDataSource.h"
 
+#import "ProductSalesAggr.h"
 #import "ProductSalesAggrPerYear.h"
 #import "ProductSalesAggrPerBrand.h"
 #import "UIUnderlinedButton.h"
 
 @implementation ProductSalesDataSource
 
-@synthesize productSalesArray;
+@synthesize productSalesAggr;
 @synthesize numberFormat;
 @synthesize delegate;
+@synthesize isYTD;
+@synthesize isFull;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -29,52 +32,52 @@
         switch (gridCoord.column)
         {
             case 0:
-                cellText = NSLocalizedString(@"Year", @"");
+                cellText = (!isYTD && !isFull) ? NSLocalizedString(@"Period", @"") : NSLocalizedString(@"Year", @"");
                 break;
             case 1:
-                cellText = NSLocalizedString(@"Jan", @"");
+                cellText = productSalesAggr.monthArray[0];
                 break;
             case 2:
-                cellText = NSLocalizedString(@"Feb", @"");
+                cellText = productSalesAggr.monthArray[1];
                 break;
             case 3:
-                cellText = NSLocalizedString(@"Mar", @"");
+                cellText = productSalesAggr.monthArray[2];
                 break;
             case 4:
                 cellText = NSLocalizedString(@"Tot. Q-1", @"");
                 break;
             case 5:
-                cellText = NSLocalizedString(@"Apr", @"");
+                cellText = productSalesAggr.monthArray[3];
                 break;
             case 6:
-                cellText = NSLocalizedString(@"May", @"");
+                cellText = productSalesAggr.monthArray[4];
                 break;
             case 7:
-                cellText = NSLocalizedString(@"Jun", @"");
+                cellText = productSalesAggr.monthArray[5];
                 break;
             case 8:
                 cellText = NSLocalizedString(@"Tot. Q-2", @"");
                 break;
             case 9:
-                cellText = NSLocalizedString(@"Jul", @"");
+                cellText = productSalesAggr.monthArray[6];
                 break;
             case 10:
-                cellText = NSLocalizedString(@"Aug", @"");
+                cellText = productSalesAggr.monthArray[7];
                 break;
             case 11:
-                cellText = NSLocalizedString(@"Sep", @"");
+                cellText = productSalesAggr.monthArray[8];
                 break;
             case 12:
                 cellText = NSLocalizedString(@"Tot. Q-3", @"");
                 break;
             case 13:
-                cellText = NSLocalizedString(@"Oct", @"");
+                cellText = productSalesAggr.monthArray[9];
                 break;
             case 14:
-                cellText = NSLocalizedString(@"Nov", @"");
+                cellText = productSalesAggr.monthArray[10];
                 break;
             case 15:
-                cellText = NSLocalizedString(@"Dec", @"");
+                cellText = productSalesAggr.monthArray[11];
                 break;
             case 16:
                 cellText = NSLocalizedString(@"Tot. Q-4", @"");
@@ -98,7 +101,7 @@
     }
     else
     {
-        ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:gridCoord.section - 1];
+        ProductSalesAggrPerBrand *aggrPerBrand = [productSalesAggr.aggrPerBrands objectAtIndex:gridCoord.section - 1];
         ProductSalesAggrPerYear *aggrPerYear = [aggrPerBrand.aggrPerYears objectAtIndex:gridCoord.rowIndex];
         
         switch (gridCoord.column)
@@ -107,49 +110,49 @@
                 cellText = aggrPerYear.year;
                 break;
             case 1:
-                cellText = aggrPerYear.janString;
+                cellText = aggrPerYear.monthValStringArray[0];
                 break;
             case 2:
-                cellText = aggrPerYear.febString;
+                cellText = aggrPerYear.monthValStringArray[1];
                 break;
             case 3:
-                cellText = aggrPerYear.marString;
+                cellText = aggrPerYear.monthValStringArray[2];
                 break;
             case 4:
                 cellText = aggrPerYear.totq1;
                 break;
             case 5:
-                cellText = aggrPerYear.aprString;
+                cellText = aggrPerYear.monthValStringArray[3];
                 break;
             case 6:
-                cellText = aggrPerYear.mayString;
+                cellText = aggrPerYear.monthValStringArray[4];
                 break;
             case 7:
-                cellText = aggrPerYear.junString;
+                cellText = aggrPerYear.monthValStringArray[5];
                 break;
             case 8:
                 cellText = aggrPerYear.totq2;
                 break;
             case 9:
-                cellText = aggrPerYear.julString;
+                cellText = aggrPerYear.monthValStringArray[6];
                 break;
             case 10:
-                cellText = aggrPerYear.augString;
+                cellText = aggrPerYear.monthValStringArray[7];
                 break;
             case 11:
-                cellText = aggrPerYear.sepString;
+                cellText = aggrPerYear.monthValStringArray[8];
                 break;
             case 12:
                 cellText = aggrPerYear.totq3;
                 break;
             case 13:
-                cellText = aggrPerYear.octString;
+                cellText = aggrPerYear.monthValStringArray[9];
                 break;
             case 14:
-                cellText = aggrPerYear.novString;
+                cellText = aggrPerYear.monthValStringArray[10];
                 break;
             case 15:
-                cellText = aggrPerYear.decString;
+                cellText = aggrPerYear.monthValStringArray[11];
                 break;
             case 16:
                 cellText = aggrPerYear.totq4;
@@ -227,7 +230,7 @@
 
 - (NSUInteger) numberOfSectionsInShinobiGrid:(ShinobiGrid *) grid
 {
-    return [productSalesArray count] + 1;
+    return [productSalesAggr.aggrPerBrands count] + 1;
 }
 
 - (NSUInteger)shinobiGrid:(ShinobiGrid *)grid numberOfRowsInSection:(int) sectionIndex
@@ -235,7 +238,7 @@
     if (sectionIndex == 0)
         return 1;
     
-    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:sectionIndex - 1];
+    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesAggr.aggrPerBrands objectAtIndex:sectionIndex - 1];
     return [aggrPerBrand.aggrPerYears count];
 }
 
@@ -245,7 +248,7 @@
     if (section == 0)
         return nil;
 
-    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:section - 1];
+    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesAggr.aggrPerBrands objectAtIndex:section - 1];
     return aggrPerBrand.brand;
 }
 
@@ -255,7 +258,7 @@
     if (!title)
         return nil;
     
-    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:section - 1];
+    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesAggr.aggrPerBrands objectAtIndex:section - 1];
 
     UIView *headerView = [[UIView alloc] initWithFrame:frame];
     headerView.backgroundColor = [UIColor clearColor];
@@ -298,7 +301,7 @@
     UITapGestureRecognizer *gesture = sender;
     NSInteger tag = [gesture.view tag];
     
-    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesArray objectAtIndex:tag - 1];
+    ProductSalesAggrPerBrand *aggrPerBrand = [productSalesAggr.aggrPerBrands objectAtIndex:tag - 1];
 
     [delegate performSelector:@selector(brandSelected:) withObject:aggrPerBrand];
 }

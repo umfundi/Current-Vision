@@ -9,6 +9,7 @@
 
 #import <ShinobiGrids/ShinobiGrid.h>
 
+@class ProductSalesAggr;
 @class ProductSalesAggrPerBrand;
 
 @protocol ProductSalesDataSourceDelegate <NSObject>
@@ -19,9 +20,11 @@
 
 @interface ProductSalesDataSource : NSObject <SGridDataSource>
 
-@property (nonatomic, strong) NSArray *productSalesArray;
+@property (nonatomic, strong) ProductSalesAggr *productSalesAggr;
 @property (nonatomic, strong) NSNumberFormatter *numberFormat;
 @property (nonatomic, assign) id<ProductSalesDataSourceDelegate> delegate;
+@property (nonatomic, assign) BOOL isYTD;
+@property (nonatomic, assign) BOOL isFull;
 
 - (NSString *)shinobiGrid:(ShinobiGrid *)grid textForGridCoord:(const SGridCoord *) gridCoord;
 

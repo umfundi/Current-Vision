@@ -283,7 +283,7 @@ NSArray *ClientSalesSubviews(UIView *aView)
 
 - (void)groupSelected:(ClientSalesAggrPerGroup *)group
 {
-    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] init];
+    ClientSalesAggr *aggr = [[ClientSalesAggr alloc] initWithYTDorMAT:isYTD];
     aggr.year = clientSalesDataSource.clientSalesAggr.year;
     aggr.lastyear = clientSalesDataSource.clientSalesAggr.lastyear;
     aggr.aggrPerGroups = group.aggrPerPractices;

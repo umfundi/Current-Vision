@@ -8,11 +8,12 @@
 #import "SalesTrendsReportDataSource.h"
 
 #import "SalesTrendAggrPerBrand.h"
+#import "SalesTrendAggr.h"
 
 @implementation SalesTrendsReportDataSource
 
 @synthesize figureTitle;
-@synthesize reportArray;
+@synthesize salesTrendAggr;
 
 #pragma mark -
 #pragma mark ShinobiGridDataSource
@@ -28,47 +29,11 @@
             case 0:
                 cellText = figureTitle;
                 break;
-            case 1:
-                cellText = NSLocalizedString(@"Jan", @"");
-                break;
-            case 2:
-                cellText = NSLocalizedString(@"Feb", @"");
-                break;
-            case 3:
-                cellText = NSLocalizedString(@"Mar", @"");
-                break;
-            case 4:
-                cellText = NSLocalizedString(@"Apr", @"");
-                break;
-            case 5:
-                cellText = NSLocalizedString(@"May", @"");
-                break;
-            case 6:
-                cellText = NSLocalizedString(@"Jun", @"");
-                break;
-            case 7:
-                cellText = NSLocalizedString(@"Jul", @"");
-                break;
-            case 8:
-                cellText = NSLocalizedString(@"Aug", @"");
-                break;
-            case 9:
-                cellText = NSLocalizedString(@"Sep", @"");
-                break;
-            case 10:
-                cellText = NSLocalizedString(@"Oct", @"");
-                break;
-            case 11:
-                cellText = NSLocalizedString(@"Nov", @"");
-                break;
-            case 12:
-                cellText = NSLocalizedString(@"Dec", @"");
-                break;
             case 13:
-                cellText = NSLocalizedString(@"Growth%", @"");
+                cellText = NSLocalizedString(@"Growth", @"");
                 break;
             default:
-                cellText = @"";
+                cellText = salesTrendAggr.monthArray[gridCoord.column - 1];
                 break;
         }
     }
@@ -78,66 +43,18 @@
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         
-        SalesTrendAggrPerBrand *aggr = [reportArray objectAtIndex:gridCoord.rowIndex - 1];
+        SalesTrendAggrPerBrand *aggrPerBrand = [salesTrendAggr.aggrPerBrands objectAtIndex:gridCoord.rowIndex - 1];
+
         switch (gridCoord.column)
         {
             case 0:
-                cellText = aggr.brand;
-                break;
-            case 1:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jan]];
-                //                cellText = aggr.janString;
-                break;
-            case 2:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.feb]];
-                //                cellText = aggr.febString;
-                break;
-            case 3:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.mar]];
-                //                cellText = aggr.marString;
-                break;
-            case 4:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.apr]];
-                //                cellText = aggr.aprString;
-                break;
-            case 5:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.may]];
-                //                cellText = aggr.mayString;
-                break;
-            case 6:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jun]];
-                //                cellText = aggr.junString;
-                break;
-            case 7:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jul]];
-                //                cellText = aggr.julString;
-                break;
-            case 8:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.aug]];
-                //                cellText = aggr.augString;
-                break;
-            case 9:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.sep]];
-                //                cellText = aggr.sepString;
-                break;
-            case 10:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.oct]];
-                //                cellText = aggr.octString;
-                break;
-            case 11:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.nov]];
-                //                cellText = aggr.novString;
-                break;
-            case 12:
-                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.dec]];
-                //                cellText = aggr.decString;
+                cellText = aggrPerBrand.brand;
                 break;
             case 13:
-                //                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggr.jan]];
-                cellText = aggr.growthString;
+                cellText = aggrPerBrand.growthString;
                 break;
             default:
-                cellText = @"";
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerBrand.monthValArray[gridCoord.column - 1]]];
                 break;
         }
     }
@@ -194,7 +111,7 @@
 
 - (NSUInteger)shinobiGrid:(ShinobiGrid *)grid numberOfRowsInSection:(int) sectionIndex
 {
-    return [reportArray count] + 1;
+    return [salesTrendAggr.aggrPerBrands count] + 1;
 }
 
 @end

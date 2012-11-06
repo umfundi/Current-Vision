@@ -20,6 +20,7 @@
 
 @class User;
 @class Practice;
+@class ErReportAggr;
 
 @interface evErReportViewController : UIViewController <SGridDelegate, AllCustomersDelegate, AllPracticesDelegate, AllCountiesDelegate, AllKeyAccountManagersDelegate, AllGroupsDelegate, AllCountriesDelegate, ErReportDataSourceDelegate>
 {
@@ -55,12 +56,13 @@
     
     ShinobiGrid *erReportGrid;
     ErReportDataSource *erReportDataSource;
-    NSArray *erReportArray;
+    ErReportAggr *erReportAggr;
     
     UIPopoverController *searchPopoverController;
     
     NSInteger currentFilter;
     BOOL isYTD;
+    BOOL isFull;
     
     NSInteger last_col;
     NSInteger last_row;
