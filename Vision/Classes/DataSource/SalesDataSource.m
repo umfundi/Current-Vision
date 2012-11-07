@@ -76,9 +76,9 @@
         
         // Create formatter
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        NSString *cellText;
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-            
+        NSString *cellText;
+                   
         PracticeAggrPerBrand *aggrPerBrand = [salesArray objectAtIndex:gridCoord.section - 1];
            
         switch (gridCoord.column)

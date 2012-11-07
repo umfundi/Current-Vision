@@ -502,11 +502,8 @@ NSArray *allSubviews(UIView *aView)
     SAPCodeField.text = currentPractice.sap_no;
  
     MonthField.text = [formatter stringFromNumber:[NSNumber numberWithInteger:currentPractice.aggrValue.month]];    
-//    MonthField.text = currentPractice.aggrValue.monthString;
     YTDField.text = [formatter stringFromNumber:[NSNumber numberWithInteger:currentPractice.aggrValue.ytd]];
-//    YTDField.text = currentPractice.aggrValue.ytdString;
     MATField.text = [formatter stringFromNumber:[NSNumber numberWithInteger:currentPractice.aggrValue.mat]];
-//    MATField.text = currentPractice.aggrValue.matString;
     
     if (currentPractice)
     {

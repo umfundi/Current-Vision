@@ -192,7 +192,7 @@
         cell.backgroundColor = [UIColor darkGrayColor];
         cell.textField.textColor = [UIColor whiteColor];
         
-        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:14.f];
+        cell.textField.font = [UIFont fontWithName:@"Verdana-Bold" size:10.f];
         cell.textField.text = cellText;
         
         return cell;
@@ -203,13 +203,16 @@
         if (!cell)
             cell = [[SGridTextCell alloc] initWithReuseIdentifier:@"valueCell"];
         
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        cell.textField.textColor = [UIColor blackColor];
-        cell.textField.textAlignment = UITextAlignmentLeft;
-        cell.textField.font = [UIFont fontWithName:@"Arial" size:15.0f];
-        
+        cell.textField.font = [UIFont fontWithName:@"Arial" size:8.0f];
+        cell.textField.textColor = [UIColor blackColor];        
         cell.textField.backgroundColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor whiteColor];
+        
+        if (gridCoord.column==0)
+            cell.textField.textAlignment = UITextAlignmentCenter;
+        else
+            cell.textField.textAlignment = UITextAlignmentRight;
+        
 
         cell.textField.text = cellText;
         

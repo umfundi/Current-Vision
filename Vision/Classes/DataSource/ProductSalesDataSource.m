@@ -56,7 +56,7 @@
                 cellText = productSalesAggr.monthArray[5];
                 break;
             case 8:
-                cellText = NSLocalizedString(@"Tot. Q-2", @"");
+                cellText = NSLocalizedString(@"Tot Q-2", @"");
                 break;
             case 9:
                 cellText = productSalesAggr.monthArray[6];
@@ -68,7 +68,7 @@
                 cellText = productSalesAggr.monthArray[8];
                 break;
             case 12:
-                cellText = NSLocalizedString(@"Tot. Q-3", @"");
+                cellText = NSLocalizedString(@"Tot Q-3", @"");
                 break;
             case 13:
                 cellText = productSalesAggr.monthArray[9];
@@ -80,7 +80,7 @@
                 cellText = productSalesAggr.monthArray[11];
                 break;
             case 16:
-                cellText = NSLocalizedString(@"Tot. Q-4", @"");
+                cellText = NSLocalizedString(@"Tot Q-4", @"");
                 break;
             case 17:
                 cellText = NSLocalizedString(@"Value", @"");
@@ -103,6 +103,9 @@
     {
         ProductSalesAggrPerBrand *aggrPerBrand = [productSalesAggr.aggrPerBrands objectAtIndex:gridCoord.section - 1];
         ProductSalesAggrPerYear *aggrPerYear = [aggrPerBrand.aggrPerYears objectAtIndex:gridCoord.rowIndex];
+        // Create formatter
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         
         switch (gridCoord.column)
         {
@@ -110,64 +113,64 @@
                 cellText = aggrPerYear.year;
                 break;
             case 1:
-                cellText = aggrPerYear.monthValStringArray[0];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[0]]];
                 break;
             case 2:
-                cellText = aggrPerYear.monthValStringArray[1];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[1]]];
                 break;
             case 3:
-                cellText = aggrPerYear.monthValStringArray[2];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[2]]];
                 break;
             case 4:
-                cellText = aggrPerYear.totq1;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.totq1]];
                 break;
             case 5:
-                cellText = aggrPerYear.monthValStringArray[3];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[3]]];
                 break;
             case 6:
-                cellText = aggrPerYear.monthValStringArray[4];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[4]]];
                 break;
             case 7:
-                cellText = aggrPerYear.monthValStringArray[5];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[5]]];
                 break;
             case 8:
-                cellText = aggrPerYear.totq2;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.totq2]];
                 break;
             case 9:
-                cellText = aggrPerYear.monthValStringArray[6];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[6]]];
                 break;
             case 10:
-                cellText = aggrPerYear.monthValStringArray[7];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[7]]];
                 break;
             case 11:
-                cellText = aggrPerYear.monthValStringArray[8];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[8]]];
                 break;
             case 12:
-                cellText = aggrPerYear.totq3;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.totq3]];
                 break;
             case 13:
-                cellText = aggrPerYear.monthValStringArray[9];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[9]]];
                 break;
             case 14:
-                cellText = aggrPerYear.monthValStringArray[10];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[10]]];
                 break;
             case 15:
-                cellText = aggrPerYear.monthValStringArray[11];
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.monthValArray[11]]];
                 break;
             case 16:
-                cellText = aggrPerYear.totq4;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.totq4]];
                 break;
             case 17:
-                cellText = aggrPerYear.value;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.value]];
                 break;
             case 18:
-                cellText = aggrPerYear.growth;
+                cellText = [[formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.growth]] stringByAppendingString:@"%"];
                 break;
             case 19:
-                cellText = aggrPerYear.qty;
+                cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.qty]];
                 break;
             case 20:
-                cellText = aggrPerYear.qtygrowth;
+                cellText = [[formatter stringFromNumber:[NSNumber numberWithInteger:aggrPerYear.qtygrowth]] stringByAppendingString:@"%"];
                 break;
             default:
                 cellText = @"";

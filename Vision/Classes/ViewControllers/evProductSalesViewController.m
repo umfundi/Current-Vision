@@ -83,8 +83,18 @@
     SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
     
     //Set fixed width for certain columns
-    if(colIndex == 4 || colIndex == 8 || colIndex == 12 || colIndex == 16 || colIndex == 18 || colIndex == 20) {
-        style.size = [NSNumber numberWithFloat:56];
+    if(colIndex == 0) {
+        style.size = [NSNumber numberWithFloat:75];
+        return style;
+    } else if (colIndex == 4 || colIndex == 8 || colIndex == 12 || colIndex == 16 ) {
+        style.size = [NSNumber numberWithFloat:55];
+        return style;
+    } else if (colIndex < 16 || colIndex == 19) {
+        style.size = [NSNumber numberWithFloat:40];
+        return style;
+    }
+    else {
+        style.size = [NSNumber numberWithFloat:55];
         return style;
     }
     return nil;

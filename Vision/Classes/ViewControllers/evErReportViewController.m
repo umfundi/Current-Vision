@@ -46,13 +46,46 @@
     return s;
 }
 
-- (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int)secIndex
-{
+
+- (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForRowAtIndex:(int)rowIndex inSection:(int)secIndex{
+    SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
+    
+    //Set Height of rows
+    if(rowIndex == 0)
+    {
+        style.size = [NSNumber numberWithFloat:25];
+        return style;
+    }
+    else
+    {
+        style.size = [NSNumber numberWithFloat:18];
+        return style;
+    }
+    
     return nil;
 }
 
+
 - (SGridColRowStyle *)shinobiGrid:(ShinobiGrid *)grid styleForColAtIndex:(int)colIndex
 {
+    SGridColRowStyle *style = [[SGridColRowStyle alloc] init];
+    
+    //Set fixed width for certain columns
+    if(colIndex == 0) {
+        style.size = [NSNumber numberWithFloat:75];
+        return style;
+    } else if (colIndex == 4 || colIndex == 8 || colIndex == 12 || colIndex == 16 ) {
+        style.size = [NSNumber numberWithFloat:55];
+        return style;
+    } else if (colIndex < 16 || colIndex == 19) {
+        style.size = [NSNumber numberWithFloat:40];
+        return style;
+    }
+    else {
+        style.size = [NSNumber numberWithFloat:55];
+        return style;
+    }
+
     return nil;
 }
 

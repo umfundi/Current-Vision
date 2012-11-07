@@ -256,7 +256,7 @@
             aggrPerYear = [aggrPerCustomer.aggrPerYears objectAtIndex:i];
             if (prvAggrPerYear == nil)
             {
-                aggrPerYear.growth = @"";
+                aggrPerYear.growth = 0;
                 prvAggrPerYear = aggrPerYear;
                 
                 for (NSInteger i = 0 ; i < 12 ; i ++ )
@@ -268,10 +268,11 @@
             for (NSInteger i = 0 ; i < 12 ; i ++ )
                 curVal += aggrPerYear.monthValArray[i];
             
+            // iHm
             if (prvVal == 0)
-                aggrPerYear.growth = @"";
+                aggrPerYear.growth = 0;
             else
-                aggrPerYear.growth = [NSString stringWithFormat:@"%.0f%%", round((curVal / prvVal - 1) * 100)];
+                aggrPerYear.growth = round((curVal / prvVal - 1) * 100);
             
             prvVal = curVal;
         }
@@ -284,7 +285,7 @@
             {
                 if (prvAggrPerYear == nil)
                 {
-                    aggrPerYear.growth = @"";
+                    aggrPerYear.growth = 0;
                     prvAggrPerYear = aggrPerYear;
                     
                     for (NSInteger i = 0 ; i < 12 ; i ++ )
@@ -297,9 +298,9 @@
                     curVal += aggrPerYear.monthValArray[i];
                 
                 if (prvVal == 0)
-                    aggrPerYear.growth = @"";
+                    aggrPerYear.growth = 0;
                 else
-                    aggrPerYear.growth = [NSString stringWithFormat:@"%.0f%%", round((curVal / prvVal - 1) * 100)];
+                    aggrPerYear.growth = round((curVal / prvVal - 1) * 100);
                 
                 prvVal = curVal;
             }
