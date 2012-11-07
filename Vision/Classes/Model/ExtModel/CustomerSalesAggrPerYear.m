@@ -126,18 +126,18 @@
                            nil];
     
     double tot1 = monthValArray[0] + monthValArray[1] + monthValArray[2];
-    totq1 = [NSString stringWithFormat:@"%.0f", round(tot1)];
+    totq1 = round(tot1);
     
     double tot2 = monthValArray[3] + monthValArray[4] + monthValArray[5];
-    totq2 = [NSString stringWithFormat:@"%.0f", round(tot2)];
+    totq2 = round(tot2);
     
     double tot3 = monthValArray[6] + monthValArray[7] + monthValArray[8];
-    totq3 = [NSString stringWithFormat:@"%.0f", round(tot3)];
+    totq3 = round(tot3);
     
     double tot4 = monthValArray[9] + monthValArray[10] + monthValArray[11];
-    totq4 = [NSString stringWithFormat:@"%.0f", round(tot4)];
+    totq4 = round(tot4);
     
-    value = [NSString stringWithFormat:@"%.0f", round(tot1 + tot2 + tot3 + tot4)];
+    value = round(tot1 + tot2 + tot3 + tot4);
 }
 
 @end

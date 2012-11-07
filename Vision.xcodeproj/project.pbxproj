@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3721B4B8164B18C0001E4700 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3721B4B7164B18C0001E4700 /* ShinobiGrids.framework */; };
+		3721B4BA164B18D4001E4700 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3721B4B9164B18D4001E4700 /* ShinobiCharts.framework */; };
 		376ED1511635AFD500066502 /* PracticeAggr.m in Sources */ = {isa = PBXBuildFile; fileRef = 376ED1501635AFD400066502 /* PracticeAggr.m */; };
 		3779C8C016346562002A2037 /* PracticeSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8BE16346562002A2037 /* PracticeSearchResultViewController.m */; };
 		3779C8C6163469BB002A2037 /* CustomerSearchResultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3779C8C3163469BB002A2037 /* CustomerSearchResultDataSource.m */; };
@@ -60,8 +62,6 @@
 		AD31002B16363C3A005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002A16363C39005B48E5 /* SALES_REPORT_CustomerSalesTrends_Qty.m */; };
 		AD31002E16363D02005B48E5 /* SALES_REPORT_Dashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31002D16363D01005B48E5 /* SALES_REPORT_Dashboard.m */; };
 		AD31003116363ECF005B48E5 /* SALES_REPORT_Dashboard_Qty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31003016363ECD005B48E5 /* SALES_REPORT_Dashboard_Qty.m */; };
-		AD31776F163F61B000DD0646 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD31776E163F61B000DD0646 /* ShinobiCharts.framework */; };
-		AD317771163F61B600DD0646 /* ShinobiGrids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD317770163F61B600DD0646 /* ShinobiGrids.framework */; };
 		AD317774163F6D5200DD0646 /* UIUnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD317773163F6D5200DD0646 /* UIUnderlinedButton.m */; };
 		AD317775163F6E3B00DD0646 /* UIUnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD317773163F6D5200DD0646 /* UIUnderlinedButton.m */; };
 		AD3773D71628680300760031 /* SalesTrendsReportDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3773D61628680200760031 /* SalesTrendsReportDataSource.m */; };
@@ -150,6 +150,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3721B4B7164B18C0001E4700 /* ShinobiGrids.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiGrids.framework; path = "../ShinobiControls Trial-2/ShinobiGrids Trial/ShinobiGrids.framework"; sourceTree = "<group>"; };
+		3721B4B9164B18D4001E4700 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = "../ShinobiControls Trial-2/ShinobiCharts Trial/ShinobiCharts.embeddedframework/ShinobiCharts.framework"; sourceTree = "<group>"; };
 		376ED14F1635AFD400066502 /* PracticeAggr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeAggr.h; sourceTree = "<group>"; };
 		376ED1501635AFD400066502 /* PracticeAggr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeAggr.m; sourceTree = "<group>"; };
 		3779C8BD16346562002A2037 /* PracticeSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeSearchResultViewController.h; sourceTree = "<group>"; };
@@ -372,6 +374,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3721B4BA164B18D4001E4700 /* ShinobiCharts.framework in Frameworks */,
+				3721B4B8164B18C0001E4700 /* ShinobiGrids.framework in Frameworks */,
 				AD6C98BB161EBD6C001FD2E2 /* SystemConfiguration.framework in Frameworks */,
 				37CBBF891604D9D2003AA83E /* CoreData.framework in Frameworks */,
 				379C13FA16004A33003828DD /* QuartzCore.framework in Frameworks */,
@@ -379,8 +383,6 @@
 				379C13F816004A10003828DD /* Security.framework in Frameworks */,
 				37D722D315F3ABD4006DF8F6 /* UIKit.framework in Frameworks */,
 				37D722D515F3ABD4006DF8F6 /* Foundation.framework in Frameworks */,
-				AD31776F163F61B000DD0646 /* ShinobiCharts.framework in Frameworks */,
-				AD317771163F61B600DD0646 /* ShinobiGrids.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +402,8 @@
 		37D722C315F3ABD4006DF8F6 = {
 			isa = PBXGroup;
 			children = (
+				3721B4B9164B18D4001E4700 /* ShinobiCharts.framework */,
+				3721B4B7164B18C0001E4700 /* ShinobiGrids.framework */,
 				37D722D815F3ABD4006DF8F6 /* Vision */,
 				37D722D115F3ABD4006DF8F6 /* Frameworks */,
 				37D722F915F3ABD4006DF8F6 /* VisionTests */,
