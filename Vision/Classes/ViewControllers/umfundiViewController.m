@@ -113,7 +113,7 @@
             style.size = [NSNumber numberWithFloat:80];
             return style;
         } else {
-            style.size = [NSNumber numberWithFloat:40];
+            style.size = [NSNumber numberWithFloat:65];
             return style;
         }
 
@@ -493,7 +493,7 @@ NSArray *allSubviews(UIView *aView)
     nameField.text = currentPractice.practiceName;
     addressField.text = currentPractice.add1;
     townField.text = currentPractice.city;
-    countryField.text = currentPractice.province;
+    countryField.text = currentPractice.country;
     postcodeField.text = currentPractice.postcode;
     brickField.text = currentPractice.brick;
     SAPCodeField.text = currentPractice.sap_no;
@@ -592,7 +592,8 @@ NSArray *allSubviews(UIView *aView)
         }
     
     searchResults = resultCustomers;
-*/    
+*/
+    
     
     [self performSelectorOnMainThread:@selector(searchFinished:) withObject:sender waitUntilDone:YES];
 }

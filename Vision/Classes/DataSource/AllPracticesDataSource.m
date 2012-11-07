@@ -179,10 +179,10 @@
                     res = [practice_i.add1 compare:practice_j.add1];
                     break;
                 case 3:
-                    res = [practice_i.province compare:practice_j.province];
+                    res = [practice_i.city compare:practice_j.city];
                     break;
                 case 4:
-                    res = [practice_i.city compare:practice_j.city];
+                    res = [practice_i.province compare:practice_j.province];
                     break;
                 case 5:
                     res = [practice_i.postcode compare:practice_j.postcode];

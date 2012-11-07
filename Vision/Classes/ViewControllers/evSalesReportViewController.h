@@ -96,7 +96,7 @@
 - (IBAction)matClicked:(id)sender;
 - (IBAction)findClicked:(id)sender;
 - (IBAction)nextClicked:(id)sender;
-- (IBAction)allClicked:(id)sender;
+- (IBAction)mailClicked:(id)sender;
 
 - (void)displayGrids;
 - (void)applyTheme:(BOOL)redTheme;

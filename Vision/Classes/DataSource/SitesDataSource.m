@@ -108,15 +108,12 @@
                 break;
             case 4:
                 cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:customer.aggrValue.month]];
-//                cellText = customer.aggrValue.monthString;
                 break;
             case 5:
                 cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:customer.aggrValue.ytd]];
-//                cellText = customer.aggrValue.ytdString;
                 break;
             case 6:
                 cellText = [formatter stringFromNumber:[NSNumber numberWithInteger:customer.aggrValue.mat]];
-//              cellText = customer.aggrValue.matString;
                 break;
             default:
                 cellText = @"";

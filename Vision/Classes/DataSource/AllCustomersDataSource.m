@@ -198,10 +198,10 @@
                     res = [customer_i.address1 compare:customer_j.address1];
                     break;
                 case 3:
-                    res = [customer_i.province compare:customer_j.province];
+                    res = [customer_i.city compare:customer_j.city];
                     break;
                 case 4:
-                    res = [customer_i.city compare:customer_j.city];
+                    res = [customer_i.province compare:customer_j.province];
                     break;
                 case 5:
                     res = [customer_i.postcode compare:customer_j.postcode];

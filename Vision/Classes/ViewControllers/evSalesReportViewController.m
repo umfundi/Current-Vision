@@ -558,9 +558,6 @@ NSArray *SalesReportSubviews(UIView *aView)
     }
 }
 
-- (IBAction)allClicked:(id)sender {
-}
-
 - (void)cellFound
 {
     SGridCell *grid_cell;
@@ -574,6 +571,11 @@ NSArray *SalesReportSubviews(UIView *aView)
         return;
     }
     [grid_cell setSelected:YES animated:YES];
+}
+
+- (IBAction)mailClicked:(id)sender
+{
+    
 }
 
 
