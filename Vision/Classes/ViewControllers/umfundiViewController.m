@@ -473,6 +473,9 @@ NSArray *allSubviews(UIView *aView)
 
 - (void)displayPractice
 {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
     if (!self.currentPractice)
     {
         if (!HUDProcessing)
@@ -497,9 +500,13 @@ NSArray *allSubviews(UIView *aView)
     postcodeField.text = currentPractice.postcode;
     brickField.text = currentPractice.brick;
     SAPCodeField.text = currentPractice.sap_no;
-    MonthField.text = currentPractice.aggrValue.monthString;
-    YTDField.text = currentPractice.aggrValue.ytdString;
-    MATField.text = currentPractice.aggrValue.matString;
+ 
+    MonthField.text = [formatter stringFromNumber:[NSNumber numberWithInteger:currentPractice.aggrValue.month]];    
+//    MonthField.text = currentPractice.aggrValue.monthString;
+    YTDField.text = [formatter stringFromNumber:[NSNumber numberWithInteger:currentPractice.aggrValue.ytd]];
+//    YTDField.text = currentPractice.aggrValue.ytdString;
+    MATField.text = [formatter stringFromNumber:[NSNumber numberWithInteger:currentPractice.aggrValue.mat]];
+//    MATField.text = currentPractice.aggrValue.matString;
     
     if (currentPractice)
     {

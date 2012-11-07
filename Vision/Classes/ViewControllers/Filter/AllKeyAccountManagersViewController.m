@@ -103,7 +103,7 @@
     keyAccountManagerGrid.canEditCellsViaDoubleTap = NO;
     
     // Selected
-    User *selectedKeyAccountManger = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
+    User *selectedKeyAccountManger = [dataSource.keyAccountManagerArray objectAtIndex:cell.gridCoord.rowIndex - 1];
     
     [delegate performSelector:@selector(keyAccountManagerSelected:) withObject:selectedKeyAccountManger];
 }

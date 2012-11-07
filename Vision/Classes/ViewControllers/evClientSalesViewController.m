@@ -221,6 +221,8 @@ NSArray *ClientSalesSubviews(UIView *aView)
 
 - (IBAction)allClicked:(id)sender
 {
+    btnAll.hidden = YES;
+
     clientSalesDataSource.clientSalesAggr = clientSalesAggr;
     [clientSalesGrid reload];
 }

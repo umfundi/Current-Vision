@@ -107,7 +107,7 @@
     }
     
     // Selected
-    Customer *selectedCustomer = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
+    Customer *selectedCustomer = [dataSource.customerArray objectAtIndex:cell.gridCoord.rowIndex - 1];
     
     [delegate performSelector:@selector(customerSelected:) withObject:selectedCustomer];
 }

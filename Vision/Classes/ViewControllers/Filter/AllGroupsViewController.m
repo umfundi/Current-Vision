@@ -100,7 +100,7 @@
     groupGrid.canEditCellsViaDoubleTap = NO;
     
     // Selected
-    NSString *selectedCounty = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
+    NSString *selectedCounty = [dataSource.groupArray objectAtIndex:cell.gridCoord.rowIndex - 1];
     
     [delegate performSelector:@selector(groupSelected:) withObject:selectedCounty];
 }

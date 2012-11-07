@@ -116,7 +116,7 @@
     }
     
     // Selected
-    Practice *selectedPractice = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
+    Practice *selectedPractice = [dataSource.searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
     
     [delegate performSelector:@selector(practiceSelected:) withObject:selectedPractice];
 }

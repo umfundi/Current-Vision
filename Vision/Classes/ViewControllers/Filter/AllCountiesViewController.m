@@ -100,7 +100,7 @@
     countyGrid.canEditCellsViaDoubleTap = NO;
     
     // Selected
-    NSString *selectedCounty = [searchResult objectAtIndex:cell.gridCoord.rowIndex - 1];
+    NSString *selectedCounty = [dataSource.countyArray objectAtIndex:cell.gridCoord.rowIndex - 1];
     
     [delegate performSelector:@selector(countySelected:) withObject:selectedCounty];
 }
